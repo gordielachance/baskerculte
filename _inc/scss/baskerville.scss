@@ -352,90 +352,84 @@ header {
 
 /* Sub menus --------------------------------------- */
 
-
-.main-menu li ul {
-  position: absolute;
-  z-index: 10000;
-  display: block;
-  left: -9999px;
-  top: 38px;
-  -webkit-opacity: 0;
-  -moz-opacity: 0;
-  opacity: 0;
-  z-index: 999;
-    @include transition(0.3s ease-in-out, top 0.3s ease-in-out);
+.main-menu {
+    li{
+        float: none;
+        display: block;
+        border-top: 1px solid rgba(255, 255, 255, 0.075);
+        &:first-child {
+            border-top: none;
+        }
+        display: block;
+        width: 240px;
+        background: #2d2d2d;
+        ul{ //sub-menu
+            position: absolute;
+            z-index: 10000;
+            display: block;
+            top: 0;
+            @include opacity(0);
+            z-index: 999;
+            @include transition(0.3s ease-in-out, top 0.3s ease-in-out);
+            
+            > {
+              .has-children::after, .page_item_has_children::after {
+                content: "";
+                display: block;
+                border: 6px solid transparent;
+                border-left-color: rgba(255, 255, 255, 0.4);
+                position: absolute;
+                z-index: 1001;
+                right: 10px;
+                top: 50%;
+                margin-top: -5px;
+              }
+              .has-children:hover::after, .page_item_has_children:hover::after {
+                border-left-color: #FFF;
+              }
+            }
+            
+            a {
+              display: block;
+              text-align: center;
+              padding: 20px;
+              margin: 0;
+              line-height: 130%;
+              color: #999;
+              &:hover {
+                color: #fff;
+              }
+            }
+            
+        }
+        &:hover{
+            > ul {
+                @include opacity(1);
+                top: 48px;
+            }
+        } 
+    }
+    > li{
+        > ul{
+            padding-top: 20px;
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: 1000;
+                top: 0px;
+                left: 50%;
+                margin-left: -10px;
+                border: 10px solid transparent;
+                border-bottom-color: #2d2d2d;
+            }
+        }
+    }
 }
 
 .is_mobile .main-menu li ul {
-  -webkit-opacity: 1;
-  -moz-opacity: 1;
-  opacity: 1;
+  @include opacity(1);
   display: none;
-}
-
-.main-menu {
-  > li > ul {
-    padding-top: 20px;
-    &:before {
-      content: "";
-      display: block;
-      position: absolute;
-      z-index: 1000;
-      top: 0px;
-      left: 50%;
-      margin-left: -10px;
-      border: 10px solid transparent;
-      border-bottom-color: #2d2d2d;
-    }
-  }
-  ul {
-    li {
-      float: none;
-      display: block;
-      border-top: 1px solid rgba(255, 255, 255, 0.075);
-      &:first-child {
-        border-top: none;
-      }
-      display: block;
-      width: 240px;
-      background: #2d2d2d;
-    }
-    > {
-      .has-children::after, .page_item_has_children::after {
-        content: "";
-        display: block;
-        border: 6px solid transparent;
-        border-left-color: rgba(255, 255, 255, 0.4);
-        position: absolute;
-        z-index: 1001;
-        right: 10px;
-        top: 50%;
-        margin-top: -5px;
-      }
-      .has-children:hover::after, .page_item_has_children:hover::after {
-        border-left-color: #FFF;
-      }
-    }
-    a {
-      display: block;
-      text-align: center;
-      padding: 20px;
-      margin: 0;
-      line-height: 130%;
-      color: #999;
-      &:hover {
-        color: #fff;
-      }
-    }
-  }
-  li:hover > ul {
-    -webkit-opacity: 1;
-    -moz-opacity: 1;
-    opacity: 1;
-    left: 50%;
-    margin-left: -120px;
-    top: 48px;
-  }
 }
 
 .is_mobile .main-menu li:hover ul {
@@ -1418,7 +1412,7 @@ img.alignleft, .alignleft img, img.aligncenter, .aligncenter img, img.alignright
     background: #fdfdfd;
     outline: none;
   }
-  input {
+  input,button {
     &[type="submit"], &[type="reset"], &[type="button"] {
       padding: 12px 16px;
       margin: 0;
