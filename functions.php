@@ -348,8 +348,18 @@ class Baskerculte{
 		) );
 
 		register_sidebar( array(
-			'name' 			=> __( 'Sidebar', 'baskerculte' ),
-			'id'			=> 'sidebar',
+			'name' 			=> __( 'Sidebar 1', 'baskerculte' ),
+			'id'			=> 'sidebar-1',
+			'description' 	=> __( 'Widgets in this area will be shown in the sidebar.', 'baskerculte' ),
+			'before_title' 	=> '<h3 class="widget-title">',
+			'after_title' 	=> '</h3>',
+			'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
+			'after_widget' 	=> '</div><div class="clear"></div></div>'
+		) );
+        
+		register_sidebar( array(
+			'name' 			=> __( 'Sidebar 2', 'baskerculte' ),
+			'id'			=> 'sidebar-2',
 			'description' 	=> __( 'Widgets in this area will be shown in the sidebar.', 'baskerculte' ),
 			'before_title' 	=> '<h3 class="widget-title">',
 			'after_title' 	=> '</h3>',
