@@ -36,7 +36,7 @@
 					<div class="clear"></div>
 					
 				</div>		
-				<ul class="main-menu">
+				<ul id="main-menu">
 				
 					<?php 
 					
@@ -63,36 +63,16 @@
 					} 
 					
 					?>
+                    
+                    <!--search -->
+                    <?php get_template_part( 'searchform' ); ?>
 											
 				 </ul><!-- .main-menu -->
-                
-                <!--search -->
-                <?php get_template_part( 'searchform' ); ?>
-				 
-				 <div class="clear"></div>
 				 
 			</div><!-- .navigation-inner -->
 			
+            <ul id="mobile-main-menu" class="section bg-graphite no-padding hidden">
+                <!-- jQuery clone of #main-menu -->
+            </ul>
+            
 		</header><!-- .navigation -->
-		
-		<div class="mobile-navigation section bg-graphite no-padding hidden">
-					
-			<ul class="mobile-menu">
-			
-				<?php
-
-				if ( has_nav_menu( 'primary' ) ) {
-																	
-					wp_nav_menu( $nav_args ); 
-
-				} else {
-				
-					wp_list_pages( $list_pages_args );
-					
-				} 
-				
-				?>
-										
-			 </ul><!-- .main-menu -->
-		
-		</div><!-- .mobile-navigation -->

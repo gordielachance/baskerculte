@@ -17,32 +17,24 @@ jQuery(document).ready(function($) {
 	$(window).resize(function () {
 		$blocks.masonry();
 	});
-
+    
+    /*
+    Mobile Menu
+    */
+    var mobile_menu = $('header #main-menu').html();
+    $('#mobile-main-menu').html(mobile_menu);
 
 	// Toggle mobile-menu
-	$(".nav-toggle").on("click", function(){	
+	$("header .nav-toggle").on("click", function(){	
 		$(this).toggleClass("active");
-		$(".mobile-navigation").slideToggle();
+		$("#mobile-main-menu").slideToggle();
 	});
-    
-    //Toggle nav search
-    $('body.search-results').find('header .searchform').addClass('expanded');
-	$("header .searchsubmit").on("hover", function(e){
-        var form = $(this).parents('form');
-        var is_expanded = form.hasClass('expanded');
-        if (!is_expanded){
-            e.preventDefault();
-            form.addClass('expanded');
-        }
-	});
-    
-    
-	
-	// Show mobile-menu > 1000
+
+	// Show mobile-menu
 	$(window).resize(function() {
-		if ($(window).width() > 1000) {
-			$(".nav-toggle").removeClass("active");
-			$(".mobile-navigation").hide();
+		if ($(window).width() > 782) {
+			$("header .nav-toggle").removeClass("active");
+			$("#mobile-main-menu").hide();
 		}
 	});
 	

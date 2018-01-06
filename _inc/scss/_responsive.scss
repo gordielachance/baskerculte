@@ -146,7 +146,7 @@
 	
 	/* navigation */
 	
-	.main-menu {
+	#main-menu {
         display: none;
     }
 
@@ -169,49 +169,6 @@
       }
       &.active .bar {
         background: #fff;
-      }
-    }
-
-    .mobile-menu {
-      li {
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      > li:first-child {
-        border-top: none;
-      }
-      a {
-        display: block;
-        padding: 25px 5%;
-        font-size: 0.9em;
-        text-transform: uppercase;
-        color: #999;
-        letter-spacing: 1px;
-        &:hover {
-          color: #fff;
-        }
-      }
-      ul {
-        a {
-          padding-left: 10%;
-        }
-        ul {
-          a {
-            padding-left: 15%;
-          }
-          ul {
-            a {
-              padding-left: 20%;
-            }
-            ul {
-              a {
-                padding-left: 25%;
-              }
-              ul a {
-                padding-left: 30%;
-              }
-            }
-          }
-        }
       }
     }
 	
@@ -297,7 +254,7 @@
 
 	/* navigation */
 
-	.mobile-menu a {
+	#mobile-main-menu a {
 		padding-top: 20px;
 		padding-bottom: 20px;
 	}
