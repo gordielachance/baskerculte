@@ -25,20 +25,32 @@
                         height:100%;
                     }
                     figcaption{
+                        //
+                        cursor: pointer;
+                        cursor: hand;
+                        a{
+                            pointer-events: none; //we will handle a global article click through JS
+                        }
+                        //
+                        @include display-flex();
+                        flex-direction: column;
+                        justify-content: center;
+                        
                         position:absolute;
                         width:100%;
                         height:100%;
                         background-color:$color-bg;
                         padding:2em;
+                         text-align:center;
                         .post-title{
-                            text-align:center;
+                            margin-top:-1em;
+                            display:block;
                             font-family: 'Roboto Slab', sans-serif;
                             font-size: 1em;
                             line-height: 1em;
                             font-weight: 700;
                             color: #2B3542;
                             word-break: break-word;
-                            margin-bottom:1em;
                             max-height: 3em;
                             overflow:hidden;
                             text-overflow: ellipsis; 
@@ -47,15 +59,11 @@
                         
                         .portfolio-post-metas{
                             .post-categories{
-                                clear:both;
-                                display:block;
-                                text-align:center;
+                                margin-top: 1em;
                             }
                             .post-tags{
-                                clear:both;
-                                display:block;
-                                text-align:center;
-                                margin-top:.5em;
+                                margin-top: .5em;
+                                font-size: .8em;
                             }
                         }
                             
