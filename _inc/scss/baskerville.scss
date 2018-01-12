@@ -146,6 +146,26 @@ body a {
 /*	2.	Structure
 /* -------------------------------------------------------------------------------- */
 
+body{
+    @include display-flex; 
+    @include flex-direction(column);
+    min-height: 100vh;
+    > header,
+    > .wrapper,
+    > footer{
+
+    }
+    > header{
+        @include flex(none); //= 0 0 auto
+    }
+    > .wrapper{
+        @include flex(auto); //= 1 1 auto
+    }
+    > footer{
+        @include flex(none); //= 0 0 auto
+    }
+    
+}
 
 .section {
   position: relative;
@@ -169,9 +189,10 @@ body a {
 }
 
 .section-inner {
-  max-width: 90%;
-  width: 1000px;
-  margin: 0 auto;
+    @include display-flex;
+    max-width: 90%;
+    width: 1000px;
+    margin: 0 auto;
   &.content {
     width: 1040px;
     max-width: 92.6%;
@@ -409,6 +430,28 @@ header {
             }
         }
     }
+    ul {
+      li {
+        ul {
+          top: 5px;
+        }
+        &:hover > ul {
+          top: 0;
+          left: 240px;
+          margin-left: 0;
+        }
+      }
+      ul {
+        li {
+          background: #3d3d3d;
+        }
+        ul {
+          li, ul li {
+            background: #4d4d4d;
+          }
+        }
+      }
+    }
 }
 
 #mobile-main-menu {
@@ -454,40 +497,18 @@ header {
   }
 }
 
-.is_mobile #main-menu li ul {
-  @include opacity(1);
-  display: none;
-}
-
-.is_mobile #main-menu li:hover ul {
-  display: block;
-}
-
-
-/* Deep down --------------------------------------- */
-
-
-#main-menu ul {
-  li {
-    ul {
-      top: 5px;
+.is_mobile {
+    #main-menu {
+        li {
+            ul {
+                @include opacity(1);
+                display: none;
+            }
+            &:hover ul {
+              display: block;
+            }
+        }
     }
-    &:hover > ul {
-      top: 0;
-      left: 240px;
-      margin-left: 0;
-    }
-  }
-  ul {
-    li {
-      background: #3d3d3d;
-    }
-    ul {
-      li, ul li {
-        background: #4d4d4d;
-      }
-    }
-  }
 }
 
 
