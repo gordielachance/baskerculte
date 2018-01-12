@@ -24,7 +24,7 @@
 	    
 	        <div class="widget-content">
 	        
-	            <h3 class="widget-title"><?php _e("Latest posts", "baskerculte") ?></h3>
+	            <h3 class="widget-title"><?php _e("Latest posts", "gordo") ?></h3>
 	            
 	            <ul>
 					<?php
@@ -46,11 +46,11 @@
 	    
 	        <div class="widget-content">
 	        
-	        	<h3 class="widget-title"><?php _e( "Text widget", "baskerculte" ); ?></h3>
+	        	<h3 class="widget-title"><?php _e( "Text widget", "gordo" ); ?></h3>
 	        
 	        	<div class="textwidget">
 	        	
-	        		<p><?php _e( "These widgets are displayed because you haven't added any widgets of your own yet. You can do so at Appearance > Widgets in the WordPress settings.", "baskerculte" ); ?></p>
+	        		<p><?php _e( "These widgets are displayed because you haven't added any widgets of your own yet. You can do so at Appearance > Widgets in the WordPress settings.", "gordo" ); ?></p>
 				
 				</div>	
 				

@@ -148,7 +148,7 @@
 					
 						<div class="featured-media">
 
-							<?php baskerculte()->flexslider('post-image'); ?>
+							<?php gordo()->flexslider('post-image'); ?>
 											
 						</div> <!-- /featured-media -->
 				
@@ -186,7 +186,7 @@
 												                        
 			   	<?php endwhile; else: ?>
 			
-					<p><?php _e("We couldn't find any posts that matched your query. Please try again.", "baskerville"); ?></p>
+					<p><?php _e("We couldn't find any posts that matched your query. Please try again.", "gordo"); ?></p>
 				
 				<?php endif; ?>    
 		

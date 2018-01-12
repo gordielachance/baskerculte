@@ -53,7 +53,7 @@ function cc_blog_query(){
     return $cc_blog_query;
 }
 
-class Baskerculte{
+class Gordo{
     
 	/**
 	 * @var The one true Instance
@@ -71,7 +71,7 @@ class Baskerculte{
 	 */
 	public static function instance() {
 		if ( ! isset( self::$instance ) ) {
-			self::$instance = new Baskerculte;
+			self::$instance = new Gordo;
 			self::$instance->setup_globals();
 			self::$instance->includes();
 			self::$instance->setup_actions();
@@ -89,19 +89,19 @@ class Baskerculte{
     }
     
     function setup_actions(){
-        //baskerville
-        add_action( 'after_setup_theme', array($this,'baskerculte_setup') );
-        add_action( 'wp_enqueue_scripts', array($this,'baskerculte_load_javascript_files') );
-        add_action( 'wp_print_styles', array($this,'baskerculte_load_style') );
-        add_action( 'init', array($this,'baskerculte_add_editor_styles') );
-        add_action( 'widgets_init', array($this,'baskerculte_sidebar_registration') );
-        add_action( 'customize_register' , array( 'baskerculte_Customize' , 'register' ) ); // Setup the Theme Customizer settings and controls...
-        add_action( 'admin_head', array($this,'baskerculte_admin_css') );
-        add_filter( 'excerpt_more', array($this,'baskerculte_new_excerpt_more') );
-        add_action( 'body_class', array($this,'baskerculte_body_classes') );
-        add_filter( 'previous_posts_link_attributes', array($this,'baskerculte_pagination_classes_prev') );
-        add_filter( 'next_posts_link_attributes', array($this,'baskerculte_pagination_classes_next') );
-        add_filter( 'excerpt_length', array($this,'baskerculte_custom_excerpt_length'), 999 );
+        //gordo
+        add_action( 'after_setup_theme', array($this,'gordo_setup') );
+        add_action( 'wp_enqueue_scripts', array($this,'gordo_load_javascript_files') );
+        add_action( 'wp_print_styles', array($this,'gordo_load_style') );
+        add_action( 'init', array($this,'gordo_add_editor_styles') );
+        add_action( 'widgets_init', array($this,'gordo_sidebar_registration') );
+        add_action( 'customize_register' , array( 'gordo_Customize' , 'register' ) ); // Setup the Theme Customizer settings and controls...
+        add_action( 'admin_head', array($this,'gordo_admin_css') );
+        add_filter( 'excerpt_more', array($this,'gordo_new_excerpt_more') );
+        add_action( 'body_class', array($this,'gordo_body_classes') );
+        add_filter( 'previous_posts_link_attributes', array($this,'gordo_pagination_classes_prev') );
+        add_filter( 'next_posts_link_attributes', array($this,'gordo_pagination_classes_next') );
+        add_filter( 'excerpt_length', array($this,'gordo_custom_excerpt_length'), 999 );
         
         //custom
         add_filter( 'body_class', array($this,'body_class'),999 );
@@ -113,13 +113,13 @@ class Baskerculte{
 
     }
     
-    function baskerculte_pagination_classes_next() {
+    function gordo_pagination_classes_next() {
         return 'class="post-nav-older fleft"';
     }
-    function baskerculte_pagination_classes_prev() {
+    function gordo_pagination_classes_prev() {
         return 'class="post-nav-newer fright"';
     }
-    function baskerculte_body_classes( $classes ) {
+    function gordo_body_classes( $classes ) {
 
         // If has post thumbnail
         $classes[] = has_post_thumbnail() ? 'has-featured-image' : 'no-featured-image';
@@ -137,13 +137,13 @@ class Baskerculte{
         return $classes;
 
     }
-    function baskerculte_custom_excerpt_length( $length ) {
+    function gordo_custom_excerpt_length( $length ) {
         return 40;
     }
-    function baskerculte_new_excerpt_more( $more ) {
-        return '... <a class="more-link" href="'. get_permalink( get_the_ID() ) . '">' . __(' Continue Reading', 'baskerculte' ) . ' &rarr;</a>';
+    function gordo_new_excerpt_more( $more ) {
+        return '... <a class="more-link" href="'. get_permalink( get_the_ID() ) . '">' . __(' Continue Reading', 'gordo' ) . ' &rarr;</a>';
     }
-    function baskerculte_admin_css() { ?>
+    function gordo_admin_css() { ?>
         <style type="text/css">   
             #postimagediv #set-post-thumbnail img {
                 max-width: 100%;
@@ -224,14 +224,14 @@ class Baskerculte{
             wp_enqueue_script( 'jquery.dropit', get_stylesheet_directory_uri().'/_inc/js/dropit.js', array('jquery'),'1.1.0');
         //}
     }
-	function baskerculte_load_style() {
+	function gordo_load_style() {
 		if ( ! is_admin() ) {
-			wp_register_style( 'baskerville_googleFonts', '//fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,400italic,700,700italic,300' );
-			wp_register_style( 'baskerville_style', get_template_directory_uri() . '/_inc/css/baskerville.css' );
+			wp_register_style( 'gordo_googleFonts', '//fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,400italic,700,700italic,300' );
+			wp_register_style( 'gordo_style', get_template_directory_uri() . '/_inc/css/gordo.css' );
             wp_register_style( 'cargoculte_style', get_template_directory_uri() . '/_inc/css/cargoculte.css' );
 			
-			wp_enqueue_style( 'baskerville_googleFonts' );
-			wp_enqueue_style( 'baskerville_style' );
+			wp_enqueue_style( 'gordo_googleFonts' );
+			wp_enqueue_style( 'gordo_style' );
             wp_enqueue_style( 'cargoculte_style' );
 		}
 	}
@@ -259,7 +259,7 @@ class Baskerculte{
         remove_filter('the_content', 'wpautop');
     }
     
-	function baskerculte_setup() {
+	function gordo_setup() {
 		
 		// Automatic feed
 		add_theme_support( 'automatic-feed-links' );
@@ -290,7 +290,7 @@ class Baskerculte{
 		register_nav_menu( 'primary', 'Primary Menu' );
 		
 		// Make the theme translation ready
-		load_theme_textdomain('baskerculte', get_template_directory() . '/languages');
+		load_theme_textdomain('gordo', get_template_directory() . '/languages');
 		
 		$locale = get_locale();
 		$locale_file = get_template_directory() . "/languages/$locale.php";
@@ -298,29 +298,29 @@ class Baskerculte{
 		require_once($locale_file);
 		
 	}
-	function baskerculte_load_javascript_files() {
+	function gordo_load_javascript_files() {
 
 		if ( ! is_admin() ) {
-			wp_register_script( 'baskerculte_imagesloaded', get_template_directory_uri() . '/js/imagesloaded.pkgd.js', '', true );
-			wp_register_script( 'baskerculte_flexslider', get_template_directory_uri() . '/js/flexslider.min.js', '', true );
+			wp_register_script( 'gordo_imagesloaded', get_template_directory_uri() . '/js/imagesloaded.pkgd.js', '', true );
+			wp_register_script( 'gordo_flexslider', get_template_directory_uri() . '/js/flexslider.min.js', '', true );
 
-			wp_enqueue_script( 'baskerculte_global', get_template_directory_uri() . '/js/global.js', array( 'jquery', 'masonry', 'baskerculte_imagesloaded', 'baskerculte_flexslider' ), '', true );
+			wp_enqueue_script( 'gordo_global', get_template_directory_uri() . '/js/global.js', array( 'jquery', 'masonry', 'gordo_imagesloaded', 'gordo_flexslider' ), '', true );
 
 			if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 		}
 	}
 
-	function baskerculte_add_editor_styles() {
-		add_editor_style( 'baskerculte-editor-style.css' );
+	function gordo_add_editor_styles() {
+		add_editor_style( 'gordo-editor-style.css' );
 		$font_url = '//fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,400italic,700,700italic,300';
 		add_editor_style( str_replace( ',', '%2C', $font_url ) );
 	}
-	function baskerculte_sidebar_registration() {
+	function gordo_sidebar_registration() {
 
 		register_sidebar( array(
-			'name' 			=> __( 'Footer A', 'baskerculte' ),
+			'name' 			=> __( 'Footer A', 'gordo' ),
 			'id' 			=> 'footer-a',
-			'description' 	=> __( 'Widgets in this area will be shown in the left column in the footer.', 'baskerculte' ),
+			'description' 	=> __( 'Widgets in this area will be shown in the left column in the footer.', 'gordo' ),
 			'before_title' 	=> '<h3 class="widget-title">',
 			'after_title' 	=> '</h3>',
 			'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
@@ -328,9 +328,9 @@ class Baskerculte{
 		) );
 
 		register_sidebar( array(
-			'name' 			=> __( 'Footer B', 'baskerculte' ),
+			'name' 			=> __( 'Footer B', 'gordo' ),
 			'id' 			=> 'footer-b',
-			'description' 	=> __( 'Widgets in this area will be shown in the middle column in the footer.', 'baskerculte' ),
+			'description' 	=> __( 'Widgets in this area will be shown in the middle column in the footer.', 'gordo' ),
 			'before_title' 	=> '<h3 class="widget-title">',
 			'after_title' 	=> '</h3>',
 			'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
@@ -338,9 +338,9 @@ class Baskerculte{
 		) );
 
 		register_sidebar( array(
-			'name' 			=> __( 'Footer C', 'baskerculte' ),
+			'name' 			=> __( 'Footer C', 'gordo' ),
 			'id' 			=> 'footer-c',
-			'description' 	=> __( 'Widgets in this area will be shown in the right column in the footer.', 'baskerculte' ),
+			'description' 	=> __( 'Widgets in this area will be shown in the right column in the footer.', 'gordo' ),
 			'before_title' 	=> '<h3 class="widget-title">',
 			'after_title' 	=> '</h3>',
 			'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
@@ -348,9 +348,9 @@ class Baskerculte{
 		) );
 
 		register_sidebar( array(
-			'name' 			=> __( 'Sidebar 1', 'baskerculte' ),
+			'name' 			=> __( 'Sidebar 1', 'gordo' ),
 			'id'			=> 'sidebar-1',
-			'description' 	=> __( 'Widgets in this area will be shown in the sidebar.', 'baskerculte' ),
+			'description' 	=> __( 'Widgets in this area will be shown in the sidebar.', 'gordo' ),
 			'before_title' 	=> '<h3 class="widget-title">',
 			'after_title' 	=> '</h3>',
 			'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
@@ -358,9 +358,9 @@ class Baskerculte{
 		) );
         
 		register_sidebar( array(
-			'name' 			=> __( 'Sidebar 2', 'baskerculte' ),
+			'name' 			=> __( 'Sidebar 2', 'gordo' ),
 			'id'			=> 'sidebar-2',
-			'description' 	=> __( 'Widgets in this area will be shown in the sidebar.', 'baskerculte' ),
+			'description' 	=> __( 'Widgets in this area will be shown in the sidebar.', 'gordo' ),
 			'before_title' 	=> '<h3 class="widget-title">',
 			'after_title' 	=> '</h3>',
 			'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
@@ -375,7 +375,7 @@ class Baskerculte{
    --------------------------------------------------------------------------------------------- */
 
 
-class baskerculte_nav_walker extends Walker_Nav_Menu {
+class gordo_nav_walker extends Walker_Nav_Menu {
     function display_element( $element, &$children_elements, $max_depth, $depth = 0, $args, &$output ) {
         $id_field = $this->db_fields['id'];
         if ( ! empty( $children_elements[$element->$id_field] ) ) {
@@ -387,13 +387,13 @@ class baskerculte_nav_walker extends Walker_Nav_Menu {
 
 
 /* ---------------------------------------------------------------------------------------------
-   BASKERVILLE META FUNCTION
+   GORDO META FUNCTION
    --------------------------------------------------------------------------------------------- */
 
 
-if ( ! function_exists( 'baskerculte_meta' ) ) {
+if ( ! function_exists( 'gordo_meta' ) ) {
 
-	function baskerculte_meta() { ?>
+	function gordo_meta() { ?>
 
 		<div class="post-meta">
 		
@@ -422,13 +422,13 @@ if ( ! function_exists( 'baskerculte_meta' ) ) {
 
 
 /* ---------------------------------------------------------------------------------------------
-   BASKERVILLE COMMENT FUNCTION
+   GORDO COMMENT FUNCTION
    --------------------------------------------------------------------------------------------- */
 
 
-if ( ! function_exists( 'baskerculte_comment' ) ) {
+if ( ! function_exists( 'gordo_comment' ) ) {
 
-	function baskerculte_comment( $comment, $args, $depth ) {
+	function gordo_comment( $comment, $args, $depth ) {
 		$GLOBALS['comment'] = $comment;
 		switch ( $comment->comment_type ) :
 			case 'pingback' :
@@ -437,7 +437,7 @@ if ( ! function_exists( 'baskerculte_comment' ) ) {
 		
 		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
 		
-			<?php __( 'Pingback:', 'baskerculte' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'baskerculte' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php __( 'Pingback:', 'gordo' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'gordo' ), '<span class="edit-link">', '</span>' ); ?>
 			
 		</li>
 		<?php
@@ -459,13 +459,13 @@ if ( ! function_exists( 'baskerculte_comment' ) ) {
 							get_comment_author_link()
 						); ?>
 						
-						<p><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf(  _x( '%s at %s', '[date] at [time of day]', 'baskerculte' ), get_comment_date(), get_comment_time() ); ?></a></p>
+						<p><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf(  _x( '%s at %s', '[date] at [time of day]', 'gordo' ), get_comment_date(), get_comment_time() ); ?></a></p>
 						
 						<div class="comment-actions">
 						
-							<?php edit_comment_link( __( 'Edit', 'baskerculte' ), '', '' ); ?>
+							<?php edit_comment_link( __( 'Edit', 'gordo' ), '', '' ); ?>
 							
-							<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'baskerculte' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+							<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'gordo' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 							
 							<div class="clear"></div>
 						
@@ -477,7 +477,7 @@ if ( ! function_exists( 'baskerculte_comment' ) ) {
 					
 						<?php if ( '0' == $comment->comment_approved ) : ?>
 						
-							<p class="comment-awaiting-moderation"><?php _e( 'Awaiting moderation', 'baskerculte' ); ?></p>
+							<p class="comment-awaiting-moderation"><?php _e( 'Awaiting moderation', 'gordo' ); ?></p>
 							
 						<?php endif; ?>
 					
@@ -487,9 +487,9 @@ if ( ! function_exists( 'baskerculte_comment' ) ) {
 					
 					<div class="comment-actions-below hidden">
 						
-						<?php edit_comment_link( __( 'Edit', 'baskerculte' ), '', '' ); ?>
+						<?php edit_comment_link( __( 'Edit', 'gordo' ), '', '' ); ?>
 						
-						<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'baskerculte' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+						<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'gordo' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 						
 						<div class="clear"></div>
 					
@@ -506,42 +506,42 @@ if ( ! function_exists( 'baskerculte_comment' ) ) {
 
 
 /* ---------------------------------------------------------------------------------------------
-   BASKERVILLE THEME OPTIONS
+   GORDO THEME OPTIONS
    --------------------------------------------------------------------------------------------- */
 
 
-class baskerculte_Customize {
+class gordo_Customize {
 
    public static function register ( $wp_customize ) {
    
       //1. Define a new section (if desired) to the Theme Customizer
-      $wp_customize->add_section( 'baskerculte_options', 
+      $wp_customize->add_section( 'gordo_options', 
          array(
-            'title' => __( 'Baskerculte Options', 'baskerculte' ), //Visible title of section
+            'title' => __( 'Gordo Options', 'gordo' ), //Visible title of section
             'priority' => 35, //Determines what order this appears in
             'capability' => 'edit_theme_options', //Capability needed to tweak
-            'description' => __('Allows you to customize some settings for Baskerculte.', 'baskerculte'), //Descriptive tooltip
+            'description' => __('Allows you to customize some settings for Gordo.', 'gordo'), //Descriptive tooltip
          ) 
       );
       
-      $wp_customize->add_section( 'baskerculte_logo_section' , array(
-		    'title'       => __( 'Logo', 'baskerculte' ),
+      $wp_customize->add_section( 'gordo_logo_section' , array(
+		    'title'       => __( 'Logo', 'gordo' ),
 		    'priority'    => 40,
 		    'description' => 'Upload a logo to replace the default site name and description in the header',
 		) );
       
       //2. Register new settings to the WP database...      
-      $wp_customize->add_setting( 'baskerculte_logo', 
+      $wp_customize->add_setting( 'gordo_logo', 
       	array( 
       		'sanitize_callback' => 'esc_url_raw'
       	) 
       );
                   
       //3. Finally, we define the control itself (which links a setting to a section and renders the HTML controls)...
-      $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'baskerculte_logo', array(
-		    'label'    => __( 'Logo', 'baskerculte' ),
-		    'section'  => 'baskerculte_logo_section',
-		    'settings' => 'baskerculte_logo',
+      $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'gordo_logo', array(
+		    'label'    => __( 'Logo', 'gordo' ),
+		    'section'  => 'gordo_logo_section',
+		    'settings' => 'gordo_logo',
 		) ) );
       
       //4. We can also change built-in settings by modifying properties. For instance, let's make some stuff use live preview JS...
@@ -574,11 +574,11 @@ class baskerculte_Customize {
  * @return The one true Instance
  */
 
-function baskerculte() {
-	return Baskerculte::instance();
+function gordo() {
+	return Gordo::instance();
 }
 
-baskerculte();
+gordo();
 
 
 ?>

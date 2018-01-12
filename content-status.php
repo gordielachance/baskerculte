@@ -4,6 +4,6 @@
 
 </div><!-- .post-excerpt -->
 
-<?php baskerculte_meta(); ?>
+<?php gordo_meta(); ?>
             
 <div class="clear"></div>

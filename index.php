@@ -11,28 +11,28 @@
         $subtitle = null;
         
         $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-        $pagination = ( $paged > 1 ) ? sprintf( __( 'Page %s of %s', 'baskerculte' ), $paged, $wp_query->max_num_pages ) : null;
+        $pagination = ( $paged > 1 ) ? sprintf( __( 'Page %s of %s', 'gordo' ), $paged, $wp_query->max_num_pages ) : null;
         
         if ( is_search() ){
             
-            $title = __( 'Search results', 'baskerculte');
+            $title = __( 'Search results', 'gordo');
             $subtitle = sprintf( '"%s"', get_search_query() );
             
         }elseif( is_archive() ){
             if ( is_day() ){
-                $title = __( 'Date', 'baskerculte' );
+                $title = __( 'Date', 'gordo' );
                 $subtitle = get_the_date();
             }elseif ( is_month() ){
-                $title = __( 'Month', 'baskerculte' );
+                $title = __( 'Month', 'gordo' );
                 $subtitle = get_the_date('F Y');
             }elseif( is_year() ){
-                $title = __( 'Year', 'baskerculte' );
+                $title = __( 'Year', 'gordo' );
                 $subtitle = get_the_date('Y');
             }elseif( is_category() ){
-                $title = __( 'Category', 'baskerculte' );
+                $title = __( 'Category', 'gordo' );
                 $subtitle = single_cat_title( '', false );
             }elseif( is_tag() ){
-                $title = __( 'Tag', 'baskerculte' );
+                $title = __( 'Tag', 'gordo' );
                 $subtitle = single_tag_title( '', false );
             /*
             if ( $tag_description = tag_description() ) {
@@ -42,7 +42,7 @@
                 
             }elseif( is_author() ){
                 $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
-                $title = __( 'Author', 'baskerculte' );
+                $title = __( 'Author', 'gordo' );
                 $subtitle = $curauth->display_name;
             }
         }
@@ -90,9 +90,9 @@
 		
 		<div class="archive-nav section-inner">
 					
-			<?php echo get_next_posts_link( '&laquo; ' . __( 'Older posts', 'baskerculte' ) ); ?>
+			<?php echo get_next_posts_link( '&laquo; ' . __( 'Older posts', 'gordo' ) ); ?>
 						
-			<?php echo get_previous_posts_link( __( 'Newer posts', 'baskerculte') . ' &raquo;' ); ?>
+			<?php echo get_previous_posts_link( __( 'Newer posts', 'gordo') . ' &raquo;' ); ?>
 			
 			<div class="clear"></div>
 			

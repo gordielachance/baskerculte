@@ -54,7 +54,7 @@ Template Name: Archive template
 					
 							<div class="archive-col">
 												
-								<h3><?php _e( 'Last 30 Posts', 'baskerculte' ); ?></h3>
+								<h3><?php _e( 'Last 30 Posts', 'gordo' ); ?></h3>
 								            
 					            <ul>
 									<?php 
@@ -74,20 +74,20 @@ Template Name: Archive template
 						            <?php endforeach; ?>
 					            </ul>
 					            
-					            <h3><?php _e( 'Archives by Categories', 'baskerculte' ) ?></h3>
+					            <h3><?php _e( 'Archives by Categories', 'gordo' ) ?></h3>
 					            
 					            <ul>
 					                <?php wp_list_categories( 'title_li=' ); ?>
 					            </ul>
 					            
-					            <h3><?php _e( 'Archives by Tags', 'baskerculte' ); ?></h3>
+					            <h3><?php _e( 'Archives by Tags', 'gordo' ); ?></h3>
 					            
 					            <ul>
 					                <?php $tags = get_tags();
 					                
 					                if ( $tags ) {
 					                    foreach ( $tags as $tag ) {
-					                 	   echo '<li><a href="' . get_tag_link( $tag->term_id ) . '" title="' . sprintf( __( "View all posts in %s", 'baskerculte' ), $tag->name ) . '"' . '>' . $tag->name.'</a></li> ';
+					                 	   echo '<li><a href="' . get_tag_link( $tag->term_id ) . '" title="' . sprintf( __( "View all posts in %s", 'gordo' ), $tag->name ) . '"' . '>' . $tag->name.'</a></li> ';
 					                    }
 					                }
 					                
@@ -98,25 +98,25 @@ Template Name: Archive template
 				            
 				            <div class="archive-col">
 				            
-				            	<h3><?php _e( 'Contributors', 'baskerculte' ); ?></h3>
+				            	<h3><?php _e( 'Contributors', 'gordo' ); ?></h3>
 				            	
 				            	<ul>
 				            		<?php wp_list_authors(); ?> 
 				            	</ul>
 				            	
-				            	<h3><?php _e( 'Archives by Year', 'baskerculte' ); ?></h3>
+				            	<h3><?php _e( 'Archives by Year', 'gordo' ); ?></h3>
 				            	
 				            	<ul>
 				            	    <?php wp_get_archives( 'type=yearly' ); ?>
 				            	</ul>
 				            	
-				            	<h3><?php _e( 'Archives by Month', 'baskerculte' ); ?></h3>
+				            	<h3><?php _e( 'Archives by Month', 'gordo' ); ?></h3>
 				            	
 				            	<ul>
 				            	    <?php wp_get_archives( 'type=monthly' ); ?>
 				            	</ul>
 				            
-					            <h3><?php _e( 'Archives by Day', 'baskerculte' ); ?></h3>
+					            <h3><?php _e( 'Archives by Day', 'gordo' ); ?></h3>
 					            
 					            <ul>
 					                <?php wp_get_archives( 'type=daily' ); ?>
@@ -138,7 +138,7 @@ Template Name: Archive template
 				
 				<?php endwhile; else: ?>
 		
-					<p><?php _e( "We couldn't find any posts that matched your query. Please try again.", "baskerculte" ); ?></p>
+					<p><?php _e( "We couldn't find any posts that matched your query. Please try again.", "gordo" ); ?></p>
 			
 				<?php endif; ?>
 	

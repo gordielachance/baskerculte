@@ -172,7 +172,7 @@ Version 1.16 (2015-08-11)
 - Added the title_tag() function, replaced old custom title function
 - Removed the post meta fields from functions.php
 - Removed the code displaying the content of the post meta fields from content-[format].php and single.php.
-- Moved the post-meta into a function called baskerculte_meta() in functions.php
+- Moved the post-meta into a function called gordo_meta() in functions.php
 - Adjusted content-quote, content-link and content-video to use a method not dependent on meta fields
 - Removed a add_shortcode function from functions.php
 - Changed the title to a h1 element on singular for SEO reasons
@@ -213,7 +213,7 @@ Version 1.11 (2014-07-31)
 
 Version 1.10 (2014-07-31)
 -------------------------
-- Fixed so that plugins can add post thumbnail sizes when Baskerculte is active
+- Fixed so that plugins can add post thumbnail sizes when Gordo is active
 
 Version 1.09 (2014-07-19)
 -------------------------

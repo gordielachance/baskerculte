@@ -43,7 +43,7 @@
                         'container' 		=> '', 
                         'items_wrap' 		=> '%3$s',
                         'theme_location' 	=> 'primary', 
-                        'walker' 			=> new baskerculte_nav_walker,
+                        'walker' 			=> new gordo_nav_walker,
                     );
 
                     wp_nav_menu( $nav_args ); 

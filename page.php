@@ -56,7 +56,7 @@
 		
 			else: ?>
 			
-				<p><?php _e( "We couldn't find any posts that matched your query. Please try again.", "baskerculte" ); ?></p>
+				<p><?php _e( "We couldn't find any posts that matched your query. Please try again.", "gordo" ); ?></p>
 		
 			<?php endif; ?>
 		

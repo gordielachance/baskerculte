@@ -6,13 +6,13 @@
 
 	<?php endif; ?>
     
-    <?php if ( is_sticky() ) echo '<span class="sticky-post">' . __( 'Sticky post', 'baskerculte' ) . '</span>'; ?>
+    <?php if ( is_sticky() ) echo '<span class="sticky-post">' . __( 'Sticky post', 'gordo' ) . '</span>'; ?>
     
 </div><!-- .post-header -->
 
 <div class="featured-media">
 
-	<?php baskerculte()->flexslider('post-thumbnail'); ?>
+	<?php gordo()->flexslider('post-thumbnail'); ?>
 					
 </div><!-- .featured-media -->
 
@@ -26,6 +26,6 @@
 
 <?php endif; ?>
 									                                    	    
-<?php baskerculte_meta(); ?>
+<?php gordo_meta(); ?>
             
 <div class="clear"></div>

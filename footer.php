@@ -24,7 +24,7 @@
 					
 						<div class="widget-content">
 						
-							<h3 class="widget-title"><?php _e( 'Search form', 'baskerculte' ); ?></h3>
+							<h3 class="widget-title"><?php _e( 'Search form', 'gordo' ); ?></h3>
 			                <?php get_search_form(); ?>
 			                
 						</div>
@@ -59,7 +59,7 @@
 					
 						<div class="widget-content">
 						
-							<h3 class="widget-title"><?php _e( 'Latest posts', 'baskerculte' ); ?></h3>
+							<h3 class="widget-title"><?php _e( 'Latest posts', 'gordo' ); ?></h3>
 							
 							<ul>
 				                <?php
@@ -104,8 +104,8 @@
 
 					<div class="widget-content">
 					
-						<h3 class="widget-title"><?php _e( "Text widget", "baskerculte" ); ?></h3>
-						<p><?php _e( "These widgets are displayed because you haven't added any widgets of your own yet. You can do so at Appearance > Widgets in the WordPress settings.", "baskerculte" ); ?></p>
+						<h3 class="widget-title"><?php _e( "Text widget", "gordo" ); ?></h3>
+						<p><?php _e( "These widgets are displayed because you haven't added any widgets of your own yet. You can do so at Appearance > Widgets in the WordPress settings.", "gordo" ); ?></p>
 		                
 					</div>
 
@@ -127,13 +127,13 @@
 
 		<p class="credits-left fleft">
 		
-			&copy; <?php echo date("Y") ?> <a href="<?php echo home_url(); ?>" title="<?php bloginfo( 'name' ); ?>"><?php bloginfo( 'name' ); ?></a><span> &mdash; <?php printf( __( 'Powered by <a href="%s">WordPress</a>', 'baskerculte'), 'http://www.wordpress.org' ); ?></span>
+			&copy; <?php echo date("Y") ?> <a href="<?php echo home_url(); ?>" title="<?php bloginfo( 'name' ); ?>"><?php bloginfo( 'name' ); ?></a><span> &mdash; <?php printf( __( 'Powered by <a href="%s">WordPress</a>', 'gordo'), 'http://www.wordpress.org' ); ?></span>
 		
 		</p>
 		
 		<p class="credits-right fright">
 			
-			<span><?php printf( __( 'Theme by <a href="%s">Anders Noren</a>', 'baskerculte' ), 'http://www.andersnoren.se' ); ?> &mdash; </span><a class="tothetop" title="<?php _e( 'To the top', 'baskerculte' ); ?>" href="#"><?php _e( 'Up', 'baskerculte' ); ?> &uarr;</a>
+			<span><?php printf( __( 'Theme by <a href="%s">Anders Noren</a>', 'gordo' ), 'http://www.andersnoren.se' ); ?> &mdash; </span><a class="tothetop" title="<?php _e( 'To the top', 'gordo' ); ?>" href="#"><?php _e( 'Up', 'gordo' ); ?> &uarr;</a>
 			
 		</p>
 		

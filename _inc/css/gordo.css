@@ -70,7 +70,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* -------------------------------------------------------------------------------- */
 /*	1. Document setup
 /* -------------------------------------------------------------------------------- */
-/* line 15, ../scss/baskerville.scss */
+/* line 15, ../scss/gordo.scss */
 body {
   margin: 0;
   padding: 0;
@@ -81,63 +81,63 @@ body {
   font-size: 18px;
   -webkit-font-smoothing: antialiased;
 }
-/* line 24, ../scss/baskerville.scss */
+/* line 24, ../scss/gordo.scss */
 body a {
   color: #13C4A5;
   text-decoration: none;
 }
-/* line 27, ../scss/baskerville.scss */
+/* line 27, ../scss/gordo.scss */
 body a:hover {
   color: #13C4A5;
   text-decoration: none;
 }
 
-/* line 34, ../scss/baskerville.scss */
+/* line 34, ../scss/gordo.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 40, ../scss/baskerville.scss */
+/* line 40, ../scss/gordo.scss */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 45, ../scss/baskerville.scss */
+/* line 45, ../scss/gordo.scss */
 .hidden {
   display: none;
 }
 
-/* line 49, ../scss/baskerville.scss */
+/* line 49, ../scss/gordo.scss */
 .clear {
   clear: both;
 }
 
-/* line 53, ../scss/baskerville.scss */
+/* line 53, ../scss/gordo.scss */
 .fleft {
   float: left;
 }
 
-/* line 57, ../scss/baskerville.scss */
+/* line 57, ../scss/gordo.scss */
 .fright {
   float: right;
 }
 
-/* line 61, ../scss/baskerville.scss */
+/* line 61, ../scss/gordo.scss */
 ::selection {
   background: #444;
   color: #FFF;
 }
 
-/* line 66, ../scss/baskerville.scss */
+/* line 66, ../scss/gordo.scss */
 ::-webkit-input-placeholder, :-ms-input-placeholder {
   color: #999;
 }
 
 /* Transitions --------------------------------------- */
-/* line 74, ../scss/baskerville.scss */
+/* line 74, ../scss/gordo.scss */
 body a {
   -moz-transition: all 0.1s ease-in-out;
   -o-transition: all 0.1s ease-in-out;
@@ -145,7 +145,7 @@ body a {
   transition: all 0.1s ease-in-out;
 }
 
-/* line 78, ../scss/baskerville.scss */
+/* line 78, ../scss/gordo.scss */
 .blog-title a,
 .post-title a,
 .post-overlay,
@@ -175,7 +175,7 @@ body a {
   transition: all 0.2s ease-in-out;
 }
 
-/* line 104, ../scss/baskerville.scss */
+/* line 104, ../scss/gordo.scss */
 .tothetop,
 .header,
 .portfolio-item a .portfolio-header-container,
@@ -187,7 +187,7 @@ body a {
 }
 
 /* Screen Reader Text --------------------------------------- */
-/* line 115, ../scss/baskerville.scss */
+/* line 115, ../scss/gordo.scss */
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
@@ -195,7 +195,7 @@ body a {
   width: 1px;
   overflow: hidden;
 }
-/* line 122, ../scss/baskerville.scss */
+/* line 122, ../scss/gordo.scss */
 .screen-reader-text:focus {
   background-color: #f1f1f1;
   border-radius: 3px;
@@ -220,68 +220,94 @@ body a {
 /* -------------------------------------------------------------------------------- */
 /*	2.	Structure
 /* -------------------------------------------------------------------------------- */
-/* line 150, ../scss/baskerville.scss */
+/* line 149, ../scss/gordo.scss */
+body {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  min-height: 100vh;
+}
+/* line 158, ../scss/gordo.scss */
+body > header {
+  -webkit-flex: none;
+  flex: none;
+}
+/* line 161, ../scss/gordo.scss */
+body > .wrapper {
+  -webkit-flex: auto;
+  flex: auto;
+}
+/* line 164, ../scss/gordo.scss */
+body > footer {
+  -webkit-flex: none;
+  flex: none;
+}
+
+/* line 170, ../scss/gordo.scss */
 .section {
   position: relative;
   padding: 80px 0;
 }
 
-/* line 155, ../scss/baskerville.scss */
+/* line 175, ../scss/gordo.scss */
 .no-padding {
   padding: 0;
 }
 
-/* line 159, ../scss/baskerville.scss */
+/* line 179, ../scss/gordo.scss */
 .small-padding {
   padding: 40px 0;
 }
 
-/* line 163, ../scss/baskerville.scss */
+/* line 183, ../scss/gordo.scss */
 .medium-padding {
   padding: 60px 0;
 }
 
-/* line 167, ../scss/baskerville.scss */
+/* line 187, ../scss/gordo.scss */
 .big-padding {
   padding: 100px 0;
 }
 
-/* line 171, ../scss/baskerville.scss */
+/* line 191, ../scss/gordo.scss */
 .section-inner {
+  display: -webkit-flex;
+  display: flex;
   max-width: 90%;
   width: 1000px;
   margin: 0 auto;
 }
-/* line 175, ../scss/baskerville.scss */
+/* line 196, ../scss/gordo.scss */
 .section-inner.content {
   width: 1040px;
   max-width: 92.6%;
 }
-/* line 179, ../scss/baskerville.scss */
+/* line 200, ../scss/gordo.scss */
 .section-inner.wide {
   width: 1240px;
 }
-/* line 182, ../scss/baskerville.scss */
+/* line 203, ../scss/gordo.scss */
 .section-inner.thin {
   width: 700px;
 }
 
-/* line 187, ../scss/baskerville.scss */
+/* line 208, ../scss/gordo.scss */
 .bg-dark {
   background-color: #1d1d1d;
 }
 
-/* line 191, ../scss/baskerville.scss */
+/* line 212, ../scss/gordo.scss */
 .bg-graphite {
   background-color: #262626;
 }
 
-/* line 195, ../scss/baskerville.scss */
+/* line 216, ../scss/gordo.scss */
 .bg-grey {
   background-color: #f1f1f1;
 }
 
-/* line 199, ../scss/baskerville.scss */
+/* line 220, ../scss/gordo.scss */
 .bg-image {
   background-size: cover;
   background-position: center;
@@ -289,31 +315,31 @@ body a {
 }
 
 /* columns */
-/* line 210, ../scss/baskerville.scss */
+/* line 231, ../scss/gordo.scss */
 .row .one-fourth {
   width: 21.5%;
   margin-left: 5%;
   float: left;
 }
-/* line 215, ../scss/baskerville.scss */
+/* line 236, ../scss/gordo.scss */
 .row .one-third {
   width: 30%;
   margin-left: 5%;
   float: left;
 }
-/* line 220, ../scss/baskerville.scss */
+/* line 241, ../scss/gordo.scss */
 .row .one-half {
   width: 47.5%;
   margin-left: 5%;
   float: left;
 }
-/* line 225, ../scss/baskerville.scss */
+/* line 246, ../scss/gordo.scss */
 .row .two-thirds {
   width: 65%;
   margin-left: 5%;
   float: left;
 }
-/* line 230, ../scss/baskerville.scss */
+/* line 251, ../scss/gordo.scss */
 .row .one-fourth:first-child, .row .one-third:first-child, .row .one-half:first-child, .row .two-thirds:first-child {
   margin-left: 0;
 }
@@ -321,17 +347,17 @@ body a {
 /* -------------------------------------------------------------------------------- */
 /*	3. Header
 /* -------------------------------------------------------------------------------- */
-/* line 240, ../scss/baskerville.scss */
+/* line 261, ../scss/gordo.scss */
 header {
   padding: 70px 0;
 }
-/* line 242, ../scss/baskerville.scss */
+/* line 263, ../scss/gordo.scss */
 header .header-inner {
   position: relative;
   display: flex;
   align-items: center;
 }
-/* line 247, ../scss/baskerville.scss */
+/* line 268, ../scss/gordo.scss */
 header .header-inner .blog-title {
   margin-right: .25em;
   font-family: '04b_19regular', sans-serif;
@@ -339,15 +365,15 @@ header .header-inner .blog-title {
   text-align: center;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
 }
-/* line 253, ../scss/baskerville.scss */
+/* line 274, ../scss/gordo.scss */
 header .header-inner .blog-title a {
   color: #fff;
 }
-/* line 255, ../scss/baskerville.scss */
+/* line 276, ../scss/gordo.scss */
 header .header-inner .blog-title a:hover {
   color: #13C4A5;
 }
-/* line 261, ../scss/baskerville.scss */
+/* line 282, ../scss/gordo.scss */
 header .header-inner .searchform {
   margin-left: auto;
   display: inline-block;
@@ -356,7 +382,7 @@ header .header-inner .searchform {
 /* -------------------------------------------------------------------------------- */
 /*	4. Navigation
 /* -------------------------------------------------------------------------------- */
-/* line 273, ../scss/baskerville.scss */
+/* line 294, ../scss/gordo.scss */
 #main-menu {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 0.9em;
@@ -364,26 +390,26 @@ header .header-inner .searchform {
   -webkit-flex: 1 0 auto;
   flex: 1 0 auto;
 }
-/* line 278, ../scss/baskerville.scss */
+/* line 299, ../scss/gordo.scss */
 #main-menu li {
   position: relative;
   border-top: 1px solid rgba(255, 255, 255, 0.075);
   background: #2d2d2d;
 }
-/* line 281, ../scss/baskerville.scss */
+/* line 302, ../scss/gordo.scss */
 #main-menu li:first-child {
   border-top: none;
 }
-/* line 285, ../scss/baskerville.scss */
+/* line 306, ../scss/gordo.scss */
 #main-menu li:hover > a {
   cursor: pointer;
   color: #fff;
 }
-/* line 291, ../scss/baskerville.scss */
+/* line 312, ../scss/gordo.scss */
 #main-menu > li {
   display: inline-block;
 }
-/* line 293, ../scss/baskerville.scss */
+/* line 314, ../scss/gordo.scss */
 #main-menu > li:before {
   content: "/";
   display: block;
@@ -397,11 +423,11 @@ header .header-inner .searchform {
   font-weight: 300;
   z-index: 1000;
 }
-/* line 306, ../scss/baskerville.scss */
+/* line 327, ../scss/gordo.scss */
 #main-menu > li:last-child:before {
   content: none;
 }
-/* line 309, ../scss/baskerville.scss */
+/* line 330, ../scss/gordo.scss */
 #main-menu > li > a {
   display: block;
   padding: 2em;
@@ -411,16 +437,16 @@ header .header-inner .searchform {
   letter-spacing: 1px;
   font-weight: 700;
 }
-/* line 318, ../scss/baskerville.scss */
+/* line 339, ../scss/gordo.scss */
 #main-menu > li:first-child > a {
   margin-left: 0;
 }
-/* line 322, ../scss/baskerville.scss */
+/* line 343, ../scss/gordo.scss */
 #main-menu > .has-children > a, #main-menu > .page_item_has_children > a {
   padding-right: 47px;
   position: relative;
 }
-/* line 326, ../scss/baskerville.scss */
+/* line 347, ../scss/gordo.scss */
 #main-menu > .has-children > a::after, #main-menu > .page_item_has_children > a::after {
   content: "";
   display: block;
@@ -432,13 +458,13 @@ header .header-inner .searchform {
   top: 50%;
   margin-top: -2px;
 }
-/* line 339, ../scss/baskerville.scss */
+/* line 360, ../scss/gordo.scss */
 #main-menu > .has-children:hover > a::after, #main-menu > .page_item_has_children:hover > a::after {
   border-top-color: #fff;
 }
 
 /* Sub menus --------------------------------------- */
-/* line 350, ../scss/baskerville.scss */
+/* line 371, ../scss/gordo.scss */
 #main-menu li ul {
   position: absolute;
   z-index: 10000;
@@ -452,7 +478,7 @@ header .header-inner .searchform {
   -webkit-transition: ease-in-out 0.3s, top 0.3s ease-in-out;
   transition: ease-in-out 0.3s, top 0.3s ease-in-out;
 }
-/* line 360, ../scss/baskerville.scss */
+/* line 381, ../scss/gordo.scss */
 #main-menu li ul > .has-children::after, #main-menu li ul > .page_item_has_children::after {
   content: "";
   display: block;
@@ -464,11 +490,11 @@ header .header-inner .searchform {
   top: 50%;
   margin-top: -5px;
 }
-/* line 371, ../scss/baskerville.scss */
+/* line 392, ../scss/gordo.scss */
 #main-menu li ul > .has-children:hover::after, #main-menu li ul > .page_item_has_children:hover::after {
   border-left-color: #FFF;
 }
-/* line 376, ../scss/baskerville.scss */
+/* line 397, ../scss/gordo.scss */
 #main-menu li ul a {
   display: block;
   text-align: center;
@@ -477,21 +503,21 @@ header .header-inner .searchform {
   line-height: 130%;
   color: #999;
 }
-/* line 383, ../scss/baskerville.scss */
+/* line 404, ../scss/gordo.scss */
 #main-menu li ul a:hover {
   color: #fff;
 }
-/* line 390, ../scss/baskerville.scss */
+/* line 411, ../scss/gordo.scss */
 #main-menu li:hover > ul {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
   top: 2em;
 }
-/* line 397, ../scss/baskerville.scss */
+/* line 418, ../scss/gordo.scss */
 #main-menu > li > ul {
   padding-top: 20px;
 }
-/* line 399, ../scss/baskerville.scss */
+/* line 420, ../scss/gordo.scss */
 #main-menu > li > ul:before {
   content: "";
   display: block;
@@ -503,16 +529,34 @@ header .header-inner .searchform {
   border: 10px solid transparent;
   border-bottom-color: #2d2d2d;
 }
+/* line 435, ../scss/gordo.scss */
+#main-menu ul li ul {
+  top: 5px;
+}
+/* line 438, ../scss/gordo.scss */
+#main-menu ul li:hover > ul {
+  top: 0;
+  left: 240px;
+  margin-left: 0;
+}
+/* line 445, ../scss/gordo.scss */
+#main-menu ul ul li {
+  background: #3d3d3d;
+}
+/* line 449, ../scss/gordo.scss */
+#main-menu ul ul ul li, #main-menu ul ul ul ul li {
+  background: #4d4d4d;
+}
 
-/* line 415, ../scss/baskerville.scss */
+/* line 458, ../scss/gordo.scss */
 #mobile-main-menu li {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-/* line 418, ../scss/baskerville.scss */
+/* line 461, ../scss/gordo.scss */
 #mobile-main-menu > li:first-child {
   border-top: none;
 }
-/* line 421, ../scss/baskerville.scss */
+/* line 464, ../scss/gordo.scss */
 #mobile-main-menu a {
   display: block;
   padding: 25px 5%;
@@ -521,85 +565,64 @@ header .header-inner .searchform {
   color: #999;
   letter-spacing: 1px;
 }
-/* line 428, ../scss/baskerville.scss */
+/* line 471, ../scss/gordo.scss */
 #mobile-main-menu a:hover {
   color: #fff;
 }
-/* line 433, ../scss/baskerville.scss */
+/* line 476, ../scss/gordo.scss */
 #mobile-main-menu ul a {
   padding-left: 10%;
 }
-/* line 437, ../scss/baskerville.scss */
+/* line 480, ../scss/gordo.scss */
 #mobile-main-menu ul ul a {
   padding-left: 15%;
 }
-/* line 441, ../scss/baskerville.scss */
+/* line 484, ../scss/gordo.scss */
 #mobile-main-menu ul ul ul a {
   padding-left: 20%;
 }
-/* line 445, ../scss/baskerville.scss */
+/* line 488, ../scss/gordo.scss */
 #mobile-main-menu ul ul ul ul a {
   padding-left: 25%;
 }
-/* line 448, ../scss/baskerville.scss */
+/* line 491, ../scss/gordo.scss */
 #mobile-main-menu ul ul ul ul ul a {
   padding-left: 30%;
 }
 
-/* line 457, ../scss/baskerville.scss */
+/* line 503, ../scss/gordo.scss */
 .is_mobile #main-menu li ul {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
   display: none;
 }
-
-/* line 462, ../scss/baskerville.scss */
+/* line 507, ../scss/gordo.scss */
 .is_mobile #main-menu li:hover ul {
   display: block;
-}
-
-/* Deep down --------------------------------------- */
-/* line 472, ../scss/baskerville.scss */
-#main-menu ul li ul {
-  top: 5px;
-}
-/* line 475, ../scss/baskerville.scss */
-#main-menu ul li:hover > ul {
-  top: 0;
-  left: 240px;
-  margin-left: 0;
-}
-/* line 482, ../scss/baskerville.scss */
-#main-menu ul ul li {
-  background: #3d3d3d;
-}
-/* line 486, ../scss/baskerville.scss */
-#main-menu ul ul ul li, #main-menu ul ul ul ul li {
-  background: #4d4d4d;
 }
 
 /* -------------------------------------------------------------------------------- */
 /*	5. Content
 /* -------------------------------------------------------------------------------- */
-/* line 499, ../scss/baskerville.scss */
+/* line 520, ../scss/gordo.scss */
 .posts {
   margin: auto;
   overflow: visible !important;
 }
-/* line 502, ../scss/baskerville.scss */
+/* line 523, ../scss/gordo.scss */
 .posts.grid-posts {
   display: -webkit-flex;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-/* line 506, ../scss/baskerville.scss */
+/* line 527, ../scss/gordo.scss */
 .posts.grid-posts .post-container {
   width: calc(100% / 3);
   box-sizing: border-box;
 }
 
-/* line 516, ../scss/baskerville.scss */
+/* line 537, ../scss/gordo.scss */
 .hentry {
   width: 100%;
   position: relative;
@@ -607,18 +630,18 @@ header .header-inner .searchform {
   overflow: hidden;
 }
 
-/* line 523, ../scss/baskerville.scss */
+/* line 544, ../scss/gordo.scss */
 .post {
   width: 100%;
   position: relative;
   background: #fff;
   overflow: hidden;
 }
-/* line 528, ../scss/baskerville.scss */
+/* line 549, ../scss/gordo.scss */
 .post.sticky .post-header {
   padding-right: 17.5%;
 }
-/* line 531, ../scss/baskerville.scss */
+/* line 552, ../scss/gordo.scss */
 .post .sticky-post {
   display: block;
   position: absolute;
@@ -631,7 +654,7 @@ header .header-inner .searchform {
   top: 0;
   text-indent: -9999px;
 }
-/* line 542, ../scss/baskerville.scss */
+/* line 563, ../scss/gordo.scss */
 .post .sticky-post:after {
   content: "";
   display: block;
@@ -645,30 +668,30 @@ header .header-inner .searchform {
 }
 
 /*  Featured media  ----------------------------------------- */
-/* line 561, ../scss/baskerville.scss */
+/* line 582, ../scss/gordo.scss */
 .featured-media a, .featured-media img {
   display: block;
 }
-/* line 564, ../scss/baskerville.scss */
+/* line 585, ../scss/gordo.scss */
 .featured-media iframe {
   display: block;
   border: none;
   margin: 0;
 }
-/* line 569, ../scss/baskerville.scss */
+/* line 590, ../scss/gordo.scss */
 .featured-media object {
   border: none;
   margin: 0;
 }
-/* line 573, ../scss/baskerville.scss */
+/* line 594, ../scss/gordo.scss */
 .featured-media a {
   overflow: hidden;
 }
-/* line 575, ../scss/baskerville.scss */
+/* line 596, ../scss/gordo.scss */
 .featured-media a img {
   margin: 0 auto;
 }
-/* line 578, ../scss/baskerville.scss */
+/* line 599, ../scss/gordo.scss */
 .featured-media a:hover img {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
@@ -679,7 +702,7 @@ header .header-inner .searchform {
   opacity: 0.8;
 }
 
-/* line 590, ../scss/baskerville.scss */
+/* line 611, ../scss/gordo.scss */
 .media-caption {
   font-size: 0.8em;
   line-height: 110%;
@@ -691,13 +714,13 @@ header .header-inner .searchform {
 }
 
 /*  Post inner  ----------------------------------------- */
-/* line 603, ../scss/baskerville.scss */
+/* line 624, ../scss/gordo.scss */
 .post-header {
   position: relative;
   padding: 8% 10%;
   border-bottom: 1px solid #eee;
 }
-/* line 607, ../scss/baskerville.scss */
+/* line 628, ../scss/gordo.scss */
 .post-header .post-title {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 1.25em;
@@ -707,49 +730,49 @@ header .header-inner .searchform {
   word-break: break-word;
   -ms-word-break: break-word;
 }
-/* line 615, ../scss/baskerville.scss */
+/* line 636, ../scss/gordo.scss */
 .post-header .post-title a {
   color: #2B3542;
 }
-/* line 617, ../scss/baskerville.scss */
+/* line 638, ../scss/gordo.scss */
 .post-header .post-title a:hover {
   color: #13C4A5;
 }
 
-/* line 624, ../scss/baskerville.scss */
+/* line 645, ../scss/gordo.scss */
 .post-excerpt {
   padding: 10%;
 }
-/* line 626, ../scss/baskerville.scss */
+/* line 647, ../scss/gordo.scss */
 .post-excerpt p {
   font-size: 0.95em;
   line-height: 150%;
   color: #666;
 }
-/* line 630, ../scss/baskerville.scss */
+/* line 651, ../scss/gordo.scss */
 .post-excerpt p + p {
   margin-top: 1em;
 }
-/* line 634, ../scss/baskerville.scss */
+/* line 655, ../scss/gordo.scss */
 .post-excerpt .more-link {
   display: block;
   margin-top: 1.1em;
 }
-/* line 637, ../scss/baskerville.scss */
+/* line 658, ../scss/gordo.scss */
 .post-excerpt .more-link:hover {
   text-decoration: underline;
 }
 
-/* line 643, ../scss/baskerville.scss */
+/* line 664, ../scss/gordo.scss */
 .post-metas {
   color: #13C4A5;
 }
-/* line 646, ../scss/baskerville.scss */
+/* line 667, ../scss/gordo.scss */
 .post-metas .term-metas .post-tags {
   font-size: .8em;
 }
 
-/* line 652, ../scss/baskerville.scss */
+/* line 673, ../scss/gordo.scss */
 .icon, .post-meta-icon, .post-meta.post-date:before, .post-meta.post-categories:before, .post-meta.post-tags:before, .post-meta.zilla-likes:before, .post-meta.post-comments:before {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
@@ -757,32 +780,32 @@ header .header-inner .searchform {
   text-rendering: auto;
 }
 
-/* line 658, ../scss/baskerville.scss */
+/* line 679, ../scss/gordo.scss */
 .post-meta-icon, .post-meta.post-date:before, .post-meta.post-categories:before, .post-meta.post-tags:before, .post-meta.zilla-likes:before, .post-meta.post-comments:before {
   margin-right: .5em;
 }
 
-/* line 664, ../scss/baskerville.scss */
+/* line 685, ../scss/gordo.scss */
 .post-meta.post-date:before {
   content: "\f017";
 }
-/* line 668, ../scss/baskerville.scss */
+/* line 689, ../scss/gordo.scss */
 .post-meta.post-categories:before {
   content: "\f07b";
 }
-/* line 672, ../scss/baskerville.scss */
+/* line 693, ../scss/gordo.scss */
 .post-meta.post-tags:before {
   content: "\f02b";
 }
-/* line 676, ../scss/baskerville.scss */
+/* line 697, ../scss/gordo.scss */
 .post-meta.zilla-likes:before {
   content: "\f004";
 }
-/* line 680, ../scss/baskerville.scss */
+/* line 701, ../scss/gordo.scss */
 .post-meta.post-comments:before {
   content: "\f075";
 }
-/* line 684, ../scss/baskerville.scss */
+/* line 705, ../scss/gordo.scss */
 .post-meta.post-edit-link {
   height: 59px;
   width: 20px;
@@ -791,14 +814,14 @@ header .header-inner .searchform {
   background-size: 20px auto;
   background-position: center;
 }
-/* line 691, ../scss/baskerville.scss */
+/* line 712, ../scss/gordo.scss */
 .post-meta.post-edit-link:hover {
   background-image: url(../images/icons/1x/edit-c.png);
 }
 
 /*  Post formats  ----------------------------------------- */
 /* format standard, format quote, format link */
-/* line 702, ../scss/baskerville.scss */
+/* line 723, ../scss/gordo.scss */
 .post .post-header:before, .page .post-header:before {
   content: "";
   display: block;
@@ -811,7 +834,7 @@ header .header-inner .searchform {
   margin-bottom: -24px;
 }
 
-/* line 714, ../scss/baskerville.scss */
+/* line 735, ../scss/gordo.scss */
 .post .post-header:after, .page .post-header:after {
   content: "";
   display: block;
@@ -826,34 +849,34 @@ header .header-inner .searchform {
 }
 
 /* format video, format image */
-/* line 733, ../scss/baskerville.scss */
+/* line 754, ../scss/gordo.scss */
 .posts .format-video .post-header:before, .posts .format-video .post-header:after {
   content: none;
 }
-/* line 738, ../scss/baskerville.scss */
+/* line 759, ../scss/gordo.scss */
 .posts .format-image .post-header:before, .posts .format-image .post-header:after {
   content: none;
 }
 
 /* format image */
-/* line 748, ../scss/baskerville.scss */
+/* line 769, ../scss/gordo.scss */
 .format-image .post-excerpt {
   padding-top: 7.5%;
   font-size: 0.9em;
 }
-/* line 751, ../scss/baskerville.scss */
+/* line 772, ../scss/gordo.scss */
 .format-image .post-excerpt .image-caption {
   font-weight: 600;
 }
 
 /* format quote, format link */
-/* line 760, ../scss/baskerville.scss */
+/* line 781, ../scss/gordo.scss */
 .post-quote {
   padding: 10%;
   background: #2B3542;
   color: #fff;
 }
-/* line 764, ../scss/baskerville.scss */
+/* line 785, ../scss/gordo.scss */
 .post-quote blockquote {
   display: block;
   font-family: 'Roboto', sans-serif;
@@ -862,7 +885,7 @@ header .header-inner .searchform {
   line-height: 140%;
 }
 
-/* line 773, ../scss/baskerville.scss */
+/* line 794, ../scss/gordo.scss */
 .post-link p {
   display: block;
   font-family: 'Roboto', sans-serif;
@@ -871,11 +894,11 @@ header .header-inner .searchform {
   line-height: 140%;
 }
 
-/* line 782, ../scss/baskerville.scss */
+/* line 803, ../scss/gordo.scss */
 .post-quote blockquote {
   font-size: 1.1em;
 }
-/* line 785, ../scss/baskerville.scss */
+/* line 806, ../scss/gordo.scss */
 .post-quote cite {
   display: block;
   margin-top: 20px;
@@ -885,7 +908,7 @@ header .header-inner .searchform {
   font-weight: 700;
 }
 
-/* line 795, ../scss/baskerville.scss */
+/* line 816, ../scss/gordo.scss */
 .post-link a {
   display: block;
   margin-top: 20px;
@@ -895,47 +918,47 @@ header .header-inner .searchform {
   font-weight: 700;
 }
 
-/* line 804, ../scss/baskerville.scss */
+/* line 825, ../scss/gordo.scss */
 .post-quote cite {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 14px;
 }
-/* line 807, ../scss/baskerville.scss */
+/* line 828, ../scss/gordo.scss */
 .post-quote cite:before {
   content: "— ";
 }
 
 /* format link */
-/* line 816, ../scss/baskerville.scss */
+/* line 837, ../scss/gordo.scss */
 .post-link {
   padding: 10%;
   background: #2B3542;
   color: #fff;
 }
-/* line 820, ../scss/baskerville.scss */
+/* line 841, ../scss/gordo.scss */
 .post-link a {
   color: #13C4A5;
   padding-left: 23px;
   background: url(../images/icons/1x/link-c.png) no-repeat left center;
   background-size: 16px auto;
 }
-/* line 825, ../scss/baskerville.scss */
+/* line 846, ../scss/gordo.scss */
 .post-link a:hover {
   color: #13C4A5;
   text-decoration: underline;
 }
 
-/* line 833, ../scss/baskerville.scss */
+/* line 854, ../scss/gordo.scss */
 .single .post-link p, .single .post-quote blockquote {
   font-size: 1.75em;
 }
 
 /* format gallery */
-/* line 842, ../scss/baskerville.scss */
+/* line 863, ../scss/gordo.scss */
 .format-gallery .flexslider {
   position: relative;
 }
-/* line 846, ../scss/baskerville.scss */
+/* line 867, ../scss/gordo.scss */
 .format-gallery .flex-direction-nav a {
   display: block;
   height: 32px;
@@ -950,41 +973,41 @@ header .header-inner .searchform {
   -moz-opacity: 0.5;
   opacity: 0.5;
 }
-/* line 860, ../scss/baskerville.scss */
+/* line 881, ../scss/gordo.scss */
 .format-gallery .flex-direction-nav .flex-prev {
   left: 16px;
   background-image: url(../images/icons/1x/chevron-left-w-shade.png);
 }
-/* line 864, ../scss/baskerville.scss */
+/* line 885, ../scss/gordo.scss */
 .format-gallery .flex-direction-nav .flex-next {
   right: 16px;
   background-image: url(../images/icons/1x/chevron-right-w-shade.png);
 }
-/* line 868, ../scss/baskerville.scss */
+/* line 889, ../scss/gordo.scss */
 .format-gallery .flex-direction-nav a:hover {
   -webkit-opacity: 1;
   -moz-opacity: 1;
   opacity: 1;
 }
-/* line 873, ../scss/baskerville.scss */
+/* line 894, ../scss/gordo.scss */
 .format-gallery .flex-direction-nav .flex-prev:hover {
   left: 12px;
 }
-/* line 876, ../scss/baskerville.scss */
+/* line 897, ../scss/gordo.scss */
 .format-gallery .flex-direction-nav .flex-next:hover {
   right: 12px;
 }
-/* line 880, ../scss/baskerville.scss */
+/* line 901, ../scss/gordo.scss */
 .format-gallery .slides li {
   position: relative;
 }
 
 /* format status */
-/* line 889, ../scss/baskerville.scss */
+/* line 910, ../scss/gordo.scss */
 .posts .format-status .post-excerpt {
   background: #2B3542;
 }
-/* line 891, ../scss/baskerville.scss */
+/* line 912, ../scss/gordo.scss */
 .posts .format-status .post-excerpt p {
   font-family: '04b_19regular', sans-serif;
   color: #fff;
@@ -992,7 +1015,7 @@ header .header-inner .searchform {
   font-size: 1.2em;
 }
 
-/* line 899, ../scss/baskerville.scss */
+/* line 920, ../scss/gordo.scss */
 .format-status .post-content {
   font-family: '04b_19regular', sans-serif;
   color: #fff;
@@ -1003,17 +1026,17 @@ header .header-inner .searchform {
 }
 
 /* format chat */
-/* line 913, ../scss/baskerville.scss */
+/* line 934, ../scss/gordo.scss */
 .format-chat .post-content p {
   margin-bottom: 0.25em;
   padding: 8px 16px;
   border-radius: 3px;
 }
-/* line 917, ../scss/baskerville.scss */
+/* line 938, ../scss/gordo.scss */
 .format-chat .post-content p:nth-child(odd) {
   background: #f5f5f5;
 }
-/* line 921, ../scss/baskerville.scss */
+/* line 942, ../scss/gordo.scss */
 .format-chat .more-link {
   margin-top: 1em;
 }
@@ -1021,62 +1044,62 @@ header .header-inner .searchform {
 /* -------------------------------------------------------------------------------- */
 /*	6. Single post
 /* -------------------------------------------------------------------------------- */
-/* line 933, ../scss/baskerville.scss */
+/* line 954, ../scss/gordo.scss */
 body.single .content {
   width: 67.5%;
 }
-/* line 935, ../scss/baskerville.scss */
+/* line 956, ../scss/gordo.scss */
 body.single .content.full-width {
   width: 100%;
 }
-/* line 938, ../scss/baskerville.scss */
+/* line 959, ../scss/gordo.scss */
 body.single .content.center {
   margin: 0 auto;
   width: 944px;
   max-width: 100%;
 }
 
-/* line 945, ../scss/baskerville.scss */
+/* line 966, ../scss/gordo.scss */
 .single {
   border-radius: 6px;
 }
 
 /* post header */
-/* line 952, ../scss/baskerville.scss */
+/* line 973, ../scss/gordo.scss */
 .single .post-title {
   font-size: 2.25em;
 }
-/* line 955, ../scss/baskerville.scss */
+/* line 976, ../scss/gordo.scss */
 .single .post-content {
   padding: 10%;
 }
 
 /* format gallery */
-/* line 963, ../scss/baskerville.scss */
+/* line 984, ../scss/gordo.scss */
 .single .format-gallery .flex-direction-nav a {
   height: 42px;
   width: 30px;
   background-size: auto 42px;
   margin-top: -21px;
 }
-/* line 969, ../scss/baskerville.scss */
+/* line 990, ../scss/gordo.scss */
 .single .format-gallery .flex-direction-nav .flex-prev {
   background-image: url(../images/icons/1x/chevron-left-w-shade-big.png);
 }
-/* line 972, ../scss/baskerville.scss */
+/* line 993, ../scss/gordo.scss */
 .single .format-gallery .flex-direction-nav .flex-next {
   background-image: url(../images/icons/1x/chevron-right-w-shade-big.png);
 }
 
 /* format quote */
-/* line 979, ../scss/baskerville.scss */
+/* line 1000, ../scss/gordo.scss */
 .single .post-quote cite {
   font-size: 1em;
   margin-top: 30px;
 }
 
 /* single post meta */
-/* line 987, ../scss/baskerville.scss */
+/* line 1008, ../scss/gordo.scss */
 .single .header-post-metas {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
@@ -1093,27 +1116,27 @@ body.single .content.center {
   background-color: rgba(255, 255, 255, 0.75);
   padding: .5em 1em;
 }
-/* line 1000, ../scss/baskerville.scss */
+/* line 1021, ../scss/gordo.scss */
 .single .post-header:hover .post-metas {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
 
-/* line 1006, ../scss/baskerville.scss */
+/* line 1027, ../scss/gordo.scss */
 .single a.post-edit-link {
   background-image: url(../images/icons/1x/edit-g.png);
   background-position: left 5px;
 }
-/* line 1009, ../scss/baskerville.scss */
+/* line 1030, ../scss/gordo.scss */
 .single a.post-edit-link:hover {
   background-image: url(../images/icons/1x/edit-c.png);
 }
 
-/* line 1014, ../scss/baskerville.scss */
+/* line 1035, ../scss/gordo.scss */
 .author-links {
   margin-top: 18px;
 }
-/* line 1016, ../scss/baskerville.scss */
+/* line 1037, ../scss/gordo.scss */
 .author-links a {
   display: inline-block;
   width: 36px;
@@ -1126,27 +1149,27 @@ body.single .content.center {
   border-radius: 999px;
   text-indent: -9999px;
 }
-/* line 1027, ../scss/baskerville.scss */
+/* line 1048, ../scss/gordo.scss */
 .author-links a:first-child {
   margin-left: 0;
 }
-/* line 1030, ../scss/baskerville.scss */
+/* line 1051, ../scss/gordo.scss */
 .author-links a.author-link-posts {
   background-image: url(../images/icons/1x/archive-w.png);
 }
-/* line 1033, ../scss/baskerville.scss */
+/* line 1054, ../scss/gordo.scss */
 .author-links a.author-link-website {
   background-image: url(../images/icons/1x/home-w.png);
 }
-/* line 1036, ../scss/baskerville.scss */
+/* line 1057, ../scss/gordo.scss */
 .author-links a.author-link-mail {
   background-image: url(../images/icons/1x/social/mail-w.png);
 }
-/* line 1039, ../scss/baskerville.scss */
+/* line 1060, ../scss/gordo.scss */
 .author-links a.author-link-twitter {
   background-image: url(../images/icons/1x/social/twitter-w.png);
 }
-/* line 1042, ../scss/baskerville.scss */
+/* line 1063, ../scss/gordo.scss */
 .author-links a:hover {
   background-color: #13C4A5;
 }
@@ -1154,85 +1177,85 @@ body.single .content.center {
 /* -------------------------------------------------------------------------------- */
 /*	7. Post content
 /* -------------------------------------------------------------------------------- */
-/* line 1055, ../scss/baskerville.scss */
+/* line 1076, ../scss/gordo.scss */
 .post-content a:hover {
   text-decoration: underline;
 }
-/* line 1058, ../scss/baskerville.scss */
+/* line 1079, ../scss/gordo.scss */
 .post-content p, .post-content blockquote, .post-content ul, .post-content ol, .post-content address, .post-content dl, .post-content .wp-caption, .post-content pre {
   line-height: 180%;
   margin-bottom: 1.1em;
   -ms-word-wrap: break-word;
   word-wrap: break-word;
 }
-/* line 1064, ../scss/baskerville.scss */
+/* line 1085, ../scss/gordo.scss */
 .post-content > *:first-child {
   margin-top: 0;
 }
-/* line 1067, ../scss/baskerville.scss */
+/* line 1088, ../scss/gordo.scss */
 .post-content *:last-child {
   margin-bottom: 0;
 }
-/* line 1070, ../scss/baskerville.scss */
+/* line 1091, ../scss/gordo.scss */
 .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
   margin: 50px 0 30px;
   font-family: 'Roboto Slab', sans-serif;
   font-weight: 700;
   color: #333;
 }
-/* line 1076, ../scss/baskerville.scss */
+/* line 1097, ../scss/gordo.scss */
 .post-content h1 {
   font-size: 2em;
 }
-/* line 1079, ../scss/baskerville.scss */
+/* line 1100, ../scss/gordo.scss */
 .post-content h2 {
   font-size: 1.75em;
 }
-/* line 1082, ../scss/baskerville.scss */
+/* line 1103, ../scss/gordo.scss */
 .post-content h3 {
   font-size: 1.5em;
 }
-/* line 1085, ../scss/baskerville.scss */
+/* line 1106, ../scss/gordo.scss */
 .post-content h4 {
   font-size: 1.25em;
   font-weight: 400;
 }
-/* line 1089, ../scss/baskerville.scss */
+/* line 1110, ../scss/gordo.scss */
 .post-content h5 {
   font-size: 1em;
   font-weight: 400;
 }
-/* line 1093, ../scss/baskerville.scss */
+/* line 1114, ../scss/gordo.scss */
 .post-content h6 {
   font-size: 0.9em;
   font-weight: 700;
   text-transform: uppercase;
 }
-/* line 1099, ../scss/baskerville.scss */
+/* line 1120, ../scss/gordo.scss */
 .post-content h1 + h1, .post-content h1 + h2, .post-content h1 + h3, .post-content h1 + h4, .post-content h1 + h5, .post-content h1 + h6 {
   margin-top: 30px;
 }
-/* line 1104, ../scss/baskerville.scss */
+/* line 1125, ../scss/gordo.scss */
 .post-content h2 + h1, .post-content h2 + h2, .post-content h2 + h3, .post-content h2 + h4, .post-content h2 + h5, .post-content h2 + h6 {
   margin-top: 30px;
 }
-/* line 1109, ../scss/baskerville.scss */
+/* line 1130, ../scss/gordo.scss */
 .post-content h3 + h1, .post-content h3 + h2, .post-content h3 + h3, .post-content h3 + h4, .post-content h3 + h5, .post-content h3 + h6 {
   margin-top: 30px;
 }
-/* line 1114, ../scss/baskerville.scss */
+/* line 1135, ../scss/gordo.scss */
 .post-content h4 + h1, .post-content h4 + h2, .post-content h4 + h3, .post-content h4 + h4, .post-content h4 + h5, .post-content h4 + h6 {
   margin-top: 30px;
 }
-/* line 1119, ../scss/baskerville.scss */
+/* line 1140, ../scss/gordo.scss */
 .post-content h5 + h1, .post-content h5 + h2, .post-content h5 + h3, .post-content h5 + h4, .post-content h5 + h5, .post-content h5 + h6 {
   margin-top: 30px;
 }
-/* line 1124, ../scss/baskerville.scss */
+/* line 1145, ../scss/gordo.scss */
 .post-content h6 + h1, .post-content h6 + h2, .post-content h6 + h3, .post-content h6 + h4, .post-content h6 + h5, .post-content h6 + h6 {
   margin-top: 30px;
 }
-/* line 1128, ../scss/baskerville.scss */
+/* line 1149, ../scss/gordo.scss */
 .post-content blockquote {
   position: relative;
   font-size: 1em;
@@ -1240,7 +1263,7 @@ body.single .content.center {
   font-weight: normal;
   margin: 40px 0;
 }
-/* line 1134, ../scss/baskerville.scss */
+/* line 1155, ../scss/gordo.scss */
 .post-content blockquote:before, .post-content blockquote:after {
   content: "";
   display: block;
@@ -1249,14 +1272,14 @@ body.single .content.center {
   background: #eee;
   margin: 40px auto;
 }
-/* line 1142, ../scss/baskerville.scss */
+/* line 1163, ../scss/gordo.scss */
 .post-content blockquote p {
   font-size: 1.2em;
   line-height: 160%;
   font-weight: 300;
   text-align: center;
 }
-/* line 1149, ../scss/baskerville.scss */
+/* line 1170, ../scss/gordo.scss */
 .post-content cite {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 0.9rem;
@@ -1265,69 +1288,69 @@ body.single .content.center {
   line-height: 140%;
   text-align: center;
 }
-/* line 1156, ../scss/baskerville.scss */
+/* line 1177, ../scss/gordo.scss */
 .post-content cite:before {
   content: "— ";
 }
-/* line 1160, ../scss/baskerville.scss */
+/* line 1181, ../scss/gordo.scss */
 .post-content blockquote cite {
   display: block;
   margin-top: 1em;
 }
-/* line 1163, ../scss/baskerville.scss */
+/* line 1184, ../scss/gordo.scss */
 .post-content blockquote cite em {
   font-style: italic;
   font-weight: bold;
 }
 
-/* line 1170, ../scss/baskerville.scss */
+/* line 1191, ../scss/gordo.scss */
 em, q {
   font-style: italic;
 }
 
-/* line 1175, ../scss/baskerville.scss */
+/* line 1196, ../scss/gordo.scss */
 .post-content strong em, .post-content em strong {
   font-weight: bold;
   font-style: italic;
 }
-/* line 1179, ../scss/baskerville.scss */
+/* line 1200, ../scss/gordo.scss */
 .post-content big {
   font-size: 1.25em;
 }
 
-/* line 1184, ../scss/baskerville.scss */
+/* line 1205, ../scss/gordo.scss */
 abbr, acronym {
   cursor: help;
 }
 
-/* line 1188, ../scss/baskerville.scss */
+/* line 1209, ../scss/gordo.scss */
 code, kbd, pre {
   font-size: 0.85em;
   background: #EEE;
   font-family: Menlo, Monaco, monospace;
 }
 
-/* line 1195, ../scss/baskerville.scss */
+/* line 1216, ../scss/gordo.scss */
 .post-content .highlight {
   background: #fcf8a5;
   width: auto;
   display: inline;
   padding: 2px 3px;
 }
-/* line 1201, ../scss/baskerville.scss */
+/* line 1222, ../scss/gordo.scss */
 .post-content kbd, .post-content code {
   padding: 5px;
   border-radius: 3px;
 }
-/* line 1205, ../scss/baskerville.scss */
+/* line 1226, ../scss/gordo.scss */
 .post-content dl {
   line-height: 160%;
 }
-/* line 1207, ../scss/baskerville.scss */
+/* line 1228, ../scss/gordo.scss */
 .post-content dl dt {
   font-weight: bold;
 }
-/* line 1211, ../scss/baskerville.scss */
+/* line 1232, ../scss/gordo.scss */
 .post-content hr {
   width: 50%;
   height: 5px;
@@ -1335,55 +1358,55 @@ code, kbd, pre {
   margin: 2em auto;
   border: 0;
 }
-/* line 1218, ../scss/baskerville.scss */
+/* line 1239, ../scss/gordo.scss */
 .post-content ul {
   list-style: disc;
   margin-left: 1.5em;
 }
-/* line 1221, ../scss/baskerville.scss */
+/* line 1242, ../scss/gordo.scss */
 .post-content ul ul {
   list-style: circle;
 }
-/* line 1223, ../scss/baskerville.scss */
+/* line 1244, ../scss/gordo.scss */
 .post-content ul ul ul {
   list-style: square;
 }
-/* line 1228, ../scss/baskerville.scss */
+/* line 1249, ../scss/gordo.scss */
 .post-content ol {
   list-style: decimal;
   margin-left: 1.5em;
 }
-/* line 1231, ../scss/baskerville.scss */
+/* line 1252, ../scss/gordo.scss */
 .post-content ol ol {
   list-style: lower-alpha;
 }
-/* line 1233, ../scss/baskerville.scss */
+/* line 1254, ../scss/gordo.scss */
 .post-content ol ol ol {
   list-style: lower-roman;
 }
-/* line 1239, ../scss/baskerville.scss */
+/* line 1260, ../scss/gordo.scss */
 .post-content ul ul, .post-content ul ol {
   margin-bottom: 0;
 }
-/* line 1244, ../scss/baskerville.scss */
+/* line 1265, ../scss/gordo.scss */
 .post-content ol ul, .post-content ol ol {
   margin-bottom: 0;
 }
-/* line 1248, ../scss/baskerville.scss */
+/* line 1269, ../scss/gordo.scss */
 .post-content li {
   margin-top: 0.5em;
   line-height: 170%;
 }
-/* line 1252, ../scss/baskerville.scss */
+/* line 1273, ../scss/gordo.scss */
 .post-content ol > li:last-child, .post-content ul > li:last-child {
   margin-bottom: 0;
 }
-/* line 1255, ../scss/baskerville.scss */
+/* line 1276, ../scss/gordo.scss */
 .post-content address {
   padding: 3% 3.5%;
   background: #f1f1f1;
 }
-/* line 1259, ../scss/baskerville.scss */
+/* line 1280, ../scss/gordo.scss */
 .post-content pre {
   white-space: pre-wrap;
   /* css-3 */
@@ -1404,52 +1427,52 @@ code, kbd, pre {
 }
 
 /* Post media --------------------------------------- */
-/* line 1278, ../scss/baskerville.scss */
+/* line 1299, ../scss/gordo.scss */
 .wp-caption, .post-content img {
   max-width: 100%;
 }
 
-/* line 1282, ../scss/baskerville.scss */
+/* line 1303, ../scss/gordo.scss */
 img.alignleft, .alignleft img, img.aligncenter, .aligncenter img, img.alignright, .alignright img {
   box-sizing: border-box;
   padding: 5px;
   border: 1px solid #EEE;
 }
 
-/* line 1289, ../scss/baskerville.scss */
+/* line 1310, ../scss/gordo.scss */
 .post-content .alignleft, .post-content .alignright {
   margin-bottom: 1.2em;
   max-width: 300px;
 }
-/* line 1294, ../scss/baskerville.scss */
+/* line 1315, ../scss/gordo.scss */
 .post-content .wp-caption a, .post-content .wp-caption img {
   display: block;
 }
-/* line 1297, ../scss/baskerville.scss */
+/* line 1318, ../scss/gordo.scss */
 .post-content .wp-caption .alignleft, .post-content .wp-caption .alignright {
   margin-bottom: 0;
 }
-/* line 1301, ../scss/baskerville.scss */
+/* line 1322, ../scss/gordo.scss */
 .post-content .alignleft {
   float: left;
   margin-right: 1em;
 }
-/* line 1305, ../scss/baskerville.scss */
+/* line 1326, ../scss/gordo.scss */
 .post-content .alignright {
   float: right;
   margin-left: 1em;
 }
-/* line 1309, ../scss/baskerville.scss */
+/* line 1330, ../scss/gordo.scss */
 .post-content .aligncenter {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 1313, ../scss/baskerville.scss */
+/* line 1334, ../scss/gordo.scss */
 .post-content .aligncenter a, .post-content .aligncenter img {
   margin: 0 auto;
 }
-/* line 1317, ../scss/baskerville.scss */
+/* line 1338, ../scss/gordo.scss */
 .post-content .wp-caption-text {
   font-size: 0.8em;
   font-weight: 700;
@@ -1457,7 +1480,7 @@ img.alignleft, .alignleft img, img.aligncenter, .aligncenter img, img.alignright
   text-align: center;
   padding-top: 0.5em;
 }
-/* line 1324, ../scss/baskerville.scss */
+/* line 1345, ../scss/gordo.scss */
 .post-content .gallery-caption {
   font-size: 0.8em;
   font-weight: 700;
@@ -1469,7 +1492,7 @@ img.alignleft, .alignleft img, img.aligncenter, .aligncenter img, img.alignright
 }
 
 /* Tables --------------------------------------- */
-/* line 1340, ../scss/baskerville.scss */
+/* line 1361, ../scss/gordo.scss */
 .post-content table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -1477,7 +1500,7 @@ img.alignleft, .alignleft img, img.aligncenter, .aligncenter img, img.alignright
   font-size: 0.9em;
   width: 100%;
 }
-/* line 1347, ../scss/baskerville.scss */
+/* line 1368, ../scss/gordo.scss */
 .post-content th, .post-content td {
   padding: 2%;
   margin: 0;
@@ -1485,33 +1508,33 @@ img.alignleft, .alignleft img, img.aligncenter, .aligncenter img, img.alignright
   line-height: 120%;
   border-bottom: 1px solid #DDD;
 }
-/* line 1354, ../scss/baskerville.scss */
+/* line 1375, ../scss/gordo.scss */
 .post-content caption {
   text-align: center;
   padding: 2%;
 }
-/* line 1358, ../scss/baskerville.scss */
+/* line 1379, ../scss/gordo.scss */
 .post-content thead {
   vertical-align: bottom;
   white-space: nowrap;
 }
-/* line 1362, ../scss/baskerville.scss */
+/* line 1383, ../scss/gordo.scss */
 .post-content th {
   font-weight: bold;
 }
-/* line 1365, ../scss/baskerville.scss */
+/* line 1386, ../scss/gordo.scss */
 .post-content table tbody > tr:nth-child(odd) > td {
   background: #f9f9f9;
 }
 
 /* Forms --------------------------------------- */
-/* line 1375, ../scss/baskerville.scss */
+/* line 1396, ../scss/gordo.scss */
 .post-content fieldset {
   padding: 25px;
   border: 2px solid #eee;
   margin-bottom: 1em;
 }
-/* line 1379, ../scss/baskerville.scss */
+/* line 1400, ../scss/gordo.scss */
 .post-content fieldset legend {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 0.9rem;
@@ -1523,18 +1546,18 @@ img.alignleft, .alignleft img, img.aligncenter, .aligncenter img, img.alignright
   background: #13C4A5;
   color: #fff;
 }
-/* line 1391, ../scss/baskerville.scss */
+/* line 1412, ../scss/gordo.scss */
 .post-content label {
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   font-weight: 700;
 }
-/* line 1396, ../scss/baskerville.scss */
+/* line 1417, ../scss/gordo.scss */
 .post-content input, .post-content textarea {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
-/* line 1401, ../scss/baskerville.scss */
+/* line 1422, ../scss/gordo.scss */
 .post-content input[type="text"], .post-content input[type="email"], .post-content input[type="tel"], .post-content input[type="url"], .post-content input[type="password"] {
   width: 100%;
   padding: 14px 16px;
@@ -1550,7 +1573,7 @@ img.alignleft, .alignleft img, img.aligncenter, .aligncenter img, img.alignright
   transition: background 0.2s ease-in-out;
   -webkit-appearance: none;
 }
-/* line 1414, ../scss/baskerville.scss */
+/* line 1435, ../scss/gordo.scss */
 .post-content textarea {
   width: 100%;
   padding: 14px 16px;
@@ -1568,17 +1591,17 @@ img.alignleft, .alignleft img, img.aligncenter, .aligncenter img, img.alignright
   height: 180px;
   line-height: 140%;
 }
-/* line 1429, ../scss/baskerville.scss */
+/* line 1450, ../scss/gordo.scss */
 .post-content input[type="text"]:focus, .post-content input[type="email"]:focus, .post-content input[type="tel"]:focus, .post-content input[type="url"]:focus, .post-content input[type="password"]:focus {
   background: #fdfdfd;
   outline: none;
 }
-/* line 1434, ../scss/baskerville.scss */
+/* line 1455, ../scss/gordo.scss */
 .post-content textarea:focus {
   background: #fdfdfd;
   outline: none;
 }
-/* line 1439, ../scss/baskerville.scss */
+/* line 1460, ../scss/gordo.scss */
 .post-content input[type="submit"], .post-content input[type="reset"], .post-content input[type="button"], .post-content button[type="submit"], .post-content button[type="reset"], .post-content button[type="button"] {
   padding: 12px 16px;
   margin: 0;
@@ -1590,13 +1613,13 @@ img.alignleft, .alignleft img, img.aligncenter, .aligncenter img, img.alignright
   -webkit-appearance: none;
   border-radius: 3px;
 }
-/* line 1450, ../scss/baskerville.scss */
+/* line 1471, ../scss/gordo.scss */
 .post-content input[type="submit"]:hover, .post-content input[type="reset"]:hover, .post-content input[type="button"]:hover, .post-content button[type="submit"]:hover, .post-content button[type="reset"]:hover, .post-content button[type="button"]:hover {
   cursor: pointer;
   background: #13C4A5;
   color: #fff;
 }
-/* line 1456, ../scss/baskerville.scss */
+/* line 1477, ../scss/gordo.scss */
 .post-content input[type="submit"]:focus, .post-content input[type="submit"]:active, .post-content button[type="submit"]:focus, .post-content button[type="submit"]:active {
   outline: none;
 }
@@ -2158,7 +2181,7 @@ p.form-submit {
 /* -------------------------------------------------------------------------------- */
 /*	10. Page & Page Templates
 /* -------------------------------------------------------------------------------- */
-/* line 1475, ../scss/baskerville.scss */
+/* line 1496, ../scss/gordo.scss */
 .posts .page {
   width: 100%;
   position: relative;
@@ -2171,22 +2194,22 @@ p.form-submit {
 }
 
 /* Contributors template ---------------------------------------------------------- */
-/* line 1490, ../scss/baskerville.scss */
+/* line 1511, ../scss/gordo.scss */
 .post-content + .contributors-container {
   border-top: 1px solid #eee;
 }
 
-/* line 1494, ../scss/baskerville.scss */
+/* line 1515, ../scss/gordo.scss */
 .authors-row {
   position: relative;
   padding: 10%;
   border-top: 1px solid #eee;
 }
-/* line 1498, ../scss/baskerville.scss */
+/* line 1519, ../scss/gordo.scss */
 .authors-row:first-child {
   border-top: none;
 }
-/* line 1501, ../scss/baskerville.scss */
+/* line 1522, ../scss/gordo.scss */
 .authors-row:before {
   content: "";
   display: block;
@@ -2197,18 +2220,18 @@ p.form-submit {
   left: 50%;
   background: #eee;
 }
-/* line 1511, ../scss/baskerville.scss */
+/* line 1532, ../scss/gordo.scss */
 .authors-row .author-info {
   width: 45%;
   margin-left: 10%;
   text-align: center;
 }
-/* line 1515, ../scss/baskerville.scss */
+/* line 1536, ../scss/gordo.scss */
 .authors-row .author-info:first-child {
   margin-left: 0;
 }
 
-/* line 1521, ../scss/baskerville.scss */
+/* line 1542, ../scss/gordo.scss */
 .author-avatar {
   display: inline-block;
   width: 134px;
@@ -2217,14 +2240,14 @@ p.form-submit {
   border: 6px solid #eee;
   border-radius: 9999px;
 }
-/* line 1528, ../scss/baskerville.scss */
+/* line 1549, ../scss/gordo.scss */
 .author-avatar img {
   display: block;
   margin: 0 auto;
   border-radius: 9999px;
 }
 
-/* line 1536, ../scss/baskerville.scss */
+/* line 1557, ../scss/gordo.scss */
 .author-info h4 {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 1.5em;
@@ -2232,51 +2255,51 @@ p.form-submit {
   text-align: center;
   margin-bottom: 10px;
 }
-/* line 1542, ../scss/baskerville.scss */
+/* line 1563, ../scss/gordo.scss */
 .author-info h4 a {
   color: #2B3542;
 }
-/* line 1544, ../scss/baskerville.scss */
+/* line 1565, ../scss/gordo.scss */
 .author-info h4 a:hover {
   color: #13C4A5;
 }
-/* line 1549, ../scss/baskerville.scss */
+/* line 1570, ../scss/gordo.scss */
 .author-info h5 {
   font-family: 'Roboto Slab', sans-serif;
   text-align: center;
   margin-bottom: 25px;
 }
-/* line 1553, ../scss/baskerville.scss */
+/* line 1574, ../scss/gordo.scss */
 .author-info h5 a {
   color: #999;
 }
-/* line 1555, ../scss/baskerville.scss */
+/* line 1576, ../scss/gordo.scss */
 .author-info h5 a:hover {
   color: #444;
 }
 
-/* line 1562, ../scss/baskerville.scss */
+/* line 1583, ../scss/gordo.scss */
 .author-description {
   line-height: 140%;
   text-align: center;
 }
-/* line 1565, ../scss/baskerville.scss */
+/* line 1586, ../scss/gordo.scss */
 .author-description p {
   line-height: inherit;
   text-align: inherit;
 }
 
-/* line 1571, ../scss/baskerville.scss */
+/* line 1592, ../scss/gordo.scss */
 .author-info .author-links a {
   background-color: #2B3542;
 }
-/* line 1573, ../scss/baskerville.scss */
+/* line 1594, ../scss/gordo.scss */
 .author-info .author-links a:hover {
   background-color: #13C4A5;
 }
 
 /* Image ---------------------------------------------------------- */
-/* line 1582, ../scss/baskerville.scss */
+/* line 1603, ../scss/gordo.scss */
 .single .post-meta p.image-resolution {
   background-image: url(../images/icons/1x/image-g.png);
 }
@@ -2284,12 +2307,12 @@ p.form-submit {
 /* -------------------------------------------------------------------------------- */
 /*	10. Pagination
 /* -------------------------------------------------------------------------------- */
-/* line 1592, ../scss/baskerville.scss */
+/* line 1613, ../scss/gordo.scss */
 .page-title {
   margin-bottom: 60px;
   text-align: center;
 }
-/* line 1595, ../scss/baskerville.scss */
+/* line 1616, ../scss/gordo.scss */
 .page-title h5 {
   display: inline-block;
   padding-bottom: 4px;
@@ -2300,7 +2323,7 @@ p.form-submit {
   text-transform: uppercase;
   text-align: center;
 }
-/* line 1605, ../scss/baskerville.scss */
+/* line 1626, ../scss/gordo.scss */
 .page-title h3 {
   margin-top: 15px;
   font-family: 'Roboto Slab', sans-serif;
@@ -2309,12 +2332,12 @@ p.form-submit {
   text-align: center;
   color: #2B3542;
 }
-/* line 1613, ../scss/baskerville.scss */
+/* line 1634, ../scss/gordo.scss */
 .page-title .title-pagination {
   margin-top: 15px;
 }
 
-/* line 1618, ../scss/baskerville.scss */
+/* line 1639, ../scss/gordo.scss */
 .tag-archive-meta p {
   text-align: center;
   margin-top: 15px;
@@ -2323,7 +2346,7 @@ p.form-submit {
 }
 
 /* archive navigation */
-/* line 1628, ../scss/baskerville.scss */
+/* line 1649, ../scss/gordo.scss */
 .archive-nav a {
   font-size: 0.9em;
   padding: 16px 20px;
@@ -2331,14 +2354,14 @@ p.form-submit {
   border-radius: 3px;
   color: #fff;
 }
-/* line 1634, ../scss/baskerville.scss */
+/* line 1655, ../scss/gordo.scss */
 .archive-nav a:hover {
   background: #13C4A5;
   color: #fff;
 }
 
 /* search */
-/* line 1642, ../scss/baskerville.scss */
+/* line 1663, ../scss/gordo.scss */
 .search-no-results .post-content p {
   text-align: center;
 }
@@ -2346,7 +2369,7 @@ p.form-submit {
 /* -------------------------------------------------------------------------------- */
 /*	11. Sidebar
 /* -------------------------------------------------------------------------------- */
-/* line 1650, ../scss/baskerville.scss */
+/* line 1671, ../scss/gordo.scss */
 .sidebar {
   width: 27.5%;
   background: #fff;
@@ -2356,17 +2379,17 @@ p.form-submit {
   border-radius: 6px;
   overflow: hidden;
 }
-/* line 1658, ../scss/baskerville.scss */
+/* line 1679, ../scss/gordo.scss */
 .sidebar .widget {
   padding: 30px;
   border-top: 1px solid #EEE;
 }
-/* line 1661, ../scss/baskerville.scss */
+/* line 1682, ../scss/gordo.scss */
 .sidebar .widget:first-child {
   border-top: none;
 }
 
-/* line 1667, ../scss/baskerville.scss */
+/* line 1688, ../scss/gordo.scss */
 .widget-title {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 0.9em;
@@ -2375,30 +2398,30 @@ p.form-submit {
   margin-bottom: 20px;
 }
 
-/* line 1675, ../scss/baskerville.scss */
+/* line 1696, ../scss/gordo.scss */
 .sidebar .widget-content {
   font-size: 0.85em;
   color: #767676;
 }
 
-/* line 1680, ../scss/baskerville.scss */
+/* line 1701, ../scss/gordo.scss */
 .widget-content a:hover {
   text-decoration: underline;
 }
 
-/* line 1684, ../scss/baskerville.scss */
+/* line 1705, ../scss/gordo.scss */
 .sidebar .widget-content p {
   line-height: 150%;
 }
 
-/* line 1689, ../scss/baskerville.scss */
+/* line 1710, ../scss/gordo.scss */
 .widget-content ul li {
   position: relative;
   margin-top: 10px;
   padding: 1px 0 1px 14px;
   line-height: 130%;
 }
-/* line 1694, ../scss/baskerville.scss */
+/* line 1715, ../scss/gordo.scss */
 .widget-content ul li:before {
   content: "»";
   position: absolute;
@@ -2407,34 +2430,34 @@ p.form-submit {
   color: #13C4A5;
   font-size: 18px;
 }
-/* line 1703, ../scss/baskerville.scss */
+/* line 1724, ../scss/gordo.scss */
 .widget-content > ul > li:first-child {
   margin: 0;
 }
-/* line 1706, ../scss/baskerville.scss */
+/* line 1727, ../scss/gordo.scss */
 .widget-content li ul > li:first-child {
   margin-top: 10px;
 }
-/* line 1709, ../scss/baskerville.scss */
+/* line 1730, ../scss/gordo.scss */
 .widget-content .page_item_has_children {
   padding-bottom: 0;
 }
-/* line 1712, ../scss/baskerville.scss */
+/* line 1733, ../scss/gordo.scss */
 .widget-content li ul li {
   padding-left: 15px;
 }
-/* line 1715, ../scss/baskerville.scss */
+/* line 1736, ../scss/gordo.scss */
 .widget-content ul li .post-date {
   margin-left: 5px;
   color: #999;
 }
-/* line 1719, ../scss/baskerville.scss */
+/* line 1740, ../scss/gordo.scss */
 .widget-content > ul > li:first-child {
   border-top: 0;
 }
 
 /* Widget tag cloud --------------------------------------- */
-/* line 1728, ../scss/baskerville.scss */
+/* line 1749, ../scss/gordo.scss */
 .tagcloud a {
   display: block;
   float: left;
@@ -2446,7 +2469,7 @@ p.form-submit {
   color: #FFF;
   border-radius: 3px;
 }
-/* line 1738, ../scss/baskerville.scss */
+/* line 1759, ../scss/gordo.scss */
 .tagcloud a:hover {
   background-color: #13C4A5;
   color: #fff;
@@ -2454,11 +2477,11 @@ p.form-submit {
 }
 
 /* Search --------------------------------------- */
-/* line 1748, ../scss/baskerville.scss */
+/* line 1769, ../scss/gordo.scss */
 .searchform {
   position: relative;
 }
-/* line 1750, ../scss/baskerville.scss */
+/* line 1771, ../scss/gordo.scss */
 .searchform .s {
   display: block;
   width: 100%;
@@ -2476,12 +2499,12 @@ p.form-submit {
   -webkit-transition: color 0.2s;
   transition: color 0.2s;
 }
-/* line 1766, ../scss/baskerville.scss */
+/* line 1787, ../scss/gordo.scss */
 .searchform:hover .s, .searchform:focus .s {
   background-color: #EEE;
   outline: none;
 }
-/* line 1773, ../scss/baskerville.scss */
+/* line 1794, ../scss/gordo.scss */
 .searchform .searchsubmit {
   display: block;
   height: 36px;
@@ -2496,26 +2519,26 @@ p.form-submit {
   color: #767676;
   font-size: 24px;
 }
-/* line 1786, ../scss/baskerville.scss */
+/* line 1807, ../scss/gordo.scss */
 .searchform .searchsubmit span {
   display: none;
 }
-/* line 1789, ../scss/baskerville.scss */
+/* line 1810, ../scss/gordo.scss */
 .searchform .searchsubmit:hover {
   color: #13C4A5;
 }
 
-/* line 1797, ../scss/baskerville.scss */
+/* line 1818, ../scss/gordo.scss */
 header .searchform .s, footer .searchform .s {
   background-color: #333;
 }
-/* line 1801, ../scss/baskerville.scss */
+/* line 1822, ../scss/gordo.scss */
 header .searchform:hover .s, header .searchform:focus .s, footer .searchform:hover .s, footer .searchform:focus .s {
   background-color: #444;
 }
 
 /* Widget calendar --------------------------------------- */
-/* line 1810, ../scss/baskerville.scss */
+/* line 1831, ../scss/gordo.scss */
 #wp-calendar {
   color: #888;
   width: 100%;
@@ -2524,28 +2547,28 @@ header .searchform:hover .s, header .searchform:focus .s, footer .searchform:hov
   font-size: 0.9em;
   text-align: center;
 }
-/* line 1816, ../scss/baskerville.scss */
+/* line 1837, ../scss/gordo.scss */
 #wp-calendar a {
   color: #1abc9c;
 }
-/* line 1820, ../scss/baskerville.scss */
+/* line 1841, ../scss/gordo.scss */
 #wp-calendar caption, #wp-calendar tr, #wp-calendar td {
   text-align: center;
 }
-/* line 1823, ../scss/baskerville.scss */
+/* line 1844, ../scss/gordo.scss */
 #wp-calendar th {
   text-align: center;
   padding: 4% 2%;
 }
-/* line 1827, ../scss/baskerville.scss */
+/* line 1848, ../scss/gordo.scss */
 #wp-calendar td {
   padding: 4% 2%;
 }
-/* line 1830, ../scss/baskerville.scss */
+/* line 1851, ../scss/gordo.scss */
 #wp-calendar caption, #wp-calendar thead {
   color: #666;
 }
-/* line 1833, ../scss/baskerville.scss */
+/* line 1854, ../scss/gordo.scss */
 #wp-calendar caption {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 1rem;
@@ -2553,7 +2576,7 @@ header .searchform:hover .s, header .searchform:focus .s, footer .searchform:hov
   text-transform: capitalize;
   padding-bottom: 20px;
 }
-/* line 1840, ../scss/baskerville.scss */
+/* line 1861, ../scss/gordo.scss */
 #wp-calendar thead th {
   font-size: 0.9em;
   font-weight: 700;
@@ -2561,23 +2584,23 @@ header .searchform:hover .s, header .searchform:focus .s, footer .searchform:hov
   border-bottom: 1px solid #eee;
   border-top: 1px solid #eee;
 }
-/* line 1847, ../scss/baskerville.scss */
+/* line 1868, ../scss/gordo.scss */
 #wp-calendar tbody {
   border-bottom: 1px solid #eee;
 }
-/* line 1851, ../scss/baskerville.scss */
+/* line 1872, ../scss/gordo.scss */
 #wp-calendar tfoot td {
   padding: 0;
 }
-/* line 1854, ../scss/baskerville.scss */
+/* line 1875, ../scss/gordo.scss */
 #wp-calendar tfoot #prev {
   text-align: left;
 }
-/* line 1857, ../scss/baskerville.scss */
+/* line 1878, ../scss/gordo.scss */
 #wp-calendar tfoot #next {
   text-align: right;
 }
-/* line 1860, ../scss/baskerville.scss */
+/* line 1881, ../scss/gordo.scss */
 #wp-calendar tfoot a {
   display: block;
   color: #999;
@@ -2586,14 +2609,14 @@ header .searchform:hover .s, header .searchform:focus .s, footer .searchform:hov
   font-weight: 700;
   text-transform: uppercase;
 }
-/* line 1867, ../scss/baskerville.scss */
+/* line 1888, ../scss/gordo.scss */
 #wp-calendar tfoot a:hover {
   text-decoration: none;
   color: #1abc9c;
 }
 
 /* Dribbble widget --------------------------------------- */
-/* line 1877, ../scss/baskerville.scss */
+/* line 1898, ../scss/gordo.scss */
 .dribbble-shot {
   display: block;
   width: 47.5%;
@@ -2603,47 +2626,47 @@ header .searchform:hover .s, header .searchform:focus .s, footer .searchform:hov
   padding: 6px;
   background: #f1f1f1;
 }
-/* line 1879, ../scss/baskerville.scss */
+/* line 1900, ../scss/gordo.scss */
 .dribbble-shot img {
   display: block;
 }
-/* line 1888, ../scss/baskerville.scss */
+/* line 1909, ../scss/gordo.scss */
 .dribbble-shot:nth-child(2n) {
   margin-right: 0;
 }
-/* line 1891, ../scss/baskerville.scss */
+/* line 1912, ../scss/gordo.scss */
 .dribbble-shot:hover {
   background-color: #13C4A5;
 }
 
-/* line 1896, ../scss/baskerville.scss */
+/* line 1917, ../scss/gordo.scss */
 .widgetmore {
   display: block;
   clear: both;
 }
 
 /* Flickr widget --------------------------------------- */
-/* line 1903, ../scss/baskerville.scss */
+/* line 1924, ../scss/gordo.scss */
 .flickr_badge_image {
   width: 21.25%;
   float: left;
   margin-left: 5%;
   margin-bottom: 5%;
 }
-/* line 1904, ../scss/baskerville.scss */
+/* line 1925, ../scss/gordo.scss */
 .flickr_badge_image a, .flickr_badge_image img {
   display: block;
 }
-/* line 1911, ../scss/baskerville.scss */
+/* line 1932, ../scss/gordo.scss */
 .flickr_badge_image a {
   padding: 4px;
   background: #f1f1f1;
 }
-/* line 1914, ../scss/baskerville.scss */
+/* line 1935, ../scss/gordo.scss */
 .flickr_badge_image a:hover {
   background-color: #13C4A5;
 }
-/* line 1918, ../scss/baskerville.scss */
+/* line 1939, ../scss/gordo.scss */
 .flickr_badge_image:nth-child(2), .flickr_badge_image:nth-child(6), .flickr_badge_image:nth-child(10), .flickr_badge_image:nth-child(14) {
   margin-left: 0;
 }
@@ -2651,63 +2674,63 @@ header .searchform:hover .s, header .searchform:focus .s, footer .searchform:hov
 /* -------------------------------------------------------------------------------- */
 /*	11. Footer
 /* -------------------------------------------------------------------------------- */
-/* line 1929, ../scss/baskerville.scss */
+/* line 1950, ../scss/gordo.scss */
 .footer .widget {
   margin-top: 40px;
   border-top: 4px solid #333;
   padding-top: 40px;
 }
-/* line 1933, ../scss/baskerville.scss */
+/* line 1954, ../scss/gordo.scss */
 .footer .widget:first-child {
   margin: 0;
   border: none;
   padding: 0;
 }
-/* line 1939, ../scss/baskerville.scss */
+/* line 1960, ../scss/gordo.scss */
 .footer .widget-title {
   color: #FFF;
   letter-spacing: 1px;
   font-size: 0.79em;
 }
-/* line 1944, ../scss/baskerville.scss */
+/* line 1965, ../scss/gordo.scss */
 .footer .widget-content {
   color: #767676;
   font-size: 0.95em;
 }
-/* line 1947, ../scss/baskerville.scss */
+/* line 1968, ../scss/gordo.scss */
 .footer .widget-content p {
   line-height: 160%;
 }
 
-/* line 1953, ../scss/baskerville.scss */
+/* line 1974, ../scss/gordo.scss */
 .widget-content p + p {
   margin-top: 1em;
 }
 
 /* Widgets --------------------------------------- */
 /* widget tagcloud */
-/* line 1962, ../scss/baskerville.scss */
+/* line 1983, ../scss/gordo.scss */
 .footer .tagcloud a {
   background-color: #333;
 }
-/* line 1964, ../scss/baskerville.scss */
+/* line 1985, ../scss/gordo.scss */
 .footer .tagcloud a:hover {
   text-decoration: none;
   background-color: #13C4A5;
 }
 
 /* widget calendar */
-/* line 1973, ../scss/baskerville.scss */
+/* line 1994, ../scss/gordo.scss */
 .footer #wp-calendar caption {
   color: #fff;
 }
-/* line 1976, ../scss/baskerville.scss */
+/* line 1997, ../scss/gordo.scss */
 .footer #wp-calendar thead th {
   border: none;
   border-top: 1px solid #3B3B3B;
   border-bottom: 1px solid #3B3B3B;
 }
-/* line 1981, ../scss/baskerville.scss */
+/* line 2002, ../scss/gordo.scss */
 .footer #wp-calendar tbody {
   border-bottom: 1px solid #3B3B3B;
 }
@@ -2715,7 +2738,7 @@ header .searchform:hover .s, header .searchform:focus .s, footer .searchform:hov
 /* -------------------------------------------------------------------------------- */
 /*	12. Credits
 /* -------------------------------------------------------------------------------- */
-/* line 1994, ../scss/baskerville.scss */
+/* line 2015, ../scss/gordo.scss */
 .credits p {
   font-family: 'Roboto Slab', sans-serif;
   color: #767676;
@@ -2724,17 +2747,17 @@ header .searchform:hover .s, header .searchform:focus .s, footer .searchform:hov
   font-weight: 700;
   letter-spacing: 1px;
 }
-/* line 2002, ../scss/baskerville.scss */
+/* line 2023, ../scss/gordo.scss */
 .credits a {
   color: #ccc;
 }
-/* line 2004, ../scss/baskerville.scss */
+/* line 2025, ../scss/gordo.scss */
 .credits a:hover {
   color: #ccc;
   text-decoration: underline;
 }
 
-/* line 2011, ../scss/baskerville.scss */
+/* line 2032, ../scss/gordo.scss */
 img#wpstats {
   display: none;
 }

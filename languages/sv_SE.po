@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Baskerculte v1.00\n"
+"Project-Id-Version: Gordo v1.00\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2014-06-07 11:56:11+0000\n"
@@ -21,86 +21,86 @@ msgstr ""
 "X-Textdomain-Support: yes"
 
 #: 404.php:13
-#@ baskerculte
+#@ gordo
 msgid "Error 404"
 msgstr "Error 404"
 
 #: 404.php:19
-#@ baskerculte
+#@ gordo
 msgid "It seems like you have tried to open a page that doesn't exist. It could have been deleted, moved, or it never existed at all. You are welcome to search for what you are looking for with the form below."
 msgstr "Det verkar som att du har försökt öppna en sida som inte existerar. Den kan ha raderats, flyttats eller har aldrig existerat överhuvudtaget. Du är välkommen att söka efter det du letar efter i sökformuläret nedan."
 
 #: archive.php:8
-#@ baskerculte
+#@ gordo
 msgid "Date"
 msgstr "Datum"
 
 #: archive.php:10
-#@ baskerculte
+#@ gordo
 msgid "Month"
 msgstr "Månad"
 
 #: archive.php:12
-#@ baskerculte
+#@ gordo
 msgid "Year"
 msgstr "År"
 
 #: archive.php:14
-#@ baskerculte
+#@ gordo
 msgid "Category"
 msgstr "Kategori"
 
 #: archive.php:16
-#@ baskerculte
+#@ gordo
 msgid "Tag"
 msgstr "Etikett"
 
 #: archive.php:19
-#@ baskerculte
+#@ gordo
 msgid "Author"
 msgstr "Författare"
 
 #: archive.php:21
-#@ baskerculte
+#@ gordo
 msgid "Archive"
 msgstr "Arkiv"
 
 #: comments.php:16
-#@ baskerculte
+#@ gordo
 msgid "Comment"
 msgid_plural "Comments"
 msgstr[0] "Kommentar"
 msgstr[1] "Kommentarer"
 
 #: comments.php:43
-#@ baskerculte
+#@ gordo
 msgid "Pingback"
 msgid_plural "Pingbacks"
 msgstr[0] "Pingback"
 msgstr[1] "Pingbacks"
 
 #: comments.php:77
-#@ baskerculte
+#@ gordo
 msgid "Comments are closed."
 msgstr "Kommentarsfältet är stängt."
 
 #: comments.php:84
-#@ baskerculte
+#@ gordo
 msgid "Your email address will not be published."
 msgstr "Din e-postadress kommer inte att publiceras."
 
 #: comments.php:93
-#@ baskerculte
+#@ gordo
 msgid "Name"
 msgstr "Namn"
 
 #: comments.php:96
-#@ baskerculte
+#@ gordo
 msgid "Email"
 msgstr "E-postadress"
 
 #: comments.php:99
-#@ baskerculte
+#@ gordo
 msgid "Website"
 msgstr "Webbplats"
 
@@ -113,178 +113,178 @@ msgstr "Webbplats"
 #: content-quote.php:8
 #: content-video.php:5
 #: content.php:5
-#@ baskerculte
+#@ gordo
 msgid "Sticky post"
 msgstr "Klistrat inlägg"
 
 #: footer.php:27
 #: searchform.php:2
-#@ baskerculte
+#@ gordo
 msgid "Search form"
 msgstr "Sökformulär"
 
 #: footer.php:62
 #: sidebar.php:27
-#@ baskerculte
+#@ gordo
 msgid "Latest posts"
 msgstr "Senaste inläggen"
 
 #: footer.php:103
 #: sidebar.php:49
-#@ baskerculte
+#@ gordo
 msgid "Text widget"
 msgstr "Textwidget"
 
 #: footer.php:104
 #: sidebar.php:53
-#@ baskerculte
+#@ gordo
 msgid "These widgets are displayed because you haven't added any widgets of your own yet. You can do so at Appearance > Widgets in the WordPress settings."
 msgstr "Dessa widgets visas för att du inte har lagt till några egna widgets ännu. Du kan göra det på Utseende > Widgets i WordPress-inställningarna."
 
 #: footer.php:125
 #, php-format
-#@ baskerculte
+#@ gordo
 msgid "Powered by <a href=\"%s\">WordPress</a>"
 msgstr "Drivs på <a href=\"%s\">WordPress</a>"
 
 #: footer.php:131
 #, php-format
-#@ baskerculte
+#@ gordo
 msgid "Theme by <a href=\"%s\">Anders Noren</a>"
 msgstr "Tema av <a href=\"%s\">Anders Noren</a>"
 
 #: footer.php:131
-#@ baskerculte
+#@ gordo
 msgid "To the top"
 msgstr "Till toppen"
 
 #: footer.php:131
-#@ baskerculte
+#@ gordo
 msgid "Up"
 msgstr "Upp"
 
 #: functions.php:91
-#@ baskerculte
+#@ gordo
 msgid "Footer A"
 msgstr "Sidfot A"
 
 #: functions.php:93
-#@ baskerculte
+#@ gordo
 msgid "Widgets in this area will be shown in the left column in the footer."
 msgstr "Widgets i det här utrymmet kommer att visas i den vänstra kolumnen i sidfoten."
 
 #: functions.php:100
-#@ baskerculte
+#@ gordo
 msgid "Footer B"
 msgstr "Sidfot B"
 
 #: functions.php:102
-#@ baskerculte
+#@ gordo
 msgid "Widgets in this area will be shown in the middle column in the footer."
 msgstr "Widgets i det här utrymmet kommer att visas i mittenkolumnen i sidfoten."
 
 #: functions.php:109
-#@ baskerculte
+#@ gordo
 msgid "Footer C"
 msgstr "Sidfot C"
 
 #: functions.php:111
-#@ baskerculte
+#@ gordo
 msgid "Widgets in this area will be shown in the right column in the footer."
 msgstr "Widgets i det här utrymmet kommer att visas i den högra kolumnen i sidfoten."
 
 #: functions.php:118
-#@ baskerculte
+#@ gordo
 msgid "Sidebar"
 msgstr "Sidebar"
 
 #: functions.php:120
-#@ baskerculte
+#@ gordo
 msgid "Widgets in this area will be shown in the sidebar."
 msgstr "Widgets i det här utrymmet kommer att visas i sidebaren."
 
 #: functions.php:155
 #, php-format
-#@ baskerculte
+#@ gordo
 msgid "Page %s"
 msgstr "Sida %s"
 
 #: functions.php:342
-#@ baskerculte
+#@ gordo
 msgid "Pingback:"
 msgstr "Pingback:"
 
 #: functions.php:342
-#@ baskerculte
+#@ gordo
 msgid "(Edit)"
 msgstr "(Redigera)"
 
 #: functions.php:368
 #: functions.php:392
-#@ baskerculte
+#@ gordo
 msgid "Edit"
 msgstr "Redigera"
 
 #: functions.php:370
 #: functions.php:394
-#@ baskerculte
+#@ gordo
 msgid "Reply"
 msgstr "Svara"
 
 #: functions.php:382
-#@ baskerculte
+#@ gordo
 msgid "Awaiting moderation"
 msgstr "Inväntar moderering"
 
 #: functions.php:433
-#@ baskerculte
+#@ gordo
 msgid "Show email"
 msgstr "Visa e-postadress"
 
 #: functions.php:437
-#@ baskerculte
+#@ gordo
 msgid "Check if you want to display your email address in single posts and the contributors page template."
 msgstr "Bocka för om du vill visa din e-postadress i enskilda inlägg och i skribenter-sidmallen."
 
 #: functions.php:461
 #: widgets/video-widget.php:70
-#@ baskerculte
+#@ gordo
 msgid "Video URL"
 msgstr "Adress till video"
 
 #: functions.php:462
-#@ baskerculte
+#@ gordo
 msgid "Audio URL"
 msgstr "Adress till ljudfil"
 
 #: functions.php:463
-#@ baskerculte
+#@ gordo
 msgid "Quote content"
 msgstr "Citatets innehåll"
 
 #: functions.php:464
-#@ baskerculte
+#@ gordo
 msgid "Quote attribution"
 msgstr "Citatets upphovsman"
 
 #: functions.php:465
-#@ baskerculte
+#@ gordo
 msgid "Link URL"
 msgstr "Länkadress"
 
 #: functions.php:466
-#@ baskerculte
+#@ gordo
 msgid "Link title"
 msgstr "Länktitel"
 
 #: functions.php:664
 #: functions.php:674
-#@ baskerculte
+#@ gordo
 msgid "Logo"
 msgstr "Logotyp"
 
 #: image.php:34
-#@ baskerculte
+#@ gordo
 msgid "About the attachment"
 msgstr "Om bilagan"
 
@@ -294,104 +294,104 @@ msgstr "Om bilagan"
 #: template-archives.php:133
 #: template-fullwidth.php:67
 #: template-nosidebar.php:67
-#@ baskerculte
+#@ gordo
 msgid "We couldn't find any posts that matched your query. Please try again."
 msgstr "Vi kunde inte hitta några inlägg som matchar din sökning. Vänligen försök igen."
 
 #: index.php:15
 #, php-format
-#@ baskerculte
+#@ gordo
 msgid "Page %s of %s"
 msgstr "Sida %s av %s"
 
 #: search.php:7
-#@ baskerculte
+#@ gordo
 msgid "Search results"
 msgstr "Sökresultat"
 
 #: search.php:55
-#@ baskerculte
+#@ gordo
 msgid "No results. Try again, would you kindly?"
 msgstr "Inga resultat. Försök igen, är du snäll?"
 
 #: searchform.php:3
-#@ baskerculte
+#@ gordo
 msgid "Search"
 msgstr "Sök"
 
 #: single.php:179
-#@ baskerculte
+#@ gordo
 msgid "Author archive"
 msgstr "Författararkiv"
 
 #: single.php:187
-#@ baskerculte
+#@ gordo
 msgid "Author website"
 msgstr "Författarens webbplats"
 
 #: single.php:205
-#@ baskerculte
+#@ gordo
 msgid "on Twitter"
 msgstr "på Twitter"
 
 #: single.php:237
-#@ baskerculte
+#@ gordo
 msgid "Previous post:"
 msgstr "Föregående inlägg:"
 
 #: single.php:237
-#@ baskerculte
+#@ gordo
 msgid "Previous post"
 msgstr "Föregående inlägg"
 
 #: single.php:245
-#@ baskerculte
+#@ gordo
 msgid "Next post:"
 msgstr "Nästa inlägg:"
 
 #: single.php:245
-#@ baskerculte
+#@ gordo
 msgid "Next post"
 msgstr "Nästa inlägg"
 
 #: template-archives.php:57
-#@ baskerculte
+#@ gordo
 msgid "Last 30 Posts"
 msgstr "Senaste 30 inläggen"
 
 #: template-archives.php:71
-#@ baskerculte
+#@ gordo
 msgid "Archives by Categories"
 msgstr "Kategoriarkiv"
 
 #: template-archives.php:77
-#@ baskerculte
+#@ gordo
 msgid "Archives by Tags"
 msgstr "Etikettarkiv"
 
 #: template-archives.php:84
 #, php-format
-#@ baskerculte
+#@ gordo
 msgid "View all posts in %s"
 msgstr "Visa alla inlägg i %s"
 
 #: template-archives.php:95
-#@ baskerculte
+#@ gordo
 msgid "Contributors"
 msgstr "Författare"
 
 #: template-archives.php:101
-#@ baskerculte
+#@ gordo
 msgid "Archives by Year"
 msgstr "Arkiv för årtal"
 
 #: template-archives.php:107
-#@ baskerculte
+#@ gordo
 msgid "Archives by Month"
 msgstr "Arkiv för månader"
 
 #: template-archives.php:113
-#@ baskerculte
+#@ gordo
 msgid "Archives by Day"
 msgstr "Arkiv för dagar"
 
@@ -401,105 +401,105 @@ msgid "posts"
 msgstr ""
 
 #: widgets/dribbble-widget.php:10
-#@ baskerculte
+#@ gordo
 msgid "Displays your latest Dribbble photos."
 msgstr "Visar dina senaste Dribbble-bilder."
 
 #: widgets/dribbble-widget.php:79
 #: widgets/flickr-widget.php:58
 #: widgets/video-widget.php:64
-#@ baskerculte
+#@ gordo
 msgid "Title"
 msgstr "Titel"
 
 #: widgets/dribbble-widget.php:85
-#@ baskerculte
+#@ gordo
 msgid "Dribbble username"
 msgstr "Dribbble-användarnamn"
 
 #: widgets/dribbble-widget.php:91
 #: widgets/flickr-widget.php:70
-#@ baskerculte
+#@ gordo
 msgid "Number of images to display:"
 msgstr "Antal bilder att visa:"
 
 #: widgets/flickr-widget.php:8
-#@ baskerculte
+#@ gordo
 msgid "Displays your latest Flickr photos."
 msgstr "Visar dina senaste Flickr-fotografier."
 
 #: widgets/flickr-widget.php:64
-#@ baskerculte
+#@ gordo
 msgid "Flickr ID (use <a target=\"_blank\" href=\"http://www.idgettr.com\">idGettr</a>):"
 msgstr "Flickr-ID (använd <a target=\"_blank\" href=\"http://www.idgettr.com\">idGettr</a>):"
 
 #: widgets/video-widget.php:8
-#@ baskerculte
+#@ gordo
 msgid "Displays a video of your choosing."
 msgstr "Visar ett valfritt videoklipp."
 
 #: archive.php:62
 #: index.php:53
 #: search.php:39
-#@ baskerculte
+#@ gordo
 msgid "Older posts"
 msgstr "Äldre inlägg"
 
 #: archive.php:64
 #: index.php:55
 #: search.php:41
-#@ baskerculte
+#@ gordo
 msgid "Newer posts"
 msgstr "Nyare inlägg"
 
 #: comments.php:61
-#@ baskerculte
+#@ gordo
 msgid "Older Comments"
 msgstr "Äldre kommentarer"
 
 #: comments.php:63
-#@ baskerculte
+#@ gordo
 msgid "Newer Comments"
 msgstr "Nyare kommentarer"
 
 #: functions.php:220
-#@ baskerculte
+#@ gordo
 msgid "Continue Reading"
 msgstr "Fortsätt läsa"
 
 #: functions.php:656
-#@ baskerculte
-msgid "Baskerculte Options"
-msgstr "Baskerculte-alternativ"
+#@ gordo
+msgid "Gordo Options"
+msgstr "Gordo-alternativ"
 
 #: functions.php:659
-#@ baskerculte
-msgid "Allows you to customize some settings for Baskerculte."
-msgstr "Låter dig ändra Baskercultes inställningar."
+#@ gordo
+msgid "Allows you to customize some settings for Gordo."
+msgstr "Låter dig ändra Gordos inställningar."
 
 #: widgets/dribbble-widget.php:52
 #, php-format
-#@ baskerculte
+#@ gordo
 msgid "Follow %s on Dribbble"
 msgstr "Följ %s på Dribbble"
 
 #: widgets/flickr-widget.php:36
-#@ baskerculte
+#@ gordo
 msgid "More on Flickr"
 msgstr "Mer på Flickr"
 
 #: single.php:249
-#@ baskerculte
+#@ gordo
 msgid "Edit post"
 msgstr "Redigera inlägg"
 
 #: comments.php:22
-#@ baskerculte
+#@ gordo
 msgid "Add yours"
 msgstr "Skriv kommentar"
 
 #: header.php:25
-#@ baskerculte
+#@ gordo
 msgid "Type and press enter"
 msgstr "Skriv och tryck enter"
 

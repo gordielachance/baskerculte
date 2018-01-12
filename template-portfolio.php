@@ -27,7 +27,7 @@
 	
 		<div class="page-title section-inner">
 		
-			<h5><?php printf( __('Page %s of %s', 'baskerville'), $paged, cc_portfolio_query()->max_num_pages ); ?></h5>
+			<h5><?php printf( __('Page %s of %s', 'gordo'), $paged, cc_portfolio_query()->max_num_pages ); ?></h5>
 			
 		</div>
 		
@@ -89,9 +89,9 @@
 		
 		<div class="archive-nav section-inner">
 					
-			<?php echo get_next_posts_link( '&laquo; ' . __('Older posts', 'baskerville'), cc_portfolio_query()->max_num_pages); ?>
+			<?php echo get_next_posts_link( '&laquo; ' . __('Older posts', 'gordo'), cc_portfolio_query()->max_num_pages); ?>
 						
-			<?php echo get_previous_posts_link( __('Newer posts', 'baskerville') . ' &raquo;', cc_portfolio_query()->max_num_pages); ?>
+			<?php echo get_previous_posts_link( __('Newer posts', 'gordo') . ' &raquo;', cc_portfolio_query()->max_num_pages); ?>
 			
 			<div class="clear"></div>
 			

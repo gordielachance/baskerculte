@@ -1,10 +1,10 @@
-<?php if ( is_sticky() ) echo '<span class="sticky-post">' . __( 'Sticky post', 'baskerculte' ) . '</span>'; ?>
+<?php if ( is_sticky() ) echo '<span class="sticky-post">' . __( 'Sticky post', 'gordo' ) . '</span>'; ?>
 
 <?php if ( has_post_thumbnail() ) : ?>
 
 	<div class="featured-media">
 	
-		<?php if ( is_sticky() ) echo '<span class="sticky-post">' . __( 'Sticky post', 'baskerculte' ) . '</span>'; ?>
+		<?php if ( is_sticky() ) echo '<span class="sticky-post">' . __( 'Sticky post', 'gordo' ) . '</span>'; ?>
 	
 		<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 		
@@ -30,6 +30,6 @@
 		
 </div><!-- .post-excerpt -->
 									                                    	    
-<?php baskerculte_meta(); ?>
+<?php gordo_meta(); ?>
             
 <div class="clear"></div>
