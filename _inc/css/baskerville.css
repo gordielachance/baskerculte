@@ -152,9 +152,9 @@ body a {
 .post-likes,
 .post-meta a,
 .pagination,
-.main-menu a,
-.main-menu > .has-children > a::after,
-.main-menu > .page_item_has_children > a::after,
+#main-menu a,
+#main-menu > .has-children > a::after,
+#main-menu > .page_item_has_children > a::after,
 .searchbutton,
 .comment-form input[type="text"],
 .comment-form input[type="email"],
@@ -352,49 +352,39 @@ header .header-inner .searchform {
   margin-left: auto;
   display: inline-block;
 }
-/* line 264, ../scss/baskerville.scss */
-header .header-inner .searchform .s {
-  -moz-transition: width 0.3s, background-color 1s;
-  -o-transition: width 0.3s, background-color 1s;
-  -webkit-transition: width 0.3s, background-color 1s;
-  transition: width 0.3s, background-color 1s;
-}
-/* line 268, ../scss/baskerville.scss */
-header .header-inner .searchform.expanded .s {
-  background-color: #333;
-}
-/* line 272, ../scss/baskerville.scss */
-header .header-inner .searchform:not(.expanded) .s {
-  background-color: transparent;
-  width: 0;
-}
 
 /* -------------------------------------------------------------------------------- */
 /*	4. Navigation
 /* -------------------------------------------------------------------------------- */
-/* line 285, ../scss/baskerville.scss */
-.main-menu {
+/* line 273, ../scss/baskerville.scss */
+#main-menu {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 0.9em;
   text-align: center;
-  display: -webkit-flex;
-  display: flex;
+  -webkit-flex: 1 0 auto;
+  flex: 1 0 auto;
 }
-/* line 290, ../scss/baskerville.scss */
-.main-menu li {
+/* line 278, ../scss/baskerville.scss */
+#main-menu li {
   position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.075);
+  background: #2d2d2d;
 }
-/* line 292, ../scss/baskerville.scss */
-.main-menu li:hover > a {
+/* line 281, ../scss/baskerville.scss */
+#main-menu li:first-child {
+  border-top: none;
+}
+/* line 285, ../scss/baskerville.scss */
+#main-menu li:hover > a {
   cursor: pointer;
   color: #fff;
 }
-/* line 298, ../scss/baskerville.scss */
-.main-menu > li {
-  float: left;
+/* line 291, ../scss/baskerville.scss */
+#main-menu > li {
+  display: inline-block;
 }
-/* line 300, ../scss/baskerville.scss */
-.main-menu > li:before {
+/* line 293, ../scss/baskerville.scss */
+#main-menu > li:before {
   content: "/";
   display: block;
   position: absolute;
@@ -407,31 +397,31 @@ header .header-inner .searchform:not(.expanded) .s {
   font-weight: 300;
   z-index: 1000;
 }
-/* line 313, ../scss/baskerville.scss */
-.main-menu > li:last-child:before {
+/* line 306, ../scss/baskerville.scss */
+#main-menu > li:last-child:before {
   content: none;
 }
-/* line 316, ../scss/baskerville.scss */
-.main-menu > li > a {
+/* line 309, ../scss/baskerville.scss */
+#main-menu > li > a {
   display: block;
-  padding: 27px;
+  padding: 2em;
   font-size: 0.85em;
   color: #999;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;
 }
-/* line 325, ../scss/baskerville.scss */
-.main-menu > li:first-child > a {
+/* line 318, ../scss/baskerville.scss */
+#main-menu > li:first-child > a {
   margin-left: 0;
 }
-/* line 329, ../scss/baskerville.scss */
-.main-menu > .has-children > a, .main-menu > .page_item_has_children > a {
+/* line 322, ../scss/baskerville.scss */
+#main-menu > .has-children > a, #main-menu > .page_item_has_children > a {
   padding-right: 47px;
   position: relative;
 }
-/* line 333, ../scss/baskerville.scss */
-.main-menu > .has-children > a::after, .main-menu > .page_item_has_children > a::after {
+/* line 326, ../scss/baskerville.scss */
+#main-menu > .has-children > a::after, #main-menu > .page_item_has_children > a::after {
   content: "";
   display: block;
   border: 5px solid transparent;
@@ -442,21 +432,19 @@ header .header-inner .searchform:not(.expanded) .s {
   top: 50%;
   margin-top: -2px;
 }
-/* line 346, ../scss/baskerville.scss */
-.main-menu > .has-children:hover > a::after, .main-menu > .page_item_has_children:hover > a::after {
+/* line 339, ../scss/baskerville.scss */
+#main-menu > .has-children:hover > a::after, #main-menu > .page_item_has_children:hover > a::after {
   border-top-color: #fff;
 }
 
 /* Sub menus --------------------------------------- */
-/* line 356, ../scss/baskerville.scss */
-.main-menu li ul {
+/* line 350, ../scss/baskerville.scss */
+#main-menu li ul {
   position: absolute;
   z-index: 10000;
   display: block;
-  left: -9999px;
-  top: 38px;
-  -webkit-opacity: 0;
-  -moz-opacity: 0;
+  top: 1.25em;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   z-index: 999;
   -moz-transition: ease-in-out 0.3s, top 0.3s ease-in-out;
@@ -464,46 +452,8 @@ header .header-inner .searchform:not(.expanded) .s {
   -webkit-transition: ease-in-out 0.3s, top 0.3s ease-in-out;
   transition: ease-in-out 0.3s, top 0.3s ease-in-out;
 }
-
-/* line 369, ../scss/baskerville.scss */
-.is_mobile .main-menu li ul {
-  -webkit-opacity: 1;
-  -moz-opacity: 1;
-  opacity: 1;
-  display: none;
-}
-
-/* line 377, ../scss/baskerville.scss */
-.main-menu > li > ul {
-  padding-top: 20px;
-}
-/* line 379, ../scss/baskerville.scss */
-.main-menu > li > ul:before {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: 1000;
-  top: 0px;
-  left: 50%;
-  margin-left: -10px;
-  border: 10px solid transparent;
-  border-bottom-color: #2d2d2d;
-}
-/* line 392, ../scss/baskerville.scss */
-.main-menu ul li {
-  float: none;
-  display: block;
-  border-top: 1px solid rgba(255, 255, 255, 0.075);
-  display: block;
-  width: 240px;
-  background: #2d2d2d;
-}
-/* line 396, ../scss/baskerville.scss */
-.main-menu ul li:first-child {
-  border-top: none;
-}
-/* line 404, ../scss/baskerville.scss */
-.main-menu ul > .has-children::after, .main-menu ul > .page_item_has_children::after {
+/* line 360, ../scss/baskerville.scss */
+#main-menu li ul > .has-children::after, #main-menu li ul > .page_item_has_children::after {
   content: "";
   display: block;
   border: 6px solid transparent;
@@ -514,12 +464,12 @@ header .header-inner .searchform:not(.expanded) .s {
   top: 50%;
   margin-top: -5px;
 }
-/* line 415, ../scss/baskerville.scss */
-.main-menu ul > .has-children:hover::after, .main-menu ul > .page_item_has_children:hover::after {
+/* line 371, ../scss/baskerville.scss */
+#main-menu li ul > .has-children:hover::after, #main-menu li ul > .page_item_has_children:hover::after {
   border-left-color: #FFF;
 }
-/* line 419, ../scss/baskerville.scss */
-.main-menu ul a {
+/* line 376, ../scss/baskerville.scss */
+#main-menu li ul a {
   display: block;
   text-align: center;
   padding: 20px;
@@ -527,94 +477,148 @@ header .header-inner .searchform:not(.expanded) .s {
   line-height: 130%;
   color: #999;
 }
-/* line 426, ../scss/baskerville.scss */
-.main-menu ul a:hover {
+/* line 383, ../scss/baskerville.scss */
+#main-menu li ul a:hover {
   color: #fff;
 }
-/* line 431, ../scss/baskerville.scss */
-.main-menu li:hover > ul {
-  -webkit-opacity: 1;
-  -moz-opacity: 1;
+/* line 390, ../scss/baskerville.scss */
+#main-menu li:hover > ul {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
+  top: 2em;
+}
+/* line 397, ../scss/baskerville.scss */
+#main-menu > li > ul {
+  padding-top: 20px;
+}
+/* line 399, ../scss/baskerville.scss */
+#main-menu > li > ul:before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1000;
+  top: 0px;
   left: 50%;
-  margin-left: -120px;
-  top: 48px;
+  margin-left: -10px;
+  border: 10px solid transparent;
+  border-bottom-color: #2d2d2d;
 }
 
+/* line 415, ../scss/baskerville.scss */
+#mobile-main-menu li {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* line 418, ../scss/baskerville.scss */
+#mobile-main-menu > li:first-child {
+  border-top: none;
+}
+/* line 421, ../scss/baskerville.scss */
+#mobile-main-menu a {
+  display: block;
+  padding: 25px 5%;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  color: #999;
+  letter-spacing: 1px;
+}
+/* line 428, ../scss/baskerville.scss */
+#mobile-main-menu a:hover {
+  color: #fff;
+}
+/* line 433, ../scss/baskerville.scss */
+#mobile-main-menu ul a {
+  padding-left: 10%;
+}
+/* line 437, ../scss/baskerville.scss */
+#mobile-main-menu ul ul a {
+  padding-left: 15%;
+}
 /* line 441, ../scss/baskerville.scss */
-.is_mobile .main-menu li:hover ul {
+#mobile-main-menu ul ul ul a {
+  padding-left: 20%;
+}
+/* line 445, ../scss/baskerville.scss */
+#mobile-main-menu ul ul ul ul a {
+  padding-left: 25%;
+}
+/* line 448, ../scss/baskerville.scss */
+#mobile-main-menu ul ul ul ul ul a {
+  padding-left: 30%;
+}
+
+/* line 457, ../scss/baskerville.scss */
+.is_mobile #main-menu li ul {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  display: none;
+}
+
+/* line 462, ../scss/baskerville.scss */
+.is_mobile #main-menu li:hover ul {
   display: block;
 }
 
 /* Deep down --------------------------------------- */
-/* line 451, ../scss/baskerville.scss */
-.main-menu ul li ul {
+/* line 472, ../scss/baskerville.scss */
+#main-menu ul li ul {
   top: 5px;
 }
-/* line 454, ../scss/baskerville.scss */
-.main-menu ul li:hover > ul {
+/* line 475, ../scss/baskerville.scss */
+#main-menu ul li:hover > ul {
   top: 0;
   left: 240px;
   margin-left: 0;
 }
-/* line 461, ../scss/baskerville.scss */
-.main-menu ul ul li {
+/* line 482, ../scss/baskerville.scss */
+#main-menu ul ul li {
   background: #3d3d3d;
 }
-/* line 465, ../scss/baskerville.scss */
-.main-menu ul ul ul li, .main-menu ul ul ul ul li {
+/* line 486, ../scss/baskerville.scss */
+#main-menu ul ul ul li, #main-menu ul ul ul ul li {
   background: #4d4d4d;
 }
 
 /* -------------------------------------------------------------------------------- */
 /*	5. Content
 /* -------------------------------------------------------------------------------- */
-/* line 478, ../scss/baskerville.scss */
+/* line 499, ../scss/baskerville.scss */
 .posts {
   margin: auto;
   overflow: visible !important;
 }
-/* line 481, ../scss/baskerville.scss */
+/* line 502, ../scss/baskerville.scss */
 .posts.grid-posts {
   display: -webkit-flex;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-/* line 485, ../scss/baskerville.scss */
+/* line 506, ../scss/baskerville.scss */
 .posts.grid-posts .post-container {
   width: calc(100% / 3);
   box-sizing: border-box;
 }
 
-/* line 495, ../scss/baskerville.scss */
+/* line 516, ../scss/baskerville.scss */
 .hentry {
   width: 100%;
   position: relative;
   background: #fff;
-  border-radius: 3px;
-  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
-/* line 504, ../scss/baskerville.scss */
+/* line 523, ../scss/baskerville.scss */
 .post {
   width: 100%;
   position: relative;
   background: #fff;
-  border-radius: 3px;
-  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
-/* line 511, ../scss/baskerville.scss */
+/* line 528, ../scss/baskerville.scss */
 .post.sticky .post-header {
   padding-right: 17.5%;
 }
-/* line 514, ../scss/baskerville.scss */
+/* line 531, ../scss/baskerville.scss */
 .post .sticky-post {
   display: block;
   position: absolute;
@@ -627,7 +631,7 @@ header .header-inner .searchform:not(.expanded) .s {
   top: 0;
   text-indent: -9999px;
 }
-/* line 525, ../scss/baskerville.scss */
+/* line 542, ../scss/baskerville.scss */
 .post .sticky-post:after {
   content: "";
   display: block;
@@ -641,30 +645,30 @@ header .header-inner .searchform:not(.expanded) .s {
 }
 
 /*  Featured media  ----------------------------------------- */
-/* line 544, ../scss/baskerville.scss */
+/* line 561, ../scss/baskerville.scss */
 .featured-media a, .featured-media img {
   display: block;
 }
-/* line 547, ../scss/baskerville.scss */
+/* line 564, ../scss/baskerville.scss */
 .featured-media iframe {
   display: block;
   border: none;
   margin: 0;
 }
-/* line 552, ../scss/baskerville.scss */
+/* line 569, ../scss/baskerville.scss */
 .featured-media object {
   border: none;
   margin: 0;
 }
-/* line 556, ../scss/baskerville.scss */
+/* line 573, ../scss/baskerville.scss */
 .featured-media a {
   overflow: hidden;
 }
-/* line 558, ../scss/baskerville.scss */
+/* line 575, ../scss/baskerville.scss */
 .featured-media a img {
   margin: 0 auto;
 }
-/* line 561, ../scss/baskerville.scss */
+/* line 578, ../scss/baskerville.scss */
 .featured-media a:hover img {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
@@ -675,7 +679,7 @@ header .header-inner .searchform:not(.expanded) .s {
   opacity: 0.8;
 }
 
-/* line 573, ../scss/baskerville.scss */
+/* line 590, ../scss/baskerville.scss */
 .media-caption {
   font-size: 0.8em;
   line-height: 110%;
@@ -687,13 +691,13 @@ header .header-inner .searchform:not(.expanded) .s {
 }
 
 /*  Post inner  ----------------------------------------- */
-/* line 586, ../scss/baskerville.scss */
+/* line 603, ../scss/baskerville.scss */
 .post-header {
   position: relative;
   padding: 8% 10%;
   border-bottom: 1px solid #eee;
 }
-/* line 590, ../scss/baskerville.scss */
+/* line 607, ../scss/baskerville.scss */
 .post-header .post-title {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 1.25em;
@@ -703,49 +707,49 @@ header .header-inner .searchform:not(.expanded) .s {
   word-break: break-word;
   -ms-word-break: break-word;
 }
-/* line 598, ../scss/baskerville.scss */
+/* line 615, ../scss/baskerville.scss */
 .post-header .post-title a {
   color: #2B3542;
 }
-/* line 600, ../scss/baskerville.scss */
+/* line 617, ../scss/baskerville.scss */
 .post-header .post-title a:hover {
   color: #13C4A5;
 }
 
-/* line 607, ../scss/baskerville.scss */
+/* line 624, ../scss/baskerville.scss */
 .post-excerpt {
   padding: 10%;
 }
-/* line 609, ../scss/baskerville.scss */
+/* line 626, ../scss/baskerville.scss */
 .post-excerpt p {
   font-size: 0.95em;
   line-height: 150%;
   color: #666;
 }
-/* line 613, ../scss/baskerville.scss */
+/* line 630, ../scss/baskerville.scss */
 .post-excerpt p + p {
   margin-top: 1em;
 }
-/* line 617, ../scss/baskerville.scss */
+/* line 634, ../scss/baskerville.scss */
 .post-excerpt .more-link {
   display: block;
   margin-top: 1.1em;
 }
-/* line 620, ../scss/baskerville.scss */
+/* line 637, ../scss/baskerville.scss */
 .post-excerpt .more-link:hover {
   text-decoration: underline;
 }
 
-/* line 626, ../scss/baskerville.scss */
+/* line 643, ../scss/baskerville.scss */
 .post-metas {
   color: #13C4A5;
 }
-/* line 629, ../scss/baskerville.scss */
+/* line 646, ../scss/baskerville.scss */
 .post-metas .term-metas .post-tags {
   font-size: .8em;
 }
 
-/* line 635, ../scss/baskerville.scss */
+/* line 652, ../scss/baskerville.scss */
 .icon, .post-meta-icon, .post-meta.post-date:before, .post-meta.post-categories:before, .post-meta.post-tags:before, .post-meta.zilla-likes:before, .post-meta.post-comments:before {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
@@ -753,32 +757,32 @@ header .header-inner .searchform:not(.expanded) .s {
   text-rendering: auto;
 }
 
-/* line 641, ../scss/baskerville.scss */
+/* line 658, ../scss/baskerville.scss */
 .post-meta-icon, .post-meta.post-date:before, .post-meta.post-categories:before, .post-meta.post-tags:before, .post-meta.zilla-likes:before, .post-meta.post-comments:before {
   margin-right: .5em;
 }
 
-/* line 647, ../scss/baskerville.scss */
+/* line 664, ../scss/baskerville.scss */
 .post-meta.post-date:before {
   content: "\f017";
 }
-/* line 651, ../scss/baskerville.scss */
+/* line 668, ../scss/baskerville.scss */
 .post-meta.post-categories:before {
   content: "\f07b";
 }
-/* line 655, ../scss/baskerville.scss */
+/* line 672, ../scss/baskerville.scss */
 .post-meta.post-tags:before {
   content: "\f02b";
 }
-/* line 659, ../scss/baskerville.scss */
+/* line 676, ../scss/baskerville.scss */
 .post-meta.zilla-likes:before {
   content: "\f004";
 }
-/* line 663, ../scss/baskerville.scss */
+/* line 680, ../scss/baskerville.scss */
 .post-meta.post-comments:before {
   content: "\f075";
 }
-/* line 667, ../scss/baskerville.scss */
+/* line 684, ../scss/baskerville.scss */
 .post-meta.post-edit-link {
   height: 59px;
   width: 20px;
@@ -787,14 +791,14 @@ header .header-inner .searchform:not(.expanded) .s {
   background-size: 20px auto;
   background-position: center;
 }
-/* line 674, ../scss/baskerville.scss */
+/* line 691, ../scss/baskerville.scss */
 .post-meta.post-edit-link:hover {
   background-image: url(../images/icons/1x/edit-c.png);
 }
 
 /*  Post formats  ----------------------------------------- */
 /* format standard, format quote, format link */
-/* line 685, ../scss/baskerville.scss */
+/* line 702, ../scss/baskerville.scss */
 .post .post-header:before, .page .post-header:before {
   content: "";
   display: block;
@@ -807,7 +811,7 @@ header .header-inner .searchform:not(.expanded) .s {
   margin-bottom: -24px;
 }
 
-/* line 697, ../scss/baskerville.scss */
+/* line 714, ../scss/baskerville.scss */
 .post .post-header:after, .page .post-header:after {
   content: "";
   display: block;
@@ -822,34 +826,34 @@ header .header-inner .searchform:not(.expanded) .s {
 }
 
 /* format video, format image */
-/* line 716, ../scss/baskerville.scss */
+/* line 733, ../scss/baskerville.scss */
 .posts .format-video .post-header:before, .posts .format-video .post-header:after {
   content: none;
 }
-/* line 721, ../scss/baskerville.scss */
+/* line 738, ../scss/baskerville.scss */
 .posts .format-image .post-header:before, .posts .format-image .post-header:after {
   content: none;
 }
 
 /* format image */
-/* line 731, ../scss/baskerville.scss */
+/* line 748, ../scss/baskerville.scss */
 .format-image .post-excerpt {
   padding-top: 7.5%;
   font-size: 0.9em;
 }
-/* line 734, ../scss/baskerville.scss */
+/* line 751, ../scss/baskerville.scss */
 .format-image .post-excerpt .image-caption {
   font-weight: 600;
 }
 
 /* format quote, format link */
-/* line 743, ../scss/baskerville.scss */
+/* line 760, ../scss/baskerville.scss */
 .post-quote {
   padding: 10%;
   background: #2B3542;
   color: #fff;
 }
-/* line 747, ../scss/baskerville.scss */
+/* line 764, ../scss/baskerville.scss */
 .post-quote blockquote {
   display: block;
   font-family: 'Roboto', sans-serif;
@@ -858,7 +862,7 @@ header .header-inner .searchform:not(.expanded) .s {
   line-height: 140%;
 }
 
-/* line 756, ../scss/baskerville.scss */
+/* line 773, ../scss/baskerville.scss */
 .post-link p {
   display: block;
   font-family: 'Roboto', sans-serif;
@@ -867,11 +871,11 @@ header .header-inner .searchform:not(.expanded) .s {
   line-height: 140%;
 }
 
-/* line 765, ../scss/baskerville.scss */
+/* line 782, ../scss/baskerville.scss */
 .post-quote blockquote {
   font-size: 1.1em;
 }
-/* line 768, ../scss/baskerville.scss */
+/* line 785, ../scss/baskerville.scss */
 .post-quote cite {
   display: block;
   margin-top: 20px;
@@ -881,7 +885,7 @@ header .header-inner .searchform:not(.expanded) .s {
   font-weight: 700;
 }
 
-/* line 778, ../scss/baskerville.scss */
+/* line 795, ../scss/baskerville.scss */
 .post-link a {
   display: block;
   margin-top: 20px;
@@ -891,47 +895,47 @@ header .header-inner .searchform:not(.expanded) .s {
   font-weight: 700;
 }
 
-/* line 787, ../scss/baskerville.scss */
+/* line 804, ../scss/baskerville.scss */
 .post-quote cite {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 14px;
 }
-/* line 790, ../scss/baskerville.scss */
+/* line 807, ../scss/baskerville.scss */
 .post-quote cite:before {
   content: "— ";
 }
 
 /* format link */
-/* line 799, ../scss/baskerville.scss */
+/* line 816, ../scss/baskerville.scss */
 .post-link {
   padding: 10%;
   background: #2B3542;
   color: #fff;
 }
-/* line 803, ../scss/baskerville.scss */
+/* line 820, ../scss/baskerville.scss */
 .post-link a {
   color: #13C4A5;
   padding-left: 23px;
   background: url(../images/icons/1x/link-c.png) no-repeat left center;
   background-size: 16px auto;
 }
-/* line 808, ../scss/baskerville.scss */
+/* line 825, ../scss/baskerville.scss */
 .post-link a:hover {
   color: #13C4A5;
   text-decoration: underline;
 }
 
-/* line 816, ../scss/baskerville.scss */
+/* line 833, ../scss/baskerville.scss */
 .single .post-link p, .single .post-quote blockquote {
   font-size: 1.75em;
 }
 
 /* format gallery */
-/* line 825, ../scss/baskerville.scss */
+/* line 842, ../scss/baskerville.scss */
 .format-gallery .flexslider {
   position: relative;
 }
-/* line 829, ../scss/baskerville.scss */
+/* line 846, ../scss/baskerville.scss */
 .format-gallery .flex-direction-nav a {
   display: block;
   height: 32px;
@@ -946,41 +950,41 @@ header .header-inner .searchform:not(.expanded) .s {
   -moz-opacity: 0.5;
   opacity: 0.5;
 }
-/* line 843, ../scss/baskerville.scss */
+/* line 860, ../scss/baskerville.scss */
 .format-gallery .flex-direction-nav .flex-prev {
   left: 16px;
   background-image: url(../images/icons/1x/chevron-left-w-shade.png);
 }
-/* line 847, ../scss/baskerville.scss */
+/* line 864, ../scss/baskerville.scss */
 .format-gallery .flex-direction-nav .flex-next {
   right: 16px;
   background-image: url(../images/icons/1x/chevron-right-w-shade.png);
 }
-/* line 851, ../scss/baskerville.scss */
+/* line 868, ../scss/baskerville.scss */
 .format-gallery .flex-direction-nav a:hover {
   -webkit-opacity: 1;
   -moz-opacity: 1;
   opacity: 1;
 }
-/* line 856, ../scss/baskerville.scss */
+/* line 873, ../scss/baskerville.scss */
 .format-gallery .flex-direction-nav .flex-prev:hover {
   left: 12px;
 }
-/* line 859, ../scss/baskerville.scss */
+/* line 876, ../scss/baskerville.scss */
 .format-gallery .flex-direction-nav .flex-next:hover {
   right: 12px;
 }
-/* line 863, ../scss/baskerville.scss */
+/* line 880, ../scss/baskerville.scss */
 .format-gallery .slides li {
   position: relative;
 }
 
 /* format status */
-/* line 872, ../scss/baskerville.scss */
+/* line 889, ../scss/baskerville.scss */
 .posts .format-status .post-excerpt {
   background: #2B3542;
 }
-/* line 874, ../scss/baskerville.scss */
+/* line 891, ../scss/baskerville.scss */
 .posts .format-status .post-excerpt p {
   font-family: '04b_19regular', sans-serif;
   color: #fff;
@@ -988,7 +992,7 @@ header .header-inner .searchform:not(.expanded) .s {
   font-size: 1.2em;
 }
 
-/* line 882, ../scss/baskerville.scss */
+/* line 899, ../scss/baskerville.scss */
 .format-status .post-content {
   font-family: '04b_19regular', sans-serif;
   color: #fff;
@@ -999,17 +1003,17 @@ header .header-inner .searchform:not(.expanded) .s {
 }
 
 /* format chat */
-/* line 896, ../scss/baskerville.scss */
+/* line 913, ../scss/baskerville.scss */
 .format-chat .post-content p {
   margin-bottom: 0.25em;
   padding: 8px 16px;
   border-radius: 3px;
 }
-/* line 900, ../scss/baskerville.scss */
+/* line 917, ../scss/baskerville.scss */
 .format-chat .post-content p:nth-child(odd) {
   background: #f5f5f5;
 }
-/* line 904, ../scss/baskerville.scss */
+/* line 921, ../scss/baskerville.scss */
 .format-chat .more-link {
   margin-top: 1em;
 }
@@ -1017,62 +1021,62 @@ header .header-inner .searchform:not(.expanded) .s {
 /* -------------------------------------------------------------------------------- */
 /*	6. Single post
 /* -------------------------------------------------------------------------------- */
-/* line 916, ../scss/baskerville.scss */
+/* line 933, ../scss/baskerville.scss */
 body.single .content {
   width: 67.5%;
 }
-/* line 918, ../scss/baskerville.scss */
+/* line 935, ../scss/baskerville.scss */
 body.single .content.full-width {
   width: 100%;
 }
-/* line 921, ../scss/baskerville.scss */
+/* line 938, ../scss/baskerville.scss */
 body.single .content.center {
   margin: 0 auto;
   width: 944px;
   max-width: 100%;
 }
 
-/* line 928, ../scss/baskerville.scss */
+/* line 945, ../scss/baskerville.scss */
 .single {
   border-radius: 6px;
 }
 
 /* post header */
-/* line 935, ../scss/baskerville.scss */
+/* line 952, ../scss/baskerville.scss */
 .single .post-title {
   font-size: 2.25em;
 }
-/* line 938, ../scss/baskerville.scss */
+/* line 955, ../scss/baskerville.scss */
 .single .post-content {
   padding: 10%;
 }
 
 /* format gallery */
-/* line 946, ../scss/baskerville.scss */
+/* line 963, ../scss/baskerville.scss */
 .single .format-gallery .flex-direction-nav a {
   height: 42px;
   width: 30px;
   background-size: auto 42px;
   margin-top: -21px;
 }
-/* line 952, ../scss/baskerville.scss */
+/* line 969, ../scss/baskerville.scss */
 .single .format-gallery .flex-direction-nav .flex-prev {
   background-image: url(../images/icons/1x/chevron-left-w-shade-big.png);
 }
-/* line 955, ../scss/baskerville.scss */
+/* line 972, ../scss/baskerville.scss */
 .single .format-gallery .flex-direction-nav .flex-next {
   background-image: url(../images/icons/1x/chevron-right-w-shade-big.png);
 }
 
 /* format quote */
-/* line 962, ../scss/baskerville.scss */
+/* line 979, ../scss/baskerville.scss */
 .single .post-quote cite {
   font-size: 1em;
   margin-top: 30px;
 }
 
 /* single post meta */
-/* line 970, ../scss/baskerville.scss */
+/* line 987, ../scss/baskerville.scss */
 .single .header-post-metas {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
@@ -1089,27 +1093,27 @@ body.single .content.center {
   background-color: rgba(255, 255, 255, 0.75);
   padding: .5em 1em;
 }
-/* line 983, ../scss/baskerville.scss */
+/* line 1000, ../scss/baskerville.scss */
 .single .post-header:hover .post-metas {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
 
-/* line 989, ../scss/baskerville.scss */
+/* line 1006, ../scss/baskerville.scss */
 .single a.post-edit-link {
   background-image: url(../images/icons/1x/edit-g.png);
   background-position: left 5px;
 }
-/* line 992, ../scss/baskerville.scss */
+/* line 1009, ../scss/baskerville.scss */
 .single a.post-edit-link:hover {
   background-image: url(../images/icons/1x/edit-c.png);
 }
 
-/* line 997, ../scss/baskerville.scss */
+/* line 1014, ../scss/baskerville.scss */
 .author-links {
   margin-top: 18px;
 }
-/* line 999, ../scss/baskerville.scss */
+/* line 1016, ../scss/baskerville.scss */
 .author-links a {
   display: inline-block;
   width: 36px;
@@ -1122,27 +1126,27 @@ body.single .content.center {
   border-radius: 999px;
   text-indent: -9999px;
 }
-/* line 1010, ../scss/baskerville.scss */
+/* line 1027, ../scss/baskerville.scss */
 .author-links a:first-child {
   margin-left: 0;
 }
-/* line 1013, ../scss/baskerville.scss */
+/* line 1030, ../scss/baskerville.scss */
 .author-links a.author-link-posts {
   background-image: url(../images/icons/1x/archive-w.png);
 }
-/* line 1016, ../scss/baskerville.scss */
+/* line 1033, ../scss/baskerville.scss */
 .author-links a.author-link-website {
   background-image: url(../images/icons/1x/home-w.png);
 }
-/* line 1019, ../scss/baskerville.scss */
+/* line 1036, ../scss/baskerville.scss */
 .author-links a.author-link-mail {
   background-image: url(../images/icons/1x/social/mail-w.png);
 }
-/* line 1022, ../scss/baskerville.scss */
+/* line 1039, ../scss/baskerville.scss */
 .author-links a.author-link-twitter {
   background-image: url(../images/icons/1x/social/twitter-w.png);
 }
-/* line 1025, ../scss/baskerville.scss */
+/* line 1042, ../scss/baskerville.scss */
 .author-links a:hover {
   background-color: #13C4A5;
 }
@@ -1150,85 +1154,85 @@ body.single .content.center {
 /* -------------------------------------------------------------------------------- */
 /*	7. Post content
 /* -------------------------------------------------------------------------------- */
-/* line 1038, ../scss/baskerville.scss */
+/* line 1055, ../scss/baskerville.scss */
 .post-content a:hover {
   text-decoration: underline;
 }
-/* line 1041, ../scss/baskerville.scss */
+/* line 1058, ../scss/baskerville.scss */
 .post-content p, .post-content blockquote, .post-content ul, .post-content ol, .post-content address, .post-content dl, .post-content .wp-caption, .post-content pre {
   line-height: 180%;
   margin-bottom: 1.1em;
   -ms-word-wrap: break-word;
   word-wrap: break-word;
 }
-/* line 1047, ../scss/baskerville.scss */
+/* line 1064, ../scss/baskerville.scss */
 .post-content > *:first-child {
   margin-top: 0;
 }
-/* line 1050, ../scss/baskerville.scss */
+/* line 1067, ../scss/baskerville.scss */
 .post-content *:last-child {
   margin-bottom: 0;
 }
-/* line 1053, ../scss/baskerville.scss */
+/* line 1070, ../scss/baskerville.scss */
 .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
   margin: 50px 0 30px;
   font-family: 'Roboto Slab', sans-serif;
   font-weight: 700;
   color: #333;
 }
-/* line 1059, ../scss/baskerville.scss */
+/* line 1076, ../scss/baskerville.scss */
 .post-content h1 {
   font-size: 2em;
 }
-/* line 1062, ../scss/baskerville.scss */
+/* line 1079, ../scss/baskerville.scss */
 .post-content h2 {
   font-size: 1.75em;
 }
-/* line 1065, ../scss/baskerville.scss */
+/* line 1082, ../scss/baskerville.scss */
 .post-content h3 {
   font-size: 1.5em;
 }
-/* line 1068, ../scss/baskerville.scss */
+/* line 1085, ../scss/baskerville.scss */
 .post-content h4 {
   font-size: 1.25em;
   font-weight: 400;
 }
-/* line 1072, ../scss/baskerville.scss */
+/* line 1089, ../scss/baskerville.scss */
 .post-content h5 {
   font-size: 1em;
   font-weight: 400;
 }
-/* line 1076, ../scss/baskerville.scss */
+/* line 1093, ../scss/baskerville.scss */
 .post-content h6 {
   font-size: 0.9em;
   font-weight: 700;
   text-transform: uppercase;
 }
-/* line 1082, ../scss/baskerville.scss */
+/* line 1099, ../scss/baskerville.scss */
 .post-content h1 + h1, .post-content h1 + h2, .post-content h1 + h3, .post-content h1 + h4, .post-content h1 + h5, .post-content h1 + h6 {
   margin-top: 30px;
 }
-/* line 1087, ../scss/baskerville.scss */
+/* line 1104, ../scss/baskerville.scss */
 .post-content h2 + h1, .post-content h2 + h2, .post-content h2 + h3, .post-content h2 + h4, .post-content h2 + h5, .post-content h2 + h6 {
   margin-top: 30px;
 }
-/* line 1092, ../scss/baskerville.scss */
+/* line 1109, ../scss/baskerville.scss */
 .post-content h3 + h1, .post-content h3 + h2, .post-content h3 + h3, .post-content h3 + h4, .post-content h3 + h5, .post-content h3 + h6 {
   margin-top: 30px;
 }
-/* line 1097, ../scss/baskerville.scss */
+/* line 1114, ../scss/baskerville.scss */
 .post-content h4 + h1, .post-content h4 + h2, .post-content h4 + h3, .post-content h4 + h4, .post-content h4 + h5, .post-content h4 + h6 {
   margin-top: 30px;
 }
-/* line 1102, ../scss/baskerville.scss */
+/* line 1119, ../scss/baskerville.scss */
 .post-content h5 + h1, .post-content h5 + h2, .post-content h5 + h3, .post-content h5 + h4, .post-content h5 + h5, .post-content h5 + h6 {
   margin-top: 30px;
 }
-/* line 1107, ../scss/baskerville.scss */
+/* line 1124, ../scss/baskerville.scss */
 .post-content h6 + h1, .post-content h6 + h2, .post-content h6 + h3, .post-content h6 + h4, .post-content h6 + h5, .post-content h6 + h6 {
   margin-top: 30px;
 }
-/* line 1111, ../scss/baskerville.scss */
+/* line 1128, ../scss/baskerville.scss */
 .post-content blockquote {
   position: relative;
   font-size: 1em;
@@ -1236,7 +1240,7 @@ body.single .content.center {
   font-weight: normal;
   margin: 40px 0;
 }
-/* line 1117, ../scss/baskerville.scss */
+/* line 1134, ../scss/baskerville.scss */
 .post-content blockquote:before, .post-content blockquote:after {
   content: "";
   display: block;
@@ -1245,14 +1249,14 @@ body.single .content.center {
   background: #eee;
   margin: 40px auto;
 }
-/* line 1125, ../scss/baskerville.scss */
+/* line 1142, ../scss/baskerville.scss */
 .post-content blockquote p {
   font-size: 1.2em;
   line-height: 160%;
   font-weight: 300;
   text-align: center;
 }
-/* line 1132, ../scss/baskerville.scss */
+/* line 1149, ../scss/baskerville.scss */
 .post-content cite {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 0.9rem;
@@ -1261,69 +1265,69 @@ body.single .content.center {
   line-height: 140%;
   text-align: center;
 }
-/* line 1139, ../scss/baskerville.scss */
+/* line 1156, ../scss/baskerville.scss */
 .post-content cite:before {
   content: "— ";
 }
-/* line 1143, ../scss/baskerville.scss */
+/* line 1160, ../scss/baskerville.scss */
 .post-content blockquote cite {
   display: block;
   margin-top: 1em;
 }
-/* line 1146, ../scss/baskerville.scss */
+/* line 1163, ../scss/baskerville.scss */
 .post-content blockquote cite em {
   font-style: italic;
   font-weight: bold;
 }
 
-/* line 1153, ../scss/baskerville.scss */
+/* line 1170, ../scss/baskerville.scss */
 em, q {
   font-style: italic;
 }
 
-/* line 1158, ../scss/baskerville.scss */
+/* line 1175, ../scss/baskerville.scss */
 .post-content strong em, .post-content em strong {
   font-weight: bold;
   font-style: italic;
 }
-/* line 1162, ../scss/baskerville.scss */
+/* line 1179, ../scss/baskerville.scss */
 .post-content big {
   font-size: 1.25em;
 }
 
-/* line 1167, ../scss/baskerville.scss */
+/* line 1184, ../scss/baskerville.scss */
 abbr, acronym {
   cursor: help;
 }
 
-/* line 1171, ../scss/baskerville.scss */
+/* line 1188, ../scss/baskerville.scss */
 code, kbd, pre {
   font-size: 0.85em;
   background: #EEE;
   font-family: Menlo, Monaco, monospace;
 }
 
-/* line 1178, ../scss/baskerville.scss */
+/* line 1195, ../scss/baskerville.scss */
 .post-content .highlight {
   background: #fcf8a5;
   width: auto;
   display: inline;
   padding: 2px 3px;
 }
-/* line 1184, ../scss/baskerville.scss */
+/* line 1201, ../scss/baskerville.scss */
 .post-content kbd, .post-content code {
   padding: 5px;
   border-radius: 3px;
 }
-/* line 1188, ../scss/baskerville.scss */
+/* line 1205, ../scss/baskerville.scss */
 .post-content dl {
   line-height: 160%;
 }
-/* line 1190, ../scss/baskerville.scss */
+/* line 1207, ../scss/baskerville.scss */
 .post-content dl dt {
   font-weight: bold;
 }
-/* line 1194, ../scss/baskerville.scss */
+/* line 1211, ../scss/baskerville.scss */
 .post-content hr {
   width: 50%;
   height: 5px;
@@ -1331,55 +1335,55 @@ code, kbd, pre {
   margin: 2em auto;
   border: 0;
 }
-/* line 1201, ../scss/baskerville.scss */
+/* line 1218, ../scss/baskerville.scss */
 .post-content ul {
   list-style: disc;
   margin-left: 1.5em;
 }
-/* line 1204, ../scss/baskerville.scss */
+/* line 1221, ../scss/baskerville.scss */
 .post-content ul ul {
   list-style: circle;
 }
-/* line 1206, ../scss/baskerville.scss */
+/* line 1223, ../scss/baskerville.scss */
 .post-content ul ul ul {
   list-style: square;
 }
-/* line 1211, ../scss/baskerville.scss */
+/* line 1228, ../scss/baskerville.scss */
 .post-content ol {
   list-style: decimal;
   margin-left: 1.5em;
 }
-/* line 1214, ../scss/baskerville.scss */
+/* line 1231, ../scss/baskerville.scss */
 .post-content ol ol {
   list-style: lower-alpha;
 }
-/* line 1216, ../scss/baskerville.scss */
+/* line 1233, ../scss/baskerville.scss */
 .post-content ol ol ol {
   list-style: lower-roman;
 }
-/* line 1222, ../scss/baskerville.scss */
+/* line 1239, ../scss/baskerville.scss */
 .post-content ul ul, .post-content ul ol {
   margin-bottom: 0;
 }
-/* line 1227, ../scss/baskerville.scss */
+/* line 1244, ../scss/baskerville.scss */
 .post-content ol ul, .post-content ol ol {
   margin-bottom: 0;
 }
-/* line 1231, ../scss/baskerville.scss */
+/* line 1248, ../scss/baskerville.scss */
 .post-content li {
   margin-top: 0.5em;
   line-height: 170%;
 }
-/* line 1235, ../scss/baskerville.scss */
+/* line 1252, ../scss/baskerville.scss */
 .post-content ol > li:last-child, .post-content ul > li:last-child {
   margin-bottom: 0;
 }
-/* line 1238, ../scss/baskerville.scss */
+/* line 1255, ../scss/baskerville.scss */
 .post-content address {
   padding: 3% 3.5%;
   background: #f1f1f1;
 }
-/* line 1242, ../scss/baskerville.scss */
+/* line 1259, ../scss/baskerville.scss */
 .post-content pre {
   white-space: pre-wrap;
   /* css-3 */
@@ -1400,52 +1404,52 @@ code, kbd, pre {
 }
 
 /* Post media --------------------------------------- */
-/* line 1261, ../scss/baskerville.scss */
+/* line 1278, ../scss/baskerville.scss */
 .wp-caption, .post-content img {
   max-width: 100%;
 }
 
-/* line 1265, ../scss/baskerville.scss */
+/* line 1282, ../scss/baskerville.scss */
 img.alignleft, .alignleft img, img.aligncenter, .aligncenter img, img.alignright, .alignright img {
   box-sizing: border-box;
   padding: 5px;
   border: 1px solid #EEE;
 }
 
-/* line 1272, ../scss/baskerville.scss */
+/* line 1289, ../scss/baskerville.scss */
 .post-content .alignleft, .post-content .alignright {
   margin-bottom: 1.2em;
   max-width: 300px;
 }
-/* line 1277, ../scss/baskerville.scss */
+/* line 1294, ../scss/baskerville.scss */
 .post-content .wp-caption a, .post-content .wp-caption img {
   display: block;
 }
-/* line 1280, ../scss/baskerville.scss */
+/* line 1297, ../scss/baskerville.scss */
 .post-content .wp-caption .alignleft, .post-content .wp-caption .alignright {
   margin-bottom: 0;
 }
-/* line 1284, ../scss/baskerville.scss */
+/* line 1301, ../scss/baskerville.scss */
 .post-content .alignleft {
   float: left;
   margin-right: 1em;
 }
-/* line 1288, ../scss/baskerville.scss */
+/* line 1305, ../scss/baskerville.scss */
 .post-content .alignright {
   float: right;
   margin-left: 1em;
 }
-/* line 1292, ../scss/baskerville.scss */
+/* line 1309, ../scss/baskerville.scss */
 .post-content .aligncenter {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 1296, ../scss/baskerville.scss */
+/* line 1313, ../scss/baskerville.scss */
 .post-content .aligncenter a, .post-content .aligncenter img {
   margin: 0 auto;
 }
-/* line 1300, ../scss/baskerville.scss */
+/* line 1317, ../scss/baskerville.scss */
 .post-content .wp-caption-text {
   font-size: 0.8em;
   font-weight: 700;
@@ -1453,7 +1457,7 @@ img.alignleft, .alignleft img, img.aligncenter, .aligncenter img, img.alignright
   text-align: center;
   padding-top: 0.5em;
 }
-/* line 1307, ../scss/baskerville.scss */
+/* line 1324, ../scss/baskerville.scss */
 .post-content .gallery-caption {
   font-size: 0.8em;
   font-weight: 700;
@@ -1465,7 +1469,7 @@ img.alignleft, .alignleft img, img.aligncenter, .aligncenter img, img.alignright
 }
 
 /* Tables --------------------------------------- */
-/* line 1323, ../scss/baskerville.scss */
+/* line 1340, ../scss/baskerville.scss */
 .post-content table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -1473,7 +1477,7 @@ img.alignleft, .alignleft img, img.aligncenter, .aligncenter img, img.alignright
   font-size: 0.9em;
   width: 100%;
 }
-/* line 1330, ../scss/baskerville.scss */
+/* line 1347, ../scss/baskerville.scss */
 .post-content th, .post-content td {
   padding: 2%;
   margin: 0;
@@ -1481,33 +1485,33 @@ img.alignleft, .alignleft img, img.aligncenter, .aligncenter img, img.alignright
   line-height: 120%;
   border-bottom: 1px solid #DDD;
 }
-/* line 1337, ../scss/baskerville.scss */
+/* line 1354, ../scss/baskerville.scss */
 .post-content caption {
   text-align: center;
   padding: 2%;
 }
-/* line 1341, ../scss/baskerville.scss */
+/* line 1358, ../scss/baskerville.scss */
 .post-content thead {
   vertical-align: bottom;
   white-space: nowrap;
 }
-/* line 1345, ../scss/baskerville.scss */
+/* line 1362, ../scss/baskerville.scss */
 .post-content th {
   font-weight: bold;
 }
-/* line 1348, ../scss/baskerville.scss */
+/* line 1365, ../scss/baskerville.scss */
 .post-content table tbody > tr:nth-child(odd) > td {
   background: #f9f9f9;
 }
 
 /* Forms --------------------------------------- */
-/* line 1358, ../scss/baskerville.scss */
+/* line 1375, ../scss/baskerville.scss */
 .post-content fieldset {
   padding: 25px;
   border: 2px solid #eee;
   margin-bottom: 1em;
 }
-/* line 1362, ../scss/baskerville.scss */
+/* line 1379, ../scss/baskerville.scss */
 .post-content fieldset legend {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 0.9rem;
@@ -1519,18 +1523,18 @@ img.alignleft, .alignleft img, img.aligncenter, .aligncenter img, img.alignright
   background: #13C4A5;
   color: #fff;
 }
-/* line 1374, ../scss/baskerville.scss */
+/* line 1391, ../scss/baskerville.scss */
 .post-content label {
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   font-weight: 700;
 }
-/* line 1379, ../scss/baskerville.scss */
+/* line 1396, ../scss/baskerville.scss */
 .post-content input, .post-content textarea {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
-/* line 1384, ../scss/baskerville.scss */
+/* line 1401, ../scss/baskerville.scss */
 .post-content input[type="text"], .post-content input[type="email"], .post-content input[type="tel"], .post-content input[type="url"], .post-content input[type="password"] {
   width: 100%;
   padding: 14px 16px;
@@ -1546,7 +1550,7 @@ img.alignleft, .alignleft img, img.aligncenter, .aligncenter img, img.alignright
   transition: background 0.2s ease-in-out;
   -webkit-appearance: none;
 }
-/* line 1397, ../scss/baskerville.scss */
+/* line 1414, ../scss/baskerville.scss */
 .post-content textarea {
   width: 100%;
   padding: 14px 16px;
@@ -1564,18 +1568,18 @@ img.alignleft, .alignleft img, img.aligncenter, .aligncenter img, img.alignright
   height: 180px;
   line-height: 140%;
 }
-/* line 1412, ../scss/baskerville.scss */
+/* line 1429, ../scss/baskerville.scss */
 .post-content input[type="text"]:focus, .post-content input[type="email"]:focus, .post-content input[type="tel"]:focus, .post-content input[type="url"]:focus, .post-content input[type="password"]:focus {
   background: #fdfdfd;
   outline: none;
 }
-/* line 1417, ../scss/baskerville.scss */
+/* line 1434, ../scss/baskerville.scss */
 .post-content textarea:focus {
   background: #fdfdfd;
   outline: none;
 }
-/* line 1422, ../scss/baskerville.scss */
-.post-content input[type="submit"], .post-content input[type="reset"], .post-content input[type="button"] {
+/* line 1439, ../scss/baskerville.scss */
+.post-content input[type="submit"], .post-content input[type="reset"], .post-content input[type="button"], .post-content button[type="submit"], .post-content button[type="reset"], .post-content button[type="button"] {
   padding: 12px 16px;
   margin: 0;
   border: none;
@@ -1586,14 +1590,14 @@ img.alignleft, .alignleft img, img.aligncenter, .aligncenter img, img.alignright
   -webkit-appearance: none;
   border-radius: 3px;
 }
-/* line 1433, ../scss/baskerville.scss */
-.post-content input[type="submit"]:hover, .post-content input[type="reset"]:hover, .post-content input[type="button"]:hover {
+/* line 1450, ../scss/baskerville.scss */
+.post-content input[type="submit"]:hover, .post-content input[type="reset"]:hover, .post-content input[type="button"]:hover, .post-content button[type="submit"]:hover, .post-content button[type="reset"]:hover, .post-content button[type="button"]:hover {
   cursor: pointer;
   background: #13C4A5;
   color: #fff;
 }
-/* line 1439, ../scss/baskerville.scss */
-.post-content input[type="submit"]:focus, .post-content input[type="submit"]:active {
+/* line 1456, ../scss/baskerville.scss */
+.post-content input[type="submit"]:focus, .post-content input[type="submit"]:active, .post-content button[type="submit"]:focus, .post-content button[type="submit"]:active {
   outline: none;
 }
 
@@ -2154,7 +2158,7 @@ p.form-submit {
 /* -------------------------------------------------------------------------------- */
 /*	10. Page & Page Templates
 /* -------------------------------------------------------------------------------- */
-/* line 1458, ../scss/baskerville.scss */
+/* line 1475, ../scss/baskerville.scss */
 .posts .page {
   width: 100%;
   position: relative;
@@ -2167,22 +2171,22 @@ p.form-submit {
 }
 
 /* Contributors template ---------------------------------------------------------- */
-/* line 1473, ../scss/baskerville.scss */
+/* line 1490, ../scss/baskerville.scss */
 .post-content + .contributors-container {
   border-top: 1px solid #eee;
 }
 
-/* line 1477, ../scss/baskerville.scss */
+/* line 1494, ../scss/baskerville.scss */
 .authors-row {
   position: relative;
   padding: 10%;
   border-top: 1px solid #eee;
 }
-/* line 1481, ../scss/baskerville.scss */
+/* line 1498, ../scss/baskerville.scss */
 .authors-row:first-child {
   border-top: none;
 }
-/* line 1484, ../scss/baskerville.scss */
+/* line 1501, ../scss/baskerville.scss */
 .authors-row:before {
   content: "";
   display: block;
@@ -2193,18 +2197,18 @@ p.form-submit {
   left: 50%;
   background: #eee;
 }
-/* line 1494, ../scss/baskerville.scss */
+/* line 1511, ../scss/baskerville.scss */
 .authors-row .author-info {
   width: 45%;
   margin-left: 10%;
   text-align: center;
 }
-/* line 1498, ../scss/baskerville.scss */
+/* line 1515, ../scss/baskerville.scss */
 .authors-row .author-info:first-child {
   margin-left: 0;
 }
 
-/* line 1504, ../scss/baskerville.scss */
+/* line 1521, ../scss/baskerville.scss */
 .author-avatar {
   display: inline-block;
   width: 134px;
@@ -2213,14 +2217,14 @@ p.form-submit {
   border: 6px solid #eee;
   border-radius: 9999px;
 }
-/* line 1511, ../scss/baskerville.scss */
+/* line 1528, ../scss/baskerville.scss */
 .author-avatar img {
   display: block;
   margin: 0 auto;
   border-radius: 9999px;
 }
 
-/* line 1519, ../scss/baskerville.scss */
+/* line 1536, ../scss/baskerville.scss */
 .author-info h4 {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 1.5em;
@@ -2228,51 +2232,51 @@ p.form-submit {
   text-align: center;
   margin-bottom: 10px;
 }
-/* line 1525, ../scss/baskerville.scss */
+/* line 1542, ../scss/baskerville.scss */
 .author-info h4 a {
   color: #2B3542;
 }
-/* line 1527, ../scss/baskerville.scss */
+/* line 1544, ../scss/baskerville.scss */
 .author-info h4 a:hover {
   color: #13C4A5;
 }
-/* line 1532, ../scss/baskerville.scss */
+/* line 1549, ../scss/baskerville.scss */
 .author-info h5 {
   font-family: 'Roboto Slab', sans-serif;
   text-align: center;
   margin-bottom: 25px;
 }
-/* line 1536, ../scss/baskerville.scss */
+/* line 1553, ../scss/baskerville.scss */
 .author-info h5 a {
   color: #999;
 }
-/* line 1538, ../scss/baskerville.scss */
+/* line 1555, ../scss/baskerville.scss */
 .author-info h5 a:hover {
   color: #444;
 }
 
-/* line 1545, ../scss/baskerville.scss */
+/* line 1562, ../scss/baskerville.scss */
 .author-description {
   line-height: 140%;
   text-align: center;
 }
-/* line 1548, ../scss/baskerville.scss */
+/* line 1565, ../scss/baskerville.scss */
 .author-description p {
   line-height: inherit;
   text-align: inherit;
 }
 
-/* line 1554, ../scss/baskerville.scss */
+/* line 1571, ../scss/baskerville.scss */
 .author-info .author-links a {
   background-color: #2B3542;
 }
-/* line 1556, ../scss/baskerville.scss */
+/* line 1573, ../scss/baskerville.scss */
 .author-info .author-links a:hover {
   background-color: #13C4A5;
 }
 
 /* Image ---------------------------------------------------------- */
-/* line 1565, ../scss/baskerville.scss */
+/* line 1582, ../scss/baskerville.scss */
 .single .post-meta p.image-resolution {
   background-image: url(../images/icons/1x/image-g.png);
 }
@@ -2280,12 +2284,12 @@ p.form-submit {
 /* -------------------------------------------------------------------------------- */
 /*	10. Pagination
 /* -------------------------------------------------------------------------------- */
-/* line 1575, ../scss/baskerville.scss */
+/* line 1592, ../scss/baskerville.scss */
 .page-title {
   margin-bottom: 60px;
   text-align: center;
 }
-/* line 1578, ../scss/baskerville.scss */
+/* line 1595, ../scss/baskerville.scss */
 .page-title h5 {
   display: inline-block;
   padding-bottom: 4px;
@@ -2296,7 +2300,7 @@ p.form-submit {
   text-transform: uppercase;
   text-align: center;
 }
-/* line 1588, ../scss/baskerville.scss */
+/* line 1605, ../scss/baskerville.scss */
 .page-title h3 {
   margin-top: 15px;
   font-family: 'Roboto Slab', sans-serif;
@@ -2305,12 +2309,12 @@ p.form-submit {
   text-align: center;
   color: #2B3542;
 }
-/* line 1596, ../scss/baskerville.scss */
+/* line 1613, ../scss/baskerville.scss */
 .page-title .title-pagination {
   margin-top: 15px;
 }
 
-/* line 1601, ../scss/baskerville.scss */
+/* line 1618, ../scss/baskerville.scss */
 .tag-archive-meta p {
   text-align: center;
   margin-top: 15px;
@@ -2319,7 +2323,7 @@ p.form-submit {
 }
 
 /* archive navigation */
-/* line 1611, ../scss/baskerville.scss */
+/* line 1628, ../scss/baskerville.scss */
 .archive-nav a {
   font-size: 0.9em;
   padding: 16px 20px;
@@ -2327,14 +2331,14 @@ p.form-submit {
   border-radius: 3px;
   color: #fff;
 }
-/* line 1617, ../scss/baskerville.scss */
+/* line 1634, ../scss/baskerville.scss */
 .archive-nav a:hover {
   background: #13C4A5;
   color: #fff;
 }
 
 /* search */
-/* line 1625, ../scss/baskerville.scss */
+/* line 1642, ../scss/baskerville.scss */
 .search-no-results .post-content p {
   text-align: center;
 }
@@ -2342,7 +2346,7 @@ p.form-submit {
 /* -------------------------------------------------------------------------------- */
 /*	11. Sidebar
 /* -------------------------------------------------------------------------------- */
-/* line 1633, ../scss/baskerville.scss */
+/* line 1650, ../scss/baskerville.scss */
 .sidebar {
   width: 27.5%;
   background: #fff;
@@ -2352,17 +2356,17 @@ p.form-submit {
   border-radius: 6px;
   overflow: hidden;
 }
-/* line 1641, ../scss/baskerville.scss */
+/* line 1658, ../scss/baskerville.scss */
 .sidebar .widget {
   padding: 30px;
   border-top: 1px solid #EEE;
 }
-/* line 1644, ../scss/baskerville.scss */
+/* line 1661, ../scss/baskerville.scss */
 .sidebar .widget:first-child {
   border-top: none;
 }
 
-/* line 1650, ../scss/baskerville.scss */
+/* line 1667, ../scss/baskerville.scss */
 .widget-title {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 0.9em;
@@ -2371,30 +2375,30 @@ p.form-submit {
   margin-bottom: 20px;
 }
 
-/* line 1658, ../scss/baskerville.scss */
+/* line 1675, ../scss/baskerville.scss */
 .sidebar .widget-content {
   font-size: 0.85em;
   color: #767676;
 }
 
-/* line 1663, ../scss/baskerville.scss */
+/* line 1680, ../scss/baskerville.scss */
 .widget-content a:hover {
   text-decoration: underline;
 }
 
-/* line 1667, ../scss/baskerville.scss */
+/* line 1684, ../scss/baskerville.scss */
 .sidebar .widget-content p {
   line-height: 150%;
 }
 
-/* line 1672, ../scss/baskerville.scss */
+/* line 1689, ../scss/baskerville.scss */
 .widget-content ul li {
   position: relative;
   margin-top: 10px;
   padding: 1px 0 1px 14px;
   line-height: 130%;
 }
-/* line 1677, ../scss/baskerville.scss */
+/* line 1694, ../scss/baskerville.scss */
 .widget-content ul li:before {
   content: "»";
   position: absolute;
@@ -2403,34 +2407,34 @@ p.form-submit {
   color: #13C4A5;
   font-size: 18px;
 }
-/* line 1686, ../scss/baskerville.scss */
+/* line 1703, ../scss/baskerville.scss */
 .widget-content > ul > li:first-child {
   margin: 0;
 }
-/* line 1689, ../scss/baskerville.scss */
+/* line 1706, ../scss/baskerville.scss */
 .widget-content li ul > li:first-child {
   margin-top: 10px;
 }
-/* line 1692, ../scss/baskerville.scss */
+/* line 1709, ../scss/baskerville.scss */
 .widget-content .page_item_has_children {
   padding-bottom: 0;
 }
-/* line 1695, ../scss/baskerville.scss */
+/* line 1712, ../scss/baskerville.scss */
 .widget-content li ul li {
   padding-left: 15px;
 }
-/* line 1698, ../scss/baskerville.scss */
+/* line 1715, ../scss/baskerville.scss */
 .widget-content ul li .post-date {
   margin-left: 5px;
   color: #999;
 }
-/* line 1702, ../scss/baskerville.scss */
+/* line 1719, ../scss/baskerville.scss */
 .widget-content > ul > li:first-child {
   border-top: 0;
 }
 
 /* Widget tag cloud --------------------------------------- */
-/* line 1711, ../scss/baskerville.scss */
+/* line 1728, ../scss/baskerville.scss */
 .tagcloud a {
   display: block;
   float: left;
@@ -2442,20 +2446,20 @@ p.form-submit {
   color: #FFF;
   border-radius: 3px;
 }
-/* line 1721, ../scss/baskerville.scss */
+/* line 1738, ../scss/baskerville.scss */
 .tagcloud a:hover {
   background-color: #13C4A5;
   color: #fff;
   text-decoration: none;
 }
 
-/* Widget search --------------------------------------- */
-/* line 1731, ../scss/baskerville.scss */
-.wrapper .searchform, header .searchform, .footer .searchform {
+/* Search --------------------------------------- */
+/* line 1748, ../scss/baskerville.scss */
+.searchform {
   position: relative;
 }
-/* line 1733, ../scss/baskerville.scss */
-.wrapper .searchform .s, header .searchform .s, .footer .searchform .s {
+/* line 1750, ../scss/baskerville.scss */
+.searchform .s {
   display: block;
   width: 100%;
   padding: 16px 55px 16px 20px;
@@ -2467,14 +2471,18 @@ p.form-submit {
   font-family: 'Roboto', sans-serif;
   font-size: 0.9em;
   -webkit-font-smoothing: antialiased;
+  -moz-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
 }
-/* line 1745, ../scss/baskerville.scss */
-.wrapper .searchform .s:focus, header .searchform .s:focus, .footer .searchform .s:focus {
-  background-color: #2B3542;
+/* line 1766, ../scss/baskerville.scss */
+.searchform:hover .s, .searchform:focus .s {
+  background-color: #EEE;
   outline: none;
 }
-/* line 1750, ../scss/baskerville.scss */
-.wrapper .searchform .searchsubmit, header .searchform .searchsubmit, .footer .searchform .searchsubmit {
+/* line 1773, ../scss/baskerville.scss */
+.searchform .searchsubmit {
   display: block;
   height: 36px;
   width: 36px;
@@ -2488,17 +2496,26 @@ p.form-submit {
   color: #767676;
   font-size: 24px;
 }
-/* line 1763, ../scss/baskerville.scss */
-.wrapper .searchform .searchsubmit span, header .searchform .searchsubmit span, .footer .searchform .searchsubmit span {
+/* line 1786, ../scss/baskerville.scss */
+.searchform .searchsubmit span {
   display: none;
 }
-/* line 1766, ../scss/baskerville.scss */
-.wrapper .searchform .searchsubmit:hover, header .searchform .searchsubmit:hover, .footer .searchform .searchsubmit:hover {
+/* line 1789, ../scss/baskerville.scss */
+.searchform .searchsubmit:hover {
   color: #13C4A5;
 }
 
+/* line 1797, ../scss/baskerville.scss */
+header .searchform .s, footer .searchform .s {
+  background-color: #333;
+}
+/* line 1801, ../scss/baskerville.scss */
+header .searchform:hover .s, header .searchform:focus .s, footer .searchform:hover .s, footer .searchform:focus .s {
+  background-color: #444;
+}
+
 /* Widget calendar --------------------------------------- */
-/* line 1776, ../scss/baskerville.scss */
+/* line 1810, ../scss/baskerville.scss */
 #wp-calendar {
   color: #888;
   width: 100%;
@@ -2507,28 +2524,28 @@ p.form-submit {
   font-size: 0.9em;
   text-align: center;
 }
-/* line 1782, ../scss/baskerville.scss */
+/* line 1816, ../scss/baskerville.scss */
 #wp-calendar a {
   color: #1abc9c;
 }
-/* line 1786, ../scss/baskerville.scss */
+/* line 1820, ../scss/baskerville.scss */
 #wp-calendar caption, #wp-calendar tr, #wp-calendar td {
   text-align: center;
 }
-/* line 1789, ../scss/baskerville.scss */
+/* line 1823, ../scss/baskerville.scss */
 #wp-calendar th {
   text-align: center;
   padding: 4% 2%;
 }
-/* line 1793, ../scss/baskerville.scss */
+/* line 1827, ../scss/baskerville.scss */
 #wp-calendar td {
   padding: 4% 2%;
 }
-/* line 1796, ../scss/baskerville.scss */
+/* line 1830, ../scss/baskerville.scss */
 #wp-calendar caption, #wp-calendar thead {
   color: #666;
 }
-/* line 1799, ../scss/baskerville.scss */
+/* line 1833, ../scss/baskerville.scss */
 #wp-calendar caption {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 1rem;
@@ -2536,7 +2553,7 @@ p.form-submit {
   text-transform: capitalize;
   padding-bottom: 20px;
 }
-/* line 1806, ../scss/baskerville.scss */
+/* line 1840, ../scss/baskerville.scss */
 #wp-calendar thead th {
   font-size: 0.9em;
   font-weight: 700;
@@ -2544,23 +2561,23 @@ p.form-submit {
   border-bottom: 1px solid #eee;
   border-top: 1px solid #eee;
 }
-/* line 1813, ../scss/baskerville.scss */
+/* line 1847, ../scss/baskerville.scss */
 #wp-calendar tbody {
   border-bottom: 1px solid #eee;
 }
-/* line 1817, ../scss/baskerville.scss */
+/* line 1851, ../scss/baskerville.scss */
 #wp-calendar tfoot td {
   padding: 0;
 }
-/* line 1820, ../scss/baskerville.scss */
+/* line 1854, ../scss/baskerville.scss */
 #wp-calendar tfoot #prev {
   text-align: left;
 }
-/* line 1823, ../scss/baskerville.scss */
+/* line 1857, ../scss/baskerville.scss */
 #wp-calendar tfoot #next {
   text-align: right;
 }
-/* line 1826, ../scss/baskerville.scss */
+/* line 1860, ../scss/baskerville.scss */
 #wp-calendar tfoot a {
   display: block;
   color: #999;
@@ -2569,14 +2586,14 @@ p.form-submit {
   font-weight: 700;
   text-transform: uppercase;
 }
-/* line 1833, ../scss/baskerville.scss */
+/* line 1867, ../scss/baskerville.scss */
 #wp-calendar tfoot a:hover {
   text-decoration: none;
   color: #1abc9c;
 }
 
 /* Dribbble widget --------------------------------------- */
-/* line 1843, ../scss/baskerville.scss */
+/* line 1877, ../scss/baskerville.scss */
 .dribbble-shot {
   display: block;
   width: 47.5%;
@@ -2586,47 +2603,47 @@ p.form-submit {
   padding: 6px;
   background: #f1f1f1;
 }
-/* line 1845, ../scss/baskerville.scss */
+/* line 1879, ../scss/baskerville.scss */
 .dribbble-shot img {
   display: block;
 }
-/* line 1854, ../scss/baskerville.scss */
+/* line 1888, ../scss/baskerville.scss */
 .dribbble-shot:nth-child(2n) {
   margin-right: 0;
 }
-/* line 1857, ../scss/baskerville.scss */
+/* line 1891, ../scss/baskerville.scss */
 .dribbble-shot:hover {
   background-color: #13C4A5;
 }
 
-/* line 1862, ../scss/baskerville.scss */
+/* line 1896, ../scss/baskerville.scss */
 .widgetmore {
   display: block;
   clear: both;
 }
 
 /* Flickr widget --------------------------------------- */
-/* line 1869, ../scss/baskerville.scss */
+/* line 1903, ../scss/baskerville.scss */
 .flickr_badge_image {
   width: 21.25%;
   float: left;
   margin-left: 5%;
   margin-bottom: 5%;
 }
-/* line 1870, ../scss/baskerville.scss */
+/* line 1904, ../scss/baskerville.scss */
 .flickr_badge_image a, .flickr_badge_image img {
   display: block;
 }
-/* line 1877, ../scss/baskerville.scss */
+/* line 1911, ../scss/baskerville.scss */
 .flickr_badge_image a {
   padding: 4px;
   background: #f1f1f1;
 }
-/* line 1880, ../scss/baskerville.scss */
+/* line 1914, ../scss/baskerville.scss */
 .flickr_badge_image a:hover {
   background-color: #13C4A5;
 }
-/* line 1884, ../scss/baskerville.scss */
+/* line 1918, ../scss/baskerville.scss */
 .flickr_badge_image:nth-child(2), .flickr_badge_image:nth-child(6), .flickr_badge_image:nth-child(10), .flickr_badge_image:nth-child(14) {
   margin-left: 0;
 }
@@ -2634,69 +2651,63 @@ p.form-submit {
 /* -------------------------------------------------------------------------------- */
 /*	11. Footer
 /* -------------------------------------------------------------------------------- */
-/* line 1895, ../scss/baskerville.scss */
+/* line 1929, ../scss/baskerville.scss */
 .footer .widget {
   margin-top: 40px;
   border-top: 4px solid #333;
   padding-top: 40px;
 }
-/* line 1899, ../scss/baskerville.scss */
+/* line 1933, ../scss/baskerville.scss */
 .footer .widget:first-child {
   margin: 0;
   border: none;
   padding: 0;
 }
-/* line 1905, ../scss/baskerville.scss */
+/* line 1939, ../scss/baskerville.scss */
 .footer .widget-title {
   color: #FFF;
   letter-spacing: 1px;
   font-size: 0.79em;
 }
-/* line 1910, ../scss/baskerville.scss */
+/* line 1944, ../scss/baskerville.scss */
 .footer .widget-content {
   color: #767676;
   font-size: 0.95em;
 }
-/* line 1913, ../scss/baskerville.scss */
+/* line 1947, ../scss/baskerville.scss */
 .footer .widget-content p {
   line-height: 160%;
 }
 
-/* line 1919, ../scss/baskerville.scss */
+/* line 1953, ../scss/baskerville.scss */
 .widget-content p + p {
   margin-top: 1em;
 }
 
 /* Widgets --------------------------------------- */
-/* Widget search */
-/* line 1930, ../scss/baskerville.scss */
-.footer .widget_search .searchform .s {
-  background: #333;
-}
-
 /* widget tagcloud */
-/* line 1937, ../scss/baskerville.scss */
+/* line 1962, ../scss/baskerville.scss */
 .footer .tagcloud a {
   background-color: #333;
 }
-/* line 1939, ../scss/baskerville.scss */
+/* line 1964, ../scss/baskerville.scss */
 .footer .tagcloud a:hover {
   text-decoration: none;
   background-color: #13C4A5;
 }
 
 /* widget calendar */
-/* line 1948, ../scss/baskerville.scss */
+/* line 1973, ../scss/baskerville.scss */
 .footer #wp-calendar caption {
   color: #fff;
 }
-/* line 1951, ../scss/baskerville.scss */
+/* line 1976, ../scss/baskerville.scss */
 .footer #wp-calendar thead th {
   border: none;
   border-top: 1px solid #3B3B3B;
   border-bottom: 1px solid #3B3B3B;
 }
-/* line 1956, ../scss/baskerville.scss */
+/* line 1981, ../scss/baskerville.scss */
 .footer #wp-calendar tbody {
   border-bottom: 1px solid #3B3B3B;
 }
@@ -2704,7 +2715,7 @@ p.form-submit {
 /* -------------------------------------------------------------------------------- */
 /*	12. Credits
 /* -------------------------------------------------------------------------------- */
-/* line 1969, ../scss/baskerville.scss */
+/* line 1994, ../scss/baskerville.scss */
 .credits p {
   font-family: 'Roboto Slab', sans-serif;
   color: #767676;
@@ -2713,17 +2724,17 @@ p.form-submit {
   font-weight: 700;
   letter-spacing: 1px;
 }
-/* line 1977, ../scss/baskerville.scss */
+/* line 2002, ../scss/baskerville.scss */
 .credits a {
   color: #ccc;
 }
-/* line 1979, ../scss/baskerville.scss */
+/* line 2004, ../scss/baskerville.scss */
 .credits a:hover {
   color: #ccc;
   text-decoration: underline;
 }
 
-/* line 1986, ../scss/baskerville.scss */
+/* line 2011, ../scss/baskerville.scss */
 img#wpstats {
   display: none;
 }
@@ -2903,7 +2914,7 @@ img#wpstats {
 
   /* navigation */
   /* line 149, ../scss/_responsive.scss */
-  .main-menu {
+  #main-menu {
     display: none;
   }
 
@@ -2934,104 +2945,62 @@ img#wpstats {
     background: #fff;
   }
 
-  /* line 176, ../scss/_responsive.scss */
-  .mobile-menu li {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  /* line 179, ../scss/_responsive.scss */
-  .mobile-menu > li:first-child {
-    border-top: none;
-  }
-  /* line 182, ../scss/_responsive.scss */
-  .mobile-menu a {
-    display: block;
-    padding: 25px 5%;
-    font-size: 0.9em;
-    text-transform: uppercase;
-    color: #999;
-    letter-spacing: 1px;
-  }
-  /* line 189, ../scss/_responsive.scss */
-  .mobile-menu a:hover {
-    color: #fff;
-  }
-  /* line 194, ../scss/_responsive.scss */
-  .mobile-menu ul a {
-    padding-left: 10%;
-  }
-  /* line 198, ../scss/_responsive.scss */
-  .mobile-menu ul ul a {
-    padding-left: 15%;
-  }
-  /* line 202, ../scss/_responsive.scss */
-  .mobile-menu ul ul ul a {
-    padding-left: 20%;
-  }
-  /* line 206, ../scss/_responsive.scss */
-  .mobile-menu ul ul ul ul a {
-    padding-left: 25%;
-  }
-  /* line 209, ../scss/_responsive.scss */
-  .mobile-menu ul ul ul ul ul a {
-    padding-left: 30%;
-  }
-
   /* header */
-  /* line 220, ../scss/_responsive.scss */
+  /* line 177, ../scss/_responsive.scss */
   .section.header {
     padding: 50px 0;
   }
 
   /* posts */
-  /* line 225, ../scss/_responsive.scss */
+  /* line 182, ../scss/_responsive.scss */
   .posts.grid-posts .post-container {
     width: calc(100% / 2);
   }
 
   /* credits */
-  /* line 234, ../scss/_responsive.scss */
+  /* line 191, ../scss/_responsive.scss */
   .credits span {
     display: none;
   }
 
   /* single post */
   /* post content */
-  /* line 242, ../scss/_responsive.scss */
+  /* line 199, ../scss/_responsive.scss */
   .post-content .alignleft, .post-content .alignright {
     max-width: 100%;
     float: none;
     margin: 1.25em 0;
   }
-  /* line 248, ../scss/_responsive.scss */
+  /* line 205, ../scss/_responsive.scss */
   .post-content .alignleft a, .post-content .alignleft img {
     margin-left: auto;
     margin-right: auto;
   }
-  /* line 254, ../scss/_responsive.scss */
+  /* line 211, ../scss/_responsive.scss */
   .post-content .alignright a, .post-content .alignright img {
     margin-left: auto;
     margin-right: auto;
   }
 
   /* comments */
-  /* line 263, ../scss/_responsive.scss */
+  /* line 220, ../scss/_responsive.scss */
   .comment-form-author, .comment-form-email, .comment-form-url {
     width: 100%;
   }
 }
 @media (max-width: 600px) {
-  /* line 272, ../scss/_responsive.scss */
+  /* line 229, ../scss/_responsive.scss */
   body {
     font-size: 16px;
   }
 
   /* structure */
-  /* line 276, ../scss/_responsive.scss */
+  /* line 233, ../scss/_responsive.scss */
   .wrapper.section {
     padding: 25px 0;
   }
 
-  /* line 278, ../scss/_responsive.scss */
+  /* line 235, ../scss/_responsive.scss */
   .post-header,
   .single .post-content,
   .post-excerpt,
@@ -3044,217 +3013,217 @@ img#wpstats {
   }
 
   /* header */
-  /* line 289, ../scss/_responsive.scss */
+  /* line 246, ../scss/_responsive.scss */
   header {
     padding: 35px 0;
   }
-  /* line 291, ../scss/_responsive.scss */
+  /* line 248, ../scss/_responsive.scss */
   header .header-inner {
     max-width: 90%;
   }
-  /* line 293, ../scss/_responsive.scss */
+  /* line 250, ../scss/_responsive.scss */
   header .header-inner .nav-toggle {
     padding: 20px 0;
   }
 
   /* navigation */
-  /* line 300, ../scss/_responsive.scss */
-  .mobile-menu a {
+  /* line 257, ../scss/_responsive.scss */
+  #mobile-main-menu a {
     padding-top: 20px;
     padding-bottom: 20px;
   }
 
   /* main content */
-  /* line 307, ../scss/_responsive.scss */
+  /* line 264, ../scss/_responsive.scss */
   .section-inner.content {
     max-width: 92%;
   }
 
-  /* line 309, ../scss/_responsive.scss */
+  /* line 266, ../scss/_responsive.scss */
   .post-header .post-title {
     font-size: 1.5em;
   }
 
-  /* line 311, ../scss/_responsive.scss */
+  /* line 268, ../scss/_responsive.scss */
   .post-excerpt {
     font-size: 1em;
   }
 
-  /* line 313, ../scss/_responsive.scss */
+  /* line 270, ../scss/_responsive.scss */
   .posts .post-meta {
     padding: 0 6%;
   }
 
   /* single post */
-  /* line 317, ../scss/_responsive.scss */
+  /* line 274, ../scss/_responsive.scss */
   .media-caption {
     margin: 0 6%;
     padding-bottom: 10px;
   }
 
-  /* line 320, ../scss/_responsive.scss */
+  /* line 277, ../scss/_responsive.scss */
   .single .post-quote blockquote, .single .post-link p {
     font-size: 1.2em;
   }
-  /* line 323, ../scss/_responsive.scss */
+  /* line 280, ../scss/_responsive.scss */
   .single .post-quote cite {
     font-size: 0.8em;
   }
 
   /* post content */
-  /* line 331, ../scss/_responsive.scss */
+  /* line 288, ../scss/_responsive.scss */
   .post-content p, .post-content blockquote, .post-content ul, .post-content ol, .post-content address, .post-content dl, .post-content .wp-caption, .post-content pre {
     line-height: 160%;
     margin-bottom: 1em;
   }
-  /* line 335, ../scss/_responsive.scss */
+  /* line 292, ../scss/_responsive.scss */
   .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
     margin: 40px 0 20px;
   }
-  /* line 338, ../scss/_responsive.scss */
+  /* line 295, ../scss/_responsive.scss */
   .post-content h1 {
     font-size: 1.4em;
   }
-  /* line 341, ../scss/_responsive.scss */
+  /* line 298, ../scss/_responsive.scss */
   .post-content h2 {
     font-size: 1.3em;
   }
-  /* line 344, ../scss/_responsive.scss */
+  /* line 301, ../scss/_responsive.scss */
   .post-content h3 {
     font-size: 1.25em;
   }
-  /* line 347, ../scss/_responsive.scss */
+  /* line 304, ../scss/_responsive.scss */
   .post-content h4 {
     font-size: 1.1em;
   }
-  /* line 350, ../scss/_responsive.scss */
+  /* line 307, ../scss/_responsive.scss */
   .post-content h5 {
     font-size: 1em;
   }
-  /* line 353, ../scss/_responsive.scss */
+  /* line 310, ../scss/_responsive.scss */
   .post-content h6 {
     font-size: 0.9em;
     font-weight: 700;
     text-transform: uppercase;
   }
-  /* line 359, ../scss/_responsive.scss */
+  /* line 316, ../scss/_responsive.scss */
   .post-content h1 + h1, .post-content h1 + h2, .post-content h1 + h3, .post-content h1 + h4, .post-content h1 + h5, .post-content h1 + h6 {
     margin-top: 20px;
   }
-  /* line 364, ../scss/_responsive.scss */
+  /* line 321, ../scss/_responsive.scss */
   .post-content h2 + h1, .post-content h2 + h2, .post-content h2 + h3, .post-content h2 + h4, .post-content h2 + h5, .post-content h2 + h6 {
     margin-top: 20px;
   }
-  /* line 369, ../scss/_responsive.scss */
+  /* line 326, ../scss/_responsive.scss */
   .post-content h3 + h1, .post-content h3 + h2, .post-content h3 + h3, .post-content h3 + h4, .post-content h3 + h5, .post-content h3 + h6 {
     margin-top: 20px;
   }
-  /* line 374, ../scss/_responsive.scss */
+  /* line 331, ../scss/_responsive.scss */
   .post-content h4 + h1, .post-content h4 + h2, .post-content h4 + h3, .post-content h4 + h4, .post-content h4 + h5, .post-content h4 + h6 {
     margin-top: 20px;
   }
-  /* line 379, ../scss/_responsive.scss */
+  /* line 336, ../scss/_responsive.scss */
   .post-content h5 + h1, .post-content h5 + h2, .post-content h5 + h3, .post-content h5 + h4, .post-content h5 + h5, .post-content h5 + h6 {
     margin-top: 20px;
   }
-  /* line 384, ../scss/_responsive.scss */
+  /* line 341, ../scss/_responsive.scss */
   .post-content h6 + h1, .post-content h6 + h2, .post-content h6 + h3, .post-content h6 + h4, .post-content h6 + h5, .post-content h6 + h6 {
     margin-top: 20px;
   }
-  /* line 388, ../scss/_responsive.scss */
+  /* line 345, ../scss/_responsive.scss */
   .post-content blockquote {
     margin-top: 25px;
   }
-  /* line 390, ../scss/_responsive.scss */
+  /* line 347, ../scss/_responsive.scss */
   .post-content blockquote:before, .post-content blockquote:after {
     margin: 25px auto;
     width: 96px;
   }
-  /* line 394, ../scss/_responsive.scss */
+  /* line 351, ../scss/_responsive.scss */
   .post-content blockquote p {
     font-size: 1.1em;
     line-height: 150%;
   }
-  /* line 398, ../scss/_responsive.scss */
+  /* line 355, ../scss/_responsive.scss */
   .post-content blockquote cite {
     font-size: 0.8em;
   }
 
   /* comments */
-  /* line 406, ../scss/_responsive.scss */
+  /* line 363, ../scss/_responsive.scss */
   .comments-title {
     float: none;
     width: 100%;
   }
 
-  /* line 411, ../scss/_responsive.scss */
+  /* line 368, ../scss/_responsive.scss */
   .add-comment-title {
     float: none;
     width: 100%;
     display: none;
   }
 
-  /* line 417, ../scss/_responsive.scss */
+  /* line 374, ../scss/_responsive.scss */
   .comments-title, .comment-reply-title {
     font-size: 1.5em;
   }
 
-  /* line 421, ../scss/_responsive.scss */
+  /* line 378, ../scss/_responsive.scss */
   .comment .avatar {
     width: 50px;
   }
 
-  /* line 425, ../scss/_responsive.scss */
+  /* line 382, ../scss/_responsive.scss */
   .comment-inner {
     margin-left: 70px;
   }
-  /* line 427, ../scss/_responsive.scss */
+  /* line 384, ../scss/_responsive.scss */
   .comment-inner:after {
     top: 13px;
   }
 
-  /* line 432, ../scss/_responsive.scss */
+  /* line 389, ../scss/_responsive.scss */
   .comment-content {
     font-size: 0.9em;
   }
 
-  /* line 436, ../scss/_responsive.scss */
+  /* line 393, ../scss/_responsive.scss */
   .reply-title {
     margin-bottom: 15px;
   }
 
-  /* line 440, ../scss/_responsive.scss */
+  /* line 397, ../scss/_responsive.scss */
   .comment-form {
     margin-top: 15px;
   }
 
   /* respond */
-  /* line 446, ../scss/_responsive.scss */
+  /* line 403, ../scss/_responsive.scss */
   .comment-form {
     margin-top: 10px;
   }
 
-  /* line 450, ../scss/_responsive.scss */
+  /* line 407, ../scss/_responsive.scss */
   .comment-notes, .logged-in-as {
     margin-bottom: 25px;
   }
 
-  /* line 455, ../scss/_responsive.scss */
+  /* line 412, ../scss/_responsive.scss */
   .comment-form input[type="text"], .comment-form input[type="email"] {
     background-position: 96% center;
   }
 
   /* page & page templates */
-  /* line 462, ../scss/_responsive.scss */
+  /* line 419, ../scss/_responsive.scss */
   .authors-row {
     padding: 0;
     border: none;
   }
-  /* line 465, ../scss/_responsive.scss */
+  /* line 422, ../scss/_responsive.scss */
   .authors-row:before {
     content: none;
   }
-  /* line 468, ../scss/_responsive.scss */
+  /* line 425, ../scss/_responsive.scss */
   .authors-row .author-info {
     width: 100%;
     margin: 0;
@@ -3262,37 +3231,37 @@ img#wpstats {
     float: none;
     border-top: 1px solid #eee;
   }
-  /* line 475, ../scss/_responsive.scss */
+  /* line 432, ../scss/_responsive.scss */
   .authors-row:first-child .author-info:first-child {
     border-top: none;
   }
 
-  /* line 480, ../scss/_responsive.scss */
+  /* line 437, ../scss/_responsive.scss */
   .author-avatar, .author-info h5 {
     margin-bottom: 20px;
   }
 
   /* pagination */
-  /* line 486, ../scss/_responsive.scss */
+  /* line 443, ../scss/_responsive.scss */
   .page-title {
     margin-bottom: 25px;
   }
-  /* line 488, ../scss/_responsive.scss */
+  /* line 445, ../scss/_responsive.scss */
   .page-title h3 {
     font-size: 1.4em;
   }
 
-  /* line 493, ../scss/_responsive.scss */
+  /* line 450, ../scss/_responsive.scss */
   .archive-nav {
     margin-top: 25px;
   }
 
   /* footer */
-  /* line 499, ../scss/_responsive.scss */
+  /* line 456, ../scss/_responsive.scss */
   .footer {
     padding: 30px 0;
   }
-  /* line 501, ../scss/_responsive.scss */
+  /* line 458, ../scss/_responsive.scss */
   .footer .one-third {
     width: 100%;
     float: none;
@@ -3300,30 +3269,30 @@ img#wpstats {
     border-top: 4px solid #333;
     margin: 40px 0 0 0;
   }
-  /* line 507, ../scss/_responsive.scss */
+  /* line 464, ../scss/_responsive.scss */
   .footer .one-third:first-child {
     margin-top: 0;
     border-top: none;
     padding-top: 0;
   }
-  /* line 513, ../scss/_responsive.scss */
+  /* line 470, ../scss/_responsive.scss */
   .footer .column-3 {
     display: block;
   }
 
   /* credits */
-  /* line 520, ../scss/_responsive.scss */
+  /* line 477, ../scss/_responsive.scss */
   .credits {
     padding: 30px 0;
   }
 }
 @media (max-width: 500px) {
   /* header */
-  /* line 533, ../scss/_responsive.scss */
+  /* line 490, ../scss/_responsive.scss */
   .header .blog-title {
     font-size: 1.75em;
   }
-  /* line 536, ../scss/_responsive.scss */
+  /* line 493, ../scss/_responsive.scss */
   .header .blog-description {
     font-size: 1em;
     margin-top: 15px;
@@ -3331,42 +3300,42 @@ img#wpstats {
 
   /* posts */
   /* posts */
-  /* line 546, ../scss/_responsive.scss */
+  /* line 503, ../scss/_responsive.scss */
   .posts.grid-posts .post-container {
     width: 100%;
   }
 
   /* comments */
-  /* line 553, ../scss/_responsive.scss */
+  /* line 510, ../scss/_responsive.scss */
   .comments div.comment {
     margin-top: 20px;
   }
 
-  /* line 557, ../scss/_responsive.scss */
+  /* line 514, ../scss/_responsive.scss */
   .comment .avatar {
     display: none;
   }
 
-  /* line 561, ../scss/_responsive.scss */
+  /* line 518, ../scss/_responsive.scss */
   .comment-inner {
     margin-left: 0;
   }
-  /* line 563, ../scss/_responsive.scss */
+  /* line 520, ../scss/_responsive.scss */
   .comment-inner:after {
     content: none;
   }
 
-  /* line 568, ../scss/_responsive.scss */
+  /* line 525, ../scss/_responsive.scss */
   .comment-actions {
     display: none;
   }
 
-  /* line 572, ../scss/_responsive.scss */
+  /* line 529, ../scss/_responsive.scss */
   .comment-actions-below {
     display: block;
     margin-top: 20px;
   }
-  /* line 575, ../scss/_responsive.scss */
+  /* line 532, ../scss/_responsive.scss */
   .comment-actions-below a {
     display: inline-block;
     margin-left: 8px;
@@ -3374,33 +3343,33 @@ img#wpstats {
     font-weight: 700;
     text-transform: uppercase;
   }
-  /* line 581, ../scss/_responsive.scss */
+  /* line 538, ../scss/_responsive.scss */
   .comment-actions-below a:first-child {
     margin-left: 0;
   }
-  /* line 584, ../scss/_responsive.scss */
+  /* line 541, ../scss/_responsive.scss */
   .comment-actions-below a:hover {
     text-decoration: underline;
   }
 
-  /* line 590, ../scss/_responsive.scss */
+  /* line 547, ../scss/_responsive.scss */
   .comment-nav-below span {
     display: none;
   }
 }
 @media (max-width: 400px) {
   /* respond */
-  /* line 604, ../scss/_responsive.scss */
+  /* line 561, ../scss/_responsive.scss */
   .comment-form input[type="text"], .comment-form input[type="email"] {
     background-position: 94% center;
     background-size: 20px auto;
   }
-  /* line 608, ../scss/_responsive.scss */
+  /* line 565, ../scss/_responsive.scss */
   .comment-form input[type="text"], .comment-form input[type="email"] {
     padding: 12px;
     font-size: 0.9em;
   }
-  /* line 613, ../scss/_responsive.scss */
+  /* line 570, ../scss/_responsive.scss */
   .comment-form textarea {
     padding: 12px;
     font-size: 0.9em;
