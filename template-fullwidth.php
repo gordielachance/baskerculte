@@ -14,7 +14,7 @@ Template Name: Full width template
 	
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		
-				<div class="post">
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				
 					<div class="post-header">
 												
@@ -54,19 +54,17 @@ Template Name: Full width template
 					
 					<?php comments_template( '', true ); ?>
 									
-				</div><!-- .post -->
+				</article><!-- .post -->
 			
 			<?php endwhile; else: ?>
 			
 				<p><?php _e( "We couldn't find any posts that matched your query. Please try again.", "gordo" ); ?></p>
 		
 			<?php endif; ?>
-		
-			<div class="clear"></div>
 			
 		</div><!-- .content -->
 				
-		<div class="clear"></div>
+		
 	
 	</div><!-- .section-inner -->
 

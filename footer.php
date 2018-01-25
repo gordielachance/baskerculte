@@ -2,9 +2,9 @@
 	
 	<div class="section-inner row">
 	
-		<?php if ( is_active_sidebar( 'footer-a' ) ) : ?>
+		<?php if ( is_active_sidebar( 'footer-a' ) ) { ?>
 		
-			<div class="column column-1 one-third">
+			<div class="column one-third">
 			
 				<div class="widgets">
 		
@@ -14,9 +14,9 @@
 				
 			</div><!-- .column-1 -->
 			
-		<?php else : ?>
+		<?php } else { ?>
 		
-			<div class="column column-1 one-third">
+			<div class="column one-third">
 			
 				<div class="widgets">
 			
@@ -35,11 +35,11 @@
 				
 			</div><!-- .column-1 -->
 			
-		<?php endif; ?>
+		<?php } ?>
 			
-		<?php if ( is_active_sidebar( 'footer-b' ) ) : ?>
+		<?php if ( is_active_sidebar( 'footer-b' ) ) { ?>
 		
-			<div class="column column-2 one-third">
+			<div class="column one-third">
 			
 				<div class="widgets">
 		
@@ -49,9 +49,9 @@
 				
 			</div><!-- .column-2 -->
 			
-		<?php else : ?>
+		<?php } else { ?>
 		
-			<div class="column column-2 one-third">
+			<div class="column one-third">
 			
 				<div class="widgets">
 				
@@ -82,11 +82,11 @@
 				
 			</div><!-- .column-2 -->
 			
-		<?php endif; ?>
+		<?php } ?>
 							
-		<?php if ( is_active_sidebar( 'footer-c' ) ) : ?>
+		<?php if ( is_active_sidebar( 'footer-c' ) ) { ?>
 		
-			<div class="column column-3 one-third">
+			<div class="column one-third">
 		
 				<div class="widgets">
 		
@@ -96,9 +96,9 @@
 				
 			</div>
 			
-		<?php else : ?>
+		<?php } else { ?>
 		
-			<div class="column column-3 one-third">
+			<div class="column one-third">
 			
 				<div id="meta" class="widget widget_text">
 
@@ -113,9 +113,9 @@
 								
 			</div>
 			
-		<?php endif; ?><!-- .footer-c -->
+		<?php } ?><!-- .footer-c -->
 		
-		<div class="clear"></div>
+		
 	
 	</div><!-- .footer-inner -->
 
@@ -123,22 +123,33 @@
 
 <div class="credits section bg-dark small-padding">
 
-	<div class="credits-inner section-inner">
+	<div class="credits-inner section-inner row">
+        
+		<?php if ( is_active_sidebar( 'credits' ) ) { ?>
 
-		<p class="credits-left fleft">
+				<div class="widgets">
 		
-			&copy; <?php echo date("Y") ?> <a href="<?php echo home_url(); ?>" title="<?php bloginfo( 'name' ); ?>"><?php bloginfo( 'name' ); ?></a><span> &mdash; <?php printf( __( 'Powered by <a href="%s">WordPress</a>', 'gordo'), 'http://www.wordpress.org' ); ?></span>
-		
-		</p>
-		
-		<p class="credits-right fright">
-			
-			<span><?php printf( __( 'Theme by <a href="%s">Anders Noren</a>', 'gordo' ), 'http://www.andersnoren.se' ); ?> &mdash; </span><a class="tothetop" title="<?php _e( 'To the top', 'gordo' ); ?>" href="#"><?php _e( 'Up', 'gordo' ); ?> &uarr;</a>
-			
-		</p>
-		
-		<div class="clear"></div>
-	
+					<?php dynamic_sidebar( 'credits' ); ?>
+										
+				</div>
+
+		<?php } else { ?>
+        
+            <p class="alignleft">
+
+                &copy; <?php echo date("Y") ?> <a href="<?php echo home_url(); ?>" title="<?php bloginfo( 'name' ); ?>"><?php bloginfo( 'name' ); ?></a><span> &mdash; <?php printf( __( 'Powered by <a href="%s">WordPress</a>', 'gordo'), 'http://www.wordpress.org' ); ?></span>
+
+            </p>
+
+            <p class="alignright">
+                <span><?php printf( __( 'Theme by <a href="%s">G.Breant</a>', 'gordo' ), 'https://github.com/gordielachance' ); ?></span>
+            </p>
+        <?php }?>
+        
+        <p id="tothetop-footer" class="alignright">
+            <a class="tothetop" title="<?php _e( 'To the top', 'gordo' ); ?>" href="#"><?php _e( 'Up', 'gordo' ); ?> &uarr;</a>
+        </p>
+
 	</div><!-- .credits-inner -->
 	
 </div><!-- .credits -->

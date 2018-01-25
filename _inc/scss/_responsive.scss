@@ -1,128 +1,4 @@
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
-
-	/* 2X images */
-
-    .post .sticky-post {
-      background-image: url(../images/icons/2x/tack-w.png);
-    }
-
-    .posts .post-meta a {
-      &.post-date {
-        background-image: url(../images/icons/2x/clock-g.png);
-        &:hover {
-          background-image: url(../images/icons/2x/clock-c.png);
-        }
-      }
-      &.zilla-likes {
-        background-image: url(../images/icons/2x/heart-g.png);
-        &:hover, &.active {
-          background-image: url(../images/icons/2x/heart-c.png);
-        }
-      }
-      &.post-comments {
-        background-image: url(../images/icons/2x/comment-g.png);
-        &:hover {
-          background-image: url(../images/icons/2x/comment-c.png);
-        }
-      }
-    }
-
-    .post-link a {
-      background-image: url(../images/icons/2x/link-c.png);
-    }
-
-    .format-gallery .flex-direction-nav .flex-prev, .single .format-gallery .flex-direction-nav .flex-prev {
-      background-image: url(../images/icons/2x/chevron-left-w-shade.png);
-    }
-
-    .format-gallery .flex-direction-nav .flex-next {
-      background-image: url(../images/icons/2x/chevron-right-w-shade.png);
-    }
-
-    .single {
-      .format-gallery .flex-direction-nav .flex-next {
-        background-image: url(../images/icons/2x/chevron-right-w-shade.png);
-      }
-      .post-meta {
-        p.post-date {
-          background-image: url(../images/icons/2x/clock-g.png);
-        }
-        a.zilla-likes {
-          background-image: url(../images/icons/2x/heart-g.png);
-          &:hover {
-            background-image: url(../images/icons/2x/heart-c.png);
-          }
-        }
-        p {
-          &.post-categories {
-            background-image: url(../images/icons/2x/folder-g.png);
-          }
-          &.post-tags {
-            background-image: url(../images/icons/2x/tag-g.png);
-          }
-        }
-      }
-    }
-
-    .author-links a {
-      &.author-link-posts {
-        background-image: url(../images/icons/2x/archive-w.png);
-      }
-      &.author-link-website {
-        background-image: url(../images/icons/2x/home-w.png);
-      }
-      &.author-link-mail {
-        background-image: url(../images/icons/2x/social/mail-w.png);
-      }
-      &.author-link-twitter {
-        background-image: url(../images/icons/2x/social/twitter-w.png);
-      }
-    }
-
-    .comment.bypostauthor:after {
-      background-image: url(../images/icons/2x/author-w.png);
-    }
-
-    .comment-actions {
-      .comment-reply-link {
-        background-image: url(../images/icons/2x/reply-w.png);
-      }
-      .comment-edit-link {
-        background-image: url(../images/icons/2x/edit-w.png);
-      }
-    }
-
-    input {
-      &#author {
-        background-image: url(../images/icons/2x/author-g.png);
-      }
-      &#email {
-        background-image: url(../images/icons/2x/social/mail-g.png);
-      }
-      &#url {
-        background-image: url(../images/icons/2x/home-g.png);
-      }
-      &#author:focus {
-        background-image: url(../images/icons/2x/author-w.png);
-      }
-      &#email:focus {
-        background-image: url(../images/icons/2x/social/mail-w.png);
-      }
-      &#url:focus {
-        background-image: url(../images/icons/2x/home-w.png);
-      }
-    }
-
-    .single .post-meta p.image-resolution {
-      background-image: url(../images/icons/2x/image-g.png);
-    }
-
-    .searchform .searchsubmit {
-      background-image: url(../images/icons/2x/spyglass-g.png);
-      &:hover {
-        background-image: url(../images/icons/2x/spyglass-c.png);
-      }
-    }
 	
 }
 
@@ -146,26 +22,19 @@
 	
 	/* navigation */
 	
-	#main-menu {
+	#main-wide-menu {
         display: none;
     }
 
     .nav-toggle {
-      display: block;
-      padding: 25px 0;
-      .bar {
         display: block;
-        width: 26px;
-        height: 3px;
-        margin-top: 5px;
-        background: #8E8E8E;
-        border-radius: 1px;
-        &:first-child {
-          margin-top: 0;
-        }
-      }
+        padding: 25px 0;
+        @include opacity(.5);
+        color:white;
+        text-align:center;
       &:hover {
         cursor: pointer;
+          @include opacity(1);
       }
       &.active .bar {
         background: #fff;
@@ -178,8 +47,8 @@
     
     /* posts */
     .posts{
-        &.grid-posts{
-            .post-container{
+        &.grid-hentries{
+            .hentry-container{
                 width: calc(100% / 2);
             }
         }
@@ -238,8 +107,7 @@
 	.content .comments,
 	div#disqus_thread,
 	.comment-respond,
-	.post-quote,
-	.post-link { padding: 7.5% 6%; }
+	.post-quote
 	
 	/* header */
     
@@ -254,7 +122,7 @@
 
 	/* navigation */
 
-	#mobile-main-menu a {
+	#main-mobile-menu a {
 		padding-top: 20px;
 		padding-bottom: 20px;
 	}
@@ -266,9 +134,7 @@
 	.post-header .post-title { font-size: 1.5em; }
 	
 	.post-excerpt { font-size: 1em; }
-	
-	.posts .post-meta { padding: 0 6%; }
-	
+
 	/* single post */
 	
 	.media-caption { margin: 0 6%; padding-bottom: 10px; }
@@ -454,22 +320,15 @@
     /* footer */
 
     .footer {
-      padding: 30px 0;
-      .one-third {
-        width: 100%;
-        float: none;
-        padding: 40px 0 0 0;
-        border-top: 4px solid #333;
-        margin: 40px 0 0 0;
-        &:first-child {
-          margin-top: 0;
-          border-top: none;
-          padding-top: 0;
+        .row{
+            display:block; /*break the flex thing*/
+            .column:not(:last-child){
+                border-bottom:2px solid #333;
+                padding-bottom:2em;
+                margin-bottom:2em;
+            }
+
         }
-      }
-      .column-3 {
-        display: block;
-      }
     }
 
     /* credits */
@@ -487,7 +346,7 @@
 	/* header */
 	
     .header {
-      .blog-title {
+      .site-title {
         font-size: 1.75em;
       }
       .blog-description {
@@ -499,8 +358,8 @@
     /* posts */
     /* posts */
     .posts{
-        &.grid-posts{
-            .post-container{
+        &.grid-hentries{
+            .hentry-container{
                 width: 100%;
             }
         }

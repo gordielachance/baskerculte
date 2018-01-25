@@ -1,21 +1,21 @@
-<?php if ( post_password_required() )
+<?php
+global $post;
+
+if ( !post_type_supports(get_post_type($post->id),'comments') ) return;
+    
+if ( post_password_required() ){
 	return;
+}
 ?>
-
-<div class="comment-ribbon ribbon">
-    <span></span><!--ribbon content-->
-    <span></span><!--ribbon end-->
-</div>
-
-<?php if ( have_comments() ) : ?>
-
+<?php 
+if ( have_comments() ) { ?>
     <div class="comments">
 
         <a name="comments"></a>
 
-        <div class="comments-title-container">
+        <div class="comments-title-container row">
 
-            <h2 class="comments-title fleft">
+            <h2 class="comments-title">
 
                 <?php 
                 $comment_count = count( $wp_query->comments_by_type['comment'] );
@@ -23,13 +23,13 @@
 
             </h2>
 
-            <?php if ( comments_open() ) : ?>
+            <?php if ( comments_open() ) { ?>
 
-                <h2 class="add-comment-title fright"><a href="#respond"><?php _e( 'Add yours', 'gordo' ) . ' &rarr;'; ?></a></h2>
+                <h2 class="add-comment-title alignright"><a href="#respond" class="action-button"><?php _e( 'Add yours', 'gordo' ) . ' &rarr;'; ?></a></h2>
 
-            <?php endif; ?>
+            <?php } ?>
 
-            <div class="clear"></div>
+            
 
         </div><!-- .comments-title-container -->
 
@@ -37,7 +37,7 @@
             <?php wp_list_comments( array( 'type' => 'comment', 'callback' => 'gordo_comment' ) ); ?>
         </ol>
 
-        <?php if ( ! empty( $comments_by_type['pings'] ) ) : ?>
+        <?php if ( ! empty( $comments_by_type['pings'] ) ) { ?>
 
             <div class="pingbacks">
 
@@ -59,9 +59,9 @@
 
             </div>
 
-        <?php endif; ?>
+        <?php } ?>
 
-        <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+        <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) { ?>
 
             <div class="comment-nav-below" role="navigation">
 
@@ -69,42 +69,60 @@
 
                 <div class="post-nav-newer fright"><?php next_comments_link( __( 'Newer Comments', 'gordo' ) . ' &raquo;' ); ?></div>
 
-                <div class="clear"></div>
+                
 
             </div><!-- .comment-nav-below -->
 
-        <?php endif; ?>
+        <?php } ?>
 
     </div><!-- .comments -->
+<?php 
+}
 
-<?php endif; ?>
+if ( !comments_open() ) {
+    if ( !is_page() ){
+        ?>
+        <p class="nocomments"><?php _e( 'Comments are closed.', 'gordo' ); ?></p>
+        <?php
+    }
+    return;
+}
+?>
+<div class="comment-ribbon ribbon">
+    <span></span><!--ribbon content-->
+    <span></span><!--ribbon end-->
+</div>
+<?php
 
-<?php if ( ! comments_open() && !is_page() ) : ?>
+//author
+$author_icon = sprintf('<span class="input-group-addon">%s</span>','<i class="fa fa-user-o" aria-hidden="true"></i>');
+$author_input = sprintf('<div class="input-group"><input id="author" class="form-control" name="author" type="text" placeholder="%s" value="%s" size="30" />%s</div>',__( 'Name', 'gordo' ),esc_attr( $commenter['comment_author'] ),$author_icon);
+$author_label = sprintf('<label for="author">%s</label>', __( 'Author', 'gordo' ));
+$author_req = $req ? '<span class="required">*</span>' : null;
+$author_block = sprintf('<p class="comment-form-author">%s</p>%s %s',$author_input,$author_label,$author_req);
 
-    <p class="nocomments"><?php _e( 'Comments are closed.', 'gordo' ); ?></p>
+//email
+$email_icon = sprintf('<span class="input-group-addon">%s</span>','<i class="fa fa-envelope-o" aria-hidden="true"></i>');
+$email_input = sprintf('<div class="input-group"><input id="email" class="form-control" name="email" type="email" placeholder="%s" value="%s" size="30" />%s</div>',__( 'Email', 'gordo' ),esc_attr( $commenter['comment_author_email'] ),$email_icon);
+$email_label = sprintf('<label for="email">%s</label>', __( 'Email', 'gordo' ));
+$email_req = $req ? '<span class="required">*</span>' : null;
+$email_block = sprintf('<p class="comment-form-email">%s</p>%s %s',$email_input,$email_label,$email_req);
 
-<?php endif; ?>
+//url
+$url_icon = sprintf('<span class="input-group-addon">%s</span>','<i class="fa fa-home" aria-hidden="true"></i>');
+$url_input = sprintf('<div class="input-group"><input id="url" class="form-control" name="url" type="text" placeholder="%s" value="%s" size="30" />%s</div>',__( 'Website', 'gordo' ),esc_attr( $commenter['comment_author_url'] ),$url_icon);
+$url_label = sprintf('<label for="email">%s</label>', __( 'Website', 'gordo' ));
+$url_block = sprintf('<p class="comment-form-url">%s</p>%s',$url_input,$url_label);
 
-<?php $comments_args = array(
+$comments_args = array(
 
-    'comment_notes_before' => 
-        '<p class="comment-notes">' . __( 'Your email address will not be published.', 'gordo' ) . '</p>',
-
-    'comment_field' => 
-        '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="6" required>' . '</textarea></p>',
-
+    'comment_notes_before' =>   sprintf( '<p class="comment-notes">%s</p>',__('Your email address will not be published.','gordo') ),
+    'comment_field' =>          '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="6" required></textarea></p>',
     'fields' => apply_filters( 'comment_form_default_fields', array(
-
-        'author' =>
-            '<p class="comment-form-author">' .
-            '<input id="author" name="author" type="text" placeholder="' . __( 'Name', 'gordo' ) . '" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" />' . '<label for="author">' . __( 'Author', 'gordo' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) . '</p>',
-
-        'email' =>
-            '<p class="comment-form-email">' . '<input id="email" name="email" type="text" placeholder="' . __( 'Email','gordo' ) . '" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" /><label for="email">' . __( 'Email', 'gordo' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) . '</p>',
-
-        'url' =>
-        '<p class="comment-form-url">' . '<input id="url" name="url" type="text" placeholder="' . __( 'Website', 'gordo' ) . '" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /><label for="url">' . __( 'Website', 'gordo' ) . '</label></p>')
-    ),
+        'author' => $author_block,
+        'email' => $email_block,
+        'url' => $url_block
+    )),
 );
 
 comment_form($comments_args);

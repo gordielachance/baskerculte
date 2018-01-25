@@ -1,16 +1,25 @@
-<div class="post-header">
+<?php
 
-	<?php if ( get_the_title() ) : ?>
-		
-		<h2 class="post-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+/*
+Gordo tile
+*/
 
-	<?php endif; ?>
-    
-    <?php if ( is_sticky() ) echo '<span class="sticky-post">' . __( 'Sticky post', 'gordo' ) . '</span>'; ?>
-    
-</div><!-- .post-header -->
+//post format icon
+if ( $icon = gordo_get_hentry_icon() ){
+    ?>
+    <p class="gordo-hentry-icon"><?php echo $icon;?></p>
+    <?php
+}
 
-<?php if ( has_post_thumbnail() ) : ?>
+//header
+if ( get_the_title() ) { ?>
+        <div class="post-header">
+		  <h2 class="post-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+        </div><!-- .post-header -->
+<?php 
+}
+//thumb
+if ( has_post_thumbnail() ) { ?>
 
 	<div class="featured-media">
 	
@@ -22,14 +31,21 @@
 				
 	</div><!-- .featured-media -->
 		
-<?php endif; ?>
-									                                    	    
-<div class="post-excerpt">
+<?php 
+}
 
-	<?php the_excerpt( 100 ); ?>
 
-</div><!-- .post-excerpt -->
+//excerpt
 
-<?php gordo_meta(); ?>
+if ( $excerpt = get_the_excerpt() ){
+    ?>
+    <div class="post-excerpt">
+        <?php the_excerpt(); ?>
+    </div><!-- .post-excerpt -->
+    <?php
+}
+
+//footer
+echo gordo_get_hentry_metas(); 
+?>
             
-<div class="clear"></div>

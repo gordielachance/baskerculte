@@ -1,14 +1,14 @@
-<?php if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
+<?php if ( is_active_sidebar( 'single-sidebar-a' ) ) { ?>
 
-	<div class="sidebar fleft" role="complementary">
+	<div class="sidebar" role="complementary">
 	
-		<?php dynamic_sidebar( 'sidebar-1' ); ?>
+		<?php dynamic_sidebar( 'single-sidebar-a' ); ?>
 		
 	</div><!-- .sidebar -->
 
 <?php }else{ ?>
 		
-	<div class="sidebar fright" role="complementary">
+	<div class="sidebar" role="complementary">
 	
 		<div id="search" class="widget widget_search">
 		
@@ -37,9 +37,7 @@
 				</ul>
 				
 			</div>
-			
-			<div class="clear"></div>
-			
+
 		</div><!-- .widget_recent_entries -->
 		
 		<div class="widget widget_text">
@@ -55,9 +53,7 @@
 				</div>	
 				
 			</div>
-			
-			<div class="clear"></div>
-			
+
 		</div><!-- .widget_recent_entries -->
 								
 	</div><!-- .sidebar -->
@@ -65,12 +61,3 @@
 <?php
 }
 ?>
-<?php if ( is_active_sidebar( 'sidebar-2' ) ) { ?>
-
-	<div class="sidebar fleft" role="complementary">
-	
-		<?php dynamic_sidebar( 'sidebar-2' ); ?>
-		
-	</div><!-- .sidebar -->
-
-<?php } ?>

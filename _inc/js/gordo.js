@@ -1,15 +1,22 @@
 jQuery(document).ready(function($) {
+    
+    //External links
+    $('a[target="_blank"]').addClass('external-link');
+    $('a.external-link').each(function(){
+        var domain = gordo_extract_url_domain($(this).attr('href'));
+        $(this).attr('data-url-domain',domain);
+    });
 
 	//Masonry blocks
-	$blocks = $(".posts.grid-posts");
+	$blocks = $(".posts.masonry");
 
 	$blocks.imagesLoaded(function(){
 		$blocks.masonry({
-			itemSelector: '.post-container'
+			itemSelector: '.hentry-container'
 		});
 
 		// Fade blocks in after images are ready (prevents jumping and re-rendering)
-		$(".post-container").fadeIn();
+		$(".hentry-container").fadeIn();
 	});
 	
 	$(document).ready( function() { setTimeout( function() { $blocks.masonry(); }, 500); });
@@ -17,24 +24,24 @@ jQuery(document).ready(function($) {
 	$(window).resize(function () {
 		$blocks.masonry();
 	});
-    
+
     /*
     Mobile Menu
     */
-    var mobile_menu = $('header #main-menu').html();
-    $('#mobile-main-menu').html(mobile_menu);
+    var mobile_menu = $('header #main-wide-menu').html();
+    $('#main-mobile-menu').html(mobile_menu);
 
 	// Toggle mobile-menu
 	$("header .nav-toggle").on("click", function(){	
 		$(this).toggleClass("active");
-		$("#mobile-main-menu").slideToggle();
+		$("#main-mobile-menu").slideToggle();
 	});
 
 	// Show mobile-menu
 	$(window).resize(function() {
 		if ($(window).width() > 782) {
 			$("header .nav-toggle").removeClass("active");
-			$("#mobile-main-menu").hide();
+			$("#main-mobile-menu").hide();
 		}
 	});
 	
@@ -85,3 +92,40 @@ jQuery(document).ready(function($) {
     
     
 });
+
+//https://stackoverflow.com/a/23945027/782013
+function gordo_extract_url_hostname(url) {
+    var hostname;
+    //find & remove protocol (http, ftp, etc.) and get hostname
+
+    if (url.indexOf("://") > -1) {
+        hostname = url.split('/')[2];
+    }
+    else {
+        hostname = url.split('/')[0];
+    }
+
+    //find & remove port number
+    hostname = hostname.split(':')[0];
+    //find & remove "?"
+    hostname = hostname.split('?')[0];
+
+    return hostname;
+}
+function gordo_extract_url_domain(url) {
+    var domain = gordo_extract_url_hostname(url),
+        splitArr = domain.split('.'),
+        arrLen = splitArr.length;
+
+    //extracting the root domain here
+    //if there is a subdomain 
+    if (arrLen > 2) {
+        domain = splitArr[arrLen - 2] + '.' + splitArr[arrLen - 1];
+        //check to see if it's using a Country Code Top Level Domain (ccTLD) (i.e. ".me.uk")
+        if (splitArr[arrLen - 1].length == 2 && splitArr[arrLen - 1].length == 2) {
+            //this is using a ccTLD
+            domain = splitArr[arrLen - 3] + '.' + domain;
+        }
+    }
+    return domain;
+}

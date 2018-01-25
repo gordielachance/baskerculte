@@ -2,17 +2,19 @@
 
 <div class="wrapper section medium-padding">
 										
-	<div class="section-inner">
+	<div class="section-inner row">
 	
-		<div class="content fleft">
+		<div class="content column">
 	
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		
-				<div class="post">
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				
 					<div class="post-header">
 												
 					    <?php the_title( '<h1 class="post-title">', '</h1>' ); ?>
+                        
+                        <?php echo gordo_get_hentry_metas();?>
 					    				    
 				    </div><!-- .post-header -->
 				
@@ -44,13 +46,13 @@
 								                                        
 						<?php the_content(); ?>
 						
-						<div class="clear"></div>
+						
 															            			                        
 					</div><!-- .post-content -->
 					
 					<?php comments_template( '', true ); ?>
 									
-				</div><!-- .post -->
+				</article><!-- .post -->
 			
 			<?php endwhile; 
 		
@@ -59,15 +61,11 @@
 				<p><?php _e( "We couldn't find any posts that matched your query. Please try again.", "gordo" ); ?></p>
 		
 			<?php endif; ?>
-		
-			<div class="clear"></div>
-			
+
 		</div><!-- .content -->
-		
-		<?php get_sidebar(); ?>
-		
-		<div class="clear"></div>
-	
+        
+        <?php gordo_get_sidebar(false); ?>
+
 	</div><!-- .section-inner -->
 
 </div><!-- .wrapper -->

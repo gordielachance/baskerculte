@@ -1,0 +1,145 @@
+/*---------------------------------------------------------------------------------
+
+	Editor styles for Gordo
+
+---------------------------------------------------------------------------------*/
+
+body#tinymce.wp-editor {
+  font-family: 'Roboto', Helvetica, sans-serif;
+  font-size: 16px;
+  a {
+    color: #13C4A5;
+    &:hover {
+      color: #13C4A5;
+      text-decoration: underline;
+    }
+  }
+
+/* headlines */
+  h1, h2, h3, h4, h5, h6 {
+    color: #444;
+    line-height: 120%;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', sans-serif;
+  }
+  h1 {
+    font-size: 2em;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: 1.75em;
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+  }
+  h4 {
+    font-size: 1.25em;
+  }
+  h5 {
+    font-size: 1.1em;
+  }
+
+/* blockquote */
+  blockquote {
+    padding: 1.1em;
+    line-height: 150%;
+    color: #666;
+    &:before, &:after {
+      content: "";
+      display: block;
+      width: 128px;
+      height: 3px;
+      background: #eee;
+      margin: 40px auto;
+    }
+    p {
+      font-size: 1.2em;
+      line-height: 160%;
+      font-weight: 300;
+      text-align: center;
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  cite {
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 140%;
+    text-align: center;
+    display: block;
+    margin-top: 1.1em;
+    font-style: normal;
+    &:before {
+      content: "— ";
+    }
+  }
+  blockquote cite em {
+    font-style: italic;
+    font-weight: bold;
+  }
+
+/* media */
+  .alignright {
+    margin-left: 20px;
+  }
+  .alignleft {
+    margin-right: 20px;
+  }
+  .wp-caption {
+    padding: 0;
+    border: none;
+    background: none;
+  }
+  .wp-caption-dd {
+    font-size: 0.85em;
+    padding-top: 0.5em;
+    color: #888;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+/* tables */
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    font-size: 0.9em;
+    width: 100%;
+    margin-bottom: 1.1em;
+    border: none;
+  }
+  th, td {
+    padding: 2%;
+    margin: 0;
+    overflow: visible;
+    line-height: 120%;
+    border: none;
+    border-bottom: 1px solid #DDD;
+    font-size: 1em;
+  }
+  caption {
+    color: #444;
+    text-align: center;
+    padding: 2%;
+  }
+  thead {
+    vertical-align: bottom;
+    white-space: nowrap;
+  }
+  th {
+    font-weight: bold;
+    color: #444;
+  }
+  table tbody > tr:nth-child(odd) > td {
+    background: #f9f9f9;
+  }
+}

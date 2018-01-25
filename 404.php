@@ -2,11 +2,11 @@
 
 <div class="wrapper section medium-padding">
 
-	<div class="section-inner">
+	<div class="section-inner row">
 
-		<div class="content fleft">
+		<div class="content column">
 		
-			<div class="post">
+			<article class="hentry post post-404">
 			
 				<div class="post-header">
 				        
@@ -22,14 +22,12 @@
 		            
 		        </div><!-- .post-content -->
 		        
-			</div><!-- .post -->
+			</article><!-- .post -->
 		
 		</div><!-- .content -->
 		
-		<?php get_sidebar(); ?>
-		
-		<div class="clear"></div>
-		
+		<?php gordo_get_sidebar(); ?>
+
 	</div><!-- .section-inner -->
 
 </div><!-- .wrapper -->
