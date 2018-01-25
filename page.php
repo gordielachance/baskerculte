@@ -17,37 +17,9 @@
                         <?php echo gordo_get_hentry_metas();?>
 					    				    
 				    </div><!-- .post-header -->
-				
-					<?php if ( has_post_thumbnail() ) : ?>
-						
-						<div class="featured-media">
-						
-							<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-							
-								<?php the_post_thumbnail( 'post-image' ); ?>
-								
-								<?php if ( ! empty( get_post( get_post_thumbnail_id() )->post_excerpt ) ) : ?>
-												
-									<div class="media-caption-container">
-									
-										<p class="media-caption"><?php echo get_post( get_post_thumbnail_id() )->post_excerpt; ?></p>
-										
-									</div>
-									
-								<?php endif; ?>
-								
-							</a>
-									
-						</div><!-- .featured-media -->
-							
-					<?php endif; ?>
 				   				        			        		                
-					<div class="post-content">
-								                                        
-						<?php the_content(); ?>
-						
-						
-															            			                        
+					<div class="post-content">                
+						<?php the_content(); ?>				            			                        
 					</div><!-- .post-content -->
 					
 					<?php comments_template( '', true ); ?>
