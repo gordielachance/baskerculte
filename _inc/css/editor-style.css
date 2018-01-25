@@ -77,7 +77,7 @@ img.alignleft, .alignleft img, img.aligncenter, .aligncenter img, img.alignright
 
 /* line 120, ../scss/_shared.scss */
 .no-border {
-  border: none; }
+  border: none !important; }
 
 /* line 124, ../scss/_shared.scss */
 small {
