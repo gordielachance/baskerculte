@@ -810,17 +810,6 @@ body.single .hentry .featured-media {
       text-decoration: underline; }
 
 /* line 659, ../scss/gordo.scss */
-.icon, .post-meta-icon, a.external-link:not(.no-link-icon)::before, a[data-url-domain="google.com"]:not(.no-link-icon)::before, a[data-url-domain="wikipedia.com"]:not(.no-link-icon)::before, a[data-url-domain="wikipedia.fr"]:not(.no-link-icon)::before, a[data-url-domain="facebook.com"]:not(.no-link-icon)::before, a[data-url-domain="twitter.com"]:not(.no-link-icon)::before, a[data-url-domain="vimeo.com"]:not(.no-link-icon)::before, a[data-url-domain="bandcamp.com"]:not(.no-link-icon)::before, a[data-url-domain="youtube.com"]:not(.no-link-icon)::before, a[data-url-domain="soundcloud.com"]:not(.no-link-icon)::before, a[data-url-domain="mixcloud.com"]:not(.no-link-icon)::before, a[data-url-domain="wordpress.com"]:not(.no-link-icon)::before, a[data-url-domain="tumblr.com"]:not(.no-link-icon)::before, a[data-url-domain="slack.com"]:not(.no-link-icon)::before, ul.post-meta > li.post-date:before, ul.post-meta > li.post-author:before, ul.post-meta > li.post-categories:before, ul.post-meta > li.post-tags:before, ul.post-meta > li.post-comments:before, ul.post-meta > li.post-edit:before, .comment.bypostauthor:after, .comment-actions a:before {
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto; }
-
-/* line 665, ../scss/gordo.scss */
-.post-meta-icon, a.external-link:not(.no-link-icon)::before, a[data-url-domain="google.com"]:not(.no-link-icon)::before, a[data-url-domain="wikipedia.com"]:not(.no-link-icon)::before, a[data-url-domain="wikipedia.fr"]:not(.no-link-icon)::before, a[data-url-domain="facebook.com"]:not(.no-link-icon)::before, a[data-url-domain="twitter.com"]:not(.no-link-icon)::before, a[data-url-domain="vimeo.com"]:not(.no-link-icon)::before, a[data-url-domain="bandcamp.com"]:not(.no-link-icon)::before, a[data-url-domain="youtube.com"]:not(.no-link-icon)::before, a[data-url-domain="soundcloud.com"]:not(.no-link-icon)::before, a[data-url-domain="mixcloud.com"]:not(.no-link-icon)::before, a[data-url-domain="wordpress.com"]:not(.no-link-icon)::before, a[data-url-domain="tumblr.com"]:not(.no-link-icon)::before, a[data-url-domain="slack.com"]:not(.no-link-icon)::before, ul.post-meta > li.post-date:before, ul.post-meta > li.post-author:before, ul.post-meta > li.post-categories:before, ul.post-meta > li.post-tags:before, ul.post-meta > li.post-comments:before, ul.post-meta > li.post-edit:before, .comment.bypostauthor:after, .comment-actions a:before {
-  margin-right: .25em; }
-
-/* line 670, ../scss/gordo.scss */
 ul.post-meta {
   background: rgba(0, 0, 0, 0.025);
   padding: 5% 10%;
@@ -829,34 +818,34 @@ ul.post-meta {
   line-height: 1.5em;
   color: #999;
   font-family: 'Roboto Slab', sans-serif; }
-  /* line 678, ../scss/gordo.scss */
+  /* line 667, ../scss/gordo.scss */
   ul.post-meta > li {
     display: inline;
     padding: 0 .2em; }
-    /* line 681, ../scss/gordo.scss */
+    /* line 670, ../scss/gordo.scss */
     ul.post-meta > li:not(:last-child) {
       margin-right: .2em;
       border-right: 1px solid #DDD; }
-    /* line 685, ../scss/gordo.scss */
+    /* line 674, ../scss/gordo.scss */
     ul.post-meta > li.post-date:before {
       content: "\f017"; }
-    /* line 689, ../scss/gordo.scss */
+    /* line 678, ../scss/gordo.scss */
     ul.post-meta > li.post-author:before {
       content: "\f2bd"; }
-    /* line 693, ../scss/gordo.scss */
+    /* line 682, ../scss/gordo.scss */
     ul.post-meta > li.post-categories:before {
       content: "\f07b"; }
-    /* line 697, ../scss/gordo.scss */
+    /* line 686, ../scss/gordo.scss */
     ul.post-meta > li.post-tags:before {
       content: "\f02b"; }
-    /* line 701, ../scss/gordo.scss */
+    /* line 690, ../scss/gordo.scss */
     ul.post-meta > li.post-comments:before {
       content: "\f075"; }
-    /* line 706, ../scss/gordo.scss */
+    /* line 695, ../scss/gordo.scss */
     ul.post-meta > li.post-edit:before {
       content: "\f040"; }
 
-/* line 716, ../scss/gordo.scss */
+/* line 705, ../scss/gordo.scss */
 .hentry.page ul.post-meta .post-author,
 .hentry.page ul.post-meta .post-date {
   display: none; }
@@ -864,19 +853,19 @@ ul.post-meta {
 /*  Post formats  ----------------------------------------- */
 /* format standard, format quote, format link */
 /* format image */
-/* line 732, ../scss/gordo.scss */
+/* line 721, ../scss/gordo.scss */
 .format-image .post-excerpt {
   padding-top: 7.5%;
   font-size: 0.9em; }
-  /* line 735, ../scss/gordo.scss */
+  /* line 724, ../scss/gordo.scss */
   .format-image .post-excerpt .image-caption {
     font-weight: 600; }
 
 /* format gallery */
-/* line 744, ../scss/gordo.scss */
+/* line 733, ../scss/gordo.scss */
 .format-gallery .flexslider {
   position: relative; }
-/* line 748, ../scss/gordo.scss */
+/* line 737, ../scss/gordo.scss */
 .format-gallery .flex-direction-nav a {
   display: block;
   height: 32px;
@@ -890,41 +879,41 @@ ul.post-meta {
   -webkit-opacity: 0.5;
   -moz-opacity: 0.5;
   opacity: 0.5; }
-/* line 762, ../scss/gordo.scss */
+/* line 751, ../scss/gordo.scss */
 .format-gallery .flex-direction-nav .flex-prev {
   left: 16px;
   background-image: url(../images/icons/1x/chevron-left-w-shade.png); }
-/* line 766, ../scss/gordo.scss */
+/* line 755, ../scss/gordo.scss */
 .format-gallery .flex-direction-nav .flex-next {
   right: 16px;
   background-image: url(../images/icons/1x/chevron-right-w-shade.png); }
-/* line 770, ../scss/gordo.scss */
+/* line 759, ../scss/gordo.scss */
 .format-gallery .flex-direction-nav a:hover {
   -webkit-opacity: 1;
   -moz-opacity: 1;
   opacity: 1; }
-/* line 775, ../scss/gordo.scss */
+/* line 764, ../scss/gordo.scss */
 .format-gallery .flex-direction-nav .flex-prev:hover {
   left: 12px; }
-/* line 778, ../scss/gordo.scss */
+/* line 767, ../scss/gordo.scss */
 .format-gallery .flex-direction-nav .flex-next:hover {
   right: 12px; }
-/* line 782, ../scss/gordo.scss */
+/* line 771, ../scss/gordo.scss */
 .format-gallery .slides li {
   position: relative; }
 
 /* -------------------------------------------------------------------------------- */
 /*	6. Single post
 /* -------------------------------------------------------------------------------- */
-/* line 797, ../scss/gordo.scss */
+/* line 786, ../scss/gordo.scss */
 body.single .content.center {
   margin: 0 auto;
   width: 944px;
   max-width: 100%; }
-/* line 804, ../scss/gordo.scss */
+/* line 793, ../scss/gordo.scss */
 body.single .content .hentry .post-header .post-title {
   font-size: 2.25em; }
-/* line 807, ../scss/gordo.scss */
+/* line 796, ../scss/gordo.scss */
 body.single .content .hentry .post-header .post-meta {
   color: #767676;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
@@ -941,39 +930,39 @@ body.single .content .hentry .post-header .post-meta {
   line-height: 120%;
   background-color: white;
   padding: 1em; }
-/* line 821, ../scss/gordo.scss */
+/* line 810, ../scss/gordo.scss */
 body.single .content .hentry .post-header:hover .post-meta {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1; }
-/* line 826, ../scss/gordo.scss */
+/* line 815, ../scss/gordo.scss */
 body.single .content .hentry .post-content {
   padding: 10%; }
 
 /* post header */
 /* format gallery */
-/* line 839, ../scss/gordo.scss */
+/* line 828, ../scss/gordo.scss */
 .single .format-gallery .flex-direction-nav a {
   height: 42px;
   width: 30px;
   background-size: auto 42px;
   margin-top: -21px; }
-/* line 845, ../scss/gordo.scss */
+/* line 834, ../scss/gordo.scss */
 .single .format-gallery .flex-direction-nav .flex-prev {
   background-image: url(../images/icons/1x/chevron-left-w-shade-big.png); }
-/* line 848, ../scss/gordo.scss */
+/* line 837, ../scss/gordo.scss */
 .single .format-gallery .flex-direction-nav .flex-next {
   background-image: url(../images/icons/1x/chevron-right-w-shade-big.png); }
 
 /* format quote */
-/* line 855, ../scss/gordo.scss */
+/* line 844, ../scss/gordo.scss */
 .single .post-quote cite {
   font-size: 1em;
   margin-top: 30px; }
 
-/* line 861, ../scss/gordo.scss */
+/* line 850, ../scss/gordo.scss */
 .author-links {
   margin-top: 18px; }
-  /* line 863, ../scss/gordo.scss */
+  /* line 852, ../scss/gordo.scss */
   .author-links a {
     display: inline-block;
     width: 36px;
@@ -985,176 +974,176 @@ body.single .content .hentry .post-content {
     margin-left: 5px;
     border-radius: 999px;
     text-indent: -9999px; }
-    /* line 874, ../scss/gordo.scss */
+    /* line 863, ../scss/gordo.scss */
     .author-links a:first-child {
       margin-left: 0; }
-    /* line 877, ../scss/gordo.scss */
+    /* line 866, ../scss/gordo.scss */
     .author-links a.author-link-posts {
       background-image: url(../images/icons/1x/archive-w.png); }
-    /* line 880, ../scss/gordo.scss */
+    /* line 869, ../scss/gordo.scss */
     .author-links a.author-link-website {
       background-image: url(../images/icons/1x/home-w.png); }
-    /* line 883, ../scss/gordo.scss */
+    /* line 872, ../scss/gordo.scss */
     .author-links a.author-link-mail {
       background-image: url(../images/icons/1x/social/mail-w.png); }
-    /* line 886, ../scss/gordo.scss */
+    /* line 875, ../scss/gordo.scss */
     .author-links a.author-link-twitter {
       background-image: url(../images/icons/1x/social/twitter-w.png); }
-    /* line 889, ../scss/gordo.scss */
+    /* line 878, ../scss/gordo.scss */
     .author-links a:hover {
       background-color: #13C4A5; }
 
 /* -------------------------------------------------------------------------------- */
 /*	7. Post content
 /* -------------------------------------------------------------------------------- */
-/* line 902, ../scss/gordo.scss */
+/* line 891, ../scss/gordo.scss */
 .post-content a {
   word-break: break-all; }
-  /* line 904, ../scss/gordo.scss */
+  /* line 893, ../scss/gordo.scss */
   .post-content a:hover {
     text-decoration: underline; }
-/* line 909, ../scss/gordo.scss */
+/* line 898, ../scss/gordo.scss */
 .post-content p, .post-content blockquote, .post-content ul, .post-content ol, .post-content address, .post-content dl, .post-content .wp-caption, .post-content pre {
   line-height: 180%;
   margin-bottom: 1.1em;
   -ms-word-wrap: break-word;
   word-wrap: break-word; }
-/* line 915, ../scss/gordo.scss */
+/* line 904, ../scss/gordo.scss */
 .post-content > *:first-child {
   margin-top: 0; }
-/* line 918, ../scss/gordo.scss */
+/* line 907, ../scss/gordo.scss */
 .post-content *:last-child {
   margin-bottom: 0; }
-/* line 921, ../scss/gordo.scss */
+/* line 910, ../scss/gordo.scss */
 .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
   margin: 50px 0 30px;
   font-family: 'Roboto Slab', sans-serif;
   font-weight: 700;
   color: #333; }
-/* line 927, ../scss/gordo.scss */
+/* line 916, ../scss/gordo.scss */
 .post-content h1 {
   font-size: 2em; }
-/* line 930, ../scss/gordo.scss */
+/* line 919, ../scss/gordo.scss */
 .post-content h2 {
   font-size: 1.75em; }
-/* line 933, ../scss/gordo.scss */
+/* line 922, ../scss/gordo.scss */
 .post-content h3 {
   font-size: 1.5em; }
-/* line 936, ../scss/gordo.scss */
+/* line 925, ../scss/gordo.scss */
 .post-content h4 {
   font-size: 1.25em;
   font-weight: 400; }
-/* line 940, ../scss/gordo.scss */
+/* line 929, ../scss/gordo.scss */
 .post-content h5 {
   font-size: 1em;
   font-weight: 400; }
-/* line 944, ../scss/gordo.scss */
+/* line 933, ../scss/gordo.scss */
 .post-content h6 {
   font-size: 0.9em;
   font-weight: 700;
   text-transform: uppercase; }
-/* line 950, ../scss/gordo.scss */
+/* line 939, ../scss/gordo.scss */
 .post-content h1 + h1, .post-content h1 + h2, .post-content h1 + h3, .post-content h1 + h4, .post-content h1 + h5, .post-content h1 + h6 {
   margin-top: 30px; }
-/* line 955, ../scss/gordo.scss */
+/* line 944, ../scss/gordo.scss */
 .post-content h2 + h1, .post-content h2 + h2, .post-content h2 + h3, .post-content h2 + h4, .post-content h2 + h5, .post-content h2 + h6 {
   margin-top: 30px; }
-/* line 960, ../scss/gordo.scss */
+/* line 949, ../scss/gordo.scss */
 .post-content h3 + h1, .post-content h3 + h2, .post-content h3 + h3, .post-content h3 + h4, .post-content h3 + h5, .post-content h3 + h6 {
   margin-top: 30px; }
-/* line 965, ../scss/gordo.scss */
+/* line 954, ../scss/gordo.scss */
 .post-content h4 + h1, .post-content h4 + h2, .post-content h4 + h3, .post-content h4 + h4, .post-content h4 + h5, .post-content h4 + h6 {
   margin-top: 30px; }
-/* line 970, ../scss/gordo.scss */
+/* line 959, ../scss/gordo.scss */
 .post-content h5 + h1, .post-content h5 + h2, .post-content h5 + h3, .post-content h5 + h4, .post-content h5 + h5, .post-content h5 + h6 {
   margin-top: 30px; }
-/* line 975, ../scss/gordo.scss */
+/* line 964, ../scss/gordo.scss */
 .post-content h6 + h1, .post-content h6 + h2, .post-content h6 + h3, .post-content h6 + h4, .post-content h6 + h5, .post-content h6 + h6 {
   margin-top: 30px; }
 
-/* line 981, ../scss/gordo.scss */
+/* line 970, ../scss/gordo.scss */
 em, q {
   font-style: italic; }
 
-/* line 986, ../scss/gordo.scss */
+/* line 975, ../scss/gordo.scss */
 .post-content strong em, .post-content em strong {
   font-weight: bold;
   font-style: italic; }
-/* line 990, ../scss/gordo.scss */
+/* line 979, ../scss/gordo.scss */
 .post-content big {
   font-size: 1.25em; }
 
-/* line 995, ../scss/gordo.scss */
+/* line 984, ../scss/gordo.scss */
 abbr, acronym {
   cursor: help; }
 
-/* line 999, ../scss/gordo.scss */
+/* line 988, ../scss/gordo.scss */
 code, kbd, pre {
   font-size: 0.85em;
   background: #EEE;
   font-family: Menlo, Monaco, monospace; }
 
-/* line 1006, ../scss/gordo.scss */
+/* line 995, ../scss/gordo.scss */
 .post-content .highlight {
   background: #fcf8a5;
   width: auto;
   display: inline;
   padding: 2px 3px; }
-/* line 1012, ../scss/gordo.scss */
+/* line 1001, ../scss/gordo.scss */
 .post-content kbd, .post-content code {
   padding: 5px;
   border-radius: 3px; }
-/* line 1016, ../scss/gordo.scss */
+/* line 1005, ../scss/gordo.scss */
 .post-content dl {
   line-height: 160%; }
-  /* line 1018, ../scss/gordo.scss */
+  /* line 1007, ../scss/gordo.scss */
   .post-content dl dt {
     font-weight: bold; }
-/* line 1022, ../scss/gordo.scss */
+/* line 1011, ../scss/gordo.scss */
 .post-content hr {
   width: 50%;
   height: 5px;
   background: #EEE;
   margin: 2em auto;
   border: 0; }
-/* line 1029, ../scss/gordo.scss */
+/* line 1018, ../scss/gordo.scss */
 .post-content ul {
   list-style: disc;
   margin-left: 1.5em; }
-  /* line 1032, ../scss/gordo.scss */
+  /* line 1021, ../scss/gordo.scss */
   .post-content ul ul {
     list-style: circle; }
-    /* line 1034, ../scss/gordo.scss */
+    /* line 1023, ../scss/gordo.scss */
     .post-content ul ul ul {
       list-style: square; }
-/* line 1039, ../scss/gordo.scss */
+/* line 1028, ../scss/gordo.scss */
 .post-content ol {
   list-style: decimal;
   margin-left: 1.5em; }
-  /* line 1042, ../scss/gordo.scss */
+  /* line 1031, ../scss/gordo.scss */
   .post-content ol ol {
     list-style: lower-alpha; }
-    /* line 1044, ../scss/gordo.scss */
+    /* line 1033, ../scss/gordo.scss */
     .post-content ol ol ol {
       list-style: lower-roman; }
-/* line 1050, ../scss/gordo.scss */
+/* line 1039, ../scss/gordo.scss */
 .post-content ul ul, .post-content ul ol {
   margin-bottom: 0; }
-/* line 1055, ../scss/gordo.scss */
+/* line 1044, ../scss/gordo.scss */
 .post-content ol ul, .post-content ol ol {
   margin-bottom: 0; }
-/* line 1059, ../scss/gordo.scss */
+/* line 1048, ../scss/gordo.scss */
 .post-content li {
   margin-top: 0.5em;
   line-height: 170%; }
-/* line 1063, ../scss/gordo.scss */
+/* line 1052, ../scss/gordo.scss */
 .post-content ol > li:last-child, .post-content ul > li:last-child {
   margin-bottom: 0; }
-/* line 1066, ../scss/gordo.scss */
+/* line 1055, ../scss/gordo.scss */
 .post-content address {
   padding: 3% 3.5%;
   background: #f1f1f1; }
-/* line 1070, ../scss/gordo.scss */
+/* line 1059, ../scss/gordo.scss */
 .post-content pre {
   white-space: pre-wrap;
   /* css-3 */
@@ -1174,44 +1163,44 @@ code, kbd, pre {
   border-radius: 6px; }
 
 /* Post media --------------------------------------- */
-/* line 1088, ../scss/gordo.scss */
+/* line 1077, ../scss/gordo.scss */
 .wp-caption, .post-content img {
   max-width: 100%; }
 
-/* line 1093, ../scss/gordo.scss */
+/* line 1082, ../scss/gordo.scss */
 .post-content .alignleft, .post-content .alignright {
   margin-bottom: 1.2em;
   max-width: 300px; }
-/* line 1098, ../scss/gordo.scss */
+/* line 1087, ../scss/gordo.scss */
 .post-content .wp-caption a, .post-content .wp-caption img {
   display: block; }
-/* line 1101, ../scss/gordo.scss */
+/* line 1090, ../scss/gordo.scss */
 .post-content .wp-caption .alignleft, .post-content .wp-caption .alignright {
   margin-bottom: 0; }
-/* line 1105, ../scss/gordo.scss */
+/* line 1094, ../scss/gordo.scss */
 .post-content .alignleft {
   float: left;
   margin-right: 1em; }
-/* line 1109, ../scss/gordo.scss */
+/* line 1098, ../scss/gordo.scss */
 .post-content .alignright {
   float: right;
   margin-left: 1em; }
-/* line 1113, ../scss/gordo.scss */
+/* line 1102, ../scss/gordo.scss */
 .post-content .aligncenter {
   display: block;
   margin-left: auto;
   margin-right: auto; }
-  /* line 1117, ../scss/gordo.scss */
+  /* line 1106, ../scss/gordo.scss */
   .post-content .aligncenter a, .post-content .aligncenter img {
     margin: 0 auto; }
-/* line 1121, ../scss/gordo.scss */
+/* line 1110, ../scss/gordo.scss */
 .post-content .wp-caption-text {
   font-size: 0.8em;
   font-weight: 700;
   color: #999;
   text-align: center;
   padding-top: 0.5em; }
-/* line 1128, ../scss/gordo.scss */
+/* line 1117, ../scss/gordo.scss */
 .post-content .gallery-caption {
   font-size: 0.8em;
   font-weight: 700;
@@ -1222,35 +1211,35 @@ code, kbd, pre {
   line-height: 24px; }
 
 /* Tables --------------------------------------- */
-/* line 1144, ../scss/gordo.scss */
+/* line 1133, ../scss/gordo.scss */
 .post-content table {
   border-collapse: collapse;
   border-spacing: 0;
   empty-cells: show;
   font-size: 0.9em;
   width: 100%; }
-/* line 1151, ../scss/gordo.scss */
+/* line 1140, ../scss/gordo.scss */
 .post-content th, .post-content td {
   padding: 2%;
   margin: 0;
   overflow: visible;
   line-height: 120%;
   border-bottom: 1px solid #DDD; }
-/* line 1158, ../scss/gordo.scss */
+/* line 1147, ../scss/gordo.scss */
 .post-content caption {
   text-align: center;
   padding: 2%; }
-/* line 1162, ../scss/gordo.scss */
+/* line 1151, ../scss/gordo.scss */
 .post-content thead {
   vertical-align: bottom;
   white-space: nowrap; }
-/* line 1166, ../scss/gordo.scss */
+/* line 1155, ../scss/gordo.scss */
 .post-content th {
   font-weight: bold; }
-/* line 1172, ../scss/gordo.scss */
+/* line 1161, ../scss/gordo.scss */
 .post-content table tbody > tr:nth-child(even) > td {
   background-color: #FFF; }
-/* line 1177, ../scss/gordo.scss */
+/* line 1166, ../scss/gordo.scss */
 .post-content table tbody > tr:nth-child(odd) > td {
   background-color: #f9f9f9; }
 
@@ -1905,7 +1894,7 @@ p.form-submit {
 /* -------------------------------------------------------------------------------- */
 /*	10. Page & Page Templates
 /* -------------------------------------------------------------------------------- */
-/* line 1204, ../scss/gordo.scss */
+/* line 1193, ../scss/gordo.scss */
 .posts .page {
   width: 100%;
   position: relative;
@@ -1917,19 +1906,19 @@ p.form-submit {
   overflow: hidden; }
 
 /* Contributors template ---------------------------------------------------------- */
-/* line 1217, ../scss/gordo.scss */
+/* line 1206, ../scss/gordo.scss */
 .post-content + .contributors-container {
   border-top: 1px solid #eee; }
 
-/* line 1221, ../scss/gordo.scss */
+/* line 1210, ../scss/gordo.scss */
 .authors-row {
   position: relative;
   padding: 10%;
   border-top: 1px solid #eee; }
-  /* line 1225, ../scss/gordo.scss */
+  /* line 1214, ../scss/gordo.scss */
   .authors-row:first-child {
     border-top: none; }
-  /* line 1228, ../scss/gordo.scss */
+  /* line 1217, ../scss/gordo.scss */
   .authors-row:before {
     content: "";
     display: block;
@@ -1939,16 +1928,16 @@ p.form-submit {
     bottom: 0;
     left: 50%;
     background: #eee; }
-  /* line 1238, ../scss/gordo.scss */
+  /* line 1227, ../scss/gordo.scss */
   .authors-row .author-info {
     width: 45%;
     margin-left: 10%;
     text-align: center; }
-    /* line 1242, ../scss/gordo.scss */
+    /* line 1231, ../scss/gordo.scss */
     .authors-row .author-info:first-child {
       margin-left: 0; }
 
-/* line 1248, ../scss/gordo.scss */
+/* line 1237, ../scss/gordo.scss */
 .author-avatar {
   display: inline-block;
   width: 134px;
@@ -1956,66 +1945,66 @@ p.form-submit {
   margin: 0 auto 25px auto;
   border: 6px solid #eee;
   border-radius: 9999px; }
-  /* line 1255, ../scss/gordo.scss */
+  /* line 1244, ../scss/gordo.scss */
   .author-avatar img {
     display: block;
     margin: 0 auto;
     border-radius: 9999px; }
 
-/* line 1263, ../scss/gordo.scss */
+/* line 1252, ../scss/gordo.scss */
 .author-info h4 {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 1.5em;
   font-weight: 700;
   text-align: center;
   margin-bottom: 10px; }
-  /* line 1269, ../scss/gordo.scss */
+  /* line 1258, ../scss/gordo.scss */
   .author-info h4 a {
     color: #2B3542; }
-    /* line 1271, ../scss/gordo.scss */
+    /* line 1260, ../scss/gordo.scss */
     .author-info h4 a:hover {
       color: #13C4A5; }
-/* line 1276, ../scss/gordo.scss */
+/* line 1265, ../scss/gordo.scss */
 .author-info h5 {
   font-family: 'Roboto Slab', sans-serif;
   text-align: center;
   margin-bottom: 25px; }
-  /* line 1280, ../scss/gordo.scss */
+  /* line 1269, ../scss/gordo.scss */
   .author-info h5 a {
     color: #999; }
-    /* line 1282, ../scss/gordo.scss */
+    /* line 1271, ../scss/gordo.scss */
     .author-info h5 a:hover {
       color: #444; }
 
-/* line 1289, ../scss/gordo.scss */
+/* line 1278, ../scss/gordo.scss */
 .author-description {
   line-height: 140%;
   text-align: center; }
-  /* line 1292, ../scss/gordo.scss */
+  /* line 1281, ../scss/gordo.scss */
   .author-description p {
     line-height: inherit;
     text-align: inherit; }
 
-/* line 1298, ../scss/gordo.scss */
+/* line 1287, ../scss/gordo.scss */
 .author-info .author-links a {
   background-color: #2B3542; }
-  /* line 1300, ../scss/gordo.scss */
+  /* line 1289, ../scss/gordo.scss */
   .author-info .author-links a:hover {
     background-color: #13C4A5; }
 
 /* Image ---------------------------------------------------------- */
-/* line 1309, ../scss/gordo.scss */
+/* line 1298, ../scss/gordo.scss */
 .single .post-meta p.image-resolution {
   background-image: url(../images/icons/1x/image-g.png); }
 
 /* -------------------------------------------------------------------------------- */
 /*	10. Pagination
 /* -------------------------------------------------------------------------------- */
-/* line 1319, ../scss/gordo.scss */
+/* line 1308, ../scss/gordo.scss */
 .page-title {
   margin-bottom: 60px;
   text-align: center; }
-  /* line 1322, ../scss/gordo.scss */
+  /* line 1311, ../scss/gordo.scss */
   .page-title h5 {
     display: inline-block;
     padding-bottom: 4px;
@@ -2025,7 +2014,7 @@ p.form-submit {
     font-weight: 700;
     text-transform: uppercase;
     text-align: center; }
-  /* line 1332, ../scss/gordo.scss */
+  /* line 1321, ../scss/gordo.scss */
   .page-title h3 {
     margin-top: 15px;
     font-family: 'Roboto Slab', sans-serif;
@@ -2033,11 +2022,11 @@ p.form-submit {
     font-weight: 400;
     text-align: center;
     color: #2B3542; }
-  /* line 1340, ../scss/gordo.scss */
+  /* line 1329, ../scss/gordo.scss */
   .page-title .title-pagination {
     margin-top: 15px; }
 
-/* line 1345, ../scss/gordo.scss */
+/* line 1334, ../scss/gordo.scss */
 .tag-archive-meta p {
   text-align: center;
   margin-top: 15px;
@@ -2045,7 +2034,7 @@ p.form-submit {
   font-style: italic; }
 
 /* archive navigation */
-/* line 1355, ../scss/gordo.scss */
+/* line 1344, ../scss/gordo.scss */
 .archive-nav a,
 a.tribe-events-button,
 .malinky-load-more a {
@@ -2055,7 +2044,7 @@ a.tribe-events-button,
   border-radius: 3px;
   color: #fff;
   display: inline-block; }
-  /* line 1365, ../scss/gordo.scss */
+  /* line 1354, ../scss/gordo.scss */
   .archive-nav a:hover,
   a.tribe-events-button:hover,
   .malinky-load-more a:hover {
@@ -2063,33 +2052,33 @@ a.tribe-events-button,
     color: #fff;
     text-decoration: none !important; }
 
-/* line 1371, ../scss/gordo.scss */
+/* line 1360, ../scss/gordo.scss */
 .malinky-load-more__button-disable {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5; }
 
 /* search */
-/* line 1378, ../scss/gordo.scss */
+/* line 1367, ../scss/gordo.scss */
 .search-no-results .post-content p {
   text-align: center; }
 
 /* -------------------------------------------------------------------------------- */
 /*	11. Sidebar
 /* -------------------------------------------------------------------------------- */
-/* line 1386, ../scss/gordo.scss */
+/* line 1375, ../scss/gordo.scss */
 .sidebar {
   flex: 0 0 27.5%;
   background-color: #fcfcfc;
   overflow: hidden; }
-  /* line 1390, ../scss/gordo.scss */
+  /* line 1379, ../scss/gordo.scss */
   .sidebar .widget {
     padding: 30px;
     border-top: 1px solid #EEE; }
-    /* line 1393, ../scss/gordo.scss */
+    /* line 1382, ../scss/gordo.scss */
     .sidebar .widget:first-child {
       border-top: none; }
 
-/* line 1399, ../scss/gordo.scss */
+/* line 1388, ../scss/gordo.scss */
 .widget-title {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 0.9em;
@@ -2097,26 +2086,26 @@ a.tribe-events-button,
   text-transform: uppercase;
   margin-bottom: 20px; }
 
-/* line 1407, ../scss/gordo.scss */
+/* line 1396, ../scss/gordo.scss */
 .sidebar .widget-content {
   font-size: 0.85em;
   color: #767676; }
 
-/* line 1412, ../scss/gordo.scss */
+/* line 1401, ../scss/gordo.scss */
 .widget-content a:hover {
   text-decoration: underline; }
 
-/* line 1416, ../scss/gordo.scss */
+/* line 1405, ../scss/gordo.scss */
 .sidebar .widget-content p {
   line-height: 150%; }
 
-/* line 1421, ../scss/gordo.scss */
+/* line 1410, ../scss/gordo.scss */
 .widget-content ul li, .widget-content ol li {
   position: relative;
   margin-top: 10px;
   padding: 1px 0 1px 14px;
   line-height: 130%; }
-  /* line 1426, ../scss/gordo.scss */
+  /* line 1415, ../scss/gordo.scss */
   .widget-content ul li:before, .widget-content ol li:before {
     font-family: FontAwesome;
     content: "\f105";
@@ -2125,28 +2114,28 @@ a.tribe-events-button,
     top: 0;
     color: #13C4A5;
     font-size: 18px; }
-/* line 1436, ../scss/gordo.scss */
+/* line 1425, ../scss/gordo.scss */
 .widget-content > ul > li:first-child {
   margin: 0; }
-/* line 1439, ../scss/gordo.scss */
+/* line 1428, ../scss/gordo.scss */
 .widget-content li ul > li:first-child {
   margin-top: 10px; }
-/* line 1442, ../scss/gordo.scss */
+/* line 1431, ../scss/gordo.scss */
 .widget-content .page_item_has_children {
   padding-bottom: 0; }
-/* line 1445, ../scss/gordo.scss */
+/* line 1434, ../scss/gordo.scss */
 .widget-content li ul li {
   padding-left: 15px; }
-/* line 1448, ../scss/gordo.scss */
+/* line 1437, ../scss/gordo.scss */
 .widget-content ul li .post-date {
   margin-left: 5px;
   color: #999; }
-/* line 1452, ../scss/gordo.scss */
+/* line 1441, ../scss/gordo.scss */
 .widget-content > ul > li:first-child {
   border-top: 0; }
 
 /* Widget tag cloud --------------------------------------- */
-/* line 1461, ../scss/gordo.scss */
+/* line 1450, ../scss/gordo.scss */
 .tagcloud a {
   display: block;
   float: left;
@@ -2157,14 +2146,14 @@ a.tribe-events-button,
   line-height: 1;
   color: #FFF;
   border-radius: 3px; }
-  /* line 1471, ../scss/gordo.scss */
+  /* line 1460, ../scss/gordo.scss */
   .tagcloud a:hover {
     background-color: #13C4A5;
     color: #fff;
     text-decoration: none; }
 
 /* Widget calendar --------------------------------------- */
-/* line 1481, ../scss/gordo.scss */
+/* line 1470, ../scss/gordo.scss */
 #wp-calendar {
   color: #888;
   width: 100%;
@@ -2172,49 +2161,49 @@ a.tribe-events-button,
   text-align: center;
   font-size: 0.9em;
   text-align: center; }
-  /* line 1487, ../scss/gordo.scss */
+  /* line 1476, ../scss/gordo.scss */
   #wp-calendar a {
     color: #1abc9c; }
-  /* line 1491, ../scss/gordo.scss */
+  /* line 1480, ../scss/gordo.scss */
   #wp-calendar caption, #wp-calendar tr, #wp-calendar td {
     text-align: center; }
-  /* line 1494, ../scss/gordo.scss */
+  /* line 1483, ../scss/gordo.scss */
   #wp-calendar th {
     text-align: center;
     padding: 4% 2%; }
-  /* line 1498, ../scss/gordo.scss */
+  /* line 1487, ../scss/gordo.scss */
   #wp-calendar td {
     padding: 4% 2%; }
-  /* line 1501, ../scss/gordo.scss */
+  /* line 1490, ../scss/gordo.scss */
   #wp-calendar caption, #wp-calendar thead {
     color: #666; }
-  /* line 1504, ../scss/gordo.scss */
+  /* line 1493, ../scss/gordo.scss */
   #wp-calendar caption {
     font-family: 'Roboto Slab', sans-serif;
     font-size: 1rem;
     color: #666;
     text-transform: capitalize;
     padding-bottom: 20px; }
-  /* line 1511, ../scss/gordo.scss */
+  /* line 1500, ../scss/gordo.scss */
   #wp-calendar thead th {
     font-size: 0.9em;
     font-weight: 700;
     text-transform: uppercase;
     border-bottom: 1px solid #eee;
     border-top: 1px solid #eee; }
-  /* line 1518, ../scss/gordo.scss */
+  /* line 1507, ../scss/gordo.scss */
   #wp-calendar tbody {
     border-bottom: 1px solid #eee; }
-  /* line 1522, ../scss/gordo.scss */
+  /* line 1511, ../scss/gordo.scss */
   #wp-calendar tfoot td {
     padding: 0; }
-  /* line 1525, ../scss/gordo.scss */
+  /* line 1514, ../scss/gordo.scss */
   #wp-calendar tfoot #prev {
     text-align: left; }
-  /* line 1528, ../scss/gordo.scss */
+  /* line 1517, ../scss/gordo.scss */
   #wp-calendar tfoot #next {
     text-align: right; }
-  /* line 1531, ../scss/gordo.scss */
+  /* line 1520, ../scss/gordo.scss */
   #wp-calendar tfoot a {
     display: block;
     color: #999;
@@ -2222,13 +2211,13 @@ a.tribe-events-button,
     font-size: 0.9em;
     font-weight: 700;
     text-transform: uppercase; }
-    /* line 1538, ../scss/gordo.scss */
+    /* line 1527, ../scss/gordo.scss */
     #wp-calendar tfoot a:hover {
       text-decoration: none;
       color: #1abc9c; }
 
 /* Dribbble widget --------------------------------------- */
-/* line 1548, ../scss/gordo.scss */
+/* line 1537, ../scss/gordo.scss */
 .dribbble-shot {
   display: block;
   width: 47.5%;
@@ -2237,108 +2226,108 @@ a.tribe-events-button,
   margin-bottom: 5%;
   padding: 6px;
   background: #f1f1f1; }
-  /* line 1550, ../scss/gordo.scss */
+  /* line 1539, ../scss/gordo.scss */
   .dribbble-shot img {
     display: block; }
-  /* line 1559, ../scss/gordo.scss */
+  /* line 1548, ../scss/gordo.scss */
   .dribbble-shot:nth-child(2n) {
     margin-right: 0; }
-  /* line 1562, ../scss/gordo.scss */
+  /* line 1551, ../scss/gordo.scss */
   .dribbble-shot:hover {
     background-color: #13C4A5; }
 
-/* line 1567, ../scss/gordo.scss */
+/* line 1556, ../scss/gordo.scss */
 .widgetmore {
   display: block;
   clear: both; }
 
 /* Flickr widget --------------------------------------- */
-/* line 1574, ../scss/gordo.scss */
+/* line 1563, ../scss/gordo.scss */
 .flickr_badge_image {
   width: 21.25%;
   float: left;
   margin-left: 5%;
   margin-bottom: 5%; }
-  /* line 1575, ../scss/gordo.scss */
+  /* line 1564, ../scss/gordo.scss */
   .flickr_badge_image a, .flickr_badge_image img {
     display: block; }
-  /* line 1582, ../scss/gordo.scss */
+  /* line 1571, ../scss/gordo.scss */
   .flickr_badge_image a {
     padding: 4px;
     background: #f1f1f1; }
-    /* line 1585, ../scss/gordo.scss */
+    /* line 1574, ../scss/gordo.scss */
     .flickr_badge_image a:hover {
       background-color: #13C4A5; }
-  /* line 1589, ../scss/gordo.scss */
+  /* line 1578, ../scss/gordo.scss */
   .flickr_badge_image:nth-child(2), .flickr_badge_image:nth-child(6), .flickr_badge_image:nth-child(10), .flickr_badge_image:nth-child(14) {
     margin-left: 0; }
 
 /* -------------------------------------------------------------------------------- */
 /*	11. Footer
 /* -------------------------------------------------------------------------------- */
-/* line 1600, ../scss/gordo.scss */
+/* line 1589, ../scss/gordo.scss */
 .footer .column {
   padding: 0 1em; }
-  /* line 1602, ../scss/gordo.scss */
+  /* line 1591, ../scss/gordo.scss */
   .footer .column:first-child {
     padding-left: 0; }
-  /* line 1605, ../scss/gordo.scss */
+  /* line 1594, ../scss/gordo.scss */
   .footer .column:last-child {
     padding-right: 0; }
-/* line 1609, ../scss/gordo.scss */
+/* line 1598, ../scss/gordo.scss */
 .footer .widget {
   margin-top: 1em;
   border-top: 1px solid #333;
   padding-top: 1em; }
-  /* line 1613, ../scss/gordo.scss */
+  /* line 1602, ../scss/gordo.scss */
   .footer .widget:first-child {
     margin: 0;
     border: none;
     padding: 0; }
-/* line 1619, ../scss/gordo.scss */
+/* line 1608, ../scss/gordo.scss */
 .footer .widget-title {
   color: #FFF;
   letter-spacing: 1px;
   font-size: 0.79em; }
-/* line 1624, ../scss/gordo.scss */
+/* line 1613, ../scss/gordo.scss */
 .footer .widget-content {
   color: #767676;
   font-size: 0.95em; }
-  /* line 1627, ../scss/gordo.scss */
+  /* line 1616, ../scss/gordo.scss */
   .footer .widget-content p {
     line-height: 160%; }
 
-/* line 1633, ../scss/gordo.scss */
+/* line 1622, ../scss/gordo.scss */
 .widget-content p + p {
   margin-top: 1em; }
 
 /* Widgets --------------------------------------- */
 /* widget tagcloud */
-/* line 1642, ../scss/gordo.scss */
+/* line 1631, ../scss/gordo.scss */
 .footer .tagcloud a {
   background-color: #333; }
-  /* line 1644, ../scss/gordo.scss */
+  /* line 1633, ../scss/gordo.scss */
   .footer .tagcloud a:hover {
     text-decoration: none;
     background-color: #13C4A5; }
 
 /* widget calendar */
-/* line 1653, ../scss/gordo.scss */
+/* line 1642, ../scss/gordo.scss */
 .footer #wp-calendar caption {
   color: #fff; }
-/* line 1656, ../scss/gordo.scss */
+/* line 1645, ../scss/gordo.scss */
 .footer #wp-calendar thead th {
   border: none;
   border-top: 1px solid #3B3B3B;
   border-bottom: 1px solid #3B3B3B; }
-/* line 1661, ../scss/gordo.scss */
+/* line 1650, ../scss/gordo.scss */
 .footer #wp-calendar tbody {
   border-bottom: 1px solid #3B3B3B; }
 
 /* -------------------------------------------------------------------------------- */
 /*	12. Credits
 /* -------------------------------------------------------------------------------- */
-/* line 1674, ../scss/gordo.scss */
+/* line 1663, ../scss/gordo.scss */
 .credits p {
   font-family: 'Roboto Slab', sans-serif;
   color: #767676;
@@ -2347,23 +2336,23 @@ a.tribe-events-button,
   font-weight: 700;
   letter-spacing: 1px;
   flex: auto; }
-/* line 1683, ../scss/gordo.scss */
+/* line 1672, ../scss/gordo.scss */
 .credits #tothetop-footer {
   flex-grow: 0;
   flex-shrink: 0; }
-  /* line 1686, ../scss/gordo.scss */
+  /* line 1675, ../scss/gordo.scss */
   .credits #tothetop-footer:before {
     padding: 0 .5em;
     content: " – "; }
-/* line 1691, ../scss/gordo.scss */
+/* line 1680, ../scss/gordo.scss */
 .credits a {
   color: #ccc; }
-  /* line 1693, ../scss/gordo.scss */
+  /* line 1682, ../scss/gordo.scss */
   .credits a:hover {
     color: #ccc;
     text-decoration: underline; }
 
-/* line 1700, ../scss/gordo.scss */
+/* line 1689, ../scss/gordo.scss */
 img#wpstats {
   display: none; }
 

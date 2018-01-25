@@ -656,17 +656,6 @@ body.single{
     }
 }
 
-.icon {
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-}
-.post-meta-icon{
-    @extend .icon;
-    margin-right:.25em;
-}
-
 ul.post-meta{
     background: rgba(0,0,0,0.025);
     padding: 5% 10%;
