@@ -1,0 +1,195 @@
+/*
+Frontend & Backend (editor)
+*/
+
+.icon {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+}
+.post-meta-icon{
+    @extend .icon;
+    margin-right:.25em;
+}
+
+a {
+    color: #13C4A5;
+    text-decoration: none;
+    &:hover {
+        color: #13C4A5;
+        text-decoration: none;
+    }
+
+    &:not(.no-link-icon){
+        &.external-link{
+            &::before{
+                @extend .post-meta-icon;
+                @include opacity(.5);
+                font-size:.3em;
+                content: "\f0c1";
+            }
+        }
+        &[data-url-domain="google.com"]{
+            &::before{
+                @extend .post-meta-icon;
+                content: "\f1a0";
+            }
+        }
+        &[data-url-domain="wikipedia.com"],&[data-url-domain="wikipedia.fr"]{
+            &::before{
+                @extend .post-meta-icon;
+                content: "\f266";
+            }
+        }
+        &[data-url-domain="facebook.com"]{
+            &::before{
+                @extend .post-meta-icon;
+                content: "\f09a";
+            }
+        }
+        &[data-url-domain="twitter.com"]{
+            &::before{
+                @extend .post-meta-icon;
+                content: "\f099";
+            }
+        }
+        &[data-url-domain="vimeo.com"]{
+            &::before{
+                @extend .post-meta-icon;
+                content: "\f27d";
+            }
+        }
+        &[data-url-domain="bandcamp.com"]{
+            &::before{
+                @extend .post-meta-icon;
+                content: "\f2d5";
+            }
+        }
+        &[data-url-domain="youtube.com"]{
+            &::before{
+                @extend .post-meta-icon;
+                content: "\f167";
+            }
+        }
+        &[data-url-domain="soundcloud.com"]{
+            &::before{
+                @extend .post-meta-icon;
+                content: "\f1be";
+            }
+        }
+        &[data-url-domain="mixcloud.com"]{
+            &::before{
+                @extend .post-meta-icon;
+                content: "\f289";
+            }
+        }
+        &[data-url-domain="wordpress.com"]{
+            &::before{
+                @extend .post-meta-icon;
+                content: "\f19a";
+            }
+        }
+        &[data-url-domain="tumblr.com"]{
+            &::before{
+                @extend .post-meta-icon;
+                content: "\f173";
+            }
+        }
+        &[data-url-domain="slack.com"]{
+            &::before{
+                @extend .post-meta-icon;
+                content: "\f198";
+            }
+        }
+    }
+
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+img.alignleft, .alignleft img, img.aligncenter, .aligncenter img, img.alignright, .alignright img {
+    box-sizing: border-box;
+    padding: 5px;
+    border: 1px solid #EEE;
+}
+.no-border{
+    border:none;
+}
+
+small{
+    font-size:.8em;
+}
+strong,b{
+    font-weight:bold;
+}
+blockquote {
+    position: relative;
+    margin: 1em 0;
+    font-size: 1.2em;
+    line-height: 160%;
+    font-weight: 300;
+    text-align: center;
+    &:before, &:after {
+        content: "";
+        display: block;
+        width: 128px;
+        height: 3px;
+        background: #eee;
+        margin: 1em auto;
+    }
+
+    cite {
+        font-family: 'Roboto Slab', sans-serif;
+        font-size: 0.9rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 140%;
+        text-align: center;
+        &:before {
+            content: "— ";
+        }
+        display: block;
+        margin-top: 1em;
+        em {
+            font-style: italic;
+            font-weight: bold;
+        }
+    }
+}
+
+.hidden {
+  display: none;
+}
+
+.clear {
+  clear: both;
+}
+
+.alignleft{
+    text-align:left;
+}
+.alignright{
+    text-align:right;
+}
+.aligncenter{
+    text-align:center;
+}
+
+.fleft {
+  float: left;
+}
+
+.fright {
+  float: right;
+}
+
+.gordo-notice{
+    text-align:center;
+    background:#ebfbed;
+    padding: .5em;
+}
