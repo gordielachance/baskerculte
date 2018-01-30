@@ -130,13 +130,6 @@ a.action-button{
     }
 
 }
-
-
-input,button {
-    &[type="submit"], &[type="reset"], &[type="button"] {
-        @extend .action-button;
-    }
-}
 .input-group-addon, .input-group-btn {
     width: 1%;
     white-space: nowrap;
@@ -149,6 +142,12 @@ input,button {
 }
 .input-group-addon, .input-group-btn, .input-group .form-control {
     display: table-cell;
+}
+
+input,button {
+    &[type="submit"], &[type="reset"], &[type="button"] {
+        @extend .action-button;
+    }
 }
 
 /* Search --------------------------------------- */
