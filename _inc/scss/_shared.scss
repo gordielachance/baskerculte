@@ -2,6 +2,34 @@
 Frontend & Backend (editor)
 */
 
+// Ratio
+@mixin fluid-aspect($ratio: 1 1, $selector: "> :first-child") {
+	$selector: unquote($selector);
+
+	padding-bottom: percentage(nth($ratio, 2) / nth($ratio, 1));
+	position: relative;
+
+	#{$selector} {
+		left: 0;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+}
+
+.ratio{
+    &.doublewidth {
+      @include fluid-aspect(1 1);  
+    }
+    &.ratio-square {
+      @include fluid-aspect(1 1);  
+    }
+    &.ratio-sixteen-nine {
+      @include fluid-aspect(16 9);  
+    }
+}
+
 .icon {
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
