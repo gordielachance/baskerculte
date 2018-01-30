@@ -53,10 +53,10 @@ class Gordo{
         //gordo
         add_action( 'after_setup_theme', array($this,'gordo_setup') );
         add_action( 'wp_head', array($this,'remove_no_js_class'), 1 );
-        add_action( 'wp_enqueue_scripts', array($this,'scripts_styles') );
-        add_action( 'admin_enqueue_scripts', array($this,'admin_scripts_styles') );
+        add_action( 'wp_enqueue_scripts', array($this,'scripts_styles'), 9 );
+        add_action( 'admin_enqueue_scripts', array($this,'admin_scripts_styles'), 9 );
         add_action( 'widgets_init', array($this,'gordo_sidebar_registration') );
-        add_action( 'customize_register' , array( 'gordo_Customize' , 'register' ) ); // Setup the Theme Customizer settings and controls...
+        //add_action( 'customize_register' , array( 'gordo_Customize' , 'register' ) ); // Setup the Theme Customizer settings and controls...
         add_action( 'admin_head', array($this,'gordo_admin_css') );
         add_filter( 'excerpt_more', array($this,'gordo_new_excerpt_more') );
         add_action( 'body_class', array($this,'gordo_body_classes') );
@@ -264,14 +264,11 @@ class Gordo{
         */
         
         $logo_args = array(
-            /*
-            'height'      => 100,
-            'width'       => 400,
-            'flex-height' => true,
-            'flex-width'  => true,
-            'header-text' => array( 'site-title', 'site-description' ),
-            */
-        );
+		'height'      => 240,
+		'width'       => 240,
+		'flex-height' => true,
+        'flex-width'  => true
+	);
         add_theme_support( 'custom-logo', $logo_args );
 
 		/*
@@ -486,7 +483,7 @@ if ( ! function_exists( 'gordo_comment' ) ) {
    GORDO THEME OPTIONS
    --------------------------------------------------------------------------------------------- */
 
-
+//TO FIX TO CHECK
 class gordo_Customize {
 
    public static function register ( $wp_customize ) {

@@ -227,35 +227,36 @@ body{
 
 header {
     padding: 70px 0;
-    .header-inner {
-        position: relative;
-        
-        .site-title {
-            margin-right: .25em;
-            text-transform: uppercase;
-            font-family: 'Roboto Slab', sans-serif;
-            font-weight: bold;
-            font-size: 2.25em;
-            text-align: center;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
-          a {
-            color: #fff;
-            &:hover {
-              color: #13C4A5;
-            }
-          }
+    #site-info{
+        text-align:center;
+    }
+    .site-title {
+        margin-right: .25em;
+        text-transform: uppercase;
+        font-family: 'Roboto Slab', sans-serif;
+        font-weight: bold;
+        font-size: 2.25em;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+      a {
+        color: #fff;
+        &:hover {
+          color: #13C4A5;
         }
-        
-        #menu-item-search{
-            @include display-flex;
-            align-items: center;
-            .searchform{
-                margin-left: auto;
-                width:12em;
-            }
-        }
-        
+      }
+    }
 
+    .custom-logo-link{
+        display:block;
+        margin:auto;
+    }
+
+    #menu-item-search{
+        @include display-flex;
+        align-items: center;
+        .searchform{
+            margin-left: auto;
+            width:12em;
+        }
     }
 }
 

@@ -17,10 +17,9 @@
 
     <header class="section no-padding bg-dark column"<?php echo $bgimgstyle;?>>
         <div class="bg-graphite section small-padding">
-            <div class="header-inner section-inner">
+            <div id="site-info" class="header-inner section-inner">
                 <?php
                 //logo
-                //TO FIX NOT WORKING
                 if ( has_custom_logo() ) {
                     the_custom_logo();
                 }else{
@@ -31,6 +30,13 @@
                         <h1 class="site-title">
                             <a href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr($title_attr); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'title' ) ); ?></a>
                         </h1>
+                        <?php
+                    }
+                    if ( $site_desc = get_bloginfo( 'description' ) ) {
+                        ?>
+                        <h2 class="site-description">
+                            <?php echo $site_desc;?>
+                        </h2>
                         <?php
                     }
                 }
