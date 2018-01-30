@@ -2,7 +2,47 @@
 /*
 Frontend & Backend (editor)
 */
-/* line 5, ../scss/_shared.scss */
+/* line 22, ../scss/_shared.scss */
+.ratio.doublewidth {
+  padding-bottom: 100%;
+  position: relative;
+}
+/* line 12, ../scss/_shared.scss */
+.ratio.doublewidth > :first-child {
+  left: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+/* line 25, ../scss/_shared.scss */
+.ratio.ratio-square {
+  padding-bottom: 100%;
+  position: relative;
+}
+/* line 12, ../scss/_shared.scss */
+.ratio.ratio-square > :first-child {
+  left: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+/* line 28, ../scss/_shared.scss */
+.ratio.ratio-sixteen-nine {
+  padding-bottom: 56.25%;
+  position: relative;
+}
+/* line 12, ../scss/_shared.scss */
+.ratio.ratio-sixteen-nine > :first-child {
+  left: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/* line 33, ../scss/_shared.scss */
 .icon, .post-meta-icon, a.external-link:not(.no-link-icon)::before, a[data-url-domain="google.com"]:not(.no-link-icon)::before, a[data-url-domain="wikipedia.com"]:not(.no-link-icon)::before, a[data-url-domain="wikipedia.fr"]:not(.no-link-icon)::before, a[data-url-domain="facebook.com"]:not(.no-link-icon)::before, a[data-url-domain="twitter.com"]:not(.no-link-icon)::before, a[data-url-domain="vimeo.com"]:not(.no-link-icon)::before, a[data-url-domain="bandcamp.com"]:not(.no-link-icon)::before, a[data-url-domain="youtube.com"]:not(.no-link-icon)::before, a[data-url-domain="soundcloud.com"]:not(.no-link-icon)::before, a[data-url-domain="mixcloud.com"]:not(.no-link-icon)::before, a[data-url-domain="wordpress.com"]:not(.no-link-icon)::before, a[data-url-domain="tumblr.com"]:not(.no-link-icon)::before, a[data-url-domain="slack.com"]:not(.no-link-icon)::before {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
@@ -10,106 +50,106 @@ Frontend & Backend (editor)
   text-rendering: auto;
 }
 
-/* line 11, ../scss/_shared.scss */
+/* line 39, ../scss/_shared.scss */
 .post-meta-icon, a.external-link:not(.no-link-icon)::before, a[data-url-domain="google.com"]:not(.no-link-icon)::before, a[data-url-domain="wikipedia.com"]:not(.no-link-icon)::before, a[data-url-domain="wikipedia.fr"]:not(.no-link-icon)::before, a[data-url-domain="facebook.com"]:not(.no-link-icon)::before, a[data-url-domain="twitter.com"]:not(.no-link-icon)::before, a[data-url-domain="vimeo.com"]:not(.no-link-icon)::before, a[data-url-domain="bandcamp.com"]:not(.no-link-icon)::before, a[data-url-domain="youtube.com"]:not(.no-link-icon)::before, a[data-url-domain="soundcloud.com"]:not(.no-link-icon)::before, a[data-url-domain="mixcloud.com"]:not(.no-link-icon)::before, a[data-url-domain="wordpress.com"]:not(.no-link-icon)::before, a[data-url-domain="tumblr.com"]:not(.no-link-icon)::before, a[data-url-domain="slack.com"]:not(.no-link-icon)::before {
   margin-right: .25em;
 }
 
-/* line 16, ../scss/_shared.scss */
+/* line 44, ../scss/_shared.scss */
 a {
   color: #13C4A5;
   text-decoration: none;
 }
-/* line 19, ../scss/_shared.scss */
+/* line 47, ../scss/_shared.scss */
 a:hover {
   color: #13C4A5;
   text-decoration: none;
 }
-/* line 26, ../scss/_shared.scss */
+/* line 54, ../scss/_shared.scss */
 a:not(.no-link-icon).external-link::before {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
   font-size: .3em;
   content: "\f0c1";
 }
-/* line 34, ../scss/_shared.scss */
+/* line 62, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="google.com"]::before {
   content: "\f1a0";
 }
-/* line 40, ../scss/_shared.scss */
+/* line 68, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="wikipedia.com"]::before, a:not(.no-link-icon)[data-url-domain="wikipedia.fr"]::before {
   content: "\f266";
 }
-/* line 46, ../scss/_shared.scss */
+/* line 74, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="facebook.com"]::before {
   content: "\f09a";
 }
-/* line 52, ../scss/_shared.scss */
+/* line 80, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="twitter.com"]::before {
   content: "\f099";
 }
-/* line 58, ../scss/_shared.scss */
+/* line 86, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="vimeo.com"]::before {
   content: "\f27d";
 }
-/* line 64, ../scss/_shared.scss */
+/* line 92, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="bandcamp.com"]::before {
   content: "\f2d5";
 }
-/* line 70, ../scss/_shared.scss */
+/* line 98, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="youtube.com"]::before {
   content: "\f167";
 }
-/* line 76, ../scss/_shared.scss */
+/* line 104, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="soundcloud.com"]::before {
   content: "\f1be";
 }
-/* line 82, ../scss/_shared.scss */
+/* line 110, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="mixcloud.com"]::before {
   content: "\f289";
 }
-/* line 88, ../scss/_shared.scss */
+/* line 116, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="wordpress.com"]::before {
   content: "\f19a";
 }
-/* line 94, ../scss/_shared.scss */
+/* line 122, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="tumblr.com"]::before {
   content: "\f173";
 }
-/* line 100, ../scss/_shared.scss */
+/* line 128, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="slack.com"]::before {
   content: "\f198";
 }
 
-/* line 110, ../scss/_shared.scss */
+/* line 138, ../scss/_shared.scss */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 115, ../scss/_shared.scss */
+/* line 143, ../scss/_shared.scss */
 img.alignleft, .alignleft img, img.aligncenter, .aligncenter img, img.alignright, .alignright img {
   box-sizing: border-box;
   padding: 5px;
   border: 1px solid #EEE;
 }
 
-/* line 120, ../scss/_shared.scss */
+/* line 148, ../scss/_shared.scss */
 .no-border {
   border: none !important;
 }
 
-/* line 124, ../scss/_shared.scss */
+/* line 152, ../scss/_shared.scss */
 small {
   font-size: .8em;
 }
 
-/* line 127, ../scss/_shared.scss */
+/* line 155, ../scss/_shared.scss */
 strong, b {
   font-weight: bold;
 }
 
-/* line 130, ../scss/_shared.scss */
+/* line 158, ../scss/_shared.scss */
 blockquote {
   position: relative;
   margin: 1em 0;
@@ -118,7 +158,7 @@ blockquote {
   font-weight: 300;
   text-align: center;
 }
-/* line 137, ../scss/_shared.scss */
+/* line 165, ../scss/_shared.scss */
 blockquote:before, blockquote:after {
   content: "";
   display: block;
@@ -127,7 +167,7 @@ blockquote:before, blockquote:after {
   background: #eee;
   margin: 1em auto;
 }
-/* line 146, ../scss/_shared.scss */
+/* line 174, ../scss/_shared.scss */
 blockquote cite {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 0.9rem;
@@ -138,52 +178,52 @@ blockquote cite {
   display: block;
   margin-top: 1em;
 }
-/* line 153, ../scss/_shared.scss */
+/* line 181, ../scss/_shared.scss */
 blockquote cite:before {
   content: "— ";
 }
-/* line 158, ../scss/_shared.scss */
+/* line 186, ../scss/_shared.scss */
 blockquote cite em {
   font-style: italic;
   font-weight: bold;
 }
 
-/* line 165, ../scss/_shared.scss */
+/* line 193, ../scss/_shared.scss */
 .hidden {
   display: none;
 }
 
-/* line 169, ../scss/_shared.scss */
+/* line 197, ../scss/_shared.scss */
 .clear {
   clear: both;
 }
 
-/* line 173, ../scss/_shared.scss */
+/* line 201, ../scss/_shared.scss */
 .alignleft {
   text-align: left;
 }
 
-/* line 176, ../scss/_shared.scss */
+/* line 204, ../scss/_shared.scss */
 .alignright {
   text-align: right;
 }
 
-/* line 179, ../scss/_shared.scss */
+/* line 207, ../scss/_shared.scss */
 .aligncenter {
   text-align: center;
 }
 
-/* line 183, ../scss/_shared.scss */
+/* line 211, ../scss/_shared.scss */
 .fleft {
   float: left;
 }
 
-/* line 187, ../scss/_shared.scss */
+/* line 215, ../scss/_shared.scss */
 .fright {
   float: right;
 }
 
-/* line 191, ../scss/_shared.scss */
+/* line 219, ../scss/_shared.scss */
 .gordo-notice {
   text-align: center;
   background: #ebfbed;
