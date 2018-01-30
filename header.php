@@ -15,8 +15,8 @@
     }
     ?>
 
-    <header class="section no-padding bg-dark column"<?php echo $bgimgstyle;?>>
-        <div class="bg-graphite section small-padding">
+    <header class="bg-graphite section no-padding column"<?php echo $bgimgstyle;?>>
+        <div class="section small-padding">
             <div id="site-info" class="header-inner section-inner">
                 <?php
                 //logo
@@ -43,12 +43,12 @@
                 ?>
             </div>
         </div>
-        <div>
-            <div class="header-inner section-inner row">
+        <div id="main-wide-menu" class="bg-dark">
+            <div class="bg-dark header-inner section-inner row">
                 <div class="nav-toggle fleft hidden">
                     <i class="fa fa-bars" aria-hidden="true"></i>
                 </div>		
-                <ul id="main-wide-menu" class="row">
+                <ul class="menu row">
 
                     <?php 
 
@@ -83,6 +83,6 @@
             </div>
         </div>
         <ul id="main-mobile-menu" class="section bg-dark no-padding hidden">
-            <!-- jQuery clone of #main-wide-menu -->
+            <!-- jQuery clone of #main-wide-menu ul -->
         </ul>
     </header><!-- .navigation -->

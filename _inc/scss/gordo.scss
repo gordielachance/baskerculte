@@ -52,9 +52,9 @@ body a {
 .post-likes,
 .post-meta a,
 .pagination,
-#main-wide-menu a,
-#main-wide-menu > .has-children > a::after,
-#main-wide-menu > .page_item_has_children > a::after,
+#main-wide-menu .menu a,
+#main-wide-menu .menu > .has-children > a::after,
+#main-wide-menu .menu > .page_item_has_children > a::after,
 .searchbutton,
 .comment-form input[type="text"],
 .comment-form input[type="email"],
@@ -260,12 +260,13 @@ header {
     }
 }
 
+
 /* -------------------------------------------------------------------------------- */
 /*	4. Navigation
 /* -------------------------------------------------------------------------------- */
 
 
-#main-wide-menu {
+#main-wide-menu .menu {
     font-family: 'Roboto Slab', sans-serif;
     font-size: 0.9em;
     text-align: center;
@@ -328,7 +329,7 @@ header {
 
 /* Sub menus --------------------------------------- */
 
-#main-wide-menu {
+#main-wide-menu .menu {
     li{
         ul{ //sub-menu
             position: absolute;
@@ -465,7 +466,7 @@ header {
 }
 
 .is_mobile {
-    #main-wide-menu {
+    #main-wide-menu .menu {
         li {
             ul {
                 @include opacity(1);

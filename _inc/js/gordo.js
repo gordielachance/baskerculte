@@ -28,7 +28,7 @@ jQuery(document).ready(function($) {
     /*
     Mobile Menu
     */
-    var mobile_menu = $('header #main-wide-menu').html();
+    var mobile_menu = $('header #main-wide-menu .menu').html();
     $('#main-mobile-menu').html(mobile_menu);
 
 	// Toggle mobile-menu

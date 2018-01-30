@@ -87,8 +87,9 @@ class Gordo{
     }
     function gordo_body_classes( $classes ) {
 
-        // If has post thumbnail
-        $classes[] = has_post_thumbnail() ? 'has-featured-image' : 'no-featured-image';
+        $classes[] = has_header_image() ? 'has-header-image' : null;
+        $classes[] = has_post_thumbnail() ? 'has-featured-image' : 'no-featured-image'; // If has post thumbnail
+        
 
         // If is mobile
         if ( wp_is_mobile() ) {
