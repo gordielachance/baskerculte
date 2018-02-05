@@ -54,7 +54,6 @@ a {
             &::before{
                 @extend .post-meta-icon;
                 @include opacity(.5);
-                font-size:.3em;
                 content: "\f0c1";
             }
         }

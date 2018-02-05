@@ -69,87 +69,86 @@ a:hover {
 a:not(.no-link-icon).external-link::before {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
-  font-size: .3em;
   content: "\f0c1";
 }
-/* line 62, ../scss/_shared.scss */
+/* line 61, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="google.com"]::before {
   content: "\f1a0";
 }
-/* line 68, ../scss/_shared.scss */
+/* line 67, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="wikipedia.com"]::before, a:not(.no-link-icon)[data-url-domain="wikipedia.fr"]::before {
   content: "\f266";
 }
-/* line 74, ../scss/_shared.scss */
+/* line 73, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="facebook.com"]::before {
   content: "\f09a";
 }
-/* line 80, ../scss/_shared.scss */
+/* line 79, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="twitter.com"]::before {
   content: "\f099";
 }
-/* line 86, ../scss/_shared.scss */
+/* line 85, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="vimeo.com"]::before {
   content: "\f27d";
 }
-/* line 92, ../scss/_shared.scss */
+/* line 91, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="bandcamp.com"]::before {
   content: "\f2d5";
 }
-/* line 98, ../scss/_shared.scss */
+/* line 97, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="youtube.com"]::before {
   content: "\f167";
 }
-/* line 104, ../scss/_shared.scss */
+/* line 103, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="soundcloud.com"]::before {
   content: "\f1be";
 }
-/* line 110, ../scss/_shared.scss */
+/* line 109, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="mixcloud.com"]::before {
   content: "\f289";
 }
-/* line 116, ../scss/_shared.scss */
+/* line 115, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="wordpress.com"]::before {
   content: "\f19a";
 }
-/* line 122, ../scss/_shared.scss */
+/* line 121, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="tumblr.com"]::before {
   content: "\f173";
 }
-/* line 128, ../scss/_shared.scss */
+/* line 127, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="slack.com"]::before {
   content: "\f198";
 }
 
-/* line 138, ../scss/_shared.scss */
+/* line 137, ../scss/_shared.scss */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 143, ../scss/_shared.scss */
+/* line 142, ../scss/_shared.scss */
 img.alignleft, .alignleft img, img.aligncenter, .aligncenter img, img.alignright, .alignright img {
   box-sizing: border-box;
   padding: 5px;
   border: 1px solid #EEE;
 }
 
-/* line 148, ../scss/_shared.scss */
+/* line 147, ../scss/_shared.scss */
 .no-border {
   border: none !important;
 }
 
-/* line 152, ../scss/_shared.scss */
+/* line 151, ../scss/_shared.scss */
 small {
   font-size: .8em;
 }
 
-/* line 155, ../scss/_shared.scss */
+/* line 154, ../scss/_shared.scss */
 strong, b {
   font-weight: bold;
 }
 
-/* line 158, ../scss/_shared.scss */
+/* line 157, ../scss/_shared.scss */
 blockquote {
   position: relative;
   margin: 1em 0;
@@ -158,7 +157,7 @@ blockquote {
   font-weight: 300;
   text-align: center;
 }
-/* line 165, ../scss/_shared.scss */
+/* line 164, ../scss/_shared.scss */
 blockquote:before, blockquote:after {
   content: "";
   display: block;
@@ -167,7 +166,7 @@ blockquote:before, blockquote:after {
   background: #eee;
   margin: 1em auto;
 }
-/* line 174, ../scss/_shared.scss */
+/* line 173, ../scss/_shared.scss */
 blockquote cite {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 0.9rem;
@@ -178,52 +177,52 @@ blockquote cite {
   display: block;
   margin-top: 1em;
 }
-/* line 181, ../scss/_shared.scss */
+/* line 180, ../scss/_shared.scss */
 blockquote cite:before {
   content: "— ";
 }
-/* line 186, ../scss/_shared.scss */
+/* line 185, ../scss/_shared.scss */
 blockquote cite em {
   font-style: italic;
   font-weight: bold;
 }
 
-/* line 193, ../scss/_shared.scss */
+/* line 192, ../scss/_shared.scss */
 .hidden {
   display: none;
 }
 
-/* line 197, ../scss/_shared.scss */
+/* line 196, ../scss/_shared.scss */
 .clear {
   clear: both;
 }
 
-/* line 201, ../scss/_shared.scss */
+/* line 200, ../scss/_shared.scss */
 .alignleft {
   text-align: left;
 }
 
-/* line 204, ../scss/_shared.scss */
+/* line 203, ../scss/_shared.scss */
 .alignright {
   text-align: right;
 }
 
-/* line 207, ../scss/_shared.scss */
+/* line 206, ../scss/_shared.scss */
 .aligncenter {
   text-align: center;
 }
 
-/* line 211, ../scss/_shared.scss */
+/* line 210, ../scss/_shared.scss */
 .fleft {
   float: left;
 }
 
-/* line 215, ../scss/_shared.scss */
+/* line 214, ../scss/_shared.scss */
 .fright {
   float: right;
 }
 
-/* line 219, ../scss/_shared.scss */
+/* line 218, ../scss/_shared.scss */
 .gordo-notice {
   text-align: center;
   background: #ebfbed;
