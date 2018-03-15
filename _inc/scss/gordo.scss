@@ -446,12 +446,6 @@ header {
             }
         }
     }
-    &#header-mobile{
-        .menu{
-
-        }
-
-    }
 
 
 }
@@ -503,10 +497,14 @@ body{
         @include display-flex();
         flex-wrap: wrap;
         .hentry-container{
-            width: calc(100% / 3);
+            width: calc(91% / 3);
             margin-top:1em;
             padding: 0 1.5% 4.5% 1.5%;
             word-wrap: break-word;
+            box-sizing: content-box;
+            .hentry{
+                padding-top: 1.5em; //space for icon
+            }
             .featured-media{
                 img{
                     min-width:100%;
@@ -532,6 +530,7 @@ body{
         height: 4em;
         line-height: 3em;
         @include border-radius(50%);
+        @include box-shadow(0 -2px 3px rgba(0, 0, 0, 0.02), 0 -2px 2px rgba(0, 0, 0, 0.03));
         color:#DDD;
     }
     &.sticky{

@@ -59,7 +59,7 @@
     .posts{
         &.grid-hentries{
             .hentry-container{
-                width: calc(100% / 2);
+                width: calc(94% / 2);
             }
         }
     }
@@ -110,25 +110,6 @@
 	/* structure */
 	
 	.wrapper.section { padding: 25px 0; }
-	
-	.post-header,
-	.single .post-content,
-	.post-excerpt,
-	.content .comments,
-	div#disqus_thread,
-	.comment-respond,
-	.post-quote
-	
-	/* header */
-    
-    header {
-        padding: 35px 0;
-        .header-inner { 
-            max-width: 90%;
-            .nav-toggle { padding: 20px 0; }
-        }
-        
-    }
 
 	/* navigation */
 
