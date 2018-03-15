@@ -278,53 +278,38 @@ header {
             color: #fff;
         }
     }
-    > {
-        li {
-            @include display-flex;
-            align-items: center;
-            justify-content: center;
-            flex: 0 0 auto;
-            padding:0 2em;
-            &:first-child{
-                padding-left:0;
-            }
-            &:not(:last-child):before { //border-right
-                content: "|";
-                display: block;
-                position: absolute;
-                right: 0;
-                top: 50%;
-                margin-top: -9px;
-                margin-right: -3px;
-                font-size: 16px;
-                color: #444;
-                font-weight: 300;
-                z-index: 1000;
-            }
-            > a {
-                display: block;
-                font-size: 0.85em;
-                color: #999;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                font-weight: 700;
-                padding: 2em 0;
-            }
+    > li {
+        /*
+        @include display-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        */
+        padding:0 2em;
+        &:first-child{
+            padding-left:0;
         }
+        > a {
+            display: block;
+            font-size: 0.85em;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            padding: 2em 0;
+        }
+    }
 
-        .has-children::after, .page_item_has_children::after {
+    .has-children > a, .page_item_has_children > a{
+        &::after{
             font: normal normal normal 14px/1 FontAwesome;
             content: "\f107";
             display: block;
-            position: absolute;
             z-index: 1001;
-            right: 1em;
-            color:#999;
+            float: right;
+            margin-left: .5em;
         }
-        .has-children:hover::after, .page_item_has_children:hover::after {
-            color: #fff;
-        }
-  }
+    }
 }
 
 /* Sub menus --------------------------------------- */
@@ -1694,3 +1679,35 @@ img#wpstats { display: none; } /* Silly WordPress stats */
 /*	13. Responsive
 /* -------------------------------------------------------------------------------- */
  @import "responsive";
+
+//////////////////
+
+body{
+    #header-side{
+        flex: 0 0 250px;
+        border-right: 1px solid black;
+    }
+    #header-top{
+        #main-wide-menu .menu {
+            > li {
+                &:not(:last-child):before { //border-right
+                    content: "|";
+                    display: block;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    margin-top: -9px;
+                    margin-right: -3px;
+                    font-size: 16px;
+                    color: #444;
+                    font-weight: 300;
+                    z-index: 1000;
+                }
+                &#menu-item-search{
+                    margin-left: auto;
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}

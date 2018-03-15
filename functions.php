@@ -336,6 +336,14 @@ class Gordo{
 
 	}
     
+    function get_header_styles(){
+        $styles = null;
+        if ( has_header_image() ){
+            $styles = sprintf(' style="background-image:url(\'%s\')"',get_header_image());
+        }
+        return $styles;
+    }
+    
 }
 
 /* ---------------------------------------------------------------------------------------------
