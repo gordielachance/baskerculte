@@ -18,10 +18,20 @@
         max-width: 97%;
       }
     }
+    
+    /* sidebar header */
+    body.gordo-sidebar-header{
+        #header-side{
+            display:none;
+        }
+        #header-top{
+            display:flex;
+        }
+    }
 
 	
 	/* navigation */
-	
+    
 	#header-top #main-wide-menu .menu {
         display: none;
     }

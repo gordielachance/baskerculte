@@ -29,19 +29,19 @@ jQuery(document).ready(function($) {
     Mobile Menu
     */
     var mobile_menu = $('header #main-wide-menu .menu').html();
-    $('#main-mobile-menu').html(mobile_menu);
+    $('#header-mobile #main-mobile-menu').html(mobile_menu);
 
 	// Toggle mobile-menu
 	$("header .nav-toggle").on("click", function(){	
 		$(this).toggleClass("active");
-		$("#main-mobile-menu").slideToggle();
+		$("#header-mobile").slideToggle();
 	});
 
 	// Show mobile-menu
 	$(window).resize(function() {
 		if ($(window).width() > 782) {
 			$("header .nav-toggle").removeClass("active");
-			$("#main-mobile-menu").hide();
+			$("#header-mobile").hide();
 		}
 	});
 	

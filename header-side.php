@@ -29,7 +29,7 @@
     <div id="main-wide-menu">
         <ul class="menu">
             <!--search -->
-            <li id="menu-item-search">
+            <li id="menu-item-search" class="menu-item">
                 <?php get_template_part( 'searchform' ); ?>
             </li>
             <?php 

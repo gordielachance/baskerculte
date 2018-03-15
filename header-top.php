@@ -27,11 +27,11 @@
         </div>
     </div>
     <div id="main-wide-menu" class="bg-dark">
-        <div class="bg-dark header-inner section-inner row">
-            <div class="nav-toggle fleft hidden">
+        <div class="bg-dark header-inner section-inner">
+            <div class="nav-toggle hidden">
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </div>		
-            <ul class="menu row">
+            <ul class="menu">
 
                 <?php 
 
@@ -59,7 +59,7 @@
 
                 ?>
                 <!--search -->
-                <li id="menu-item-search">
+                <li id="menu-item-search" class="menu-item">
                     <?php get_template_part( 'searchform' ); ?>
                 </li>
              </ul><!-- .main-menu -->

@@ -7,10 +7,17 @@
 </head>
 	
 <body <?php body_class('row'); ?>>
-    <?php get_template_part( 'header', 'side' ); ?>
+    <?php 
+    //use a sidebar header
+    if ( get_theme_mod( 'gordo_sidebar_header' ) ) {
+        get_template_part( 'header', 'side' );
+    }
+    ?>
     <div id="all-but-header">
         <?php get_template_part( 'header', 'top' ); ?>
-        <ul id="main-mobile-menu" class="section bg-dark no-padding hidden">
-            <!-- jQuery clone of #main-wide-menu ul -->
-        </ul>
+        <header id="header-mobile" class="hidden">
+            <ul id="main-mobile-menu" class="menu section bg-dark no-padding">
+                <!-- jQuery clone of #main-wide-menu ul -->
+            </ul>
+        </header>
     
