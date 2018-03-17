@@ -53,6 +53,22 @@
             }
         }
     }
+    
+    /* footer */
+
+    .footer {
+        .row{
+            display:block; /*break the flex thing*/
+            .column{
+                padding: 2em;
+                border: 1px solid rgba(0,0,0,0.05);
+            }
+            .column:not(:last-child){
+                margin-bottom: 2em;
+            }
+
+        }
+    }
 
 	
 	/* credits */
@@ -289,20 +305,6 @@
 
     .archive-nav {
       margin-top: 25px;
-    }
-	
-    /* footer */
-
-    .footer {
-        .row{
-            display:block; /*break the flex thing*/
-            .column:not(:last-child){
-                border-bottom:2px solid #333;
-                padding-bottom:2em;
-                margin-bottom:2em;
-            }
-
-        }
     }
 
     /* credits */
