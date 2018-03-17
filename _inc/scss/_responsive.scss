@@ -2,7 +2,15 @@
 	
 }
 
+#mobile-menu-switch{
+    display:none;
+}
+
 @media (max-width: 782px) {
+    
+    #mobile-menu-switch{
+        display:block;
+    }
     
 	/* structure */
     
@@ -19,38 +27,20 @@
       }
     }
     
-    /* sidebar header */
-    body.gordo-sidebar-header{
-        #header-side{
+    body.gordo-is-mobile{
+        
+        flex-direction:column;
+        #main-wide-menu{
             display:none;
         }
-        #header-top{
-            display:flex;
+
+        &.gordo-show-mobile-menu{
+            #main-wide-menu{
+                display:block;
+            }
         }
     }
 
-	
-	/* navigation */
-    
-	#header-top #main-wide-menu .menu {
-        display: none;
-    }
-
-    .nav-toggle {
-        display: block;
-        padding: 25px 0;
-        @include opacity(.5);
-        color:white;
-        text-align:center;
-      &:hover {
-        cursor: pointer;
-          @include opacity(1);
-      }
-      &.active .bar {
-        background: #fff;
-      }
-    }
-	
 	/* header */
 	
 	.section.header { padding: 50px 0; }
@@ -111,13 +101,6 @@
 	
 	.wrapper.section { padding: 25px 0; }
 
-	/* navigation */
-
-	#main-mobile-menu a {
-		padding-top: 20px;
-		padding-bottom: 20px;
-	}
-	
 	/* main content */
 	
 	.section-inner.content { max-width: 92%; }

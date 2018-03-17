@@ -1,9 +1,11 @@
-<?php get_header(); ?>
+<?php 
+	get_header(); 
+?>
 
 <div class="wrapper section medium-padding">
-
+										
 	<div class="section-inner row">
-
+	
 		<div class="content column">
 		
 			<article class="hentry post post-404">

@@ -1,5 +1,8 @@
 jQuery(document).ready(function($) {
     
+    //Expandable lists
+    $('#header ul.menu li').gordoExpandableMenu({button_glyph_open:'<i class="fa fa-chevron-down"></i>',button_glyph_closed:'<i class="fa fa-chevron-up"></i>'});
+    
     //External links
     $('a[target="_blank"]').addClass('external-link');
     $('a.external-link').each(function(){
@@ -28,22 +31,16 @@ jQuery(document).ready(function($) {
     /*
     Mobile Menu
     */
-    var mobile_menu = $('header #main-wide-menu .menu').html();
-    $('#header-mobile #main-mobile-menu').html(mobile_menu);
 
-	// Toggle mobile-menu
-	$("header .nav-toggle").on("click", function(){	
-		$(this).toggleClass("active");
-		$("#header-mobile").slideToggle();
-	});
-
-	// Show mobile-menu
 	$(window).resize(function() {
-		if ($(window).width() > 782) {
-			$("header .nav-toggle").removeClass("active");
-			$("#header-mobile").hide();
-		}
+        var is_mobile = ($(window).width() <= 782);
+        $('body').toggleClass('gordo-is-mobile',is_mobile);
 	});
+    
+	// Toggle mobile-menu
+	$("#mobile-menu-switch").on("click", function(){	
+		$('body').toggleClass("gordo-show-mobile-menu");
+	})
 	
 	
 	// Load Flexslider
@@ -90,7 +87,8 @@ jQuery(document).ready(function($) {
         return false;
     });
     
-    
+    $(window).trigger('resize');
+
 });
 
 //https://stackoverflow.com/a/23945027/782013

@@ -141,7 +141,7 @@
 
             </p>
 
-            <p class="alignright">
+            <p id="theme-credits" class="alignright">
                 <span><?php printf( __( 'Theme by <a href="%s">G.Breant</a>', 'gordo' ), 'https://github.com/gordielachance' ); ?></span>
             </p>
         <?php }?>

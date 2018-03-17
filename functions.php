@@ -180,8 +180,9 @@ class Gordo{
         //scripts
         wp_register_script( 'imagesloaded', '//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js', '4.1.4', true );
         wp_register_script( 'flexslider', '//cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/jquery.flexslider.min.js', '2.6.4', true );
-
-        wp_enqueue_script( 'gordo', get_template_directory_uri() . '/_inc/js/gordo.js', array( 'jquery', 'jquery-masonry', 'imagesloaded', 'flexslider' ),$this->version, true );
+        
+        wp_register_script( 'gordo.ExpandableMenu',get_template_directory_uri() . '/_inc/js/gordo.ExpandableMenu.js', array('jquery'),'1.0.0' );
+        wp_enqueue_script( 'gordo', get_template_directory_uri() . '/_inc/js/gordo.js', array( 'jquery', 'jquery-masonry', 'imagesloaded', 'flexslider',  'gordo.ExpandableMenu' ),$this->version, true );
 
         if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 
