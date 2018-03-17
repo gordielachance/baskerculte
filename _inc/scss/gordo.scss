@@ -352,6 +352,9 @@ body{
                         z-index: 1000;
                     }
                     &#menu-item-search{
+                        &:before{
+                            content:"";
+                        }
                         padding:0;
                         padding-top: .5em;
                         float:right;
