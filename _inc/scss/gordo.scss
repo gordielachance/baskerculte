@@ -482,7 +482,7 @@ body{
             word-wrap: break-word;
             box-sizing: content-box;
             .hentry{
-                padding-top: 1.5em; //space for icon
+                padding-top: 3em; //space for icon
             }
             .featured-media{
                 img{
@@ -503,12 +503,11 @@ body{
         text-align:center;
         box-sizing: border-box;
         position: absolute;
-        top: -1em;
+        top: -.25em;
         left: calc(50% - 2em);
         width: 4em;
         height: 4em;
         line-height: 3em;
-        @include border-radius(50%);
         @include box-shadow(0 -2px 3px rgba(0, 0, 0, 0.02), 0 -2px 2px rgba(0, 0, 0, 0.03));
         color:#DDD;
     }
