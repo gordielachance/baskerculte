@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
     
     //Expandable lists
-    $('#header ul.menu li').gordoExpandableMenu({button_glyph_open:'<i class="fa fa-chevron-down"></i>',button_glyph_closed:'<i class="fa fa-chevron-up"></i>'});
+    $('#header ul.menu li').gordoExpandableMenu({button_glyph_open:'<i class="fa fa-angle-down"></i>',button_glyph_closed:'<i class="fa fa-angle-up"></i>'});
     
     //External links
     $('a[target="_blank"]').addClass('external-link');
