@@ -50,13 +50,15 @@ class Gordo{
     
     function setup_actions(){
         
+        //customizer
+        new gordo_customizer();
+        
         //gordo
         add_action( 'after_setup_theme', array($this,'gordo_setup') );
         add_action( 'wp_head', array($this,'remove_no_js_class'), 1 );
         add_action( 'wp_enqueue_scripts', array($this,'scripts_styles'), 9 );
         add_action( 'admin_enqueue_scripts', array($this,'admin_scripts_styles'), 9 );
         add_action( 'widgets_init', array($this,'gordo_sidebar_registration') );
-        //add_action( 'customize_register' , array( 'gordo_Customize' , 'register' ) ); // Setup the Theme Customizer settings and controls...
         add_action( 'admin_head', array($this,'gordo_admin_css') );
         add_filter( 'excerpt_more', array($this,'gordo_new_excerpt_more') );
         add_action( 'body_class', array($this,'gordo_body_classes') );
@@ -89,6 +91,7 @@ class Gordo{
 
         $classes[] = has_header_image() ? 'has-header-image' : null;
         $classes[] = has_post_thumbnail() ? 'has-featured-image' : 'no-featured-image'; // If has post thumbnail
+        $classes[] = ( get_theme_mod( 'gordo_sidebar_header' ) ) ? 'gordo-sidebar-header' : null; //sidebar header ?
         
 
         // If is mobile
@@ -177,8 +180,9 @@ class Gordo{
         //scripts
         wp_register_script( 'imagesloaded', '//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js', '4.1.4', true );
         wp_register_script( 'flexslider', '//cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/jquery.flexslider.min.js', '2.6.4', true );
-
-        wp_enqueue_script( 'gordo', get_template_directory_uri() . '/_inc/js/gordo.js', array( 'jquery', 'jquery-masonry', 'imagesloaded', 'flexslider' ),$this->version, true );
+        
+        wp_register_script( 'gordo.ExpandableMenu',get_template_directory_uri() . '/_inc/js/gordo.ExpandableMenu.js', array('jquery'),'1.0.0' );
+        wp_enqueue_script( 'gordo', get_template_directory_uri() . '/_inc/js/gordo.js', array( 'jquery', 'jquery-masonry', 'imagesloaded', 'flexslider',  'gordo.ExpandableMenu' ),$this->version, true );
 
         if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 
@@ -336,6 +340,14 @@ class Gordo{
 
 	}
     
+    function get_header_styles(){
+        $styles = null;
+        if ( has_header_image() ){
+            $styles = sprintf(' style="background-image:url(\'%s\')"',get_header_image());
+        }
+        return $styles;
+    }
+    
 }
 
 /* ---------------------------------------------------------------------------------------------
@@ -484,59 +496,64 @@ if ( ! function_exists( 'gordo_comment' ) ) {
    GORDO THEME OPTIONS
    --------------------------------------------------------------------------------------------- */
 
-//TO FIX TO CHECK
-class gordo_Customize {
+class gordo_customizer {
+	public function __construct() {
 
-   public static function register ( $wp_customize ) {
-   
-      //1. Define a new section (if desired) to the Theme Customizer
-      $wp_customize->add_section( 'gordo_options', 
-         array(
-            'title' => __( 'Gordo Options', 'gordo' ), //Visible title of section
-            'priority' => 35, //Determines what order this appears in
-            'capability' => 'edit_theme_options', //Capability needed to tweak
-            'description' => __('Allows you to customize some settings for Gordo.', 'gordo'), //Descriptive tooltip
-         ) 
-      );
-      
-      $wp_customize->add_section( 'gordo_logo_section' , array(
-		    'title'       => __( 'Logo', 'gordo' ),
-		    'priority'    => 40,
-		    'description' => 'Upload a logo to replace the default site name and description in the header',
+		add_action( 'customize_register', array( $this, 'register_customize_sections' ) );
+
+	}
+
+	public function register_customize_sections( $wp_customize ) {
+        /*
+		 * Add Panels
+		 */
+
+		// New panel for "Layout".
+		$wp_customize->add_section( 'header_layout', array(
+			'title'    => __( 'Header Layout', 'gordo' ),
+			'priority' => 101
 		) );
-      
-      //2. Register new settings to the WP database...      
-      $wp_customize->add_setting( 'gordo_logo', 
-      	array( 
-      		'sanitize_callback' => 'esc_url_raw'
-      	) 
-      );
-                  
-      //3. Finally, we define the control itself (which links a setting to a section and renders the HTML controls)...
-      $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'gordo_logo', array(
-		    'label'    => __( 'Logo', 'gordo' ),
-		    'section'  => 'gordo_logo_section',
-		    'settings' => 'gordo_logo',
+
+		/*
+		 * Add settings to sections.
+		 */
+		$this->header_layout_section( $wp_customize );
+
+	}
+
+	function header_layout_section( $wp_customize ) {
+
+		/* Auto add featured image */
+		$wp_customize->add_setting( 'gordo_sidebar_header', array(
+			'default'           => false,
+			'sanitize_callback' => array( $this, 'sanitize_checkbox' )
+		) );
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gordo_sidebar_header', array(
+			'label'       => esc_html__( 'Sidebar header', 'gordo' ),
+			'description' => esc_html__( 'Check this if you want a sidebar header instead of a top header.', 'gordo' ),
+			'section'     => 'header_layout',
+			'settings'    => 'gordo_sidebar_header',
+			'type'        => 'checkbox',
+			'priority'    => 10
 		) ) );
-      
-      //4. We can also change built-in settings by modifying properties. For instance, let's make some stuff use live preview JS...
-      $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
-      $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
-   }
-   
-   public static function generate_css( $selector, $style, $mod_name, $prefix='', $postfix='', $echo=true ) {
-      $return = '';
-      $mod = get_theme_mod($mod_name);
-      if ( ! empty( $mod ) ) {
-         $return = sprintf('%s { %s:%s; }',
-            $selector,
-            $style,
-            $prefix.$mod.$postfix
-         );
-         if ( $echo ) echo $return;
-      }
-      return $return;
-    }
+
+	}
+
+	/**
+	 * Sanitize Checkbox
+	 *
+	 * Accepts only "true" or "false" as possible values.
+	 *
+	 * @param $input
+	 *
+	 * @access public
+	 * @since  1.0
+	 * @return bool
+	 */
+	public function sanitize_checkbox( $input ) {
+		return ( $input === true ) ? true : false;
+	}
+
 }
 
 /*
