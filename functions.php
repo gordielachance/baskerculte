@@ -13,7 +13,8 @@ class Gordo{
     public $db_version = '100';
     /*******************************************************************/
     
-    public $post_format_excerpts = array();
+    public $default_options;
+    public $options;
     
 	/**
 	 * @var The one true Instance
@@ -43,6 +44,15 @@ class Gordo{
     }
     
     function setup_globals(){
+        $this->default_options = array(
+            'colors' => array(
+                'bg-color' =>           '#f3f1e6',
+                'content-bg-color' =>   '#FFF',
+                'header-bg-color' =>    '#262626',
+                'footer-bg-color' =>    '#262626',
+                'credits-bg-color' =>   '#2b3029',
+            )
+        );
     }
     
     function includes(){
@@ -75,6 +85,14 @@ class Gordo{
         add_filter('the_excerpt', 'do_shortcode'); //enable shortcodes in excerpts
         add_filter('the_excerpt', array($GLOBALS['wp_embed'], 'autoembed')); //enable oEmbed in excerpts
 
+    }
+    
+    function get_options($keys = null){
+        return gordo_get_array_value($keys,$this->options);
+    }
+    
+    public function get_default_option($keys = null){
+        return gordo_get_array_value($keys,$this->options_default);
     }
 
     function remove_no_js_class(){
@@ -252,16 +270,7 @@ class Gordo{
         */
 		global $content_width;
 		if ( ! isset( $content_width ) ) $content_width = 676;
-			
-		/*
-        Custom background
-        */
-        $bg_args = array(
-            'default-color' =>      'f3f1e6',
-        );
-        
-        add_theme_support( 'custom-background', $bg_args );
-        
+
 		/*
         Custom header image
         */
@@ -510,13 +519,85 @@ if ( ! function_exists( 'gordo_comment' ) ) {
    --------------------------------------------------------------------------------------------- */
 
 class gordo_customizer {
+
 	public function __construct() {
 
 		add_action( 'customize_register', array( $this, 'register_customize_sections' ) );
+        add_action( 'wp_head', array($this,'customizer_css'), 15 );
 
 	}
 
 	public function register_customize_sections( $wp_customize ) {
+        //BG color
+        $wp_customize->add_setting( 'bg-color', array(
+            'default'        => gordo()->get_default_option('colors','bg-color'),
+            'type'           => 'theme_mod',
+            'transport'      => 'postMessage',
+            'capability'     => 'edit_theme_options',
+        ) );
+
+        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bg-color', array(
+            'label'   => __( 'Background color','gordo' ),
+            'section' => 'colors',
+            'settings'   => 'bg-color',
+        ) ) );
+        
+        //content BG color
+        $wp_customize->add_setting( 'content-bg-color', array(
+            'default'        => gordo()->get_default_option('colors','content-bg-color'),
+            'type'           => 'theme_mod',
+            'transport'      => 'postMessage',
+            'capability'     => 'edit_theme_options',
+        ) );
+
+        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'content-bg-color', array(
+            'label'   => __( 'Content background color','gordo' ),
+            'section' => 'colors',
+            'settings'   => 'content-bg-color',
+        ) ) );
+        
+        //header BG color
+        $wp_customize->add_setting( 'header-bg-color', array(
+            'default'        => gordo()->get_default_option('colors','header-bg-color'),
+            'type'           => 'theme_mod',
+            'transport'      => 'postMessage',
+            'capability'     => 'edit_theme_options',
+        ) );
+
+        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'header-bg-color', array(
+            'label'   => __( 'Header background color','gordo' ),
+            'section' => 'colors',
+            'settings'   => 'header-bg-color',
+        ) ) );
+        
+        //footer BG color
+        $wp_customize->add_setting( 'footer-bg-color', array(
+            'default'        => gordo()->get_default_option('colors','footer-bg-color'),
+            'type'           => 'theme_mod',
+            'transport'      => 'postMessage',
+            'capability'     => 'edit_theme_options',
+        ) );
+
+        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer-bg-color', array(
+            'label'   => __( 'Footer background color','gordo' ),
+            'section' => 'colors',
+            'settings'   => 'footer-bg-color',
+        ) ) );
+        
+        //credits BG color
+        $wp_customize->add_setting( 'credits-bg-color', array(
+            'default'        => gordo()->get_default_option('colors','credits-bg-color'),
+            'type'           => 'theme_mod',
+            'transport'      => 'postMessage',
+            'capability'     => 'edit_theme_options',
+        ) );
+
+        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'credits-bg-color', array(
+            'label'   => __( 'Credits background color','gordo' ),
+            'section' => 'colors',
+            'settings'   => 'credits-bg-color',
+        ) ) );
+        
         /*
 		 * Add Panels
 		 */
@@ -566,7 +647,60 @@ class gordo_customizer {
 	public function sanitize_checkbox( $input ) {
 		return ( $input === true ) ? true : false;
 	}
+    
+    function customizer_css(){
+        $bg_color = get_theme_mod( 'bg-color', gordo()->get_default_option('colors','bg-color') );
+        $content_bg_color = get_theme_mod( 'content-bg-color', gordo()->get_default_option('colors','content-bg-color') );
+        $header_bg_color = get_theme_mod( 'header-bg-color', gordo()->get_default_option('colors','header-bg-color') );
+        $footer_bg_color = get_theme_mod( 'footer-bg-color', gordo()->get_default_option('colors','footer-bg-color') );
+        $credits_bg_color = get_theme_mod( 'credits-bg-color', gordo()->get_default_option('colors','credits-bg-color') );
+        ?>
+        <!--gordo custom colors-->
+        <style type="text/css">
+            body{
+                 background-color:<?php echo $bg_color;?>
+            }
+            body.single,body:not(.single) .hentry, body:not(.single) .hentry .gordo-hentry-icon{
+                background-color:<?php echo $content_bg_color;?>
+            }
+            #header{
+                background-color:<?php echo $header_bg_color;?>
+            }
+            .footer{
+                background-color:<?php echo $footer_bg_color;?>
+            }
+            .credits{
+                background-color:<?php echo $credits_bg_color;?>
+            }
+            
+        </style>
+        <!--/gordo custom colors-->
+        <?php
+    }
 
+}
+
+/**
+ * Get a value in a multidimensional array
+ * http://stackoverflow.com/questions/1677099/how-to-use-a-string-as-an-array-index-path-to-retrieve-a-value
+ * @param type $keys
+ * @param type $array
+ * @return type
+ */
+function gordo_get_array_value($keys = null, $array){
+    if (!$keys) return $array;
+    
+    $keys = (array)$keys;
+    $first_key = $keys[0];
+    if(count($keys) > 1) {
+        if ( isset($array[$keys[0]]) ){
+            return wpsstm_get_array_value(array_slice($keys, 1), $array[$keys[0]]);
+        }
+    }elseif (isset($array[$first_key])){
+        return $array[$first_key];
+    }
+    
+    return false;
 }
 
 /*
