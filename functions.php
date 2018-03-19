@@ -103,6 +103,12 @@ class Gordo{
         if ( is_singular() || is_404() ) {
             $classes[] = 'single single-post';
         }
+        
+        if ( is_page_template('template-bookmarks.php') ){
+            if (($key = array_search('single single-post', $classes)) !== false) {
+                unset($classes[$key]);
+            }
+        }
 
         return $classes;
 
@@ -346,6 +352,13 @@ class Gordo{
             $styles = sprintf(' style="background-image:url(\'%s\')"',get_header_image());
         }
         return $styles;
+    }
+    
+    function get_page_bookmarks(){
+        $args = array(
+        );
+        $args = apply_filters('gordo_page_bookmarks_args',$args);
+        return get_bookmarks( $args );
     }
     
 }
