@@ -8,6 +8,9 @@ jQuery(document).ready(function($) {
     $('a.external-link').each(function(){
         var domain = gordo_extract_url_domain($(this).attr('href'));
         $(this).attr('data-url-domain',domain);
+        if ($(this).find('img').length) {
+            $(this).addClass('no-link-icon');
+        }
     });
 
 	//Masonry blocks

@@ -29,12 +29,12 @@
                     </div>
 		    			        		            
 		        <?php } ?>
+                
+            </div><!-- .posts -->
 	        	                    
-			<?php }else{
-                echo"No Posts Found";//TO FIX have sidebar etc.
-            } ?>
-			
-		</div><!-- .posts -->
+        <?php }else{
+            echo"No Posts Found";//TO FIX have sidebar etc.
+        } ?>
 			
 	</div><!-- .content -->
 	
