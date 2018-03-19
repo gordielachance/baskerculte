@@ -654,7 +654,7 @@ header .menu .searchform {
 }
 
 /* line 326, ../scss/gordo.scss */
-body.gordo-sidebar-header.page .wrapper, body.gordo-is-mobile.page .wrapper {
+body.gordo-sidebar-header.single .wrapper, body.gordo-is-mobile.single .wrapper {
   background-color: white;
 }
 /* line 333, ../scss/gordo.scss */
