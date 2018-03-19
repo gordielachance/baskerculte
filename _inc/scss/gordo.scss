@@ -322,6 +322,12 @@ header {
 
 body{
     
+    &.gordo-sidebar-header,&.gordo-is-mobile{
+        &.page .wrapper{
+            background-color:white;
+        }
+    }
+    
     &:not(.gordo-is-mobile){
         &.gordo-sidebar-header{ //side header when screen in large enough
             #header{
