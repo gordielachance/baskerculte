@@ -52,9 +52,9 @@ body a {
 .post-likes,
 .post-meta a,
 .pagination,
-#main-wide-menu .menu a,
-#main-wide-menu .menu > .has-children > a::after,
-#main-wide-menu .menu > .page_item_has_children > a::after,
+#header-menu .menu a,
+#header-menu .menu > .has-children > a::after,
+#header-menu .menu > .page_item_has_children > a::after,
 .searchbutton,
 .comment-form input[type="text"],
 .comment-form input[type="email"],
@@ -63,7 +63,7 @@ body a {
 .widget_search .searchsubmit,
 .widget_search .s,
 .format-gallery .flex-direction-nav a,
-.nav-toggle,
+#toggle-menu-bt,
 .dribbble-shot,
 .flickr_badge_image a,
 .post-content input[type="submit"],
@@ -498,13 +498,10 @@ body{
             }
         }
         .hentry{
-            //@include box-shadow(0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.12));
-            @include transition(box-shadow 0.3s cubic-bezier(.25,.8,.25,1));
             .featured-media img {
                     @include opacity(.8);
             }
             &:hover {
-                @include box-shadow(0 14px 28px rgba(0,0,0,0.125), 0 10px 10px rgba(0,0,0,0.11));
                 .featured-media img {
                     @include scale(1.02);
                     @include opacity(1);
@@ -1716,7 +1713,7 @@ img#wpstats { display: none; } /* Silly WordPress stats */
 }
 
 
-header .nav-toggle {
+header #toggle-menu-bt {
     display: block;
     padding: 25px 0;
     @include opacity(.5);
@@ -1726,4 +1723,30 @@ header .nav-toggle {
     cursor: pointer;
     @include opacity(1);
   }
+}
+
+#archives-menu{
+    margin-top: 1em;
+    .menu{
+        display:inline-block;
+        font-family: 'Roboto Slab', sans-serif;
+        a{
+            color:#444;
+            &:hover{
+                color:#13C4A5;
+            }
+        }
+        li{
+            display:inline-block;
+            padding:0 .25em;
+            &:not(:last-child){
+                border-right: 2px solid #ccc;
+            }
+            &.current-cat{
+                a{
+                    border-bottom: 2px solid #ccc;
+                }
+            }
+        }
+    }
 }

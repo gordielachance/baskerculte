@@ -4,6 +4,42 @@
 
     <div class="page-title section-inner">
         <?php echo gordo_archive_title();?>
+        <div id="archives-menu" class="section-inner">
+            <i class="fa fa-cog" aria-hidden="true"></i>
+            <ul class="menu">
+                <li><?php 
+                    $link_all = get_permalink( get_option( 'page_for_posts' ) );
+                    $text_all = __('All','gordo');
+                    printf('<a href="%s" title="%s">%s</a>',$link_all,$text_all,$text_all);
+                    ?>
+                </li>
+                <?php 
+
+                if ( has_nav_menu( 'archives' ) ) {
+
+                    $nav_args = array( 
+                        'container' 		=> '', 
+                        'items_wrap' 		=> '%3$s',
+                        'theme_location' 	=> 'archives', 
+                        'walker' 			=> new gordo_nav_walker,
+                    );
+
+                    wp_nav_menu( $nav_args ); 
+
+                } else {
+
+                    $archives_cat_args = array(
+                        'title_li' 	=> '',
+                        'hide_title_if_empty' => true,
+                    );
+
+                    wp_list_categories( $archives_cat_args );
+
+                } 
+
+                ?>
+             </ul><!-- #archives-menu -->
+        </div>
     </div>
 
 	<div class="content section-inner">

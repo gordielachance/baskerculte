@@ -58,7 +58,7 @@ class Gordo{
         add_action( 'wp_head', array($this,'remove_no_js_class'), 1 );
         add_action( 'wp_enqueue_scripts', array($this,'scripts_styles'), 9 );
         add_action( 'admin_enqueue_scripts', array($this,'admin_scripts_styles'), 9 );
-        add_action( 'widgets_init', array($this,'gordo_sidebar_registration') );
+        add_action( 'widgets_init', array($this,'register_sidebars') );
         add_action( 'admin_head', array($this,'gordo_admin_css') );
         add_filter( 'excerpt_more', array($this,'gordo_new_excerpt_more') );
         add_action( 'body_class', array($this,'gordo_body_classes') );
@@ -283,9 +283,10 @@ class Gordo{
         add_theme_support( 'custom-logo', $logo_args );
 
 		/*
-        Nav menu
+        Nav menus
         */
-		register_nav_menu( 'primary', 'Primary Menu' );
+		register_nav_menu( 'primary', __('Header Menu','gordo') );
+        register_nav_menu( 'archives', __('Blog Menu','gordo') );
 		
 		/*
         Translation ready
@@ -299,7 +300,7 @@ class Gordo{
 		
 	}
 
-	function gordo_sidebar_registration() {
+	function register_sidebars() {
         
         $defaults = array(
             'name' =>       null,

@@ -2,13 +2,13 @@
 	
 }
 
-#mobile-menu-switch{
+#toggle-menu-bt{
     display:none;
 }
 
 @media (max-width: 782px) {
     
-    #mobile-menu-switch{
+    #toggle-menu-bt{
         display:block;
     }
     
@@ -30,12 +30,12 @@
     body.gordo-is-mobile{
         
         flex-direction:column;
-        #main-wide-menu{
+        #header-menu{
             display:none;
         }
 
         &.gordo-show-mobile-menu{
-            #main-wide-menu{
+            #header-menu{
                 display:block;
             }
         }
