@@ -1688,12 +1688,6 @@ a.tribe-events-button, //the calendar plugin
 
 img#wpstats { display: none; } /* Silly WordPress stats */
 
-
-/* -------------------------------------------------------------------------------- */
-/*	13. Responsive
-/* -------------------------------------------------------------------------------- */
- @import "responsive";
-
 ////
 
 .gordoExpandableMenu{
@@ -1714,7 +1708,7 @@ img#wpstats { display: none; } /* Silly WordPress stats */
 
 
 header #toggle-menu-bt {
-    display: block;
+    display:none;
     padding: 25px 0;
     @include opacity(.5);
     color:white;
@@ -1750,3 +1744,8 @@ header #toggle-menu-bt {
         }
     }
 }
+
+/* -------------------------------------------------------------------------------- */
+/*	13. Responsive
+/* -------------------------------------------------------------------------------- */
+ @import "responsive";

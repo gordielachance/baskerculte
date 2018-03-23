@@ -2,13 +2,9 @@
 	
 }
 
-#toggle-menu-bt{
-    display:none;
-}
-
 @media (max-width: 782px) {
     
-    #toggle-menu-bt{
+    header #toggle-menu-bt{
         display:block;
     }
     

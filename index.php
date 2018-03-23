@@ -3,7 +3,9 @@
 <div class="wrapper section medium-padding">
 
     <div class="page-title section-inner">
+        <!-- archives title -->
         <?php echo gordo_archive_title();?>
+        <!-- archives menu -->
         <div id="archives-menu" class="section-inner">
             <i class="fa fa-cog" aria-hidden="true"></i>
             <ul class="menu">
