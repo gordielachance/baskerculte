@@ -74,6 +74,8 @@ class Gordo{
 
         add_filter('the_excerpt', 'do_shortcode'); //enable shortcodes in excerpts
         add_filter('the_excerpt', array($GLOBALS['wp_embed'], 'autoembed')); //enable oEmbed in excerpts
+        
+        add_action( 'gordo_archives_menu', array($this,'events_add_archive_filters_link') );
 
     }
 
@@ -360,6 +362,19 @@ class Gordo{
         );
         $args = apply_filters('gordo_page_bookmarks_args',$args);
         return get_bookmarks( $args );
+    }
+    
+    function events_add_archive_filters_link(){
+        $link = get_permalink( get_option( 'page_for_posts' ) );
+        $link = add_query_arg(array('post_type'=>'tribe_events'),$link);
+        $is_active = ( get_post_type() == 'tribe_events' );
+        $classes = array(
+            $is_active ? 'current-cat' : null
+        );
+        $classes = array_filter($classes);
+        $classes_str = $classes ? sprintf(' class="%s"',implode(' ',$classes)) : null;
+        
+        printf('<li %s><a href="%s">%s</a></li>',$classes_str,$link,__('Events', 'the-events-calendar'));
     }
     
 }

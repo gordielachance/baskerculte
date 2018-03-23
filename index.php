@@ -33,13 +33,17 @@
                     $archives_cat_args = array(
                         'title_li' 	=> '',
                         'hide_title_if_empty' => true,
+                        //'show_option_all' => __('All','gordo'),
                     );
 
                     wp_list_categories( $archives_cat_args );
 
                 } 
 
+                    do_action('gordo_archives_menu');
+                
                 ?>
+                
              </ul><!-- #archives-menu -->
         </div>
     </div>
