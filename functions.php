@@ -91,6 +91,7 @@ class Gordo{
     }
     function gordo_body_classes( $classes ) {
 
+        $classes[] = 'bg-page';
         $classes[] = has_header_image() ? 'has-header-image' : null;
         $classes[] = has_post_thumbnail() ? 'has-featured-image' : 'no-featured-image'; // If has post thumbnail
         $classes[] = ( get_theme_mod( 'gordo_sidebar_header' ) ) ? 'gordo-sidebar-header' : null; //sidebar header ?
@@ -257,12 +258,16 @@ class Gordo{
 			
 		/*
         Custom background
-        */
+        
+        It is too complex / too restrictive to handle color schemes using the WP functions.
+        We'll use strict CSS instead.
+        
         $bg_args = array(
             'default-color' =>      'f3f1e6',
         );
         
         add_theme_support( 'custom-background', $bg_args );
+        */
         
 		/*
         Custom header image
