@@ -5,8 +5,12 @@
     <div class="page-title section-inner">
         <!-- archives title -->
         <?php echo gordo_get_archive_title();?>
-        <!-- archives menu -->
-        <?php echo gordo_archive_menu();?>
+        <?php 
+        //archives menu
+        if ( get_theme_mod('gordo_archives_filter', true) ){
+            gordo_archive_menu();
+        }
+        ?>
     </div>
 
 	<div class="content section-inner">

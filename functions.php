@@ -543,21 +543,21 @@ class gordo_customizer {
 		 */
 
 		// New panel for "Layout".
-		$wp_customize->add_section( 'header_layout', array(
-			'title'    => __( 'Header Layout', 'gordo' ),
+		$wp_customize->add_section( 'gordo_extras', array(
+			'title'    => __( 'Gordo Extra Settings', 'gordo' ),
 			'priority' => 101
 		) );
 
 		/*
 		 * Add settings to sections.
 		 */
-		$this->header_layout_section( $wp_customize );
+		$this->gordo_extras_section( $wp_customize );
 
 	}
 
-	function header_layout_section( $wp_customize ) {
+	function gordo_extras_section( $wp_customize ) {
 
-		/* Auto add featured image */
+		/* Sidebar header */
 		$wp_customize->add_setting( 'gordo_sidebar_header', array(
 			'default'           => false,
 			'sanitize_callback' => array( $this, 'sanitize_checkbox' )
@@ -565,8 +565,22 @@ class gordo_customizer {
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gordo_sidebar_header', array(
 			'label'       => esc_html__( 'Sidebar header', 'gordo' ),
 			'description' => esc_html__( 'Check this if you want a sidebar header instead of a top header.', 'gordo' ),
-			'section'     => 'header_layout',
+			'section'     => 'gordo_extras',
 			'settings'    => 'gordo_sidebar_header',
+			'type'        => 'checkbox',
+			'priority'    => 10
+		) ) );
+        
+		/* Archives menu */
+		$wp_customize->add_setting( 'gordo_archives_filter', array(
+			'default'           => true,
+			'sanitize_callback' => array( $this, 'sanitize_checkbox' )
+		) );
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gordo_archives_filter', array(
+			'label'       => esc_html__( 'Archives menu', 'gordo' ),
+			'description' => esc_html__( 'Check this if you want a menu to filter your archives.', 'gordo' ),
+			'section'     => 'gordo_extras',
+			'settings'    => 'gordo_archives_filter',
 			'type'        => 'checkbox',
 			'priority'    => 10
 		) ) );
