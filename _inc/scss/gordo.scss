@@ -331,9 +331,10 @@ header {
 }
 
 body{
-    
     &.gordo-sidebar-header,&.gordo-is-mobile{
-        @extend .bg-white;
+        &:not(.blog){
+            @extend .bg-white;
+        }
     }
     
     &:not(.gordo-is-mobile){
