@@ -5,15 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
     <?php wp_head(); ?>
 </head>
-    
-<?php
-    
-$body_classes = array(
-    ( get_theme_mod( 'gordo_sidebar_header' ) ) ? 'row' : null,
-);
-?>
-	
-<body <?php body_class($body_classes); ?>>
+
+<body <?php body_class(); ?>>
 <header id="header" class="bg-graphite section no-padding"<?php echo gordo()->get_header_styles();?>>
     <div class="section small-padding">
         <div id="site-info" class="header-inner section-inner">
