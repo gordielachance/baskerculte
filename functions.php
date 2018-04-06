@@ -58,7 +58,7 @@ class Gordo{
         add_action( 'wp_head', array($this,'remove_no_js_class'), 1 );
         add_action( 'wp_enqueue_scripts', array($this,'scripts_styles'), 9 );
         add_action( 'admin_enqueue_scripts', array($this,'admin_scripts_styles'), 9 );
-        add_action( 'widgets_init', array($this,'gordo_sidebar_registration') );
+        add_action( 'widgets_init', array($this,'register_sidebars') );
         add_action( 'admin_head', array($this,'gordo_admin_css') );
         add_filter( 'excerpt_more', array($this,'gordo_new_excerpt_more') );
         add_action( 'body_class', array($this,'gordo_body_classes') );
@@ -74,6 +74,8 @@ class Gordo{
 
         add_filter('the_excerpt', 'do_shortcode'); //enable shortcodes in excerpts
         add_filter('the_excerpt', array($GLOBALS['wp_embed'], 'autoembed')); //enable oEmbed in excerpts
+        
+        add_action( 'gordo_archives_menu', array($this,'events_add_archive_filters_link') );
 
     }
 
@@ -89,6 +91,7 @@ class Gordo{
     }
     function gordo_body_classes( $classes ) {
 
+        $classes[] = 'bg-page';
         $classes[] = has_header_image() ? 'has-header-image' : null;
         $classes[] = has_post_thumbnail() ? 'has-featured-image' : 'no-featured-image'; // If has post thumbnail
         $classes[] = ( get_theme_mod( 'gordo_sidebar_header' ) ) ? 'gordo-sidebar-header' : null; //sidebar header ?
@@ -255,12 +258,16 @@ class Gordo{
 			
 		/*
         Custom background
-        */
+        
+        It is too complex / too restrictive to handle color schemes using the WP functions.
+        We'll use strict CSS instead.
+        
         $bg_args = array(
             'default-color' =>      'f3f1e6',
         );
         
         add_theme_support( 'custom-background', $bg_args );
+        */
         
 		/*
         Custom header image
@@ -283,9 +290,10 @@ class Gordo{
         add_theme_support( 'custom-logo', $logo_args );
 
 		/*
-        Nav menu
+        Nav menus
         */
-		register_nav_menu( 'primary', 'Primary Menu' );
+		register_nav_menu( 'primary', __('Header Menu','gordo') );
+        register_nav_menu( 'archives', __('Blog Menu','gordo') );
 		
 		/*
         Translation ready
@@ -299,7 +307,7 @@ class Gordo{
 		
 	}
 
-	function gordo_sidebar_registration() {
+	function register_sidebars() {
         
         $defaults = array(
             'name' =>       null,
@@ -359,6 +367,19 @@ class Gordo{
         );
         $args = apply_filters('gordo_page_bookmarks_args',$args);
         return get_bookmarks( $args );
+    }
+    
+    function events_add_archive_filters_link(){
+        $link = get_permalink( get_option( 'page_for_posts' ) );
+        $link = add_query_arg(array('post_type'=>'tribe_events'),$link);
+        $is_active = ( get_post_type() == 'tribe_events' );
+        $classes = array(
+            $is_active ? 'current-cat' : null
+        );
+        $classes = array_filter($classes);
+        $classes_str = $classes ? sprintf(' class="%s"',implode(' ',$classes)) : null;
+        
+        printf('<li %s><a href="%s">%s</a></li>',$classes_str,$link,__('Events', 'the-events-calendar'));
     }
     
 }
@@ -655,7 +676,7 @@ function gordo_get_sidebar( $sidebar_name = null ) {
     if ( $sidebar_name === false ) return; //We don't want a sidebar
     get_sidebar($sidebar_name);
 }
-function gordo_archive_title(){
+function gordo_get_archive_title(){
     global $wp_query;
     //posts header
 
@@ -713,6 +734,51 @@ function gordo_archive_title(){
 
     $output_str = implode("\n",$output);
     return sprintf('<p class="gordo-archive-title">%s</p>',$output_str);
+}
+
+function gordo_archive_menu(){
+    ?>
+    <div id="archives-menu" class="section-inner">
+        <i class="fa fa-cog" aria-hidden="true"></i>
+        <ul class="menu">
+            <li><?php 
+                $link_all = get_permalink( get_option( 'page_for_posts' ) );
+                $text_all = __('All','gordo');
+                printf('<a href="%s" title="%s">%s</a>',$link_all,$text_all,$text_all);
+                ?>
+            </li>
+            <?php 
+
+            if ( has_nav_menu( 'archives' ) ) {
+
+                $nav_args = array( 
+                    'container' 		=> '', 
+                    'items_wrap' 		=> '%3$s',
+                    'theme_location' 	=> 'archives', 
+                    'walker' 			=> new gordo_nav_walker,
+                );
+
+                wp_nav_menu( $nav_args ); 
+
+            } else {
+
+                $archives_cat_args = array(
+                    'title_li' 	=> '',
+                    'hide_title_if_empty' => true,
+                    //'show_option_all' => __('All','gordo'),
+                );
+
+                wp_list_categories( $archives_cat_args );
+
+            } 
+
+            do_action('gordo_archives_menu');
+
+            ?>
+
+         </ul><!-- #archives-menu -->
+    </div>
+    <?php
 }
 
 

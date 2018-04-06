@@ -42,10 +42,10 @@ $body_classes = array(
             ?>
         </div>
     </div>
-    <div id="mobile-menu-switch" class="nav-toggle">
+    <div id="toggle-menu-bt">
         <i class="fa fa-bars" aria-hidden="true"></i>
     </div>	
-    <div id="main-wide-menu" class="section-inner">
+    <div id="header-menu" class="section-inner">
         <ul class="menu">
             <!--search -->
             <li id="menu-item-search" class="menu-item">
@@ -76,7 +76,7 @@ $body_classes = array(
             } 
 
             ?>
-         </ul><!-- .main-menu -->
+         </ul><!-- #header-menu -->
     </div>
 </header><!-- .navigation -->
     <div id="all-but-header">

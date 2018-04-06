@@ -3,7 +3,10 @@
 <div class="wrapper section medium-padding">
 
     <div class="page-title section-inner">
-        <?php echo gordo_archive_title();?>
+        <!-- archives title -->
+        <?php echo gordo_get_archive_title();?>
+        <!-- archives menu -->
+        <?php echo gordo_archive_menu();?>
     </div>
 
 	<div class="content section-inner">

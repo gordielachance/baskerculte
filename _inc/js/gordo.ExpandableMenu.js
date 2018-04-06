@@ -53,7 +53,7 @@
                     $handle.append($button);
 
                     //menu click
-                    $button.click(function(e) {
+                    $button.on('click', function (e) {
                         e.preventDefault();
                         toggleState();
 
