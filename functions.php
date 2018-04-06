@@ -676,7 +676,7 @@ function gordo_get_sidebar( $sidebar_name = null ) {
     if ( $sidebar_name === false ) return; //We don't want a sidebar
     get_sidebar($sidebar_name);
 }
-function gordo_archive_title(){
+function gordo_get_archive_title(){
     global $wp_query;
     //posts header
 
@@ -734,6 +734,51 @@ function gordo_archive_title(){
 
     $output_str = implode("\n",$output);
     return sprintf('<p class="gordo-archive-title">%s</p>',$output_str);
+}
+
+function gordo_archive_menu(){
+    ?>
+    <div id="archives-menu" class="section-inner">
+        <i class="fa fa-cog" aria-hidden="true"></i>
+        <ul class="menu">
+            <li><?php 
+                $link_all = get_permalink( get_option( 'page_for_posts' ) );
+                $text_all = __('All','gordo');
+                printf('<a href="%s" title="%s">%s</a>',$link_all,$text_all,$text_all);
+                ?>
+            </li>
+            <?php 
+
+            if ( has_nav_menu( 'archives' ) ) {
+
+                $nav_args = array( 
+                    'container' 		=> '', 
+                    'items_wrap' 		=> '%3$s',
+                    'theme_location' 	=> 'archives', 
+                    'walker' 			=> new gordo_nav_walker,
+                );
+
+                wp_nav_menu( $nav_args ); 
+
+            } else {
+
+                $archives_cat_args = array(
+                    'title_li' 	=> '',
+                    'hide_title_if_empty' => true,
+                    //'show_option_all' => __('All','gordo'),
+                );
+
+                wp_list_categories( $archives_cat_args );
+
+            } 
+
+            do_action('gordo_archives_menu');
+
+            ?>
+
+         </ul><!-- #archives-menu -->
+    </div>
+    <?php
 }
 
 
