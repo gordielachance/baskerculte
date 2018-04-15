@@ -332,7 +332,7 @@ header {
 
 body{
     &.gordo-sidebar-header,&.gordo-is-mobile{
-        &:not(.blog){
+        &:not(.blog):not(.archive){
             @extend .bg-white;
         }
     }
