@@ -7,7 +7,7 @@
         <?php echo gordo_get_archive_title();?>
         <?php 
         //archives menu
-        if ( get_theme_mod('gordo_archives_filter', true) ){ //TOFIX default should be from gordo() settings ?
+        if ( gordo()->get_options('has_archives_menu') ){
             gordo_archive_menu();
         }
         ?>

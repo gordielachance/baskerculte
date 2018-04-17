@@ -19,6 +19,9 @@ class Gordo{
 	 * @var The one true Instance
 	 */
 	private static $instance;
+    
+    public $options_default;
+    public $options;
 
 	/**
 	 * Main Instance
@@ -43,6 +46,16 @@ class Gordo{
     }
     
     function setup_globals(){
+        $this->options_default = array(
+            'has_archives_menu' =>  true,
+            'has_sidebar_header' => false,
+        );
+        
+        $db_options = array();
+        $db_options['has_archives_menu'] = get_theme_mod('gordo_archives_filter', $this->options_default['has_archives_menu']);
+        $db_options['has_sidebar_header'] = get_theme_mod('gordo_sidebar_header', $this->options_default['has_archives_menu']);
+
+        $this->options = wp_parse_args($db_options, $this->options_default);
     }
     
     function includes(){
@@ -76,6 +89,14 @@ class Gordo{
         add_filter('the_excerpt', array($GLOBALS['wp_embed'], 'autoembed')); //enable oEmbed in excerpts
 
     }
+    
+    function get_options($keys = null){
+        return gordo_get_array_value($keys,$this->options);
+    }
+    
+    public function get_default_option($keys = null){
+        return gordo_get_array_value($keys,$this->options_default);
+    }
 
     function remove_no_js_class(){
         echo '<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>'. "\n";
@@ -92,7 +113,7 @@ class Gordo{
         $classes[] = 'bg-page';
         $classes[] = has_header_image() ? 'has-header-image' : null;
         $classes[] = has_post_thumbnail() ? 'has-featured-image' : 'no-featured-image'; // If has post thumbnail
-        $classes[] = ( get_theme_mod( 'gordo_sidebar_header' ) ) ? 'gordo-sidebar-header' : null; //sidebar header ?
+        $classes[] = ( gordo()->get_options('has_sidebar_header') ) ? 'gordo-sidebar-header' : null; //sidebar header ?
         
 
         // If is mobile
@@ -292,7 +313,7 @@ class Gordo{
         */
 		register_nav_menu( 'gordo_primary', __('Header Menu','gordo') );
         
-        if ( get_theme_mod('gordo_archives_filter', true) ){ //TOFIX default should be from gordo() settings ?
+        if ( gordo()->get_options('has_archives_menu') ){
             register_nav_menu( 'gordo_archives', __('Archives Menu','gordo'),__('Submenu displayed on the archives pages.','gordo') );
         }
 		
@@ -590,6 +611,29 @@ class gordo_customizer {
 		return ( $input === true ) ? true : false;
 	}
 
+}
+
+/**
+ * Get a value in a multidimensional array
+ * http://stackoverflow.com/questions/1677099/how-to-use-a-string-as-an-array-index-path-to-retrieve-a-value
+ * @param type $keys
+ * @param type $array
+ * @return type
+ */
+function gordo_get_array_value($keys = null, $array){
+    if (!$keys) return $array;
+    
+    $keys = (array)$keys;
+    $first_key = $keys[0];
+    if(count($keys) > 1) {
+        if ( isset($array[$keys[0]]) ){
+            return gordo_get_array_value(array_slice($keys, 1), $array[$keys[0]]);
+        }
+    }elseif (isset($array[$first_key])){
+        return $array[$first_key];
+    }
+    
+    return false;
 }
 
 /*
