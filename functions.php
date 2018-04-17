@@ -74,8 +74,6 @@ class Gordo{
 
         add_filter('the_excerpt', 'do_shortcode'); //enable shortcodes in excerpts
         add_filter('the_excerpt', array($GLOBALS['wp_embed'], 'autoembed')); //enable oEmbed in excerpts
-        
-        add_action( 'gordo_archives_menu', array($this,'events_add_archive_filters_link') );
 
     }
 
@@ -292,8 +290,11 @@ class Gordo{
 		/*
         Nav menus
         */
-		register_nav_menu( 'primary', __('Header Menu','gordo') );
-        register_nav_menu( 'archives', __('Blog Menu','gordo') );
+		register_nav_menu( 'gordo_primary', __('Header Menu','gordo') );
+        
+        if ( get_theme_mod('gordo_archives_filter', true) ){ //TOFIX default should be from gordo() settings ?
+            register_nav_menu( 'gordo_archives', __('Archives Menu','gordo'),__('Submenu displayed on the archives pages.','gordo') );
+        }
 		
 		/*
         Translation ready
@@ -367,19 +368,6 @@ class Gordo{
         );
         $args = apply_filters('gordo_page_bookmarks_args',$args);
         return get_bookmarks( $args );
-    }
-    
-    function events_add_archive_filters_link(){
-        $link = get_permalink( get_option( 'page_for_posts' ) );
-        $link = add_query_arg(array('post_type'=>'tribe_events'),$link);
-        $is_active = ( get_post_type() == 'tribe_events' );
-        $classes = array(
-            $is_active ? 'current-cat' : null
-        );
-        $classes = array_filter($classes);
-        $classes_str = $classes ? sprintf(' class="%s"',implode(' ',$classes)) : null;
-        
-        printf('<li %s><a href="%s">%s</a></li>',$classes_str,$link,__('Events', 'the-events-calendar'));
     }
     
 }
@@ -752,7 +740,7 @@ function gordo_get_archive_title(){
 
 function gordo_archive_menu(){
     
-    $has_menu = has_nav_menu( 'archives' );
+    $has_menu = has_nav_menu( 'gordo_archives' );
     
     ?>
     <div id="archives-menu" class="section-inner">
@@ -771,7 +759,7 @@ function gordo_archive_menu(){
                 $nav_args = array( 
                     'container' 		=> '', 
                     'items_wrap' 		=> '%3$s',
-                    'theme_location' 	=> 'archives', 
+                    'theme_location' 	=> 'gordo_archives', 
                     'walker' 			=> new gordo_nav_walker,
                 );
 

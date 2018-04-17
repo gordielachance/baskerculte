@@ -46,12 +46,12 @@
             </li>
             <?php 
 
-            if ( has_nav_menu( 'primary' ) ) {
+            if ( has_nav_menu( 'gordo_primary' ) ) {
 
                 $nav_args = array( 
                     'container' 		=> '', 
                     'items_wrap' 		=> '%3$s',
-                    'theme_location' 	=> 'primary', 
+                    'theme_location' 	=> 'gordo_primary', 
                     'walker' 			=> new gordo_nav_walker,
                 );
 
