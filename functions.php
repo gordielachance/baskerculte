@@ -751,6 +751,9 @@ function gordo_get_archive_title(){
 }
 
 function gordo_archive_menu(){
+    
+    $has_menu = has_nav_menu( 'archives' );
+    
     ?>
     <div id="archives-menu" class="section-inner">
         <i class="fa fa-cog" aria-hidden="true"></i>
@@ -763,7 +766,7 @@ function gordo_archive_menu(){
             </li>
             <?php 
 
-            if ( has_nav_menu( 'archives' ) ) {
+            if ( $has_menu ) {
 
                 $nav_args = array( 
                     'container' 		=> '', 
@@ -786,7 +789,7 @@ function gordo_archive_menu(){
 
             } 
 
-            do_action('gordo_archives_menu');
+            do_action('gordo_archives_menu',$has_menu);
 
             ?>
 
