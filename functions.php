@@ -116,7 +116,7 @@ class Gordo{
         $classes[] = ( gordo()->get_options('has_sidebar_header') ) ? 'gordo-sidebar-header' : null; //sidebar header ?
         
 
-        // If is mobile
+        // If is mobile //TOFIX TOCHECK USEFUL ?
         if ( wp_is_mobile() ) {
             $classes[] = 'is_mobile';
         }
