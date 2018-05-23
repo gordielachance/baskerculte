@@ -492,13 +492,11 @@ body{
         @include display-flex();
         flex-wrap: wrap;
         .hentry-container{
-            width: calc(91% / 3);
-            margin-top:1em;
-            padding: 0 1.5% 4.5% 1.5%;
+            width: calc(100% / 3);
             word-wrap: break-word;
-            box-sizing: content-box;
             .hentry{
-                padding-top: 3em; //space for icon
+                margin:1em;
+                width:calc(100% - 2em);
             }
             .featured-media{
                 img{
@@ -526,21 +524,21 @@ body{
     position: relative;
     background: white;
     .gordo-hentry-icon{
-        background: white;
         text-align:center;
-        box-sizing: border-box;
-        position: absolute;
-        top: -.25em;
-        left: calc(50% - 2em);
-        width: 4em;
-        height: 4em;
-        line-height: 3em;
-        @include box-shadow(0 -2px 3px rgba(0, 0, 0, 0.02), 0 -2px 2px rgba(0, 0, 0, 0.03));
-        color:#DDD;
+        i{
+            background: white;
+            text-align:center;
+            box-sizing: border-box;
+            margin-top: -.25em;
+            width: 4em;
+            line-height: 3em;
+            @include box-shadow(0 -2px 3px rgba(0, 0, 0, 0.02), 0 -2px 2px rgba(0, 0, 0, 0.03));
+            color:#DDD;
+        }
     }
     &.sticky{
         background:#fdffda;
-        .gordo-hentry-icon{
+        .gordo-hentry-icon i{
             background:#fdffda;
         }
     }
