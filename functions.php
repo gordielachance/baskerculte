@@ -53,9 +53,10 @@ class Gordo{
         
         $db_options = array();
         $db_options['has_archives_menu'] = get_theme_mod('gordo_archives_filter', $this->options_default['has_archives_menu']);
-        $db_options['has_sidebar_header'] = get_theme_mod('gordo_sidebar_header', $this->options_default['has_archives_menu']);
+        $db_options['has_sidebar_header'] = get_theme_mod('gordo_sidebar_header', $this->options_default['has_sidebar_header']);
 
         $this->options = wp_parse_args($db_options, $this->options_default);
+        
     }
     
     function includes(){
@@ -568,7 +569,7 @@ class gordo_customizer {
 
 		/* Sidebar header */
 		$wp_customize->add_setting( 'gordo_sidebar_header', array(
-			'default'           => false,
+			'default'           => $this->options_default['has_sidebar_header'],
 			'sanitize_callback' => array( $this, 'sanitize_checkbox' )
 		) );
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gordo_sidebar_header', array(
@@ -582,7 +583,7 @@ class gordo_customizer {
         
 		/* Archives menu */
 		$wp_customize->add_setting( 'gordo_archives_filter', array(
-			'default'           => true,
+			'default'           => $this->options_default['has_archives_menu'],
 			'sanitize_callback' => array( $this, 'sanitize_checkbox' )
 		) );
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gordo_archives_filter', array(
