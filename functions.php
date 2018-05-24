@@ -74,7 +74,7 @@ class Gordo{
         add_action( 'admin_enqueue_scripts', array($this,'admin_scripts_styles'), 9 );
         add_action( 'widgets_init', array($this,'register_sidebars') );
         add_action( 'admin_head', array($this,'gordo_admin_css') );
-        add_filter( 'excerpt_more', array($this,'gordo_new_excerpt_more') );
+        add_filter( 'excerpt_more', array($this,'excerpt_more_text') );
         add_action( 'body_class', array($this,'gordo_body_classes') );
         
         add_filter( 'previous_posts_link_attributes', array($this,'gordo_pagination_classes_prev') );
@@ -137,7 +137,7 @@ class Gordo{
 
     }
 
-    function gordo_new_excerpt_more( $more ) {
+    function excerpt_more_text( $more ) {
         return '... <a class="more-link" href="'. get_permalink( get_the_ID() ) . '">' . __(' Continue Reading', 'gordo' ) . ' &rarr;</a>';
     }
     function gordo_admin_css() { ?>
@@ -847,6 +847,5 @@ function gordo() {
 }
 
 gordo();
-
 
 ?>
