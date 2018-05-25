@@ -88,6 +88,8 @@ class Gordo{
 
         add_filter('the_excerpt', 'do_shortcode'); //enable shortcodes in excerpts
         add_filter('the_excerpt', array($GLOBALS['wp_embed'], 'autoembed')); //enable oEmbed in excerpts
+        
+        add_action( 'gordo_after_archive_title', 'gordo_post_archive_menu' );
 
     }
     
@@ -783,8 +785,19 @@ function gordo_get_archive_title(){
     return sprintf('<p class="gordo-archive-title">%s</p>',$output_str);
 }
 
-function gordo_archive_menu(){
+function gordo_post_archive_menu(){
+    global $wp_query;
     
+    $show_menu = gordo()->get_options('has_archives_menu');
+    
+    if ( !$show_menu ) return;
+    
+    //display based on post types ?
+    $allowed_types = array('post');
+    $query_post_types = $wp_query->query_vars['post_type'];
+    $intersect = array_intersect($allowed_types,$query_post_types);
+    if ( empty($intersect) ) return;
+
     $has_menu = has_nav_menu( 'gordo_archives' );
     
     ?>
@@ -822,7 +835,7 @@ function gordo_archive_menu(){
 
             } 
 
-            do_action('gordo_archives_menu',$has_menu);
+            do_action('gordo_post_archive_menu',$has_menu);
 
             ?>
 

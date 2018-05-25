@@ -7,9 +7,7 @@
         <?php echo gordo_get_archive_title();?>
         <?php 
         //archives menu
-        if ( gordo()->get_options('has_archives_menu') ){
-            gordo_archive_menu();
-        }
+        do_action('gordo_after_archive_title');
         ?>
     </div>
 
