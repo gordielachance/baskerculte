@@ -794,7 +794,7 @@ function gordo_post_archive_menu(){
     
     //display based on post types ?
     $allowed_types = array('post');
-    $query_post_types = $wp_query->query_vars['post_type'];
+    $query_post_types = (array)$wp_query->query_vars['post_type'];
     $intersect = array_intersect($allowed_types,$query_post_types);
     if ( empty($intersect) ) return;
 
