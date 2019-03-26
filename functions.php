@@ -69,7 +69,7 @@ class Gordo{
         
         //gordo
         add_action( 'after_setup_theme', array($this,'gordo_setup') );
-        add_action( 'wp_head', array($this,'remove_no_js_class'), 1 );
+        add_action( 'wp_head', array($this,'inline_scripts_styles'), 1 );
         add_action( 'wp_enqueue_scripts', array($this,'scripts_styles'), 9 );
         add_action( 'admin_enqueue_scripts', array($this,'admin_scripts_styles'), 9 );
         add_action( 'widgets_init', array($this,'register_sidebars') );
@@ -101,7 +101,8 @@ class Gordo{
         return gordo_get_array_value($keys,$this->options_default);
     }
 
-    function remove_no_js_class(){
+    function inline_scripts_styles(){
+        /*remove .no-js class*/
         echo '<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>'. "\n";
     }
     
@@ -197,6 +198,16 @@ class Gordo{
         }
     }
     
+    function get_custom_styles() {
+        ob_start();
+        ?>
+        .bg-graphite{
+            background-color:#<?php echo get_header_textcolor(); ?>;
+        }
+        <?php
+        return ob_get_clean();
+    }
+    
     /*
     Frontend Scripts / Styles
     */
@@ -207,6 +218,8 @@ class Gordo{
         wp_register_style( 'gordoGoogleFonts', '//fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,400italic,700,700italic,300|Coming+Soon' );
         wp_register_style( 'gordo', get_template_directory_uri() . '/_inc/css/gordo.css',array('fontAwesome','gordoGoogleFonts'),$this->version );
         wp_enqueue_style( 'gordo' );
+        wp_add_inline_style( 'gordo', $this->get_custom_styles() );
+        
         
         //scripts
         wp_register_script( 'imagesloaded', '//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js', '4.1.4', true );
