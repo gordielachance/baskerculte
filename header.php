@@ -35,11 +35,11 @@
             ?>
         </div>
     </div>
-    <div id="toggle-menu-bt">
-        <i class="fa fa-bars" aria-hidden="true"></i>
-    </div>	
-    <div id="header-menu" class="section-inner">
-        <ul class="menu">
+    <div id="header-menu">
+        <div id="toggle-menu-bt">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>	
+        <ul class="menu section-inner"
             <!--search -->
             <li id="menu-item-search" class="menu-item">
                 <?php get_template_part( 'searchform' ); ?>

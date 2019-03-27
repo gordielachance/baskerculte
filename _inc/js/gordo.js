@@ -42,7 +42,7 @@ jQuery(document).ready(function($) {
     
 	// Toggle mobile-menu
 	$("#toggle-menu-bt").on("click", function(){	
-		$('body').toggleClass("gordo-show-mobile-menu");
+		$('#header-menu').toggleClass("gordo-expanded");
 	})
 	
 	

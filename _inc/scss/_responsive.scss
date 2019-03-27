@@ -3,11 +3,7 @@
 }
 
 @media (max-width: 782px) {
-    
-    header #toggle-menu-bt{
-        display:block;
-    }
-    
+
 	/* structure */
     
 	body.single .content { width: 100%; float: none; }
@@ -26,15 +22,7 @@
     body.gordo-is-mobile{
         
         flex-direction:column;
-        #header-menu{
-            display:none;
-        }
 
-        &.gordo-show-mobile-menu{
-            #header-menu{
-                display:block;
-            }
-        }
     }
 
 	/* header */

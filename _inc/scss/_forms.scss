@@ -168,17 +168,17 @@ input,button {
     }
 }
 
-header .searchform,footer .searchform {
-    background-color: rgba(0,0,0,0.05);
+header .searchform.input-group,footer .searchform.input-group {
     @include transition(all 0.1s ease-in-out);
+    border:none;
+    background-color:rgba(255, 255, 255, 0.025);
     &:hover,&:focus-within{
-        background-color: rgba(0,0,0,0.05);
-        @include box-shadow(inset 3px 3px 25px rgba(0,0,0,0.1));
+        background-color:rgba(255, 255, 255, 0.1);
     }
     .s{
         font-family:'Roboto Slab', sans-serif;
         font-size:.8em;
-        &:focus,&:valid{
+        &:hover,&:focus,&:valid{
             color:#FFF;
         }
     }

@@ -201,8 +201,17 @@ class Gordo{
     function get_custom_styles() {
         ob_start();
         ?>
+        a{
+            color:<?php echo get_theme_mod( 'color-links','#13C4A5' ); ?>;
+        }
+        .bg-page{
+            color:<?php echo get_theme_mod( 'color-bg-page','#f3f1e6' ); ?>;
+        }
         .bg-graphite{
-            background-color:#<?php echo get_header_textcolor(); ?>;
+            background-color:<?php echo get_theme_mod( 'color-bg-graphite','#262626' ); ?>;
+        }
+        .bg-dark{
+            background-color:<?php echo get_theme_mod( 'color-bg-dark','#2b3029' ); ?>;
         }
         <?php
         return ob_get_clean();
@@ -581,6 +590,50 @@ class gordo_customizer {
 	}
 
 	function gordo_extras_section( $wp_customize ) {
+        
+        /* .bg-page */
+        $wp_customize->add_setting( 'color-bg-page', array(
+          'default'   => 'f3f1e6',
+          'transport' => 'refresh',
+          'sanitize_callback' => 'sanitize_hex_color',
+        ) );
+        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'color-bg-page', array(
+          'section' => 'colors',
+          'label'   => esc_html__( 'Links', 'gordo' ),
+        ) ) );
+        
+        /* links color*/
+        $wp_customize->add_setting( 'color-links', array(
+          'default'   => '13C4A5',
+          'transport' => 'refresh',
+          'sanitize_callback' => 'sanitize_hex_color',
+        ) );
+        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'color-links', array(
+          'section' => 'colors',
+          'label'   => esc_html__( 'Links', 'gordo' ),
+        ) ) );
+        
+        /* .bg-graphite color*/
+        $wp_customize->add_setting( 'color-bg-graphite', array(
+          'default'   => '262626',
+          'transport' => 'refresh',
+          'sanitize_callback' => 'sanitize_hex_color',
+        ) );
+        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'color-bg-graphite', array(
+          'section' => 'colors',
+          'label'   => esc_html__( '.bg-graphite', 'gordo' ),
+        ) ) );
+        
+        /* .bg-dark color*/
+        $wp_customize->add_setting( 'color-bg-dark', array(
+          'default'   => '2b3029',
+          'transport' => 'refresh',
+          'sanitize_callback' => 'sanitize_hex_color',
+        ) );
+        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'color-bg-dark', array(
+          'section' => 'colors',
+          'label'   => esc_html__( '.bg-dark', 'gordo' ),
+        ) ) );
 
 		/* Sidebar header */
 		$wp_customize->add_setting( 'gordo_sidebar_header', array(

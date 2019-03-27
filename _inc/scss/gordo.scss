@@ -166,7 +166,6 @@ body{
 /* colors scheme */
 
 .bg-page{
-    background-color:#f3f1e6;
     color: #444;
 }
 
@@ -179,28 +178,21 @@ body{
   background-color: #f1f1f1;
 }
 
-.bg-dark{
-  background-color: #2b3029;
-}
-
-.bg-graphite{
-  background-color: #262626;
-}
-
 .bg-image {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-
-/* columns */
+/*
+//columns
 .column{
     @include display-flex; 
     @include flex-direction(column);
 }
 
 .row {
+    
     @include display-flex; 
     @include flex-direction(row);
     .one-fourth {
@@ -215,6 +207,7 @@ body{
     .two-thirds {
         flex-basis: 65%;
     }
+    
 }
 
 .column,
@@ -226,7 +219,7 @@ body{
 .row > *{
     min-width:0; //fix for owlcarousel
 }
-
+*/
 
 /* -------------------------------------------------------------------------------- */
 /*	3. Header
@@ -256,10 +249,41 @@ header {
         margin:auto;
     }
     
+    #header-menu{
+        @include display-flex; 
+        flex-direction: column;
+        #toggle-menu-bt{
+            text-align:right;
+            padding: 1em;
+            position:absolute;
+            top:0;
+            right:0;
+            display:none;
+        }
+        ul{
+            display:block;
+            padding-right:2em;
+        }
+        
+        .gordo-is-mobile &{
+            #toggle-menu-bt{
+                display:block;
+            }
+            ul{
+                display:none;
+            }
+        }
+        
+        &.gordo-expanded{
+            ul{
+                display:block;
+            }
+        }
+    }
+    
     .menu{
         font-family: 'Roboto Slab', sans-serif;
         font-size: 0.9em;
-        padding: 0 1em;
         
         .searchform{
             margin:auto;
@@ -331,12 +355,13 @@ header {
 }
 
 body{
+    
     &.gordo-sidebar-header,&.gordo-is-mobile{
         &.single{
             @extend .bg-white;
         }
     }
-    
+    /*
     &:not(.gordo-is-mobile){
         &.gordo-sidebar-header{ //side header when screen in large enough
             @extend .row;
@@ -380,7 +405,7 @@ body{
                         }
                     }
                 }
-            /* Sub menus --------------------------------------- */
+            // Sub menus ---------------------------------------
 
                 li{
                     ul{ //sub-menu
@@ -391,8 +416,6 @@ body{
                         @include opacity(0);
                         visibility: hidden;
                         z-index: 999;
-
-                        @extend .bg-dark;
 
                         > {
                           .has-children::after, .page_item_has_children::after {
@@ -433,8 +456,8 @@ body{
                     } 
                 }
                 > li{
-                    > ul{ /*first level submenu*/
-                        margin-top:-20px;/*for the vertical transition*/
+                    > ul{ //first level submenu
+                        margin-top:-20px;//for the vertical transition
                         width: 200px;
                         &:before {
                             content: "";
@@ -479,6 +502,7 @@ body{
         
         
     }
+    */
 }
 
 /* -------------------------------------------------------------------------------- */
@@ -1716,7 +1740,6 @@ img#wpstats { display: none; } /* Silly WordPress stats */
 
 
 header #toggle-menu-bt {
-    display:none;
     padding: 25px 0;
     @include opacity(.5);
     color:white;
