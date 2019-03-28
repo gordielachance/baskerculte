@@ -13,7 +13,7 @@ if ( have_comments() ) { ?>
 
         <a name="comments"></a>
 
-        <div class="comments-title-container row">
+        <div class="comments-title-container">
 
             <h2 class="comments-title">
 

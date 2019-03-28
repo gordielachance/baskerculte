@@ -47,13 +47,15 @@ class Gordo{
     
     function setup_globals(){
         $this->options_default = array(
-            'has_archives_menu' =>  true,
-            'has_sidebar_header' => false,
+            'has_archives_menu'     =>  true,
+            'has_sidebar_header'    => false,
+            'pagination_mode'       => false,
         );
         
         $db_options = array();
         $db_options['has_archives_menu'] = get_theme_mod('gordo_archives_filter', $this->options_default['has_archives_menu']);
         $db_options['has_sidebar_header'] = get_theme_mod('gordo_sidebar_header', $this->options_default['has_sidebar_header']);
+        $db_options['pagination_mode'] = get_theme_mod('gordo_pagination_mode', $this->options_default['pagination_mode']);
 
         $this->options = wp_parse_args($db_options, $this->options_default);
         
@@ -77,8 +79,8 @@ class Gordo{
         add_filter( 'excerpt_more', array($this,'excerpt_more_text') );
         add_action( 'body_class', array($this,'gordo_body_classes') );
         
-        add_filter( 'previous_posts_link_attributes', array($this,'gordo_pagination_classes_prev') );
-        add_filter( 'next_posts_link_attributes', array($this,'gordo_pagination_classes_next') );
+        //add_filter( 'previous_posts_link_attributes', array($this,'gordo_pagination_classes_prev') );
+        //add_filter( 'next_posts_link_attributes', array($this,'gordo_pagination_classes_next') );
         
         //custom
         add_action( 'loop_start', array($this,'remove_blog_share') );
@@ -114,7 +116,7 @@ class Gordo{
     }
     function gordo_body_classes( $classes ) {
 
-        $classes[] = 'bg-page';
+        $classes[] = 'bg-white';
         $classes[] = has_header_image() ? 'has-header-image' : null;
         $classes[] = has_post_thumbnail() ? 'has-featured-image' : 'no-featured-image'; // If has post thumbnail
         $classes[] = ( gordo()->get_options('has_sidebar_header') ) ? 'gordo-sidebar-header' : null; //sidebar header ?
@@ -582,8 +584,7 @@ class gordo_customizer {
 
 	function gordo_extras_section( $wp_customize ) {
         /*
-        // .bg-page
-        
+
         $wp_customize->add_setting( 'color-bg-page', array(
           'default'   => 'f3f1e6',
           'transport' => 'refresh',
@@ -605,6 +606,20 @@ class gordo_customizer {
 			'description' => esc_html__( 'Check this if you want a sidebar header instead of a top header.', 'gordo' ),
 			'section'     => 'gordo_extras',
 			'settings'    => 'gordo_sidebar_header',
+			'type'        => 'checkbox',
+			'priority'    => 10
+		) ) );
+        
+        /* Pagination mode */
+		$wp_customize->add_setting( 'gordo_pagination_mode', array(
+			'default'           => gordo()->get_default_option('gordo_pagination_mode'),
+			'sanitize_callback' => array( $this, 'sanitize_checkbox' )
+		) );
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gordo_pagination_mode', array(
+			'label'       => esc_html__( 'Pagination mode', 'gordo' ),
+			'description' => esc_html__( 'Previous / Next', 'gordo' ),
+			'section'     => 'gordo_extras',
+			'settings'    => 'gordo_pagination_mode',
 			'type'        => 'checkbox',
 			'priority'    => 10
 		) ) );

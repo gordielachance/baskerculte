@@ -25,7 +25,7 @@
 
                     <div class="hentry-container">
 
-                        <article id="post-<?php the_ID(); ?>" <?php post_class('column'); ?>>
+                        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
                             <?php get_template_part( 'content', get_post_format() ); ?>
 
@@ -46,11 +46,24 @@
 	<?php if ( $wp_query->max_num_pages > 1 ) : ?>
 		
 		<div class="archive-nav section-inner">
-					
-			<?php echo get_next_posts_link( '&laquo; ' . __( 'Older posts', 'gordo' ) ); ?>
-						
-			<?php echo get_previous_posts_link( __( 'Newer posts', 'gordo') . ' &raquo;' ); ?>
+            <?php
 
+            if ( !gordo()->get_options('pagination_mode') ){
+
+                echo get_next_posts_link( __( 'Previous page', 'gordo' ) );
+                echo get_previous_posts_link( __( 'Next page', 'gordo') );
+            }else{
+                // Previous/next page navigation.
+
+                the_posts_pagination(
+                    array(
+                        'prev_text'          => __( 'Previous page', 'gordo' ),
+                        'next_text'          => __( 'Next page', 'gordo' ),
+                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>',
+                    )
+                );
+            }
+            ?>
 		</div><!-- .post-nav archive-nav -->
 	
 	<?php endif; ?>

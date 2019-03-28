@@ -2,9 +2,9 @@
 
 <div class="wrapper section medium-padding">
 										
-	<div class="section-inner row">
+	<div class="section-inner">
 	
-		<div class="content column">
+		<div class="content">
 	
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		

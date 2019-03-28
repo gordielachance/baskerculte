@@ -155,7 +155,6 @@ input,button {
 /* Search --------------------------------------- */
 
 .searchform{
-    position: relative;
     .s{
         font-family: 'Roboto', sans-serif;
         -webkit-font-smoothing: antialiased;
@@ -168,7 +167,8 @@ input,button {
     }
 }
 
-header .searchform.input-group,footer .searchform.input-group {
+header .input-group.searchform,
+footer .input-group.searchform {
     @include transition(all 0.1s ease-in-out);
     border:none;
     background-color:rgba(255, 255, 255, 0.025);

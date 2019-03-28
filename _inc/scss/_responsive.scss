@@ -1,3 +1,20 @@
+body{
+    &:not(.gordo-is-mobile){
+        #header{
+            position:fixed;
+            width:30%;
+            height:100%;
+            border-right:1px solid black;
+        }
+        .wrapper,
+        #footer,
+        .credits{
+            margin-left:30%;
+        }
+    }
+
+}
+
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
 	
 }
@@ -19,11 +36,7 @@
       }
     }
     
-    body.gordo-is-mobile{
-        
-        flex-direction:column;
 
-    }
 
 	/* header */
 	
@@ -37,24 +50,7 @@
             }
         }
     }
-    
-    /* footer */
 
-    .footer {
-        .row{
-            display:block; /*break the flex thing*/
-            .column{
-                padding: 2em;
-                border: 1px solid rgba(0,0,0,0.05);
-            }
-            .column:not(:last-child){
-                margin-bottom: 2em;
-            }
-
-        }
-    }
-
-	
 	/* credits */
 	
 	.credits span { display: none; }

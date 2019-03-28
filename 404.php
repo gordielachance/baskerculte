@@ -4,9 +4,9 @@
 
 <div class="wrapper section medium-padding">
 										
-	<div class="section-inner row">
+	<div class="section-inner">
 	
-		<div class="content column">
+		<div class="content">
 		
 			<article class="hentry post post-404">
 			

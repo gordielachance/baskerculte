@@ -165,11 +165,6 @@ body{
 
 /* colors scheme */
 
-.bg-page{
-    background-color: #f3f1e6;
-    color: #444;
-}
-
 .bg-white{
     background-color: white;
     color: #444;
@@ -182,6 +177,9 @@ body{
 .bg-graphite {
   background-color: #262626;
 }
+.bg-dark{
+    background-color: #2b3029;
+}
 
 .bg-image {
   background-size: cover;
@@ -189,48 +187,13 @@ body{
   background-repeat: no-repeat;
 }
 
-/*
-//columns
-.column{
-    @include display-flex; 
-    @include flex-direction(column);
-}
-
-.row {
-    
-    @include display-flex; 
-    @include flex-direction(row);
-    .one-fourth {
-        flex-basis: 21.5%;
-    }
-    .one-third {
-        flex-basis: 30%;
-    }
-    .one-half {
-        flex-basis: 47.5%;
-    }
-    .two-thirds {
-        flex-basis: 65%;
-    }
-    
-}
-
-.column,
-.row{
-    > * {
-        flex:auto;
-    }
-}
-.row > *{
-    min-width:0; //fix for owlcarousel
-}
-*/
-
 /* -------------------------------------------------------------------------------- */
 /*	3. Header
 /* -------------------------------------------------------------------------------- */
 
-header {
+#header {
+    padding:0 25px;
+    
     #site-info{
         text-align:center;
     }
@@ -353,10 +316,6 @@ header {
         }
         
     }
-    
-    flex: 0 0 300px;
-    border-right: 1px solid black;
-    padding:0 25px;
 }
 
 body{
@@ -369,7 +328,6 @@ body{
     /*
     &:not(.gordo-is-mobile){
         &.gordo-sidebar-header{ //side header when screen in large enough
-            @extend .row;
             #header{
                 flex: 0 0 300px;
             }
@@ -551,7 +509,12 @@ body{
 .hentry {
     width: 100%;
     position: relative;
-    background: white;
+    
+    .archive &{
+        background: rgba(0, 0, 0, 0.02);
+        border: 2px solid rgba(0, 0, 0, 0.02);
+    }
+    
     .gordo-hentry-icon{
         text-align:center;
         i{
@@ -1341,18 +1304,18 @@ code, kbd, pre {
 /*	10. Pagination
 /* -------------------------------------------------------------------------------- */
 
+.gordo-title-underline{
+    padding-bottom: 4px;
+    border-bottom: 2px solid #ccc;
+}
 
 .page-title {
   margin-bottom: 60px;
   text-align: center;
     h5 {
+        @extend .gordo-title-underline;
+        @extend .gordo-navigation;
         display: inline-block;
-        padding-bottom: 4px;
-        border-bottom: 2px solid #ccc;
-        font-family: 'Roboto Slab', sans-serif;
-        font-size: 0.9em;
-        font-weight: 700;
-        text-transform: uppercase;
         text-align: center;
     }
     h3 {
@@ -1378,21 +1341,75 @@ code, kbd, pre {
 
 /* archive navigation */
 
-.archive-nav a,
-a.tribe-events-button, //the calendar plugin
-.malinky-load-more a, //Ajax Pagination and Infinite Scroll plugin
-{
+.gordo-navigation-bt{
     font-size: 0.9em;
-    padding: 16px 20px;
+    padding: 1em;
     background: #2B3542;
     border-radius: 3px;
     color: #fff;
     display:inline-block;
+    line-height: initial;
     &:hover {
         background: #13C4A5;
         color: #fff;
         text-decoration:none!important;
     }
+}
+
+.gordo-navigation{
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 0.9em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.archive-nav{
+    position:relative;
+    text-align:center;
+    line-height:3em;
+    padding:1em 0;
+    @extend .gordo-navigation;
+
+    
+    //previous/next
+    > a{
+        @extend .gordo-navigation-bt;
+        &:first-child{
+            @extend .fleft;
+        }
+        &:last-child{
+            @extend .fright;
+        }
+    }
+    
+    //list
+    .nav-links{
+        > a{
+            padding:1em 0;
+        }
+        > a:first-child, > a:last-child{
+            @extend .gordo-navigation-bt;
+        }
+        > a:first-child{
+            @extend .fleft;
+        }
+        > a:last-child{
+            @extend .fright;
+        }
+        .page-numbers.current{
+            @extend .gordo-title-underline;
+        }
+    }
+
+    
+}
+
+
+
+a.tribe-events-button, //the calendar plugin
+.malinky-load-more a, //Ajax Pagination and Infinite Scroll plugin
+{
+    @extend .gordo-navigation-bt;
 }
 .malinky-load-more__button-disable{
     @include opacity(.5);
@@ -1621,39 +1638,55 @@ a.tribe-events-button, //the calendar plugin
 /*	11. Footer
 /* -------------------------------------------------------------------------------- */
 
+body:not(.gordo-is-mobile){
+    .footer{
+        .section-inner {
+            @include display-flex; 
+            @include flex-direction(row);
+            flex-basis: 0;
+            justify-content: center;
+            .widgets{
+                width:30%;
+            }
+        }
+    }
+}
+
 
 .footer {
-    .column{
-        padding:0 1em;
-        &:first-child{
-            padding-left:0;
+    .section-inner{
+
+        .widgets{
+            
+            padding: 2em;
+            border: 1px solid rgba(0,0,0,0.05);
         }
-        &:last-child{
-            padding-right:0;
+        .widgets:not(:last-child){
+            margin-bottom: 2em;
+        }
+        .widget {
+            margin-top: 1em;
+            border-top: 1px solid #333;
+            padding-top: 1em;
+            &:first-child {
+                margin: 0;
+                border: none;
+                padding: 0;
+            }
+            .widget-title {
+                letter-spacing: 1px;
+                font-size: 0.79em;
+            }
+            .widget-content {
+                color: #767676;
+                font-size: 0.95em;
+                p {
+                    line-height: 160%;
+                }
+            }
         }
     }
-    .widget {
-        margin-top: 1em;
-        border-top: 1px solid #333;
-        padding-top: 1em;
-        &:first-child {
-            margin: 0;
-            border: none;
-            padding: 0;
-        }
-    }
-    .widget-title {
-        color: #FFF;
-        letter-spacing: 1px;
-        font-size: 0.79em;
-    }
-    .widget-content {
-        color: #767676;
-        font-size: 0.95em;
-        p {
-            line-height: 160%;
-        }
-    }
+
 }
 
 .widget-content p + p {
