@@ -1,22 +1,24 @@
-body{
-    &:not(.gordo-is-mobile){
-        #header{
-            position:fixed;
-            width:30%;
-            height:100%;
-            border-right:1px solid black;
-        }
-        .wrapper,
-        #footer,
-        .credits{
-            margin-left:30%;
-        }
+.grid-hentries{
+    grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 1050px) {
+    .grid-hentries{
+        grid-template-columns: repeat(3, 1fr);
     }
-
+}
+@media (max-width: 782px) {
+    .grid-hentries{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 500px) {
+    .grid-hentries{
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
+
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
-	
 }
 
 @media (max-width: 782px) {
@@ -35,21 +37,10 @@ body{
         max-width: 97%;
       }
     }
-    
-
 
 	/* header */
 	
 	.section.header { padding: 50px 0; }
-    
-    /* posts */
-    .posts{
-        &.grid-hentries{
-            .hentry-container{
-                width: calc(94% / 2);
-            }
-        }
-    }
 
 	/* credits */
 	
@@ -98,6 +89,7 @@ body{
 	.wrapper.section { padding: 25px 0; }
 
 	/* main content */
+
 	
 	.section-inner.content { max-width: 92%; }
 
@@ -310,16 +302,7 @@ body{
         margin-top: 15px;
       }
     }
-    
-    /* posts */
-    /* posts */
-    .posts{
-        &.grid-hentries{
-            .hentry-container{
-                width: 100%;
-            }
-        }
-    }
+
 	/* comments */
 	
     .comments div.comment {

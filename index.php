@@ -23,22 +23,18 @@
                     global $post;
                     ?>
 
-                    <div class="hentry-container">
+                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-                        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                        <?php get_template_part( 'content', get_gordo_post_format() ); ?>
 
-                            <?php get_template_part( 'content', get_gordo_post_format() ); ?>
-
-                        </article><!-- .post -->
-
-                    </div>
+                    </article><!-- .post -->
 		    			        		            
 		        <?php } ?>
                 
             </div><!-- .posts -->
 	        	                    
         <?php }else{
-            echo"No Posts Found";//TO FIX have sidebar etc.
+            _e( 'Nothing Found', 'gordo' );//TO FIX have sidebar etc.
         } ?>
 			
 	</div><!-- .content -->

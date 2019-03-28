@@ -123,6 +123,19 @@ body{
     > footer{
         @include flex(none); //= 0 0 auto
     }
+    &:not(.gordo-is-mobile){
+        #header{
+            position:fixed;
+            width:30%;
+            height:100%;
+            border-right:1px solid black;
+        }
+        .wrapper,
+        #footer,
+        .credits{
+            margin-left:30%;
+        }
+    }
 }
 
 
@@ -476,23 +489,11 @@ body{
     margin:auto;
     overflow: visible !important;
     &.grid-hentries{
-        @include display-flex();
-        flex-wrap: wrap;
-        .hentry-container{
-            width: calc(100% / 3);
-            word-wrap: break-word;
-            .hentry{
-                margin:1em;
-                width:calc(100% - 2em);
-            }
-            .featured-media{
-                img{
-                    min-width:100%;
-                    height:auto;
-                }
-            }
-        }
+        display: grid;
+        place-items: start;
+        grid-auto-rows: 1fr;
         .hentry{
+            box-sizing:content-box;
             .featured-media img {
                     @include opacity(.8);
             }

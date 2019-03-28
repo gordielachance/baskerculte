@@ -18,11 +18,11 @@ jQuery(document).ready(function($) {
 
 	$blocks.imagesLoaded(function(){
 		$blocks.masonry({
-			itemSelector: '.hentry-container'
+			itemSelector: 'article'
 		});
 
 		// Fade blocks in after images are ready (prevents jumping and re-rendering)
-		$(".hentry-container").fadeIn();
+		$("article").fadeIn();
 	});
 	
 	$(document).ready( function() { setTimeout( function() { $blocks.masonry(); }, 500); });
