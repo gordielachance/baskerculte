@@ -39,7 +39,7 @@
         <div id="toggle-menu-bt">
             <i class="fa fa-bars" aria-hidden="true"></i>
         </div>	
-        <ul class="menu section-inner"
+        <ul class="menu section-inner small-padding">
             <!--search -->
             <li id="menu-item-search" class="menu-item">
                 <?php get_template_part( 'searchform' ); ?>
@@ -66,10 +66,18 @@
 
                 wp_list_pages( $list_pages_args );
 
-            } 
-
+            }
             ?>
          </ul><!-- #header-menu -->
+        <?php
+        if ( is_active_sidebar( 'header-sidebar' ) ){
+            ?>
+            <div id="widget-area" class="widget-area section-inner small-padding" role="complementary">
+                <?php dynamic_sidebar( 'header-sidebar' ); ?>
+            </div><!-- .widget-area -->
+            <?php
+        }
+        ?>
     </div>
 </header><!-- .navigation -->
     <div id="all-but-header">

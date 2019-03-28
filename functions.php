@@ -357,6 +357,20 @@ class Gordo{
 			'before_widget' => '<div id="widget-%1$s" class="widget %2$s"><div class="widget-content">',
 			'after_widget' 	=> '</div></div>'
         );
+                         
+         /*sidebars*/
+        
+		register_sidebar( wp_parse_args(array(
+			'name' 			=> __( 'Header Widgets', 'gordo' ),
+			'id'			=> 'header-sidebar',
+			'description' 	=> __( 'Widgets in this area will be shown in the sidebar.', 'gordo' )
+		),$defaults) );
+
+		register_sidebar( wp_parse_args(array(
+			'name' 			=> __( 'Single Sidebar', 'gordo' ),
+			'id'			=> 'single-sidebar-a',
+			'description' 	=> __( 'Widgets in this area will be shown in the sidebar.', 'gordo' )
+		),$defaults) );
         
         /*footer*/
         
@@ -382,14 +396,6 @@ class Gordo{
 			'name' 			=> __( 'Credits', 'gordo' ),
 			'id'			=> 'credits',
 			'description' 	=> __( 'Widgets in this area will be shown at the very bottom, for credits (eg. use an HTML widget)', 'gordo' )
-		),$defaults) );
-                         
-         /*sidebar*/
-
-		register_sidebar( wp_parse_args(array(
-			'name' 			=> __( 'Sidebar 1', 'gordo' ),
-			'id'			=> 'single-sidebar-a',
-			'description' 	=> __( 'Widgets in this area will be shown in the sidebar.', 'gordo' )
 		),$defaults) );
 
 	}

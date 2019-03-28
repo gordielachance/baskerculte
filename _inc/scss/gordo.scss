@@ -240,38 +240,43 @@ body{
             top:0;
             right:0;
             display:none;
+            padding-right:2em;
         }
         ul{
             display:block;
-            padding-right:2em;
+            
         }
         
         .gordo-is-mobile &{
             #toggle-menu-bt{
                 display:block;
             }
-            ul{
+            > *{
                 display:none;
             }
         }
         
         &.gordo-expanded{
-            ul{
+            > *{
                 display:block;
             }
         }
     }
     
-    .menu{
+    #header-menu{
         font-family: 'Roboto Slab', sans-serif;
         font-size: 0.9em;
+    }
+    
+    .menu{
+
         
         .searchform{
             margin:auto;
         }
         
         li{
-            padding: 1em 0;
+            padding: .5em 0;
         }
 
         
