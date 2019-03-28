@@ -41,9 +41,6 @@
         </div>	
         <ul class="menu section-inner small-padding">
             <!--search -->
-            <li id="menu-item-search" class="menu-item">
-                <?php get_template_part( 'searchform' ); ?>
-            </li>
             <?php 
 
             if ( has_nav_menu( 'gordo_primary' ) ) {
