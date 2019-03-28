@@ -224,6 +224,9 @@ body{
         }
       }
     }
+    .site-description{
+        margin-top:1em;
+    }
 
     .custom-logo-link{
         display:block;
@@ -497,6 +500,7 @@ body{
         display: grid;
         place-items: start;
         grid-auto-rows: 1fr;
+        max-width:700px;
         .hentry{
             box-sizing:content-box;
             .featured-media img {

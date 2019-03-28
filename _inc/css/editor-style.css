@@ -140,7 +140,7 @@ img.alignleft, .alignleft img, img.aligncenter, .aligncenter img, img.alignright
 }
 
 /* line 152, ../scss/_shared.scss */
-.no-border {
+.no-border, .no-border img {
   border: none !important;
 }
 
