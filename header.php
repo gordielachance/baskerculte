@@ -80,5 +80,4 @@
         ?>
     </div>
 </header><!-- .navigation -->
-    <div id="all-but-header">
     

@@ -136,7 +136,6 @@
 	</div><!-- .credits-inner -->
 	
 </div><!-- .credits -->
-</div><!--#all-but-header -->
 <?php wp_footer(); ?>
 
 </body>
