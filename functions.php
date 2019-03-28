@@ -704,7 +704,7 @@ post format icon for posts
 */
 function gordo_get_hentry_icon($post_id = null){
     $icon = null;
-    $format = get_post_format($post_id);
+    $format = get_gordo_post_format($post_id);
 
     switch ($format){
         case 'aside':
@@ -824,6 +824,37 @@ function gordo_get_archive_title(){
 
     $output_str = implode("\n",$output);
     return sprintf('<p class="gordo-archive-title">%s</p>',$output_str);
+}
+
+function gordo_pagination(){
+    global $wp_query;
+	if ( !$wp_query->max_num_pages ) return;
+    ?>
+    <div class="archive-nav section-inner">
+        <?php
+
+        if ( !gordo()->get_options('pagination_mode') ){
+
+            echo get_next_posts_link( __( 'Previous page', 'gordo' ) );
+            echo get_previous_posts_link( __( 'Next page', 'gordo') );
+        }else{
+            // Previous/next page navigation.
+
+            the_posts_pagination(
+                array(
+                    'prev_text'          => __( 'Previous page', 'gordo' ),
+                    'next_text'          => __( 'Next page', 'gordo' ),
+                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>',
+                )
+            );
+        }
+        ?>
+    </div><!-- .post-nav archive-nav -->
+   <?php
+}
+
+function get_gordo_post_format($post_id = null){
+    return apply_filters('get_gordo_post_format',get_post_format($post_id),$post_id);
 }
 
 function gordo_post_archive_menu(){

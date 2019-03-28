@@ -1,7 +1,4 @@
-<?php 
-	get_header(); 
-	$format = get_post_format();
-?>
+<?php get_header(); ?>
 
 <div class="wrapper section medium-padding">
 										
