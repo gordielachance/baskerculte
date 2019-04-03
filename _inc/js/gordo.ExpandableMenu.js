@@ -25,8 +25,8 @@
                 var $item = $(this);
                 var $children = $item.find(options.childrenSelector);
                 var $handle = $item.find(options.handleSelector);
-                var is_active = $item.find(options.activeItemSelector).length;
-                
+                var is_active = ( $item.filter(options.activeItemSelector).length || $item.find(options.activeItemSelector).length );
+
                 if ( !$children.length ) return;
                 
                 var toggleState = function(bool) {
