@@ -791,9 +791,9 @@ function gordo_get_archive_title(){
         */
 
         }elseif( is_author() ){
-            $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
+            $author = get_userdata( get_query_var('author') );
             $title = __( 'Author', 'gordo' );
-            $subtitle = $curauth->display_name;
+            $subtitle = $author->display_name;
         }
     }
 
