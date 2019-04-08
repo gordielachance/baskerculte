@@ -111,7 +111,7 @@ Frontend & Backend (editor)
 }
 
 /* line 33, ../scss/_shared.scss */
-.icon, .post-meta-icon, a.external-link:not(.no-link-icon)::before, a[data-url-domain="google.com"]:not(.no-link-icon)::before, a[data-url-domain="wikipedia.com"]:not(.no-link-icon)::before, a[data-url-domain="wikipedia.fr"]:not(.no-link-icon)::before, a[data-url-domain="facebook.com"]:not(.no-link-icon)::before, a[data-url-domain="twitter.com"]:not(.no-link-icon)::before, a[data-url-domain="vimeo.com"]:not(.no-link-icon)::before, a[data-url-domain="bandcamp.com"]:not(.no-link-icon)::before, a[data-url-domain="youtube.com"]:not(.no-link-icon)::before, a[data-url-domain="soundcloud.com"]:not(.no-link-icon)::before, a[data-url-domain="mixcloud.com"]:not(.no-link-icon)::before, a[data-url-domain="wordpress.com"]:not(.no-link-icon)::before, a[data-url-domain="tumblr.com"]:not(.no-link-icon)::before, a[data-url-domain="slack.com"]:not(.no-link-icon)::before, ul.post-meta > li.post-date:before, ul.post-meta > li.post-author:before, ul.post-meta > li.post-categories:before, ul.post-meta > li.post-tags:before, ul.post-meta > li.post-comments:before, ul.post-meta > li.post-edit:before, .comment.bypostauthor:after, .comment-actions a:before {
+.icon, .post-meta-icon, a.external-link:not(.no-link-icon)::before, a[data-url-domain="google.com"]:not(.no-link-icon)::before, a[data-url-domain="wikipedia.com"]:not(.no-link-icon)::before, a[data-url-domain="wikipedia.fr"]:not(.no-link-icon)::before, a[data-url-domain="facebook.com"]:not(.no-link-icon)::before, a[data-url-domain="twitter.com"]:not(.no-link-icon)::before, a[data-url-domain="vimeo.com"]:not(.no-link-icon)::before, a[data-url-domain="last.fm"]:not(.no-link-icon)::before, a[data-url-domain="bandcamp.com"]:not(.no-link-icon)::before, a[data-url-domain="youtube.com"]:not(.no-link-icon)::before, a[data-url-domain="soundcloud.com"]:not(.no-link-icon)::before, a[data-url-domain="mixcloud.com"]:not(.no-link-icon)::before, a[data-url-domain="wordpress.com"]:not(.no-link-icon)::before, a[data-url-domain="tumblr.com"]:not(.no-link-icon)::before, a[data-url-domain="slack.com"]:not(.no-link-icon)::before, ul.post-meta > li.post-date:before, ul.post-meta > li.post-author:before, ul.post-meta > li.post-categories:before, ul.post-meta > li.post-tags:before, ul.post-meta > li.post-comments:before, ul.post-meta > li.post-edit:before, .comment.bypostauthor:after, .comment-actions a:before {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -119,7 +119,7 @@ Frontend & Backend (editor)
 }
 
 /* line 39, ../scss/_shared.scss */
-.post-meta-icon, a.external-link:not(.no-link-icon)::before, a[data-url-domain="google.com"]:not(.no-link-icon)::before, a[data-url-domain="wikipedia.com"]:not(.no-link-icon)::before, a[data-url-domain="wikipedia.fr"]:not(.no-link-icon)::before, a[data-url-domain="facebook.com"]:not(.no-link-icon)::before, a[data-url-domain="twitter.com"]:not(.no-link-icon)::before, a[data-url-domain="vimeo.com"]:not(.no-link-icon)::before, a[data-url-domain="bandcamp.com"]:not(.no-link-icon)::before, a[data-url-domain="youtube.com"]:not(.no-link-icon)::before, a[data-url-domain="soundcloud.com"]:not(.no-link-icon)::before, a[data-url-domain="mixcloud.com"]:not(.no-link-icon)::before, a[data-url-domain="wordpress.com"]:not(.no-link-icon)::before, a[data-url-domain="tumblr.com"]:not(.no-link-icon)::before, a[data-url-domain="slack.com"]:not(.no-link-icon)::before, ul.post-meta > li.post-date:before, ul.post-meta > li.post-author:before, ul.post-meta > li.post-categories:before, ul.post-meta > li.post-tags:before, ul.post-meta > li.post-comments:before, ul.post-meta > li.post-edit:before, .comment.bypostauthor:after, .comment-actions a:before {
+.post-meta-icon, a.external-link:not(.no-link-icon)::before, a[data-url-domain="google.com"]:not(.no-link-icon)::before, a[data-url-domain="wikipedia.com"]:not(.no-link-icon)::before, a[data-url-domain="wikipedia.fr"]:not(.no-link-icon)::before, a[data-url-domain="facebook.com"]:not(.no-link-icon)::before, a[data-url-domain="twitter.com"]:not(.no-link-icon)::before, a[data-url-domain="vimeo.com"]:not(.no-link-icon)::before, a[data-url-domain="last.fm"]:not(.no-link-icon)::before, a[data-url-domain="bandcamp.com"]:not(.no-link-icon)::before, a[data-url-domain="youtube.com"]:not(.no-link-icon)::before, a[data-url-domain="soundcloud.com"]:not(.no-link-icon)::before, a[data-url-domain="mixcloud.com"]:not(.no-link-icon)::before, a[data-url-domain="wordpress.com"]:not(.no-link-icon)::before, a[data-url-domain="tumblr.com"]:not(.no-link-icon)::before, a[data-url-domain="slack.com"]:not(.no-link-icon)::before, ul.post-meta > li.post-date:before, ul.post-meta > li.post-author:before, ul.post-meta > li.post-categories:before, ul.post-meta > li.post-tags:before, ul.post-meta > li.post-comments:before, ul.post-meta > li.post-edit:before, .comment.bypostauthor:after, .comment-actions a:before {
   margin-right: .25em;
 }
 
@@ -160,69 +160,73 @@ a:not(.no-link-icon)[data-url-domain="vimeo.com"]::before {
   content: "\f27d";
 }
 /* line 91, ../scss/_shared.scss */
+a:not(.no-link-icon)[data-url-domain="last.fm"]::before {
+  content: "\f202";
+}
+/* line 97, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="bandcamp.com"]::before {
   content: "\f2d5";
 }
-/* line 97, ../scss/_shared.scss */
+/* line 103, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="youtube.com"]::before {
   content: "\f167";
 }
-/* line 103, ../scss/_shared.scss */
+/* line 109, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="soundcloud.com"]::before {
   content: "\f1be";
 }
-/* line 109, ../scss/_shared.scss */
+/* line 115, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="mixcloud.com"]::before {
   content: "\f289";
 }
-/* line 115, ../scss/_shared.scss */
+/* line 121, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="wordpress.com"]::before {
   content: "\f19a";
 }
-/* line 121, ../scss/_shared.scss */
+/* line 127, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="tumblr.com"]::before {
   content: "\f173";
 }
-/* line 127, ../scss/_shared.scss */
+/* line 133, ../scss/_shared.scss */
 a:not(.no-link-icon)[data-url-domain="slack.com"]::before {
   content: "\f198";
 }
 
-/* line 136, ../scss/_shared.scss */
+/* line 142, ../scss/_shared.scss */
 .gordo-can-click, .gordoExpandableMenu .gordoExpandableMenuBt {
   cursor: pointer;
   cursor: hand;
 }
 
-/* line 142, ../scss/_shared.scss */
+/* line 148, ../scss/_shared.scss */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 147, ../scss/_shared.scss */
+/* line 153, ../scss/_shared.scss */
 img.alignleft, .alignleft img, img.aligncenter, .aligncenter img, img.alignright, .alignright img {
   box-sizing: border-box;
   padding: 5px;
   border: 1px solid #EEE;
 }
 
-/* line 152, ../scss/_shared.scss */
+/* line 158, ../scss/_shared.scss */
 .no-border, .no-border img {
   border: none !important;
 }
 
-/* line 156, ../scss/_shared.scss */
+/* line 162, ../scss/_shared.scss */
 small {
   font-size: .8em;
 }
 
-/* line 159, ../scss/_shared.scss */
+/* line 165, ../scss/_shared.scss */
 strong, b {
   font-weight: bold;
 }
 
-/* line 162, ../scss/_shared.scss */
+/* line 168, ../scss/_shared.scss */
 blockquote {
   position: relative;
   margin: 1em 0;
@@ -231,7 +235,7 @@ blockquote {
   font-weight: 300;
   text-align: center;
 }
-/* line 169, ../scss/_shared.scss */
+/* line 175, ../scss/_shared.scss */
 blockquote:before, blockquote:after {
   content: "";
   display: block;
@@ -240,7 +244,7 @@ blockquote:before, blockquote:after {
   background: #eee;
   margin: 1em auto;
 }
-/* line 178, ../scss/_shared.scss */
+/* line 184, ../scss/_shared.scss */
 blockquote cite {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 0.9rem;
@@ -251,52 +255,52 @@ blockquote cite {
   display: block;
   margin-top: 1em;
 }
-/* line 185, ../scss/_shared.scss */
+/* line 191, ../scss/_shared.scss */
 blockquote cite:before {
   content: "— ";
 }
-/* line 190, ../scss/_shared.scss */
+/* line 196, ../scss/_shared.scss */
 blockquote cite em {
   font-style: italic;
   font-weight: bold;
 }
 
-/* line 197, ../scss/_shared.scss */
+/* line 203, ../scss/_shared.scss */
 .hidden {
   display: none;
 }
 
-/* line 201, ../scss/_shared.scss */
+/* line 207, ../scss/_shared.scss */
 .clear {
   clear: both;
 }
 
-/* line 205, ../scss/_shared.scss */
+/* line 211, ../scss/_shared.scss */
 .alignleft {
   text-align: left;
 }
 
-/* line 208, ../scss/_shared.scss */
+/* line 214, ../scss/_shared.scss */
 .alignright {
   text-align: right;
 }
 
-/* line 211, ../scss/_shared.scss */
+/* line 217, ../scss/_shared.scss */
 .aligncenter {
   text-align: center;
 }
 
-/* line 215, ../scss/_shared.scss */
+/* line 221, ../scss/_shared.scss */
 .fleft, .archive-nav > a:first-child, .archive-nav .nav-links > a:first-child {
   float: left;
 }
 
-/* line 219, ../scss/_shared.scss */
+/* line 225, ../scss/_shared.scss */
 .fright, .archive-nav > a:last-child, .archive-nav .nav-links > a:last-child {
   float: right;
 }
 
-/* line 223, ../scss/_shared.scss */
+/* line 229, ../scss/_shared.scss */
 .gordo-notice {
   text-align: center;
   background: #ebfbed;

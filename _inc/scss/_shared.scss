@@ -87,6 +87,12 @@ a {
                 content: "\f27d";
             }
         }
+        &[data-url-domain="last.fm"]{
+            &::before{
+                @extend .post-meta-icon;
+                content: "\f202";
+            }
+        }
         &[data-url-domain="bandcamp.com"]{
             &::before{
                 @extend .post-meta-icon;
