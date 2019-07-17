@@ -268,6 +268,8 @@ body{
     #header-menu{
         font-family: 'Roboto Slab', sans-serif;
         font-size: 0.9em;
+        text-transform: uppercase;
+        font-weight: 700;
     }
     
     .menu{
@@ -291,9 +293,7 @@ body{
                 display: block;
                 font-size: 0.85em;
                 color:rgba(255,255,255,.5);
-                text-transform: uppercase;
                 letter-spacing: 1px;
-                font-weight: 700;
                 line-height: 2em;
                 
             }
