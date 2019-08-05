@@ -7,6 +7,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <header id="header" class="bg-graphite section no-padding"<?php echo gordo()->get_header_styles();?>>
     <div class="section small-padding">
         <div id="site-info" class="header-inner section-inner">
