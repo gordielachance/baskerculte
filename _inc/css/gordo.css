@@ -303,8 +303,11 @@ blockquote cite em {
 /* line 229, ../scss/_shared.scss */
 .gordo-notice {
   text-align: center;
-  background: #ebfbed;
-  padding: .5em;
+  background: #fff3d4;
+  border: 0px solid #f6b73c;
+  border-left-width: 5px;
+  padding: .75em;
+  position: relative;
 }
 
 /* -------------------------------------------------------------------------------- */
