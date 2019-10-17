@@ -40,9 +40,14 @@ jQuery(document).ready(function($) {
         $('body').toggleClass('gordo-is-mobile',is_mobile);
 	});
     
-	// Toggle mobile-menu
-	$("#toggle-menu-bt").on("click", function(){	
-		$('#header-menu').toggleClass("gordo-expanded");
+	// Toggle header menu
+	$("#toggle-header-bt").on("click", function(){	
+		$('body').toggleClass("gordo-header-active");
+	})
+    
+	// Toggle header menu
+	$("#toggle-header-menu-bt").on("click", function(){	
+		$('body').toggleClass("gordo-header-menu-active");
 	})
 	
 	

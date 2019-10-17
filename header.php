@@ -9,8 +9,9 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <header id="header" class="bg-graphite section no-padding"<?php echo gordo()->get_header_styles();?>>
-    <div class="section small-padding">
-        <div id="site-info" class="header-inner section-inner">
+    <div id="toggle-header-bt"></div>
+    <div id="site-info" class="section small-padding">
+        <div class="header-inner section-inner">
             <?php
             //logo
             if ( has_custom_logo() ) {
@@ -37,9 +38,9 @@
         </div>
     </div>
     <div id="header-menu">
-        <div id="toggle-menu-bt">
+        <div id="toggle-header-menu-bt">
             <i class="fa fa-bars" aria-hidden="true"></i>
-        </div>	
+        </div>
         <ul class="menu section-inner small-padding">
             <!--search -->
             <?php 

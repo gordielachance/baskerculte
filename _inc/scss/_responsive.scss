@@ -372,3 +372,59 @@
       }
     }
 }
+
+////
+body{
+    &.gordo-vertical-header:not(.gordo-is-mobile){
+        #header{
+            position:fixed;
+            width:30%;
+            height:100%;
+        }
+        .wrapper,
+        #footer,
+        .credits{
+            margin-left:30%;
+            z-index: -1; //so header is above
+        }
+        &.single{
+            @extend .bg-white;
+        }
+        
+        &:not(.gordo-header-active){
+            #header{
+                left: -30%;
+            }
+            .wrapper,
+            #footer,
+            .credits{
+                margin-left:0;
+            }
+        }
+        
+    }
+    
+    &:not(.gordo-vertical-header),&.gordo-is-mobile{
+        #header{
+            #toggle-header-bt{
+                display:none;
+            }
+            #site-info{
+                padding-bottom:0;
+            }
+            #header-menu{ //hide header menu
+                #toggle-header-menu-bt{
+                    display:block;
+                }
+                > *{
+                    display:none;
+                }
+            }
+        }
+    }
+    &.gordo-header-menu-active{
+        #header #header-menu > *{
+            display:block;
+        }
+    }
+}

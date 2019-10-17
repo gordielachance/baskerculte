@@ -117,7 +117,8 @@ class Gordo{
         $classes[] = 'bg-white';
         $classes[] = has_header_image() ? 'has-header-image' : null;
         $classes[] = has_post_thumbnail() ? 'has-featured-image' : 'no-featured-image'; // If has post thumbnail
-        $classes[] = ( gordo()->get_options('has_sidebar_header') ) ? 'gordo-sidebar-header' : null; //sidebar header ?
+        $classes[] = 'gordo-header-active';
+        $classes[] = ( gordo()->get_options('has_sidebar_header') ) ? 'gordo-vertical-header' : null; //sidebar header ?
         
 
         // If is mobile //TOFIX TOCHECK USEFUL ?
@@ -603,7 +604,7 @@ class gordo_customizer {
 			'sanitize_callback' => array( $this, 'sanitize_checkbox' )
 		) );
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gordo_sidebar_header', array(
-			'label'       => esc_html__( 'Sidebar header', 'gordo' ),
+			'label'       => esc_html__( 'Vertical header', 'gordo' ),
 			'description' => esc_html__( 'Check this if you want a sidebar header instead of a top header.', 'gordo' ),
 			'section'     => 'gordo_extras',
 			'settings'    => 'gordo_sidebar_header',

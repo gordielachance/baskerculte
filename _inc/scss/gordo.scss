@@ -61,7 +61,7 @@ body a {
 .widget_search .searchsubmit,
 .widget_search .s,
 .format-gallery .flex-direction-nav a,
-#toggle-menu-bt,
+#toggle-header-menu-bt,
 .dribbble-shot,
 .flickr_badge_image a,
 .post-content input[type="submit"],
@@ -122,18 +122,6 @@ body{
     }
     > footer{
         @include flex(none); //= 0 0 auto
-    }
-    &:not(.gordo-is-mobile){
-        #header{
-            position:fixed;
-            width:30%;
-            height:100%;
-        }
-        .wrapper,
-        #footer,
-        .credits{
-            margin-left:30%;
-        }
     }
 }
 
@@ -205,6 +193,31 @@ body{
 
 #header {
     padding:0 25px;
+    position:relative;
+    
+    #toggle-header-bt{
+        position: absolute;
+        right: -2em;
+        text-align: center;
+        top: 1em;
+        box-sizing: content-box;
+        @extend .gordo-can-click;
+        &:before{
+            @extend .post-meta-icon;
+            width: 2rem;
+            height: 2rem;
+            line-height: 2rem;
+            background-color: red;
+            content: "\f105"; //fa-angle-right
+            display: block;
+        }
+        .gordo-header-active &{
+            &:before{
+                content: "\f104"; //fa-angle-left
+            }
+        }
+        
+    }
     
     #site-info{
         text-align:center;
@@ -235,33 +248,26 @@ body{
     #header-menu{
         @include display-flex; 
         flex-direction: column;
-        #toggle-menu-bt{
-            text-align:right;
-            padding: 1em;
-            position:absolute;
-            top:0;
-            right:0;
-            display:none;
-            padding-right:2em;
+        
+        #toggle-header-menu-bt{
+            @include opacity(.5);
+            color: white;
+            text-align: right;
+            display: none;
+            margin: auto;
+            font-size: 2em;
+            padding:1em;
+            
+            @extend .gordo-can-click;
+            &:hover {
+                @include opacity(1);
+            }
+            
+
         }
         ul{
             display:block;
             
-        }
-        
-        .gordo-is-mobile &{
-            #toggle-menu-bt{
-                display:block;
-            }
-            > *{
-                display:none;
-            }
-        }
-        
-        &.gordo-expanded{
-            > *{
-                display:block;
-            }
         }
     }
     
@@ -327,15 +333,6 @@ body{
         }
         */
         
-    }
-}
-
-body{
-    
-    &.gordo-sidebar-header,&.gordo-is-mobile{
-        &.single{
-            @extend .bg-white;
-        }
     }
 }
 
@@ -1634,18 +1631,6 @@ img#wpstats { display: none; } /* Silly WordPress stats */
             @include opacity(1);
         }
     }
-}
-
-
-header #toggle-menu-bt {
-    padding: 25px 0;
-    @include opacity(.5);
-    color:white;
-    text-align:center;
-  &:hover {
-    cursor: pointer;
-    @include opacity(1);
-  }
 }
 
 #gordo-archive-menu{
