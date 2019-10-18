@@ -9,7 +9,13 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <header id="header" class="bg-graphite section no-padding"<?php echo gordo()->get_header_styles();?>>
-    <div id="toggle-header-bt"></div>
+    <?php 
+    if ( gordo()->get_options('toggle_header_bt') ){
+        ?>
+        <div id="toggle-header-bt"></div>
+        <?php
+    }
+    ?>
     <div id="site-info" class="section small-padding">
         <div class="header-inner section-inner">
             <?php

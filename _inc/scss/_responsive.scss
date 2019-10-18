@@ -378,14 +378,13 @@ body{
     &.gordo-vertical-header:not(.gordo-is-mobile){
         #header{
             position:fixed;
-            width:30%;
+            width:$vertical-header-width;
             height:100%;
         }
         .wrapper,
         #footer,
         .credits{
-            margin-left:30%;
-            z-index: -1; //so header is above
+            margin-left:$vertical-header-width;
         }
         &.single{
             @extend .bg-white;
@@ -393,12 +392,12 @@ body{
         
         &:not(.gordo-header-active){
             #header{
-                left: -30%;
+                left: calc( -#{$vertical-header-width} + 2em);
             }
             .wrapper,
             #footer,
             .credits{
-                margin-left:0;
+                margin-left:2em;
             }
         }
         

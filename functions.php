@@ -47,13 +47,15 @@ class Gordo{
     
     function setup_globals(){
         $this->options_default = array(
-            'has_sidebar_header'    => false,
+            'vertical_header'       => false,
+            'toggle_header_bt'      => false,
             'pagination_mode'       => false,
         );
         
         $db_options = array();
-        $db_options['has_sidebar_header'] = get_theme_mod('gordo_sidebar_header', $this->options_default['has_sidebar_header']);
-        $db_options['pagination_mode'] = get_theme_mod('gordo_pagination_mode', $this->options_default['pagination_mode']);
+        $db_options['vertical_header'] =        get_theme_mod('gordo_vertical_header', $this->options_default['vertical_header']);
+        $db_options['toggle_header_bt'] =       get_theme_mod('gordo_toggle_header_bt', $this->options_default['toggle_header_bt']);
+        $db_options['pagination_mode'] =        get_theme_mod('gordo_pagination_mode', $this->options_default['pagination_mode']);
 
         $this->options = wp_parse_args($db_options, $this->options_default);
         
@@ -118,7 +120,7 @@ class Gordo{
         $classes[] = has_header_image() ? 'has-header-image' : null;
         $classes[] = has_post_thumbnail() ? 'has-featured-image' : 'no-featured-image'; // If has post thumbnail
         $classes[] = 'gordo-header-active';
-        $classes[] = ( gordo()->get_options('has_sidebar_header') ) ? 'gordo-vertical-header' : null; //sidebar header ?
+        $classes[] = ( gordo()->get_options('vertical_header') ) ? 'gordo-vertical-header' : null; //sidebar header ?
         
 
         // If is mobile //TOFIX TOCHECK USEFUL ?
@@ -599,15 +601,30 @@ class gordo_customizer {
         
 
 		/* Sidebar header */
-		$wp_customize->add_setting( 'gordo_sidebar_header', array(
-			'default'           => gordo()->get_default_option('has_sidebar_header'),
+		$wp_customize->add_setting( 'gordo_vertical_header', array(
+			'default'           => gordo()->get_default_option('vertical_header'),
 			'sanitize_callback' => array( $this, 'sanitize_checkbox' )
 		) );
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gordo_sidebar_header', array(
+        
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gordo_vertical_header', array(
 			'label'       => esc_html__( 'Vertical header', 'gordo' ),
-			'description' => esc_html__( 'Check this if you want a sidebar header instead of a top header.', 'gordo' ),
+			'description' => esc_html__( 'Check this if you want a sidebar header (<768px) instead of a top header.', 'gordo' ),
 			'section'     => 'gordo_extras',
-			'settings'    => 'gordo_sidebar_header',
+			'settings'    => 'gordo_vertical_header',
+			'type'        => 'checkbox',
+			'priority'    => 10
+		) ) );
+        
+		$wp_customize->add_setting( 'gordo_toggle_header_bt', array(
+			'default'           => gordo()->get_default_option('toggle_header_bt'),
+			'sanitize_callback' => array( $this, 'sanitize_checkbox' )
+		) );
+        
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gordo_toggle_header_bt', array(
+			'label'       => esc_html__( 'Toggle header button', 'gordo' ),
+			'description' => esc_html__( 'Shrink/expand header with a button', 'gordo' ),
+			'section'     => 'gordo_extras',
+			'settings'    => 'gordo_toggle_header_bt',
 			'type'        => 'checkbox',
 			'priority'    => 10
 		) ) );
